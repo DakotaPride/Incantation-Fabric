@@ -20,8 +20,6 @@ public class MoreWeaponryCompat {
 
     public static StatusEffect HARMING_RESISTANCE = new EmptyStatusEffect(StatusEffectCategory.BENEFICIAL, 0xCEFFF2);
     public static HarmingResistanceScrollItem HARMING_RESISTANCE_SCROLL;
-    public static Item COLD_BLOODED_IMBUED_ITEM;
-    public static Item COLD_BLOODED_TWIST_ITEM;
 
     // Registration
 
@@ -33,9 +31,9 @@ public class MoreWeaponryCompat {
 
     public static void moreWeaponryCompatRegistry() {
 
-        // Items
+        Registry.register(Registry.STATUS_EFFECT, new Identifier(MORE_WEAPONRY_ID, "milky_resistance"), HARMING_RESISTANCE);
         HARMING_RESISTANCE_SCROLL = registerItem("harming_resistance_scroll",
-                new HarmingResistanceScrollItem(new FabricItemSettings().group(IncantationMod.INCANTATION_GROUP)));
+                new HarmingResistanceScrollItem(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
 
     }
 

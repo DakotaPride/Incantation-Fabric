@@ -5,7 +5,6 @@ import net.dakotapride.incantation.compat.moreweaponry.MoreWeaponryCompat;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
