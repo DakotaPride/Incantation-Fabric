@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "incantation",
+  "version": "${version}",
+
+  "name": "Incantation",
+  "description": "Incantation is a mod that adds new weapon variants as well as several new effects. This includes imbued variants, artifact variants, and more! (of course, planned mod compatibility!)",
+  "authors": [
+    "DakotaPride"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/incantation",
+    "sources": "https://github.com/DakotaPride/Incantation"
+  },
+
+  "license": "MIT",
+  "icon": "assets/incantation/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.dakotapride.incantation.common.IncantationMod"
+    ]
+  },
+  "mixins": [
+    "incantation.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.7",
+    "fabric": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
