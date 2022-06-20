@@ -1,8 +1,14 @@
 {
+
   "item.incantation.milky_resistance_scroll": "Resistance Parchment",
-  "itemGroup.incantation.incantation": "Incantation",
   "effect.incantation.milky_resistance": "Milky Resistance",
   "item.incantation.resistance_parchment.milk": "Milky Resistance",
   "item.incantation.parchment.starting_desc": "When Applied:",
-  "item.incantation.resistance_parchment.milk.description": "Removes 100% Of Effects"
+  "item.incantation.resistance_parchment.milk.description": "Removes 100% Of Effects",
+  "item.incantation.freezing_resistance_scroll": "Resistance Parchment",
+  "effect.incantation.freezing_resistance": "Freezing Resistance",
+  "item.incantation.resistance_parchment.freezing": "Freezing Resistance",
+  "item.incantation.resistance_parchment.freezing.description": "Immune To Freezing",
+  "itemGroup.incantation.incantation": "Incantation"
+
 }

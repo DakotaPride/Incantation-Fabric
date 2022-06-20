@@ -2,6 +2,7 @@ package net.dakotapride.incantation.common;
 
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
 import net.dakotapride.incantation.common.item.EffectScrollItem;
+import net.dakotapride.incantation.common.item.FreezingResistanceScrollItem;
 import net.dakotapride.incantation.common.item.MilkyResistanceScrollItem;
 import net.dakotapride.incantation.compat.moreweaponry.MoreWeaponryCompat;
 import net.fabricmc.api.ModInitializer;
@@ -27,7 +28,8 @@ public class IncantationMod implements ModInitializer {
 	public static StatusEffect MILKY_RESISTANCE = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0xF9F7F7);
 	public static MilkyResistanceScrollItem MILKY_RESISTANCE_SCROLL;
 
-	public static EffectScrollItem FREEZING_RESISTANCE_SCROLL;
+	public static StatusEffect FREEZING_RESISTANCE = new EmptyStatusEffect(StatusEffectCategory.BENEFICIAL, 0xCEFFF2);
+	public static FreezingResistanceScrollItem FREEZING_RESISTANCE_SCROLL;
 
 
 	// Registration
@@ -54,10 +56,11 @@ public class IncantationMod implements ModInitializer {
 
 		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "milky_resistance"), MILKY_RESISTANCE);
 		MILKY_RESISTANCE_SCROLL = registerItem("milky_resistance_scroll",
-				new MilkyResistanceScrollItem(new FabricItemSettings().group(INCANTATION_GROUP)));
+				new MilkyResistanceScrollItem(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
 
+		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "freezing_resistance"), FREEZING_RESISTANCE);
 		FREEZING_RESISTANCE_SCROLL = registerItem("freezing_resistance_scroll",
-				new EffectScrollItem(new FabricItemSettings().group(INCANTATION_GROUP)));
+				new FreezingResistanceScrollItem(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
 
 		LOGGER.info("Incantation Awaits You!");
 	}

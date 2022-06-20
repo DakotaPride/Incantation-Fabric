@@ -1,0 +1,14 @@
+{
+
+  "item.incantation.milky_resistance_scroll": "Parchemin de résistance",
+  "effect.incantation.milky_resistance": "Résistance laiteuse",
+  "item.incantation.resistance_parchment.milk": "Résistance laiteuse",
+  "item.incantation.parchment.starting_desc": "Si appliqué :",
+  "item.incantation.resistance_parchment.milk.description": "Supprime 100 % des effets",
+  "item.incantation.freezing_resistance_scroll": "Parchemin de résistance",
+  "effect.incantation.freezing_resistance": "Résistance au gel",
+  "item.incantation.resistance_parchment.freezing": "Résistance au gel",
+  "item.incantation.resistance_parchment.freezing.description": "Immunisé au gel",
+  "itemGroup.incantation.incantation": "Incantation"
+
+}
