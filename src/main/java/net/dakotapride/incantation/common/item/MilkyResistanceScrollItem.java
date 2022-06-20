@@ -3,7 +3,6 @@ package net.dakotapride.incantation.common.item;
 import net.dakotapride.incantation.common.IncantationMod;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.player.ItemCooldownManager;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
@@ -22,22 +21,14 @@ public class MilkyResistanceScrollItem extends EffectScrollItem {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+        ItemStack itemStack = user.getStackInHand(hand);
         user.addStatusEffect(new StatusEffectInstance(IncantationMod.MILKY_RESISTANCE, 100, 0));
 
-        this.getItemCooldownManager().set(this, 100);
+        user.getItemCooldownManager().set(this, 100);
 
-        return super.use(world, user, hand);
+        return TypedActionResult.success(itemStack);
     }
 
-    public ItemCooldownManager getItemCooldownManager() {
-        return this.itemCooldownManager;
-    }
-
-    private final ItemCooldownManager itemCooldownManager = createCooldownManager();
-
-    protected ItemCooldownManager createCooldownManager() {
-        return new ItemCooldownManager();
-    }
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {

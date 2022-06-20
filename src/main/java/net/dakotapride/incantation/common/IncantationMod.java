@@ -27,6 +27,8 @@ public class IncantationMod implements ModInitializer {
 	public static StatusEffect MILKY_RESISTANCE = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0xF9F7F7);
 	public static MilkyResistanceScrollItem MILKY_RESISTANCE_SCROLL;
 
+	public static EffectScrollItem FREEZING_RESISTANCE_SCROLL;
+
 
 	// Registration
 	public static <T extends Block> T registerBlock(String name, T block) {
@@ -53,6 +55,9 @@ public class IncantationMod implements ModInitializer {
 		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "milky_resistance"), MILKY_RESISTANCE);
 		MILKY_RESISTANCE_SCROLL = registerItem("milky_resistance_scroll",
 				new MilkyResistanceScrollItem(new FabricItemSettings().group(INCANTATION_GROUP)));
+
+		FREEZING_RESISTANCE_SCROLL = registerItem("freezing_resistance_scroll",
+				new EffectScrollItem(new FabricItemSettings().group(INCANTATION_GROUP)));
 
 		LOGGER.info("Incantation Awaits You!");
 	}
