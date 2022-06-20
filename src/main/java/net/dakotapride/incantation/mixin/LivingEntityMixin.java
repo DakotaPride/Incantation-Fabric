@@ -1,6 +1,7 @@
 package net.dakotapride.incantation.mixin;
 
 import net.dakotapride.incantation.common.IncantationMod;
+import net.dakotapride.incantation.common.util.IncantationTags;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -22,7 +23,7 @@ public abstract class LivingEntityMixin extends Entity {
     @Inject(method = "tick", at = @At("HEAD"))
     private void tick(CallbackInfo ci) {
         if (livingEntity.hasStatusEffect(IncantationMod.MILKY_RESISTANCE)) {
-            livingEntity.removeStatusEffect(StatusEffects.POISON);
+            livingEntity.removeStatusEffect(IncantationTags.EffectTags.RESISTED_EFFECTS);
         }
     }
 
