@@ -2,6 +2,7 @@ package net.dakotapride.incantation.common;
 
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
 import net.dakotapride.incantation.common.item.EffectScrollItem;
+import net.dakotapride.incantation.common.item.MilkyResistanceScrollItem;
 import net.dakotapride.incantation.compat.moreweaponry.MoreWeaponryCompat;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
@@ -24,7 +25,7 @@ public class IncantationMod implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("incantation");
 
 	public static StatusEffect MILKY_RESISTANCE = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0xF9F7F7);
-	public static EffectScrollItem MILKY_RESISTANCE_SCROLL;
+	public static MilkyResistanceScrollItem MILKY_RESISTANCE_SCROLL;
 
 
 	// Registration
@@ -51,7 +52,7 @@ public class IncantationMod implements ModInitializer {
 
 		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "milky_resistance"), MILKY_RESISTANCE);
 		MILKY_RESISTANCE_SCROLL = registerItem("milky_resistance_scroll",
-				new EffectScrollItem(new FabricItemSettings().group(INCANTATION_GROUP)));
+				new MilkyResistanceScrollItem(new FabricItemSettings().group(INCANTATION_GROUP)));
 
 		LOGGER.info("Incantation Awaits You!");
 	}

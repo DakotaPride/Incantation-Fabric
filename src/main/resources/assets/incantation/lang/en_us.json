@@ -1,3 +1,8 @@
 {
-  "item.incantation.milky_resistance_scroll": "Resistance Parchment"
+  "item.incantation.milky_resistance_scroll": "Resistance Parchment",
+  "itemGroup.incantation.incantation": "Incantation",
+  "effect.incantation.milky_resistance": "Milky Resistance",
+  "item.incantation.resistance_parchment.milk": "Milky Resistance",
+  "item.incantation.parchment.starting_desc": "When Applied:",
+  "item.incantation.resistance_parchment.milk.description": "Removes 100% Of Effects"
 }
