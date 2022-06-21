@@ -29,7 +29,7 @@ public class MoreWeaponryCompat {
 
     public static void moreWeaponryCompatRegistry() {
 
-        Registry.register(Registry.STATUS_EFFECT, new Identifier(MORE_WEAPONRY_ID, "milky_resistance"), HARMING_RESISTANCE);
+        Registry.register(Registry.STATUS_EFFECT, new Identifier(MORE_WEAPONRY_ID, "harming_resistance"), HARMING_RESISTANCE);
         HARMING_RESISTANCE_SCROLL = registerItem("harming_resistance_scroll",
                 new HarmingResistanceScrollItem(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
 
