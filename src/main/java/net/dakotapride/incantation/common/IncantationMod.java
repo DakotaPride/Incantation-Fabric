@@ -7,6 +7,7 @@ import net.dakotapride.incantation.common.item.FreezingResistanceScrollItem;
 import net.dakotapride.incantation.common.item.MilkyResistanceScrollItem;
 import net.dakotapride.incantation.common.recipe.BewitchmentTableRecipe;
 import net.dakotapride.incantation.common.screen.BewitchmentTableScreenHandler;
+import net.dakotapride.incantation.compat.enhancedcelestials.EnhancedCelestialsCompat;
 import net.dakotapride.incantation.compat.moreweaponry.MoreWeaponryCompat;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
@@ -68,6 +69,14 @@ public class IncantationMod implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
+		if (FabricLoader.getInstance().isModLoaded("moreweaponry")) {
+			MoreWeaponryCompat.moreWeaponryCompatRegistry();
+		}
+
+		if (FabricLoader.getInstance().isModLoaded("enhancedcelestials")) {
+			EnhancedCelestialsCompat.enhancedCelestialsCompatRegistry();
+		}
+
 		BEWITCHMENT_TABLE_SCREEN_HANDLER =
 				ScreenHandlerRegistry.registerSimple(new Identifier(INCANTATION_ID, "bewitchment_table"),
 						BewitchmentTableScreenHandler::new);
@@ -81,10 +90,6 @@ public class IncantationMod implements ModInitializer {
 				new BewitchmentTableBlock(FabricBlockSettings.copy(Blocks.CAULDRON)));
 		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "bewitchment_table"), new BlockItem(BEWITCHMENT_TABLE,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
-
-		if (FabricLoader.getInstance().isModLoaded("moreweaponry")) {
-			MoreWeaponryCompat.moreWeaponryCompatRegistry();
-		}
 
 		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "milky_resistance"), MILKY_RESISTANCE);
 		MILKY_RESISTANCE_SCROLL = registerItem("milky_resistance_scroll",

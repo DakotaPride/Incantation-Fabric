@@ -5,7 +5,7 @@
       "item": "minecraft:paper"
     },
     {
-      "item": "minecraft:milk_bucket"
+      "item": "minecraft:hay_block"
     },
     {
       "item": "minecraft:string"
@@ -21,6 +21,6 @@
     }
   ],
   "output": {
-    "item": "incantation:milky_resistance_scroll"
+    "item": "enhancedcelestials:harvest_healing_scroll"
   }
 }

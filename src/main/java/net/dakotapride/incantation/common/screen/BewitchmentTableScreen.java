@@ -33,7 +33,7 @@ public class BewitchmentTableScreen extends HandledScreen<BewitchmentTableScreen
         drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
 
         if(handler.isCrafting()) {
-            drawTexture(matrices, x + 37, y + 15, 0, 168, handler.getScaledProgress(), 76);
+            drawTexture(matrices, x + 28, y + 10, 0, 168, handler.getScaledProgress(), 55);
         }
     }
 
