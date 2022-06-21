@@ -1,28 +1,88 @@
 package net.dakotapride.incantation.common.block.entity;
 
 import net.dakotapride.incantation.common.IncantationMod;
-import net.minecraft.block.BlockEntityProvider;
-import net.minecraft.block.BlockRenderType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.BlockWithEntity;
+import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.screen.NamedScreenHandlerFactory;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ItemScatterer;
+import net.minecraft.state.StateManager;
+import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.Properties;
+import net.minecraft.util.*;
+import net.minecraft.util.function.BooleanBiFunction;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.util.shape.VoxelShapes;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.stream.Stream;
+
 public class BewitchmentTableBlock extends BlockWithEntity implements BlockEntityProvider {
+    public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
     public BewitchmentTableBlock(Settings settings) {
         super(settings);
     }
 
+    private static final VoxelShape SHAPE_N = Stream.of(
+            Block.createCuboidShape(1, 0, 1, 15, 2, 15),
+            Block.createCuboidShape(4, 2, 4, 12, 13, 12)
+    ).reduce((v1, v2) -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR)).get();
+    private static final VoxelShape SHAPE_S = Stream.of(
+            Block.createCuboidShape(1, 0, 1, 15, 2, 15),
+            Block.createCuboidShape(4, 2, 4, 12, 13, 12)
+    ).reduce((v1, v2) -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR)).get();
+    private static final VoxelShape SHAPE_W = Stream.of(
+            Block.createCuboidShape(1, 0, 1, 15, 2, 15),
+            Block.createCuboidShape(4, 2, 4, 12, 13, 12)
+    ).reduce((v1, v2) -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR)).get();
+    private static final VoxelShape SHAPE_E = Stream.of(
+            Block.createCuboidShape(1, 0, 1, 15, 2, 15),
+            Block.createCuboidShape(4, 2, 4, 12, 13, 12)
+    ).reduce((v1, v2) -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR)).get();
+
+
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        switch (state.get(FACING)) {
+            case NORTH:
+                return SHAPE_N;
+            case SOUTH:
+                return SHAPE_S;
+            case WEST:
+                return SHAPE_W;
+            case EAST:
+                return SHAPE_E;
+            default:
+                return SHAPE_N;
+        }
+    }
+
+    @Nullable
+    @Override
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        return this.getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite());
+    }
+
+    @Override
+    public BlockState rotate(BlockState state, BlockRotation rotation) {
+        return state.with(FACING, rotation.rotate(state.get(FACING)));
+    }
+
+    @Override
+    public BlockState mirror(BlockState state, BlockMirror mirror) {
+        return state.rotate(mirror.getRotation(state.get(FACING)));
+    }
+
+    @Override
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(FACING);
+    }
 
     @Override
     public BlockRenderType getRenderType(BlockState state) {

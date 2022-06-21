@@ -69,7 +69,7 @@ public class BewitchmentTableEntity extends BlockEntity implements NamedScreenHa
 
     @Override
     public Text getDisplayName() {
-        return Text.translatable("gui.moreweaponry.echo_infuser.label");
+        return Text.literal(" ");
     }
 
     @Nullable
@@ -82,18 +82,18 @@ public class BewitchmentTableEntity extends BlockEntity implements NamedScreenHa
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
-        nbt.putInt("echo_infuser.progress", progress);
-        nbt.putInt("echo_infuser.fuelTime", fuelTime);
-        nbt.putInt("echo_infuser.maxFuelTime", maxFuelTime);
+        nbt.putInt("bewitchment_table.progress", progress);
+        nbt.putInt("bewitchment_table.fuelTime", fuelTime);
+        nbt.putInt("bewitchment_table.maxFuelTime", maxFuelTime);
     }
 
     @Override
     public void readNbt(NbtCompound nbt) {
         Inventories.readNbt(nbt, inventory);
         super.readNbt(nbt);
-        progress = nbt.getInt("echo_infuser.progress");
-        fuelTime = nbt.getInt("echo_infuser.fuelTime");
-        maxFuelTime = nbt.getInt("echo_infuser.maxFuelTime");
+        progress = nbt.getInt("bewitchment_table.progress");
+        fuelTime = nbt.getInt("bewitchment_table.fuelTime");
+        maxFuelTime = nbt.getInt("bewitchment_table.maxFuelTime");
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, BewitchmentTableEntity entity) {

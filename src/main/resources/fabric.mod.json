@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "net.dakotapride.incantation.common.IncantationMod"
+    ],
+    "client": [
+      "net.dakotapride.incantation.client.IncantationClient"
     ]
   },
   "mixins": [

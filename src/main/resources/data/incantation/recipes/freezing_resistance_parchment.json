@@ -1,0 +1,26 @@
+{
+  "type": "incantation:bewitchment_table",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:ice"
+    },
+    {
+      "item": "minecraft:string"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:ice"
+    },
+    {
+      "item": "minecraft:string"
+    }
+  ],
+  "output": {
+    "item": "incantation:freezing_resistance_scroll"
+  }
+}

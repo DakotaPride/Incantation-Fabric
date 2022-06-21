@@ -31,13 +31,13 @@ public class BewitchmentTableScreenHandler extends ScreenHandler {
         propertyDelegate = delegate;
 
         // Our Slots
-        this.addSlot(new Slot(inventory, 1, 52, 24));
-        this.addSlot(new Slot(inventory, 2, 80, 16));
-        this.addSlot(new Slot(inventory, 3, 108, 24));
-        this.addSlot(new Slot(inventory, 4, 52, 56));
-        this.addSlot(new Slot(inventory, 5, 80, 64));
-        this.addSlot(new Slot(inventory, 6, 108, 56));
-        this.addSlot(new ResultSlot(inventory, 7, 80, 40));
+        this.addSlot(new Slot(inventory, 1, 8, 8));
+        this.addSlot(new Slot(inventory, 2, 8, 29));
+        this.addSlot(new Slot(inventory, 3, 8, 50));
+        this.addSlot(new Slot(inventory, 4, 151, 8));
+        this.addSlot(new Slot(inventory, 5, 151, 29));
+        this.addSlot(new Slot(inventory, 6, 151, 50));
+        this.addSlot(new ResultSlot(inventory, 7, 79, 29));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);

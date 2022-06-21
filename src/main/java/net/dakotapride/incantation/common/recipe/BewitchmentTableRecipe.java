@@ -70,12 +70,12 @@ public class BewitchmentTableRecipe implements Recipe<SimpleInventory> {
     public static class Type implements RecipeType<BewitchmentTableRecipe> {
         private Type() { }
         public static final Type INSTANCE = new Type();
-        public static final String ID = "echo_infusion";
+        public static final String ID = "bewitchment_table";
     }
 
     public static class Serializer implements RecipeSerializer<BewitchmentTableRecipe> {
         public static final Serializer INSTANCE = new Serializer();
-        public static final String ID = "echo_infusion";
+        public static final String ID = "bewitchment_table";
 
         @Override
         public BewitchmentTableRecipe read(Identifier id, JsonObject json) {

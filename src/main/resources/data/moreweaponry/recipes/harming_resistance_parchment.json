@@ -1,0 +1,26 @@
+{
+  "type": "incantation:bewitchment_table",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "moreweaponry:poisonous_fang"
+    },
+    {
+      "item": "minecraft:string"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:spider_eye"
+    },
+    {
+      "item": "minecraft:string"
+    }
+  ],
+  "output": {
+    "item": "moreweaponry:harming_resistance_scroll"
+  }
+}

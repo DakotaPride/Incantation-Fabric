@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "incantation:block/bewitchment_table" },
+    "facing=east": { "model": "incantation:block/bewitchment_table", "y": 90 },
+    "facing=south": { "model": "incantation:block/bewitchment_table", "y": 180 },
+    "facing=west": { "model": "incantation:block/bewitchment_table", "y": 270 }
+  }
+}

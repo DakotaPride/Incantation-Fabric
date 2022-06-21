@@ -9,6 +9,7 @@
   "effect.incantation.freezing_resistance": "Freezing Resistance",
   "item.incantation.resistance_parchment.freezing": "Freezing Resistance",
   "item.incantation.resistance_parchment.freezing.description": "Immune To Freezing",
+  "block.incantation.bewitchment_table": "Bewitchment Table",
   "itemGroup.incantation.incantation": "Incantation"
 
 }
