@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "enhancedcelestials:item/mending_moon_crest_fruit"
+  }
+}
