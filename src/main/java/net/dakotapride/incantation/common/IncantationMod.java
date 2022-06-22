@@ -3,6 +3,7 @@ package net.dakotapride.incantation.common;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableBlock;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableEntity;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
+import net.dakotapride.incantation.common.effect.FleshyPunishmentEffect;
 import net.dakotapride.incantation.common.item.FreezingResistanceScrollItem;
 import net.dakotapride.incantation.common.item.MilkyResistanceScrollItem;
 import net.dakotapride.incantation.common.recipe.BewitchmentTableRecipe;
@@ -36,6 +37,9 @@ public class IncantationMod implements ModInitializer {
 	public static MilkyResistanceScrollItem MILKY_RESISTANCE_SCROLL;
 
 	public static StatusEffect FREEZING_RESISTANCE = new EmptyStatusEffect(StatusEffectCategory.BENEFICIAL, 0xCEFFF2);
+	public static FreezingResistanceScrollItem FREEZING_RESISTANCE_SCROLL;
+
+	public static StatusEffect FLESHY_PUNISHMENT = new FleshyPunishmentEffect(StatusEffectCategory.NEUTRAL, 0x000000);
 	public static FreezingResistanceScrollItem FREEZING_RESISTANCE_SCROLL;
 
 	public static ScreenHandlerType<BewitchmentTableScreenHandler> BEWITCHMENT_TABLE_SCREEN_HANDLER;
@@ -90,6 +94,10 @@ public class IncantationMod implements ModInitializer {
 		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "freezing_resistance"), FREEZING_RESISTANCE);
 		FREEZING_RESISTANCE_SCROLL = registerItem("freezing_resistance_scroll",
 				new FreezingResistanceScrollItem(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+
+		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "fleshy_punishment"), FLESHY_PUNISHMENT);
+		FLESHY_PUNISHMENT_SCROLL = registerItem("fleshy_punishment_scroll",
+				new MilkyResistanceScrollItem(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
 
 		if (FabricLoader.getInstance().isModLoaded("moreweaponry")) {
 			MoreWeaponryCompat.moreWeaponryCompatRegistry();
