@@ -4,6 +4,7 @@ import net.dakotapride.incantation.common.block.entity.BewitchmentTableBlock;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableEntity;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
 import net.dakotapride.incantation.common.effect.FleshyPunishmentEffect;
+import net.dakotapride.incantation.common.item.FleshyPunishmentScrollItem;
 import net.dakotapride.incantation.common.item.FreezingResistanceScrollItem;
 import net.dakotapride.incantation.common.item.MilkyResistanceScrollItem;
 import net.dakotapride.incantation.common.recipe.BewitchmentTableRecipe;
@@ -33,6 +34,14 @@ public class IncantationMod implements ModInitializer {
 	public static final String INCANTATION_ID = ("incantation");
 	public static final Logger LOGGER = LoggerFactory.getLogger("incantation");
 
+	// Incantation Levels
+	public static StatusEffect INCANTATION_LVL_ONE = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0x000000);
+	public static StatusEffect INCANTATION_LVL_TWO = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0x000000);
+	public static StatusEffect INCANTATION_LVL_THREE = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0x000000);
+	public static StatusEffect INCANTATION_LVL_FOUR = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0x000000);
+	public static StatusEffect INCANTATION_LVL_FIVE = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0x000000);
+
+
 	public static StatusEffect MILKY_RESISTANCE = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0xF9F7F7);
 	public static MilkyResistanceScrollItem MILKY_RESISTANCE_SCROLL;
 
@@ -40,17 +49,10 @@ public class IncantationMod implements ModInitializer {
 	public static FreezingResistanceScrollItem FREEZING_RESISTANCE_SCROLL;
 
 	public static StatusEffect FLESHY_PUNISHMENT = new FleshyPunishmentEffect(StatusEffectCategory.NEUTRAL, 0x000000);
-	public static FreezingResistanceScrollItem FREEZING_RESISTANCE_SCROLL;
+	public static FleshyPunishmentScrollItem FLESHY_PUNISHMENT_SCROLL;
 
 	public static ScreenHandlerType<BewitchmentTableScreenHandler> BEWITCHMENT_TABLE_SCREEN_HANDLER;
 	public static BewitchmentTableBlock BEWITCHMENT_TABLE;
-
-	private void registerIncantationBlockEntities() {
-		BEWITCHMENT_TABLE_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
-				new Identifier(INCANTATION_ID, "bewitchment_table"),
-				FabricBlockEntityTypeBuilder.create(BewitchmentTableEntity::new,
-						BEWITCHMENT_TABLE).build(null));
-	}
 
 	public static BlockEntityType<BewitchmentTableEntity> BEWITCHMENT_TABLE_BLOCK_ENTITY;
 
@@ -97,7 +99,7 @@ public class IncantationMod implements ModInitializer {
 
 		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "fleshy_punishment"), FLESHY_PUNISHMENT);
 		FLESHY_PUNISHMENT_SCROLL = registerItem("fleshy_punishment_scroll",
-				new MilkyResistanceScrollItem(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+				new FleshyPunishmentScrollItem(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
 
 		if (FabricLoader.getInstance().isModLoaded("moreweaponry")) {
 			MoreWeaponryCompat.moreWeaponryCompatRegistry();
@@ -107,7 +109,18 @@ public class IncantationMod implements ModInitializer {
 			EnhancedCelestialsCompat.enhancedCelestialsCompatRegistry();
 		}
 
-		registerIncantationBlockEntities();
+
+		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "incantation_level_one"), INCANTATION_LVL_ONE);
+		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "incantation_level_two"), INCANTATION_LVL_TWO);
+		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "incantation_level_three"), INCANTATION_LVL_THREE);
+		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "incantation_level_four"), INCANTATION_LVL_FOUR);
+		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "incantation_level_five"), INCANTATION_LVL_FIVE);
+
+
+		BEWITCHMENT_TABLE_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
+				new Identifier(INCANTATION_ID, "bewitchment_table"),
+				FabricBlockEntityTypeBuilder.create(BewitchmentTableEntity::new,
+						BEWITCHMENT_TABLE).build(null));
 
 		LOGGER.info("Incantation Awaits You!");
 	}

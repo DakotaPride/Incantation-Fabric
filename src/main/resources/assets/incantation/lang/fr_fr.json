@@ -9,6 +9,11 @@
   "effect.incantation.freezing_resistance": "Résistance au gel",
   "item.incantation.resistance_parchment.freezing": "Résistance au gel",
   "item.incantation.resistance_parchment.freezing.description": "Immunisé au gel",
-  "itemGroup.incantation.incantation": "Incantation"
+  "item.incantation.fleshy_punishment_scroll": "Parchemin de punition",
+  "effect.incantation.fleshy_punishment": "Punition charnue",
+  "item.incantation.punishment_parchment.fleshy": "Punition charnue",
+  "item.incantation.punishment_parchment.fleshy.description": "Vous brûlez indéfiniment, mais c'est plus fort",
+  "itemGroup.incantation.incantation": "Incantation",
+  "block.incantation.bewitchment_table": "Table d'envoûtement"
 
 }

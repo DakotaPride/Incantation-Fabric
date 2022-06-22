@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "incantation:fleshy_punishment_scroll",
+    "incantation:milky_resistance_scroll",
+    "incantation:freezing_resistance_scroll",
+
+    "moreweaponry:harming_resistance_scroll",
+
+    "enhancedcelestials:harvest_healing_scroll"
+  ]
+}
