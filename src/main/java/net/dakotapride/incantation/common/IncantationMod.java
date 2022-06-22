@@ -7,7 +7,6 @@ import net.dakotapride.incantation.common.item.FreezingResistanceScrollItem;
 import net.dakotapride.incantation.common.item.MilkyResistanceScrollItem;
 import net.dakotapride.incantation.common.recipe.BewitchmentTableRecipe;
 import net.dakotapride.incantation.common.screen.BewitchmentTableScreenHandler;
-import net.dakotapride.incantation.compat.croptopia.CroptopiaCompat;
 import net.dakotapride.incantation.compat.enhancedcelestials.EnhancedCelestialsCompat;
 import net.dakotapride.incantation.compat.moreweaponry.MoreWeaponryCompat;
 import net.fabricmc.api.ModInitializer;
@@ -98,10 +97,6 @@ public class IncantationMod implements ModInitializer {
 
 		if (FabricLoader.getInstance().isModLoaded("enhancedcelestials")) {
 			EnhancedCelestialsCompat.enhancedCelestialsCompatRegistry();
-		}
-
-		if (FabricLoader.getInstance().isModLoaded("croptopia")) {
-			CroptopiaCompat.croptopiaCompatRegistry();
 		}
 
 		registerIncantationBlockEntities();

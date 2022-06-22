@@ -6,6 +6,8 @@
     "minecraft:beetroot",
     "minecraft:melon_slice",
     "minecraft:apple",
-    "minecraft:bread"
+    "minecraft:bread",
+    "#croptopia:harvestable_healing_foods",
+    "#moreweaponry:harvestable_healing_foods"
   ]
 }
