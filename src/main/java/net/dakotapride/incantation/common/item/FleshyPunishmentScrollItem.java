@@ -21,31 +21,6 @@ public class FleshyPunishmentScrollItem extends EffectScrollItem {
     }
 
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        if (!world.isClient) {
-            if (!user.hasStatusEffect(IncantationMod.INCANTATION_LVL_ONE)
-                    || !user.hasStatusEffect(IncantationMod.INCANTATION_LVL_ONE) && !user.hasStatusEffect(IncantationMod.INCANTATION_LVL_TWO)
-                    || !user.hasStatusEffect(IncantationMod.INCANTATION_LVL_ONE) && !user.hasStatusEffect(IncantationMod.INCANTATION_LVL_TWO)
-                    && !user.hasStatusEffect(IncantationMod.INCANTATION_LVL_THREE)
-                    || !user.hasStatusEffect(IncantationMod.INCANTATION_LVL_ONE) && !user.hasStatusEffect(IncantationMod.INCANTATION_LVL_TWO)
-                    && !user.hasStatusEffect(IncantationMod.INCANTATION_LVL_THREE) && !user.hasStatusEffect(IncantationMod.INCANTATION_LVL_FOUR)
-                    || !user.hasStatusEffect(IncantationMod.INCANTATION_LVL_ONE) && !user.hasStatusEffect(IncantationMod.INCANTATION_LVL_TWO)
-                    && !user.hasStatusEffect(IncantationMod.INCANTATION_LVL_THREE) && !user.hasStatusEffect(IncantationMod.INCANTATION_LVL_FOUR)
-                    && !user.hasStatusEffect(IncantationMod.INCANTATION_LVL_FIVE)) {
-                deniedLevelOneScrolls(user);
-            }
-        }
-
-        user.addStatusEffect(new StatusEffectInstance(IncantationMod.FLESHY_PUNISHMENT, 200, 0));
-
-        return super.use(world, user, hand);
-    }
-
-    private void deniedLevelOneScrolls(PlayerEntity player) {
-        player.sendMessage(Text.translatable("text.incantation.level_one_scrolls.denied", "text.incantation.level_one_scrolls.punishment"));
-    }
-
-    @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         tooltip.add(Text.translatable("item.incantation.punishment_parchment.fleshy").formatted(Formatting.BLUE));
         tooltip.add(Text.literal(" "));

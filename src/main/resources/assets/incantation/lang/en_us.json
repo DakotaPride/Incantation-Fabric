@@ -1,5 +1,4 @@
 {
-
   "item.incantation.milky_resistance_scroll": "Resistance Parchment",
   "effect.incantation.milky_resistance": "Milky Resistance",
   "item.incantation.resistance_parchment.milk": "Milky Resistance",
@@ -14,8 +13,5 @@
   "item.incantation.punishment_parchment.fleshy": "Fleshy Punishment",
   "item.incantation.punishment_parchment.fleshy.description": "You Burn Indefinitely, But Is Stronger",
   "block.incantation.bewitchment_table": "Bewitchment Table",
-  "itemGroup.incantation.incantation": "Incantation",
-  "text.incantation.level_one_scrolls.denied": "You Must Be Incantation Level 1 Or Higher To Use This ",
-  "text.incantation.level_one_scrolls.punishment": "Punishment Parchment!",
-  "text.incantation.level_one_scrolls.resistance": "Resistance Parchment!"
+  "itemGroup.incantation.incantation": "Incantation"
 }

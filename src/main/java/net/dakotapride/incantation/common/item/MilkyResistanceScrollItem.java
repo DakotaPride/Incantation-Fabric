@@ -20,24 +20,6 @@ public class MilkyResistanceScrollItem extends EffectScrollItem {
     }
 
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        if (!world.isClient) {
-            if (!user.hasStatusEffect(IncantationMod.INCANTATION_LVL_ONE)) {
-                deniedLevelOneScrolls(user);
-            }
-        }
-
-        user.addStatusEffect(new StatusEffectInstance(IncantationMod.MILKY_RESISTANCE, 240, 0));
-
-        return super.use(world, user, hand);
-    }
-
-    private void deniedLevelOneScrolls(PlayerEntity player) {
-        player.sendMessage(Text.translatable("text.incantation.level_one_scrolls.denied"
-                + "text.incantation.level_one_scrolls.resistance"));
-    }
-
-    @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         tooltip.add(Text.translatable("item.incantation.resistance_parchment.milk").formatted(Formatting.BLUE));
         tooltip.add(Text.literal(" "));
