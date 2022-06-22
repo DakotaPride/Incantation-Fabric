@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#L#",
+    "###"
+  ],
+  "key": {
+    "#": [
+      {
+        "item": "minecraft:soul_soil"
+      },
+      {
+        "item": "minecraft:soul_sand"
+      }
+    ],
+    "L": {
+      "item": "minecraft:lectern"
+    }
+  },
+  "result": {
+    "item": "incantation:bewitchment_table",
+    "count": 1
+  }
+}

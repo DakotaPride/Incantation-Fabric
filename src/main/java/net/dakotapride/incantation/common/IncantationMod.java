@@ -11,6 +11,7 @@ import net.dakotapride.incantation.common.recipe.BewitchmentTableRecipe;
 import net.dakotapride.incantation.common.screen.BewitchmentTableScreenHandler;
 import net.dakotapride.incantation.compat.enhancedcelestials.EnhancedCelestialsCompat;
 import net.dakotapride.incantation.compat.moreweaponry.MoreWeaponryCompat;
+import net.dakotapride.incantation.mixin.BrewingRecipeRegistryMixin;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -23,7 +24,10 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.*;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.Potions;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -40,13 +44,17 @@ public class IncantationMod implements ModInitializer {
 	public static StatusEffect FREEZING_RESISTANCE = new EmptyStatusEffect(StatusEffectCategory.BENEFICIAL, 0xCEFFF2);
 	public static FreezingResistanceScrollItem FREEZING_RESISTANCE_SCROLL;
 
-	public static StatusEffect FLESHY_PUNISHMENT = new FleshyPunishmentEffect(StatusEffectCategory.NEUTRAL, 0x000000);
+	public static StatusEffect FLESHY_PUNISHMENT = new FleshyPunishmentEffect(StatusEffectCategory.NEUTRAL, 0xC89661);
 	public static FleshyPunishmentScrollItem FLESHY_PUNISHMENT_SCROLL;
 
 	public static ScreenHandlerType<BewitchmentTableScreenHandler> BEWITCHMENT_TABLE_SCREEN_HANDLER;
 	public static BewitchmentTableBlock BEWITCHMENT_TABLE;
 
 	public static BlockEntityType<BewitchmentTableEntity> BEWITCHMENT_TABLE_BLOCK_ENTITY;
+
+	public static Potion MILKY_RESISTANCE_POTION;
+	public static Potion FREEZING_RESISTANCE_POTION;
+	public static Potion FLESHY_PUNISHMENT_POTION;
 
 
 	// Registration
@@ -60,12 +68,31 @@ public class IncantationMod implements ModInitializer {
 		return item;
 	}
 
+	public static <T extends Potion> T registerPotion(String name, T potion) {
+		Registry.register(Registry.POTION, new Identifier(INCANTATION_ID, name), potion);
+		return potion;
+	}
+
 	public static final ItemGroup INCANTATION_GROUP = FabricItemGroupBuilder.create(
 					new Identifier(INCANTATION_ID, "incantation"))
 			.icon(() -> new ItemStack(Items.SPLASH_POTION)).build();
 
 	@Override
 	public void onInitialize() {
+
+		MILKY_RESISTANCE_POTION  = registerPotion("milky_resistance",
+				new Potion(new StatusEffectInstance(MILKY_RESISTANCE, 340, 0)));
+		FLESHY_PUNISHMENT_POTION  = registerPotion("fleshy_punishment",
+				new Potion(new StatusEffectInstance(FLESHY_PUNISHMENT, 180, 0)));
+		FREEZING_RESISTANCE_POTION  = registerPotion("freezing_resistance",
+				new Potion(new StatusEffectInstance(FREEZING_RESISTANCE, 260, 0)));
+
+		BrewingRecipeRegistryMixin.invokeRegisterPotionRecipe(Potions.MUNDANE,
+				Items.MILK_BUCKET, MILKY_RESISTANCE_POTION);
+		BrewingRecipeRegistryMixin.invokeRegisterPotionRecipe(Potions.MUNDANE,
+				Items.ICE, FREEZING_RESISTANCE_POTION);
+		BrewingRecipeRegistryMixin.invokeRegisterPotionRecipe(Potions.MUNDANE,
+				Items.ROTTEN_FLESH, FLESHY_PUNISHMENT_POTION);
 
 		BEWITCHMENT_TABLE_SCREEN_HANDLER =
 				ScreenHandlerRegistry.registerSimple(new Identifier(INCANTATION_ID, "bewitchment_table"),

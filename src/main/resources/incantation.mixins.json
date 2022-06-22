@@ -4,6 +4,7 @@
   "package": "net.dakotapride.incantation.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "BrewingRecipeRegistryMixin",
     "ItemStackMixin",
     "LivingEntityMixin"
   ],
