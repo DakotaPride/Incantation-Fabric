@@ -34,14 +34,6 @@ public class IncantationMod implements ModInitializer {
 	public static final String INCANTATION_ID = ("incantation");
 	public static final Logger LOGGER = LoggerFactory.getLogger("incantation");
 
-	// Incantation Levels
-	public static StatusEffect INCANTATION_LVL_ONE = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0x000000);
-	public static StatusEffect INCANTATION_LVL_TWO = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0x000000);
-	public static StatusEffect INCANTATION_LVL_THREE = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0x000000);
-	public static StatusEffect INCANTATION_LVL_FOUR = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0x000000);
-	public static StatusEffect INCANTATION_LVL_FIVE = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0x000000);
-
-
 	public static StatusEffect MILKY_RESISTANCE = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0xF9F7F7);
 	public static MilkyResistanceScrollItem MILKY_RESISTANCE_SCROLL;
 
@@ -108,14 +100,6 @@ public class IncantationMod implements ModInitializer {
 		if (FabricLoader.getInstance().isModLoaded("enhancedcelestials")) {
 			EnhancedCelestialsCompat.enhancedCelestialsCompatRegistry();
 		}
-
-
-		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "incantation_level_one"), INCANTATION_LVL_ONE);
-		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "incantation_level_two"), INCANTATION_LVL_TWO);
-		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "incantation_level_three"), INCANTATION_LVL_THREE);
-		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "incantation_level_four"), INCANTATION_LVL_FOUR);
-		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "incantation_level_five"), INCANTATION_LVL_FIVE);
-
 
 		BEWITCHMENT_TABLE_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
 				new Identifier(INCANTATION_ID, "bewitchment_table"),
