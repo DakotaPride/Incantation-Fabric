@@ -1,0 +1,29 @@
+{
+  "item.incantation.milky_resistance_scroll": "Pergamino de Resistencia",
+  "effect.incantation.milky_resistance": "Resistencia lechosa",
+  "item.incantation.resistance_parchment.milk": "Resistencia lechosa",
+  "item.incantation.parchment.starting_desc": "Cuando se aplica:",
+  "item.incantation.resistance_parchment.milk.description": "Elimina el 100 % de los efectos",
+  "item.incantation.freezing_resistance_scroll": "Pergamino de Resistencia",
+  "effect.incantation.freezing_resistance": "Resistencia al congelamiento",
+  "item.incantation.resistance_parchment.freezing": "Resistencia a la Congelación",
+  "item.incantation.resistance_parchment.freezing.description": "Inmune a la congelación",
+  "item.incantation.fleshy_punishment_scroll": "Pergamino de castigo",
+  "effect.incantation.fleshy_punishment": "Castigo carnoso",
+  "item.incantation.punishment_parchment.fleshy": "Castigo carnoso",
+  "item.incantation.punishment_parchment.fleshy.description": "Te quemas indefinidamente, pero es más fuerte",
+  "block.incantation.bewitchment_table": "Tabla de Embrujo",
+  "itemGroup.incantation.incantation": "Encantamiento",
+
+  "item.minecraft.potion.effect.milky_resistance": "Poción de resistencia lechosa",
+  "item.minecraft.potion.effect.freezing_resistance": "Poción de resistencia al congelamiento",
+  "item.minecraft.potion.effect.fleshy_punishment": "Poción de castigo carnoso",
+
+  "item.minecraft.splash_potion.effect.milky_resistance": "Poción de salpicadura de resistencia lechosa",
+  "item.minecraft.splash_potion.effect.freezing_resistance": "Poción de salpicadura de resistencia al congelamiento",
+  "item.minecraft.splash_potion.effect.fleshy_punishment": "Poción de salpicadura de castigo carnoso",
+
+  "item.minecraft.lingering_potion.effect.milky_resistance": "Poción persistente de resistencia lechosa",
+  "item.minecraft.lingering_potion.effect.freezing_resistance": "Poción persistente de resistencia al congelamiento",
+  "item.minecraft.lingering_potion.effect.fleshy_punishment": "Poción persistente de castigo carnal"
+}

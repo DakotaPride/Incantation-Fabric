@@ -13,5 +13,17 @@
   "item.incantation.punishment_parchment.fleshy": "Fleshy Punishment",
   "item.incantation.punishment_parchment.fleshy.description": "You Burn Indefinitely, But Is Stronger",
   "block.incantation.bewitchment_table": "Bewitchment Table",
-  "itemGroup.incantation.incantation": "Incantation"
+  "itemGroup.incantation.incantation": "Incantation",
+
+  "item.minecraft.potion.effect.milky_resistance": "Potion Of Milky Resistance",
+  "item.minecraft.potion.effect.freezing_resistance": "Potion Of Freezing Resistance",
+  "item.minecraft.potion.effect.fleshy_punishment": "Potion Of Fleshy Punishment",
+
+  "item.minecraft.splash_potion.effect.milky_resistance": "Splash Potion Of Milky Resistance",
+  "item.minecraft.splash_potion.effect.freezing_resistance": "Splash Potion Of Freezing Resistance",
+  "item.minecraft.splash_potion.effect.fleshy_punishment": "Splash Potion Of Fleshy Punishment",
+
+  "item.minecraft.lingering_potion.effect.milky_resistance": "Lingering Potion Of Milky Resistance",
+  "item.minecraft.lingering_potion.effect.freezing_resistance": "Lingering Potion Of Freezing Resistance",
+  "item.minecraft.lingering_potion.effect.fleshy_punishment": "Lingering Potion Of Fleshy Punishment"
 }

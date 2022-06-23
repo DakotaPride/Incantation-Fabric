@@ -1,5 +1,4 @@
 {
-
   "item.incantation.milky_resistance_scroll": "Parchemin de résistance",
   "effect.incantation.milky_resistance": "Résistance laiteuse",
   "item.incantation.resistance_parchment.milk": "Résistance laiteuse",
@@ -13,7 +12,18 @@
   "effect.incantation.fleshy_punishment": "Punition charnue",
   "item.incantation.punishment_parchment.fleshy": "Punition charnue",
   "item.incantation.punishment_parchment.fleshy.description": "Vous brûlez indéfiniment, mais c'est plus fort",
+  "block.incantation.bewitchment_table": "Table d'envoûtement",
   "itemGroup.incantation.incantation": "Incantation",
-  "block.incantation.bewitchment_table": "Table d'envoûtement"
 
+  "item.minecraft.potion.effect.milky_resistance": "Potion de résistance lactée",
+  "item.minecraft.potion.effect.freezing_resistance": "Potion de résistance au gel",
+  "item.minecraft.potion.effect.fleshy_punishment": "Potion de punition charnue",
+
+  "item.minecraft.splash_potion.effect.milky_resistance": "Potion éclaboussante de résistance laiteuse",
+  "item.minecraft.splash_potion.effect.freezing_resistance": "Potion éclaboussante de résistance au gel",
+  "item.minecraft.splash_potion.effect.fleshy_punishment": "Potion éclaboussante de punition charnue",
+
+  "item.minecraft.lingering_potion.effect.milky_resistance": "Potion persistante de résistance laiteuse",
+  "item.minecraft.lingering_potion.effect.freezing_resistance": "Potion persistante de résistance au gel",
+  "item.minecraft.lingering_potion.effect.fleshy_punishment": "Potion persistante de punition charnue"
 }

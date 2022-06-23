@@ -1,0 +1,10 @@
+{
+  "item.moreweaponry.harming_resistance_scroll": "Parchemin de résistance",
+  "effect.moreweaponry.harming_resistance": "Résistance aux dégâts",
+  "item.moreweaponry.resistance_parchment.harming": "Endommager la résistance",
+  "item.moreweaponry.resistance_parchment.harming.description": "Éliminer tout effet dommageable",
+
+  "item.minecraft.potion.effect.harming_resistance": "Potion de résistance aux dégâts",
+  "item.minecraft.splash_potion.effect.harming_resistance": "Potion de résistance aux dégâts",
+  "item.minecraft.lingering_potion.effect.harming_resistance": "Potion de résistance aux dégâts"
+}

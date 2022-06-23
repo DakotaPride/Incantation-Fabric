@@ -1,0 +1,12 @@
+{
+  "item.enhancedcelestials.harvest_healing_scroll": "Parchemin de guérison",
+  "effect.enhancedcelestials.harvest_healing": "Récolte de soins",
+  "item.enhancedcelestials.healing_parchment.harvest": "Soins de récolte",
+  "item.enhancedcelestials.healing_parchment.harvest.description": "Soigner en mangeant une récolte",
+  "item.enhancedcelestials.moon_crest_fruit": "Crête lunaire",
+  "item.enhancedcelestials.mending_moon_crest_fruit": "Réparation de l'écusson de la lune",
+
+  "item.minecraft.potion.effect.harvest_healing": "Potion de guérison de la récolte",
+  "item.minecraft.splash_potion.effect.harvest_healing": "Potion de guérison de la récolte",
+  "item.minecraft.lingering_potion.effect.harvest_healing": "Potion de guérison de la récolte"
+}

@@ -1,0 +1,12 @@
+{
+  "item.enhancedcelestials.harvest_healing_scroll": "Pergamino curativo",
+  "effect.enhancedcelestials.harvest_healing": "Cosecha de curación",
+  "item.enhancedcelestials.healing_parchment.harvest": "Cosecha de curación",
+  "item.enhancedcelestials.healing_parchment.harvest.description": "Curar al comer una cosecha",
+  "item.enhancedcelestials.moon_crest_fruit": "Cresta de la Luna",
+  "item.enhancedcelestials.mending_moon_crest_fruit": "Reparando Cresta Lunar",
+
+  "item.minecraft.potion.effect.harvest_healing": "Poción de curación de la cosecha",
+  "item.minecraft.splash_potion.effect.harvest_healing": "Poción de curación de la cosecha",
+  "item.minecraft.lingering_potion.effect.harvest_healing": "Poción de curación de la cosecha"
+}
