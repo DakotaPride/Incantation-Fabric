@@ -1,6 +1,7 @@
 package net.dakotapride.incantation.common.util;
 
 import net.dakotapride.incantation.common.IncantationMod;
+import net.dakotapride.incantation.compat.pickyourpoison.PickYourPoisonCompat;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.item.Item;
 import net.minecraft.tag.TagKey;
@@ -17,7 +18,7 @@ public class IncantationTags {
         }
 
         private static TagKey<StatusEffect> createStatusEffectTag(String name) {
-            return TagKey.of(Registry.MOB_EFFECT_KEY, new Identifier(IncantationMod.INCANTATION_ID, name));
+            return TagKey.of(Registry.MOB_EFFECT_KEY, new Identifier(PickYourPoisonCompat.PICK_YOUR_POISON_ID, name));
         }
 
 
