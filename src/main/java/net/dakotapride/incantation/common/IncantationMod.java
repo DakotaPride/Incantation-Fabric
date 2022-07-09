@@ -3,7 +3,6 @@ package net.dakotapride.incantation.common;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableBlock;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableEntity;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
-import net.dakotapride.incantation.common.effect.FleshyPunishmentEffect;
 import net.dakotapride.incantation.common.item.*;
 import net.dakotapride.incantation.common.recipe.BewitchmentTableRecipe;
 import net.dakotapride.incantation.common.screen.BewitchmentTableScreenHandler;
@@ -31,7 +30,6 @@ import net.minecraft.potion.Potions;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.world.biome.Biome;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,7 +43,7 @@ public class IncantationMod implements ModInitializer {
 	public static StatusEffect FREEZING_RESISTANCE = new EmptyStatusEffect(StatusEffectCategory.BENEFICIAL, 0xCEFFF2);
 	public static FreezingResistanceScrollItem FREEZING_RESISTANCE_SCROLL;
 
-	public static StatusEffect FLESHY_PUNISHMENT = new FleshyPunishmentEffect(StatusEffectCategory.NEUTRAL, 0xC89661);
+	public static StatusEffect FLESHY_PUNISHMENT = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0xC89661);
 	public static FleshyPunishmentScrollItem FLESHY_PUNISHMENT_SCROLL;
 
 	public static ScreenHandlerType<BewitchmentTableScreenHandler> BEWITCHMENT_TABLE_SCREEN_HANDLER;
