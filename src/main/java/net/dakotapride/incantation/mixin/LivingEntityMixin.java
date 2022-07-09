@@ -44,6 +44,10 @@ public abstract class LivingEntityMixin<O> extends Entity {
             livingEntity.removeStatusEffect(StatusEffects.HUNGER);
         }
 
+        if (livingEntity.hasStatusEffect(IncantationMod.FREEZING_RESISTANCE)) {
+            livingEntity.setFrozenTicks(20);
+        }
+
     }
 
 }
