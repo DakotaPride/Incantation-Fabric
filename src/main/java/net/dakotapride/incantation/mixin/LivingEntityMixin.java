@@ -45,7 +45,7 @@ public abstract class LivingEntityMixin<O> extends Entity {
         }
 
         if (livingEntity.hasStatusEffect(IncantationMod.FREEZING_RESISTANCE)) {
-            livingEntity.setFrozenTicks(20);
+            livingEntity.setFrozenTicks(0);
         }
 
     }
