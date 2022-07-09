@@ -39,12 +39,12 @@ public class PickYourPoisonCompat {
     }
 
     public static void pickYourPoisonCompatRegistry() {
-        FOREIGN_POISON_RESISTANCE_POTION = registerPotion("foreign_poison",
+        FOREIGN_POISON_RESISTANCE_POTION = registerPotion("foreign_poison_resistance",
                 new Potion(new StatusEffectInstance(FOREIGN_POISON_RESISTANCE, 220, 0)));
         BrewingRecipeRegistryMixin.invokeRegisterPotionRecipe(Potions.MUNDANE,
                 Items.FERMENTED_SPIDER_EYE, FOREIGN_POISON_RESISTANCE_POTION);
 
-        Registry.register(Registry.STATUS_EFFECT, new Identifier(PICK_YOUR_POISON_ID, "foreign_poison"), FOREIGN_POISON_RESISTANCE);
+        Registry.register(Registry.STATUS_EFFECT, new Identifier(PICK_YOUR_POISON_ID, "foreign_poison_resistance"), FOREIGN_POISON_RESISTANCE);
         FOREIGN_POISON_RESISTANCE_SCROLL = registerItem("foreign_poison_resistance_scroll",
                 new ForeignPoisonResistanceScrollItem(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
 
