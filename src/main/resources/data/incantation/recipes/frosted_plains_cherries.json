@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:ice"
+      },
+      {
+        "item": "minecraft:packed_ice"
+      },
+      {
+        "item": "minecraft:blue_ice"
+      }
+    ],
+    {
+      "item": "incantation:plains_cherries"
+    },
+    {
+      "item": "incantation:plains_cherries"
+    },
+    {
+      "item": "incantation:plains_cherries"
+    }
+  ],
+  "result": {
+    "item": "incantation:frosted_plains_cherries",
+    "count": 3
+  }
+}

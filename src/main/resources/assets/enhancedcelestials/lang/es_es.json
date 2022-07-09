@@ -9,5 +9,10 @@
   "item.minecraft.potion.effect.harvest_healing": "Poción de curación de la cosecha",
   "item.minecraft.splash_potion.effect.harvest_healing": "Poción de curación de la cosecha",
   "item.minecraft.lingering_potion.effect.harvest_healing": "Poción de curación de la cosecha",
-  "item.minecraft.tipped_arrow.effect.harvest_healing": "Flecha de curación de la cosecha"
+  "item.minecraft.tipped_arrow.effect.harvest_healing": "Flecha de curación de la cosecha",
+
+  "item.enhancedcelestials.unconcealed_harvest_healing_scroll": "Pergamino curativo descubierto",
+  "item.enhancedcelestials.long_unconcealed_harvest_healing_scroll": "Pergamino curativo descubierto",
+  "item.enhancedcelestials.strong_unconcealed_harvest_healing_scroll": "Pergamino curativo descubierto",
+  "item.enhancedcelestials.frosted_unconcealed_harvest_healing_scroll": "Pergamino curativo descubierto"
 }

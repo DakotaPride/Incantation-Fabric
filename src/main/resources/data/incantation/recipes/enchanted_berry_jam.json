@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "incantation:enchanted_berries"
+    },
+    {
+      "item": "incantation:enchanted_berries"
+    },
+    {
+      "item": "incantation:enchanted_berries"
+    },
+    {
+      "item": "incantation:enchanted_berries"
+    },
+    {
+      "item": "incantation:enchanted_berries"
+    },
+    {
+      "item": "incantation:enchanted_berries"
+    }
+  ],
+  "result": {
+    "item": "incantation:enchanted_berry_jam",
+    "count": 6
+  }
+}

@@ -7,5 +7,10 @@
   "item.minecraft.potion.effect.reflection_resistance": "Potion de résistance aux reflets",
   "item.minecraft.splash_potion.effect.reflection_resistance": "Potion de résistance aux reflets",
   "item.minecraft.lingering_potion.effect.reflection_resistance": "Potion de résistance aux reflets",
-  "item.minecraft.tipped_arrow.effect.reflection_resistance": "Flèche de résistance à la réflexion"
+  "item.minecraft.tipped_arrow.effect.reflection_resistance": "Flèche de résistance à la réflexion",
+
+  "item.pickyourpoison.unconcealed_reflection_resistance_scroll": "Parchemin de résistance non dissimulé",
+  "item.pickyourpoison.long_unconcealed_reflection_resistance_scroll": "Parchemin de résistance non dissimulé",
+  "item.pickyourpoison.strong_unconcealed_reflection_resistance_scroll": "Parchemin de résistance non dissimulé",
+  "item.pickyourpoison.frosted_unconcealed_reflection_resistance_scroll": "Parchemin de résistance non dissimulé"
 }

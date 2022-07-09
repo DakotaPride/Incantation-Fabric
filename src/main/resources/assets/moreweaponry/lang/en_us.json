@@ -7,5 +7,10 @@
   "item.minecraft.potion.effect.harming_resistance": "Potion Of Harming Resistance",
   "item.minecraft.splash_potion.effect.harming_resistance": "Potion Of Harming Resistance",
   "item.minecraft.lingering_potion.effect.harming_resistance": "Potion Of Harming Resistance",
-  "item.minecraft.tipped_arrow.effect.harming_resistance": "Arrow Of Harming Resistance"
+  "item.minecraft.tipped_arrow.effect.harming_resistance": "Arrow Of Harming Resistance",
+
+  "item.moreweaponry.unconcealed_harming_resistance_scroll": "Unconcealed Resistance Parchment",
+  "item.moreweaponry.long_unconcealed_harming_resistance_scroll": "Unconcealed Resistance Parchment",
+  "item.moreweaponry.strong_unconcealed_harming_resistance_scroll": "Unconcealed Resistance Parchment",
+  "item.moreweaponry.frosted_unconcealed_harming_resistance_scroll": "Unconcealed Resistance Parchment"
 }

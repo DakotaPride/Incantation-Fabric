@@ -7,5 +7,10 @@
   "item.minecraft.potion.effect.reflection_resistance": "Poción de resistencia a la reflexión",
   "item.minecraft.splash_potion.effect.reflection_resistance": "Poción de resistencia a la reflexión",
   "item.minecraft.lingering_potion.effect.reflection_resistance": "Poción de resistencia a la reflexión",
-  "item.minecraft.tipped_arrow.effect.reflection_resistance": "Flecha de resistencia a la reflexión"
+  "item.minecraft.tipped_arrow.effect.reflection_resistance": "Flecha de resistencia a la reflexión",
+
+  "item.pickyourpoison.unconcealed_reflection_resistance_scroll": "Pergamino de resistencia descubierto",
+  "item.pickyourpoison.long_unconcealed_reflection_resistance_scroll": "Pergamino de resistencia descubierto",
+  "item.pickyourpoison.strong_unconcealed_reflection_resistance_scroll": "Pergamino de resistencia descubierto",
+  "item.pickyourpoison.frosted_unconcealed_reflection_resistance_scroll": "Pergamino de resistencia descubierto"
 }

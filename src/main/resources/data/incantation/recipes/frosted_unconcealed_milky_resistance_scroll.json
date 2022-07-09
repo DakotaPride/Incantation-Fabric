@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBA",
+    "#X "
+  ],
+  "key": {
+    "X": {
+      "item": "incantation:unconcealed_milky_resistance_scroll"
+    },
+    "B": {
+      "item": "incantation:mystic_leather"
+    },
+    "A": {
+      "item": "incantation:enchanted_berry_jam"
+    },
+    "#": {
+      "item": "incantation:frosted_plains_cherries"
+    }
+  },
+  "result": {
+    "item": "incantation:frosted_unconcealed_milky_resistance_scroll",
+    "count": 1
+  }
+}

@@ -37,6 +37,7 @@ public abstract class ItemStackMixin {
                 || entity.getActiveItem().isOf(Items.POTION)
                 || entity.getActiveItem().isOf(Items.SPLASH_POTION)
                 || entity.getActiveItem().isOf(Items.MELON_SLICE)
+                || entity.getActiveItem().isOf(Items.HONEY_BOTTLE)
                 || entity.getActiveItem().isOf(EnhancedCelestialsCompat.MENDING_MOON_CREST_FRUIT)
                 || entity.getActiveItem().isOf(EnhancedCelestialsCompat.MOON_CREST_FRUIT)) {
             entity.removeStatusEffect(IncantationMod.FLESHY_PUNISHMENT);

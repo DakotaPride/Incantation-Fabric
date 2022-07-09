@@ -9,5 +9,10 @@
   "item.minecraft.potion.effect.harvest_healing": "Potion de guérison de la récolte",
   "item.minecraft.splash_potion.effect.harvest_healing": "Potion de guérison de la récolte",
   "item.minecraft.lingering_potion.effect.harvest_healing": "Potion de guérison de la récolte",
-  "item.minecraft.tipped_arrow.effect.harvest_healing": "Flèche de guérison de la récolte"
+  "item.minecraft.tipped_arrow.effect.harvest_healing": "Flèche de guérison de la récolte",
+
+  "item.enhancedcelestials.unconcealed_harvest_healing_scroll": "Parchemin de guérison non dissimulé",
+  "item.enhancedcelestials.long_unconcealed_harvest_healing_scroll": "Parchemin de guérison non dissimulé",
+  "item.enhancedcelestials.strong_unconcealed_harvest_healing_scroll": "Parchemin de guérison non dissimulé",
+  "item.enhancedcelestials.frosted_unconcealed_harvest_healing_scroll": "Parchemin de guérison non dissimulé"
 }

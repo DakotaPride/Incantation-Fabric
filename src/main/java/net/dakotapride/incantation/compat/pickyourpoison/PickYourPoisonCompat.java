@@ -2,7 +2,19 @@ package net.dakotapride.incantation.compat.pickyourpoison;
 
 import net.dakotapride.incantation.common.IncantationMod;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.base.UnconcealedFleshyPunishmentScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.base.UnconcealedFreezingResistanceScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.extended.UnconcealedExtendedFleshyPunishmentScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.extended.UnconcealedExtendedFreezingResistanceScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.frosted.UnconcealedFrostedFleshyPunishmentScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.frosted.UnconcealedFrostedFreezingResistanceScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.stronger.UnconcealedStrongerFleshyPunishmentScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.stronger.UnconcealedStrongerFreezingResistanceScroll;
 import net.dakotapride.incantation.compat.pickyourpoison.item.ReflectionResistanceScrollItem;
+import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.base.UnconcealedReflectionResistanceScroll;
+import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.extended.UnconcealedExtendedReflectionResistanceScroll;
+import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.frosted.UnconcealedFrostedReflectionResistanceScroll;
+import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.stronger.UnconcealedStrongerReflectionResistanceScroll;
 import net.dakotapride.incantation.mixin.BrewingRecipeRegistryMixin;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.effect.StatusEffect;
@@ -23,6 +35,11 @@ public class PickYourPoisonCompat {
     public static StatusEffect REFLECTION_RESISTANCE = new EmptyStatusEffect(StatusEffectCategory.BENEFICIAL, 0xD85252);
     public static ReflectionResistanceScrollItem REFLECTION_RESISTANCE_SCROLL;
 
+    public static UnconcealedReflectionResistanceScroll UNCONCEALED_REFLECTION_RESISTANCE_SCROLL;
+    public static UnconcealedExtendedReflectionResistanceScroll UNCONCEALED_LONG_REFLECTION_RESISTANCE_SCROLL;
+    public static UnconcealedStrongerReflectionResistanceScroll UNCONCEALED_STRONG_REFLECTION_RESISTANCE_SCROLL;
+    public static UnconcealedFrostedReflectionResistanceScroll UNCONCEALED_FROSTED_REFLECTION_RESISTANCE_SCROLL;
+
     public static Potion REFLECTION_RESISTANCE_POTION;
 
     // Registration
@@ -38,6 +55,16 @@ public class PickYourPoisonCompat {
     }
 
     public static void pickYourPoisonCompatRegistry() {
+
+        UNCONCEALED_REFLECTION_RESISTANCE_SCROLL = registerItem("unconcealed_reflection_resistance_scroll",
+                new UnconcealedReflectionResistanceScroll(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+        UNCONCEALED_FROSTED_REFLECTION_RESISTANCE_SCROLL = registerItem("frosted_unconcealed_reflection_resistance_scroll",
+                new UnconcealedFrostedReflectionResistanceScroll(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+        UNCONCEALED_LONG_REFLECTION_RESISTANCE_SCROLL = registerItem("long_unconcealed_reflection_resistance_scroll",
+                new UnconcealedExtendedReflectionResistanceScroll(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+        UNCONCEALED_STRONG_REFLECTION_RESISTANCE_SCROLL = registerItem("strong_unconcealed_reflection_resistance_scroll",
+                new UnconcealedStrongerReflectionResistanceScroll(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+
         REFLECTION_RESISTANCE_POTION = registerPotion("reflection_resistance",
                 new Potion(new StatusEffectInstance(REFLECTION_RESISTANCE, 220, 0)));
         BrewingRecipeRegistryMixin.invokeRegisterPotionRecipe(Potions.MUNDANE,

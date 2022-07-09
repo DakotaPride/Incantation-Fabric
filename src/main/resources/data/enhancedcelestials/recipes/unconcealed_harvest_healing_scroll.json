@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  A",
+    "A#X"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:iron_nugget"
+    },
+    "X": {
+      "item": "incantation:silver_nugget_apple"
+    },
+    "#": {
+      "item": "enhancedcelestials:harvest_healing_scroll"
+    }
+  },
+  "result": {
+    "item": "enhancedcelestials:unconcealed_harvest_healing_scroll",
+    "count": 1
+  }
+}

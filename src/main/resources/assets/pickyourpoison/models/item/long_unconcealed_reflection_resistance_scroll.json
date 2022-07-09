@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "pickyourpoison:item/long_unconcealed_reflection_resistance_scroll"
+  }
+}

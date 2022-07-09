@@ -7,5 +7,10 @@
   "item.minecraft.potion.effect.reflection_resistance": "Potion Of Reflection Resistance",
   "item.minecraft.splash_potion.effect.reflection_resistance": "Potion Of Reflection Resistance",
   "item.minecraft.lingering_potion.effect.reflection_resistance": "Potion Of Reflection Resistance",
-  "item.minecraft.tipped_arrow.effect.reflection_resistance": "Arrow Of Reflection Resistance"
+  "item.minecraft.tipped_arrow.effect.reflection_resistance": "Arrow Of Reflection Resistance",
+
+  "item.pickyourpoison.unconcealed_reflection_resistance_scroll": "Unconcealed Resistance Parchment",
+  "item.pickyourpoison.long_unconcealed_reflection_resistance_scroll": "Unconcealed Resistance Parchment",
+  "item.pickyourpoison.strong_unconcealed_reflection_resistance_scroll": "Unconcealed Resistance Parchment",
+  "item.pickyourpoison.frosted_unconcealed_reflection_resistance_scroll": "Unconcealed Resistance Parchment"
 }

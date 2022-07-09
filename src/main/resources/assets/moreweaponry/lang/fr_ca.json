@@ -7,5 +7,10 @@
   "item.minecraft.potion.effect.harming_resistance": "Potion de résistance aux dégâts",
   "item.minecraft.splash_potion.effect.harming_resistance": "Potion de résistance aux dégâts",
   "item.minecraft.lingering_potion.effect.harming_resistance": "Potion de résistance aux dégâts",
-  "item.minecraft.tipped_arrow.effect.harming_resistance": "Flèche de résistance aux dégâts"
+  "item.minecraft.tipped_arrow.effect.harming_resistance": "Flèche de résistance aux dégâts",
+
+  "item.moreweaponry.unconcealed_harming_resistance_scroll": "Parchemin de résistance non dissimulé",
+  "item.moreweaponry.long_unconcealed_harming_resistance_scroll": "Parchemin de résistance non dissimulé",
+  "item.moreweaponry.strong_unconcealed_harming_resistance_scroll": "Parchemin de résistance non dissimulé",
+  "item.moreweaponry.frosted_unconcealed_harming_resistance_scroll": "Parchemin de résistance non dissimulé"
 }

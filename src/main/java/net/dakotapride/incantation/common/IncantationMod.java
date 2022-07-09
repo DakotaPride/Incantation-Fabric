@@ -67,6 +67,7 @@ public class IncantationMod implements ModInitializer {
 	public static Item PLAINS_CHERRIES;
 	public static Item FROSTED_PLAINS_CHERRIES;
 	public static Item SILVER_NUGGET_APPLE;
+	public static Item MYSTIC_LEATHER;
 	public static EnchantedBerryItem ENCHANTED_BERRIES;
 	public static EnchantedBerryJamItem ENCHANTED_BERRY_JAM;
 
@@ -108,6 +109,7 @@ public class IncantationMod implements ModInitializer {
 				itemStacks.add(new ItemStack(SILVER_NUGGET_APPLE));
 				itemStacks.add(new ItemStack(ENCHANTED_BERRIES));
 				itemStacks.add(new ItemStack(ENCHANTED_BERRY_JAM));
+				itemStacks.add(new ItemStack(MYSTIC_LEATHER));
 
 				itemStacks.add(new ItemStack(FLESHY_PUNISHMENT_SCROLL));
 				itemStacks.add(new ItemStack(UNCONCEALED_FLESHY_PUNISHMENT_SCROLL));
@@ -123,8 +125,22 @@ public class IncantationMod implements ModInitializer {
 				itemStacks.add(new ItemStack(UNCONCEALED_FROSTED_FREEZING_RESISTANCE_SCROLL));
 
 				itemStacks.add(new ItemStack(PickYourPoisonCompat.REFLECTION_RESISTANCE_SCROLL));
+				itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_REFLECTION_RESISTANCE_SCROLL));
+				itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_LONG_REFLECTION_RESISTANCE_SCROLL));
+				itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_STRONG_REFLECTION_RESISTANCE_SCROLL));
+				itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_FROSTED_REFLECTION_RESISTANCE_SCROLL));
+
 				itemStacks.add(new ItemStack(MoreWeaponryCompat.HARMING_RESISTANCE_SCROLL));
+				itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_HARMING_RESISTANCE_SCROLL));
+				itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_LONG_HARMING_RESISTANCE_SCROLL));
+				itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_STRONG_HARMING_RESISTANCE_SCROLL));
+				itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_FROSTED_HARMING_RESISTANCE_SCROLL));
+
 				itemStacks.add(new ItemStack(EnhancedCelestialsCompat.HARVEST_HEALING_SCROLL));
+				itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_HARVEST_HEALING_SCROLL));
+				itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_LONG_HARVEST_HEALING_SCROLL));
+				itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_STRONG_HARVEST_HEALING_SCROLL));
+				itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_FROSTED_HARVEST_HEALING_SCROLL));
 
 				itemStacks.add(new ItemStack(EnhancedCelestialsCompat.MOON_CREST_FRUIT));
 				itemStacks.add(new ItemStack(EnhancedCelestialsCompat.MENDING_MOON_CREST_FRUIT));
@@ -173,6 +189,8 @@ public class IncantationMod implements ModInitializer {
 						.saturationModifier(4.0f).hunger(6).snack().build()).group(INCANTATION_GROUP)));
 		ENCHANTED_BERRY_JAM = registerItem("enchanted_berry_jam",
 				new EnchantedBerryJamItem(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+		MYSTIC_LEATHER = registerItem("mystic_leather",
+				new Item(new FabricItemSettings().group(INCANTATION_GROUP)));
 
 		MILKY_RESISTANCE_POTION  = registerPotion("milky_resistance",
 				new Potion(new StatusEffectInstance(MILKY_RESISTANCE, 340, 0)));

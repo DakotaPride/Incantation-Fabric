@@ -4,6 +4,14 @@ package net.dakotapride.incantation.compat.moreweaponry;
 import net.dakotapride.incantation.common.IncantationMod;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
 import net.dakotapride.incantation.compat.moreweaponry.item.HarmingResistanceScrollItem;
+import net.dakotapride.incantation.compat.moreweaponry.item.unconcealed_scrolls.base.UnconcealedHarmingResistanceScroll;
+import net.dakotapride.incantation.compat.moreweaponry.item.unconcealed_scrolls.extended.UnconcealedExtendedHarmingResistanceScroll;
+import net.dakotapride.incantation.compat.moreweaponry.item.unconcealed_scrolls.frosted.UnconcealedFrostedHarmingResistanceScroll;
+import net.dakotapride.incantation.compat.moreweaponry.item.unconcealed_scrolls.stronger.UnconcealedStrongerHarmingResistanceScroll;
+import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.base.UnconcealedReflectionResistanceScroll;
+import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.extended.UnconcealedExtendedReflectionResistanceScroll;
+import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.frosted.UnconcealedFrostedReflectionResistanceScroll;
+import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.stronger.UnconcealedStrongerReflectionResistanceScroll;
 import net.dakotapride.incantation.mixin.BrewingRecipeRegistryMixin;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.effect.StatusEffect;
@@ -24,6 +32,11 @@ public class MoreWeaponryCompat {
     public static StatusEffect HARMING_RESISTANCE = new EmptyStatusEffect(StatusEffectCategory.BENEFICIAL, 0xCEFFF2);
     public static HarmingResistanceScrollItem HARMING_RESISTANCE_SCROLL;
 
+    public static UnconcealedHarmingResistanceScroll UNCONCEALED_HARMING_RESISTANCE_SCROLL;
+    public static UnconcealedExtendedHarmingResistanceScroll UNCONCEALED_LONG_HARMING_RESISTANCE_SCROLL;
+    public static UnconcealedStrongerHarmingResistanceScroll UNCONCEALED_STRONG_HARMING_RESISTANCE_SCROLL;
+    public static UnconcealedFrostedHarmingResistanceScroll UNCONCEALED_FROSTED_HARMING_RESISTANCE_SCROLL;
+
     public static Potion HARMING_RESISTANCE_POTION;
 
     // Registration
@@ -40,6 +53,15 @@ public class MoreWeaponryCompat {
 
 
     public static void moreWeaponryCompatRegistry() {
+
+        UNCONCEALED_HARMING_RESISTANCE_SCROLL = registerItem("unconcealed_harming_resistance_scroll",
+                new UnconcealedHarmingResistanceScroll(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+        UNCONCEALED_FROSTED_HARMING_RESISTANCE_SCROLL = registerItem("frosted_unconcealed_harming_resistance_scroll",
+                new UnconcealedFrostedHarmingResistanceScroll(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+        UNCONCEALED_LONG_HARMING_RESISTANCE_SCROLL = registerItem("long_unconcealed_harming_resistance_scroll",
+                new UnconcealedExtendedHarmingResistanceScroll(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+        UNCONCEALED_STRONG_HARMING_RESISTANCE_SCROLL = registerItem("strong_unconcealed_harming_resistance_scroll",
+                new UnconcealedStrongerHarmingResistanceScroll(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
 
         HARMING_RESISTANCE_POTION = registerPotion("harming_resistance",
                 new Potion(new StatusEffectInstance(HARMING_RESISTANCE, 220, 0)));
