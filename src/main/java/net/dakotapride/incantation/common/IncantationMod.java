@@ -9,6 +9,7 @@ import net.dakotapride.incantation.common.recipe.BewitchmentTableRecipe;
 import net.dakotapride.incantation.common.screen.BewitchmentTableScreenHandler;
 import net.dakotapride.incantation.compat.enhancedcelestials.EnhancedCelestialsCompat;
 import net.dakotapride.incantation.compat.moreweaponry.MoreWeaponryCompat;
+import net.dakotapride.incantation.compat.pickyourpoison.PickYourPoisonCompat;
 import net.dakotapride.incantation.mixin.BrewingRecipeRegistryMixin;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
@@ -152,6 +153,10 @@ public class IncantationMod implements ModInitializer {
 
 		if (FabricLoader.getInstance().isModLoaded("enhancedcelestials")) {
 			EnhancedCelestialsCompat.enhancedCelestialsCompatRegistry();
+		}
+
+		if (FabricLoader.getInstance().isModLoaded("pickyourpoison")) {
+			PickYourPoisonCompat.pickYourPoisonCompatRegistry();
 		}
 
 		BEWITCHMENT_TABLE_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,

@@ -3,6 +3,7 @@ package net.dakotapride.incantation.mixin;
 import net.dakotapride.incantation.common.IncantationMod;
 import net.dakotapride.incantation.common.util.IncantationTags;
 import net.dakotapride.incantation.compat.moreweaponry.MoreWeaponryCompat;
+import net.dakotapride.incantation.compat.pickyourpoison.PickYourPoisonCompat;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -41,6 +42,10 @@ public abstract class LivingEntityMixin<O> extends Entity {
             livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 300, 2));
             livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 200, 1));
             livingEntity.removeStatusEffect(StatusEffects.HUNGER);
+        }
+
+        if (livingEntity.hasStatusEffect(PickYourPoisonCompat.FOREIGN_POISON_RESISTANCE)) {
+            livingEntity.removeStatusEffect(IncantationTags.PICK_YOUR_POISON_EFFECTS);
         }
 
     }

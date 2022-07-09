@@ -1,0 +1,10 @@
+{
+  "item.pickyourpoison.foreign_poison_resistance_scroll": "Pergamino de Resistencia",
+  "effect.pickyourpoison.foreign_poison_resistance": "Resistencia a venenos extranjeros",
+  "item.pickyourpoison.resistance_parchment.foreign_poison": "Resistencia al veneno extranjero",
+  "item.pickyourpoison.resistance_parchment.foreign_poison.description": "Elimina cualquier veneno extraño",
+
+  "item.minecraft.potion.effect.foreign_poison_resistance": "Poción de resistencia al veneno extranjero",
+  "item.minecraft.splash_potion.effect.foreign_poison_resistance": "Poción de resistencia al veneno extranjero",
+  "item.minecraft.lingering_potion.effect.foreign_poison_resistance": "Poción de resistencia al veneno extranjero"
+}

@@ -1,0 +1,10 @@
+{
+  "item.pickyourpoison.foreign_poison_resistance_scroll": "Parchemin de résistance",
+  "effect.pickyourpoison.foreign_poison_resistance": "Résistance aux poisons étrangers",
+  "item.pickyourpoison.resistance_parchment.foreign_poison": "Résistance aux poisons étrangers",
+  "item.pickyourpoison.resistance_parchment.foreign_poison.description": "Débarrassez-vous des poisons étrangers",
+
+  "item.minecraft.potion.effect.foreign_poison_resistance": "Potion de résistance aux poisons étrangers",
+  "item.minecraft.splash_potion.effect.foreign_poison_resistance": "Potion de résistance aux poisons étrangers",
+  "item.minecraft.lingering_potion.effect.foreign_poison_resistance": "Potion de résistance aux poisons étrangers"
+}

@@ -1,0 +1,10 @@
+{
+  "item.pickyourpoison.foreign_poison_resistance_scroll": "Resistance Parchment",
+  "effect.pickyourpoison.foreign_poison_resistance": "Foreign Poison Resistance",
+  "item.pickyourpoison.resistance_parchment.foreign_poison": "Foreign Poison Resistance",
+  "item.pickyourpoison.resistance_parchment.foreign_poison.description": "Rid Any Foreign Poisons",
+
+  "item.minecraft.potion.effect.foreign_poison_resistance": "Potion Of Foreign Poison Resistance",
+  "item.minecraft.splash_potion.effect.foreign_poison_resistance": "Potion Of Foreign Poison Resistance",
+  "item.minecraft.lingering_potion.effect.foreign_poison_resistance": "Potion Of Foreign Poison Resistance"
+}
