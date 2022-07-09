@@ -57,7 +57,6 @@ public class IncantationMod implements ModInitializer {
 
 	public static ScreenHandlerType<BewitchmentTableScreenHandler> BEWITCHMENT_TABLE_SCREEN_HANDLER;
 	public static BewitchmentTableBlock BEWITCHMENT_TABLE;
-
 	public static BlockEntityType<BewitchmentTableEntity> BEWITCHMENT_TABLE_BLOCK_ENTITY;
 
 	public static Potion MILKY_RESISTANCE_POTION;
@@ -101,7 +100,36 @@ public class IncantationMod implements ModInitializer {
 
 	public static final ItemGroup INCANTATION_GROUP = FabricItemGroupBuilder.create(
 					new Identifier(INCANTATION_ID, "incantation"))
-			.icon(() -> new ItemStack(Items.SPLASH_POTION)).build();
+			.icon(() -> new ItemStack(Items.SPLASH_POTION))
+			.appendItems(itemStacks -> {
+				itemStacks.add(new ItemStack(BEWITCHMENT_TABLE));
+				itemStacks.add(new ItemStack(PLAINS_CHERRIES));
+				itemStacks.add(new ItemStack(FROSTED_PLAINS_CHERRIES));
+				itemStacks.add(new ItemStack(SILVER_NUGGET_APPLE));
+				itemStacks.add(new ItemStack(ENCHANTED_BERRIES));
+				itemStacks.add(new ItemStack(ENCHANTED_BERRY_JAM));
+
+				itemStacks.add(new ItemStack(FLESHY_PUNISHMENT_SCROLL));
+				itemStacks.add(new ItemStack(UNCONCEALED_FLESHY_PUNISHMENT_SCROLL));
+				itemStacks.add(new ItemStack(UNCONCEALED_LONG_FLESHY_PUNISHMENT_SCROLL));
+				itemStacks.add(new ItemStack(UNCONCEALED_STRONG_FLESHY_PUNISHMENT_SCROLL));
+				itemStacks.add(new ItemStack(UNCONCEALED_FROSTED_FLESHY_PUNISHMENT_SCROLL));
+				itemStacks.add(new ItemStack(MILKY_RESISTANCE_SCROLL));
+				itemStacks.add(new ItemStack(UNCONCEALED_MILKY_RESISTANCE_SCROLL));
+				itemStacks.add(new ItemStack(FREEZING_RESISTANCE_SCROLL));
+				itemStacks.add(new ItemStack(UNCONCEALED_FREEZING_RESISTANCE_SCROLL));
+				itemStacks.add(new ItemStack(UNCONCEALED_LONG_FREEZING_RESISTANCE_SCROLL));
+				itemStacks.add(new ItemStack(UNCONCEALED_STRONG_FREEZING_RESISTANCE_SCROLL));
+				itemStacks.add(new ItemStack(UNCONCEALED_FROSTED_FREEZING_RESISTANCE_SCROLL));
+
+				itemStacks.add(new ItemStack(PickYourPoisonCompat.REFLECTION_RESISTANCE_SCROLL));
+				itemStacks.add(new ItemStack(MoreWeaponryCompat.HARMING_RESISTANCE_SCROLL));
+				itemStacks.add(new ItemStack(EnhancedCelestialsCompat.HARVEST_HEALING_SCROLL));
+
+				itemStacks.add(new ItemStack(EnhancedCelestialsCompat.MOON_CREST_FRUIT));
+				itemStacks.add(new ItemStack(EnhancedCelestialsCompat.MENDING_MOON_CREST_FRUIT));
+			})
+			.build();
 
 	@Override
 	public void onInitialize() {
