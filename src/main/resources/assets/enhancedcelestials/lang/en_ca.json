@@ -1,0 +1,12 @@
+{
+  "item.enhancedcelestials.harvest_healing_scroll": "Healing Parchment",
+  "effect.enhancedcelestials.harvest_healing": "Harvest Healing",
+  "item.enhancedcelestials.healing_parchment.harvest": "Harvest Healing",
+  "item.enhancedcelestials.healing_parchment.harvest.description": "Heal Upon Eating A Crop",
+  "item.enhancedcelestials.moon_crest_fruit": "Moon Crest",
+  "item.enhancedcelestials.mending_moon_crest_fruit": "Mending Moon Crest",
+
+  "item.minecraft.potion.effect.harvest_healing": "Potion Of Harvest Healing",
+  "item.minecraft.splash_potion.effect.harvest_healing": "Potion Of Harvest Healing",
+  "item.minecraft.lingering_potion.effect.harvest_healing": "Potion Of Harvest Healing"
+}

@@ -1,0 +1,10 @@
+{
+  "item.moreweaponry.harming_resistance_scroll": "Resistance Parchment",
+  "effect.moreweaponry.harming_resistance": "Harming Resistance",
+  "item.moreweaponry.resistance_parchment.harming": "Harming Resistance",
+  "item.moreweaponry.resistance_parchment.harming.description": "Rid Any Damaging Effects",
+
+  "item.minecraft.potion.effect.harming_resistance": "Potion Of Harming Resistance",
+  "item.minecraft.splash_potion.effect.harming_resistance": "Potion Of Harming Resistance",
+  "item.minecraft.lingering_potion.effect.harming_resistance": "Potion Of Harming Resistance"
+}

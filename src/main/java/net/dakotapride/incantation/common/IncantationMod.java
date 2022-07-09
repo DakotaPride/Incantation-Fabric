@@ -4,9 +4,7 @@ import net.dakotapride.incantation.common.block.entity.BewitchmentTableBlock;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableEntity;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
 import net.dakotapride.incantation.common.effect.FleshyPunishmentEffect;
-import net.dakotapride.incantation.common.item.FleshyPunishmentScrollItem;
-import net.dakotapride.incantation.common.item.FreezingResistanceScrollItem;
-import net.dakotapride.incantation.common.item.MilkyResistanceScrollItem;
+import net.dakotapride.incantation.common.item.*;
 import net.dakotapride.incantation.common.recipe.BewitchmentTableRecipe;
 import net.dakotapride.incantation.common.screen.BewitchmentTableScreenHandler;
 import net.dakotapride.incantation.compat.enhancedcelestials.EnhancedCelestialsCompat;
@@ -25,12 +23,14 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.Potions;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -57,6 +57,13 @@ public class IncantationMod implements ModInitializer {
 	public static Potion FLESHY_PUNISHMENT_POTION;
 
 
+	public static Item PLAINS_CHERRIES;
+	public static Item FROSTED_PLAINS_CHERRIES;
+	public static Item SILVER_NUGGET_APPLE;
+	public static EnchantedBerryItem ENCHANTED_BERRIES;
+	public static EnchantedBerryJamItem ENCHANTED_BERRY_JAM;
+
+
 	// Registration
 	public static <T extends Block> T registerBlock(String name, T block) {
 		Registry.register(Registry.BLOCK, new Identifier(INCANTATION_ID, name), block);
@@ -79,6 +86,25 @@ public class IncantationMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+
+		PLAINS_CHERRIES = registerItem("plains_cherries",
+				new Item(new FabricItemSettings().food(new FoodComponent.Builder()
+						.saturationModifier(3.0f).hunger(3).snack().build()).group(INCANTATION_GROUP)));
+		FROSTED_PLAINS_CHERRIES = registerItem("frosted_plains_cherries",
+				new Item(new FabricItemSettings().food(new FoodComponent.Builder()
+						.saturationModifier(1.0f).hunger(5)
+						.statusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 100, 1), 1.0f)
+						.build()).group(INCANTATION_GROUP)));
+		SILVER_NUGGET_APPLE = registerItem("silver_nugget_apple",
+				new Item(new FabricItemSettings().food(new FoodComponent.Builder()
+						.saturationModifier(6.0f).hunger(6)
+						.statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 200, 1), 1.0f)
+						.build()).group(INCANTATION_GROUP)));
+		ENCHANTED_BERRIES = registerItem("enchanted_berries",
+				new EnchantedBerryItem(new FabricItemSettings().food(new FoodComponent.Builder()
+						.saturationModifier(4.0f).hunger(6).snack().build()).group(INCANTATION_GROUP)));
+		ENCHANTED_BERRY_JAM = registerItem("enchanted_berry_jam",
+				new EnchantedBerryJamItem(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
 
 		MILKY_RESISTANCE_POTION  = registerPotion("milky_resistance",
 				new Potion(new StatusEffectInstance(MILKY_RESISTANCE, 340, 0)));

@@ -37,6 +37,7 @@ public abstract class LivingEntityMixin<O> extends Entity {
         }
 
         if (livingEntity.hasStatusEffect(IncantationMod.FLESHY_PUNISHMENT)) {
+            livingEntity.setFireTicks(40);
             livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 300, 2));
             livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 200, 1));
             livingEntity.removeStatusEffect(StatusEffects.HUNGER);
