@@ -2,7 +2,6 @@ package net.dakotapride.incantation.compat.pickyourpoison;
 
 import net.dakotapride.incantation.common.IncantationMod;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
-import net.dakotapride.incantation.compat.moreweaponry.item.HarmingResistanceScrollItem;
 import net.dakotapride.incantation.compat.pickyourpoison.item.ForeignPoisonResistanceScrollItem;
 import net.dakotapride.incantation.mixin.BrewingRecipeRegistryMixin;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
