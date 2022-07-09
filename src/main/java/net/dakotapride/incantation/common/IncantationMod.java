@@ -4,6 +4,15 @@ import net.dakotapride.incantation.common.block.entity.BewitchmentTableBlock;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableEntity;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
 import net.dakotapride.incantation.common.item.*;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.base.UnconcealedFleshyPunishmentScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.base.UnconcealedFreezingResistanceScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.base.UnconcealedMilkyResistanceScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.extended.UnconcealedExtendedFleshyPunishmentScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.extended.UnconcealedExtendedFreezingResistanceScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.frosted.UnconcealedFrostedFleshyPunishmentScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.frosted.UnconcealedFrostedFreezingResistanceScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.stronger.UnconcealedStrongerFleshyPunishmentScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.stronger.UnconcealedStrongerFreezingResistanceScroll;
 import net.dakotapride.incantation.common.recipe.BewitchmentTableRecipe;
 import net.dakotapride.incantation.common.screen.BewitchmentTableScreenHandler;
 import net.dakotapride.incantation.compat.enhancedcelestials.EnhancedCelestialsCompat;
@@ -62,6 +71,17 @@ public class IncantationMod implements ModInitializer {
 	public static EnchantedBerryItem ENCHANTED_BERRIES;
 	public static EnchantedBerryJamItem ENCHANTED_BERRY_JAM;
 
+	public static UnconcealedMilkyResistanceScroll UNCONCEALED_MILKY_RESISTANCE_SCROLL;
+
+	public static UnconcealedFreezingResistanceScroll UNCONCEALED_FREEZING_RESISTANCE_SCROLL;
+	public static UnconcealedExtendedFreezingResistanceScroll UNCONCEALED_LONG_FREEZING_RESISTANCE_SCROLL;
+	public static UnconcealedStrongerFreezingResistanceScroll UNCONCEALED_STRONG_FREEZING_RESISTANCE_SCROLL;
+	public static UnconcealedFrostedFreezingResistanceScroll UNCONCEALED_FROSTED_FREEZING_RESISTANCE_SCROLL;
+
+	public static UnconcealedFleshyPunishmentScroll UNCONCEALED_FLESHY_PUNISHMENT_SCROLL;
+	public static UnconcealedExtendedFleshyPunishmentScroll UNCONCEALED_LONG_FLESHY_PUNISHMENT_SCROLL;
+	public static UnconcealedStrongerFleshyPunishmentScroll UNCONCEALED_STRONG_FLESHY_PUNISHMENT_SCROLL;
+	public static UnconcealedFrostedFleshyPunishmentScroll UNCONCEALED_FROSTED_FLESHY_PUNISHMENT_SCROLL;
 
 	// Registration
 	public static <T extends Block> T registerBlock(String name, T block) {
@@ -85,6 +105,27 @@ public class IncantationMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+
+		UNCONCEALED_FLESHY_PUNISHMENT_SCROLL = registerItem("unconcealed_fleshy_punishment_scroll",
+				new UnconcealedFleshyPunishmentScroll(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+		UNCONCEALED_FROSTED_FLESHY_PUNISHMENT_SCROLL = registerItem("frosted_unconcealed_fleshy_punishment_scroll",
+				new UnconcealedFrostedFleshyPunishmentScroll(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+		UNCONCEALED_LONG_FLESHY_PUNISHMENT_SCROLL = registerItem("long_unconcealed_fleshy_punishment_scroll",
+				new UnconcealedExtendedFleshyPunishmentScroll(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+		UNCONCEALED_STRONG_FLESHY_PUNISHMENT_SCROLL = registerItem("strong_unconcealed_fleshy_punishment_scroll",
+				new UnconcealedStrongerFleshyPunishmentScroll(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+
+		UNCONCEALED_MILKY_RESISTANCE_SCROLL = registerItem("unconcealed_milky_resistance_scroll",
+				new UnconcealedMilkyResistanceScroll(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+
+		UNCONCEALED_FREEZING_RESISTANCE_SCROLL = registerItem("unconcealed_freezing_resistance_scroll",
+				new UnconcealedFreezingResistanceScroll(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+		UNCONCEALED_FROSTED_FREEZING_RESISTANCE_SCROLL = registerItem("frosted_unconcealed_freezing_resistance_scroll",
+				new UnconcealedFrostedFreezingResistanceScroll(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+		UNCONCEALED_LONG_FREEZING_RESISTANCE_SCROLL = registerItem("long_unconcealed_freezing_resistance_scroll",
+				new UnconcealedExtendedFreezingResistanceScroll(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+		UNCONCEALED_STRONG_FREEZING_RESISTANCE_SCROLL = registerItem("strong_unconcealed_freezing_resistance_scroll",
+				new UnconcealedStrongerFreezingResistanceScroll(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
 
 		PLAINS_CHERRIES = registerItem("plains_cherries",
 				new Item(new FabricItemSettings().food(new FoodComponent.Builder()
@@ -149,12 +190,12 @@ public class IncantationMod implements ModInitializer {
 			MoreWeaponryCompat.moreWeaponryCompatRegistry();
 		}
 
-		if (FabricLoader.getInstance().isModLoaded("enhancedcelestials")) {
-			EnhancedCelestialsCompat.enhancedCelestialsCompatRegistry();
-		}
-
 		if (FabricLoader.getInstance().isModLoaded("pickyourpoison")) {
 			PickYourPoisonCompat.pickYourPoisonCompatRegistry();
+		}
+
+		if (FabricLoader.getInstance().isModLoaded("enhancedcelestials")) {
+			EnhancedCelestialsCompat.enhancedCelestialsCompatRegistry();
 		}
 
 		BEWITCHMENT_TABLE_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,

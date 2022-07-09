@@ -34,5 +34,17 @@
 
   "item.minecraft.tipped_arrow.effect.milky_resistance": "Flecha de resistencia lechosa",
   "item.minecraft.tipped_arrow.effect.freezing_resistance": "Flecha de resistencia al congelamiento",
-  "item.minecraft.tipped_arrow.effect.fleshy_punishment": "Flecha del castigo carnoso"
+  "item.minecraft.tipped_arrow.effect.fleshy_punishment": "Flecha del castigo carnoso",
+
+  "item.incantation.unconcealed_milky_resistance_scroll": "Pergamino de resistencia descubierto",
+
+  "item.incantation.unconcealed_freezing_resistance_scroll": "Pergamino de resistencia descubierto",
+  "item.incantation.long_unconcealed_freezing_resistance_scroll": "Pergamino de resistencia descubierto",
+  "item.incantation.strong_unconcealed_freezing_resistance_scroll": "Pergamino de resistencia descubierto",
+  "item.incantation.frosted_unconcealed_freezing_resistance_scroll": "Pergamino de resistencia descubierto",
+
+  "item.incantation.unconcealed_fleshy_punishment_scroll": "Pergamino de castigo descubierto",
+  "item.incantation.long_unconcealed_fleshy_punishment_scroll": "Pergamino de castigo descubierto",
+  "item.incantation.strong_unconcealed_fleshy_punishment_scroll": "Pergamino de castigo descubierto",
+  "item.incantation.frosted_unconcealed_fleshy_punishment_scroll": "Pergamino de castigo descubierto"
 }

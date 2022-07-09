@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "pickyourpoison:item/foreign_poison_resistance_scroll"
-  }
-}

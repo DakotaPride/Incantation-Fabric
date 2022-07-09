@@ -2,6 +2,7 @@ package net.dakotapride.incantation.mixin;
 
 import net.dakotapride.incantation.common.IncantationMod;
 import net.dakotapride.incantation.compat.moreweaponry.MoreWeaponryCompat;
+import net.dakotapride.incantation.compat.pickyourpoison.PickYourPoisonCompat;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -17,6 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class LivingEntityMixin<O> extends Entity {
 
     private final LivingEntity livingEntity = (LivingEntity) (Object) this;
+    private final LivingEntity attacker = livingEntity.getAttacker();
     public LivingEntityMixin(EntityType<?> type, World world) {
         super(type, world);
     }
@@ -41,6 +43,20 @@ public abstract class LivingEntityMixin<O> extends Entity {
 
         if (livingEntity.hasStatusEffect(IncantationMod.FREEZING_RESISTANCE)) {
             livingEntity.setFrozenTicks(0);
+        }
+
+        if (livingEntity.hasStatusEffect(PickYourPoisonCompat.REFLECTION_RESISTANCE)) {
+            if (livingEntity.hasStatusEffect(StatusEffects.POISON)) {
+                if (attacker != null) {
+                    attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 260, 1));
+                }
+            }
+
+            if (livingEntity.hasStatusEffect(StatusEffects.WITHER)) {
+                if (attacker != null) {
+                    attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 420, 1));
+                }
+            }
         }
 
     }

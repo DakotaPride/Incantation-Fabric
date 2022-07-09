@@ -1,11 +1,11 @@
 {
-  "item.pickyourpoison.foreign_poison_resistance_scroll": "Parchemin de résistance",
-  "effect.pickyourpoison.foreign_poison_resistance": "Résistance aux poisons étrangers",
-  "item.pickyourpoison.resistance_parchment.foreign_poison": "Résistance aux poisons étrangers",
-  "item.pickyourpoison.resistance_parchment.foreign_poison.description": "Débarrassez-vous des poisons étrangers",
+  "item.pickyourpoison.reflection_resistance_scroll": "Parchemin de résistance",
+  "effect.pickyourpoison.reflection_resistance": "Résistance à la réflexion",
+  "item.pickyourpoison.resistance_parchment.reflection": "Résistance à la réflexion",
+  "item.pickyourpoison.resistance_parchment.reflection.description": "Les autres subissent votre sort",
 
-  "item.minecraft.potion.effect.foreign_poison_resistance": "Potion de résistance aux poisons étrangers",
-  "item.minecraft.splash_potion.effect.foreign_poison_resistance": "Potion de résistance aux poisons étrangers",
-  "item.minecraft.lingering_potion.effect.foreign_poison_resistance": "Potion de résistance aux poisons étrangers",
-  "item.minecraft.tipped_arrow.effect.foreign_poison_resistance": "Flèche de résistance aux poisons étrangers"
+  "item.minecraft.potion.effect.reflection_resistance": "Potion de résistance aux reflets",
+  "item.minecraft.splash_potion.effect.reflection_resistance": "Potion de résistance aux reflets",
+  "item.minecraft.lingering_potion.effect.reflection_resistance": "Potion de résistance aux reflets",
+  "item.minecraft.tipped_arrow.effect.reflection_resistance": "Flèche de résistance à la réflexion"
 }

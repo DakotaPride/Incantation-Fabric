@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "incantation:item/frosted_unconcealed_freezing_resistance_scroll"
+  }
+}

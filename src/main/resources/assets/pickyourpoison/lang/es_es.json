@@ -1,11 +1,11 @@
 {
-  "item.pickyourpoison.foreign_poison_resistance_scroll": "Pergamino de Resistencia",
-  "effect.pickyourpoison.foreign_poison_resistance": "Resistencia a venenos extranjeros",
-  "item.pickyourpoison.resistance_parchment.foreign_poison": "Resistencia al veneno extranjero",
-  "item.pickyourpoison.resistance_parchment.foreign_poison.description": "Elimina cualquier veneno extraño",
+  "item.pickyourpoison.reflection_resistance_scroll": "Pergamino de Resistencia",
+  "effect.pickyourpoison.reflection_resistance": "Resistencia a la reflexión",
+  "item.pickyourpoison.resistance_parchment.reflection": "Resistencia a la reflexión",
+  "item.pickyourpoison.resistance_parchment.reflection.description": "Otros sufren tu destino",
 
-  "item.minecraft.potion.effect.foreign_poison_resistance": "Poción de resistencia al veneno extranjero",
-  "item.minecraft.splash_potion.effect.foreign_poison_resistance": "Poción de resistencia al veneno extranjero",
-  "item.minecraft.lingering_potion.effect.foreign_poison_resistance": "Poción de resistencia al veneno extranjero",
-  "item.minecraft.tipped_arrow.effect.foreign_poison_resistance": "Flecha de resistencia al veneno extranjero"
+  "item.minecraft.potion.effect.reflection_resistance": "Poción de resistencia a la reflexión",
+  "item.minecraft.splash_potion.effect.reflection_resistance": "Poción de resistencia a la reflexión",
+  "item.minecraft.lingering_potion.effect.reflection_resistance": "Poción de resistencia a la reflexión",
+  "item.minecraft.tipped_arrow.effect.reflection_resistance": "Flecha de resistencia a la reflexión"
 }

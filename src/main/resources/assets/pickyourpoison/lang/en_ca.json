@@ -1,11 +1,11 @@
 {
-  "item.pickyourpoison.foreign_poison_resistance_scroll": "Resistance Parchment",
-  "effect.pickyourpoison.foreign_poison_resistance": "Foreign Poison Resistance",
-  "item.pickyourpoison.resistance_parchment.foreign_poison": "Foreign Poison Resistance",
-  "item.pickyourpoison.resistance_parchment.foreign_poison.description": "Rid Any Foreign Poisons",
+  "item.pickyourpoison.reflection_resistance_scroll": "Resistance Parchment",
+  "effect.pickyourpoison.reflection_resistance": "Reflection Resistance",
+  "item.pickyourpoison.resistance_parchment.reflection": "Reflection Resistance",
+  "item.pickyourpoison.resistance_parchment.reflection.description": "Others Suffer Your Fate",
 
-  "item.minecraft.potion.effect.foreign_poison_resistance": "Potion Of Foreign Poison Resistance",
-  "item.minecraft.splash_potion.effect.foreign_poison_resistance": "Potion Of Foreign Poison Resistance",
-  "item.minecraft.lingering_potion.effect.foreign_poison_resistance": "Potion Of Foreign Poison Resistance",
-  "item.minecraft.tipped_arrow.effect.foreign_poison_resistance": "Arrow Of Foreign Poison Resistance"
+  "item.minecraft.potion.effect.reflection_resistance": "Potion Of Reflection Resistance",
+  "item.minecraft.splash_potion.effect.reflection_resistance": "Potion Of Reflection Resistance",
+  "item.minecraft.lingering_potion.effect.reflection_resistance": "Potion Of Reflection Resistance",
+  "item.minecraft.tipped_arrow.effect.reflection_resistance": "Arrow Of Reflection Resistance"
 }

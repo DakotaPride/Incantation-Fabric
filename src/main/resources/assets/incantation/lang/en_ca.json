@@ -34,5 +34,17 @@
 
   "item.minecraft.tipped_arrow.effect.milky_resistance": "Arrow Of Milky Resistance",
   "item.minecraft.tipped_arrow.effect.freezing_resistance": "Arrow Of Freezing Resistance",
-  "item.minecraft.tipped_arrow.effect.fleshy_punishment": "Arrow Of Fleshy Punishment"
+  "item.minecraft.tipped_arrow.effect.fleshy_punishment": "Arrow Of Fleshy Punishment",
+
+  "item.incantation.unconcealed_milky_resistance_scroll": "Unconcealed Resistance Parchment",
+
+  "item.incantation.unconcealed_freezing_resistance_scroll": "Unconcealed Resistance Parchment",
+  "item.incantation.long_unconcealed_freezing_resistance_scroll": "Unconcealed Resistance Parchment",
+  "item.incantation.strong_unconcealed_freezing_resistance_scroll": "Unconcealed Resistance Parchment",
+  "item.incantation.frosted_unconcealed_freezing_resistance_scroll": "Unconcealed Resistance Parchment",
+
+  "item.incantation.unconcealed_fleshy_punishment_scroll": "Unconcealed Punishment Parchment",
+  "item.incantation.long_unconcealed_fleshy_punishment_scroll": "Unconcealed Punishment Parchment",
+  "item.incantation.strong_unconcealed_fleshy_punishment_scroll": "Unconcealed Punishment Parchment",
+  "item.incantation.frosted_unconcealed_fleshy_punishment_scroll": "Unconcealed Punishment Parchment"
 }
