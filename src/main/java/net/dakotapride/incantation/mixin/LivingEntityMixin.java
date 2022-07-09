@@ -44,10 +44,6 @@ public abstract class LivingEntityMixin<O> extends Entity {
             livingEntity.removeStatusEffect(StatusEffects.HUNGER);
         }
 
-        if (livingEntity.hasStatusEffect(PickYourPoisonCompat.FOREIGN_POISON_RESISTANCE)) {
-            livingEntity.removeStatusEffect(IncantationTags.PICK_YOUR_POISON_EFFECTS);
-        }
-
     }
 
 }
