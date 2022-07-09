@@ -1,6 +1,5 @@
 package net.dakotapride.incantation.common.util;
 
-import net.dakotapride.incantation.common.IncantationMod;
 import net.dakotapride.incantation.compat.pickyourpoison.PickYourPoisonCompat;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.item.Item;
