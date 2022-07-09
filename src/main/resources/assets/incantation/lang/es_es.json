@@ -30,5 +30,9 @@
 
   "item.minecraft.lingering_potion.effect.milky_resistance": "Poción persistente de resistencia lechosa",
   "item.minecraft.lingering_potion.effect.freezing_resistance": "Poción persistente de resistencia al congelamiento",
-  "item.minecraft.lingering_potion.effect.fleshy_punishment": "Poción persistente de castigo carnal"
+  "item.minecraft.lingering_potion.effect.fleshy_punishment": "Poción persistente de castigo carnal",
+
+  "item.minecraft.tipped_arrow.effect.milky_resistance": "Flecha de resistencia lechosa",
+  "item.minecraft.tipped_arrow.effect.freezing_resistance": "Flecha de resistencia al congelamiento",
+  "item.minecraft.tipped_arrow.effect.fleshy_punishment": "Flecha del castigo carnoso"
 }

@@ -30,5 +30,9 @@
 
   "item.minecraft.lingering_potion.effect.milky_resistance": "Potion persistante de résistance laiteuse",
   "item.minecraft.lingering_potion.effect.freezing_resistance": "Potion persistante de résistance au gel",
-  "item.minecraft.lingering_potion.effect.fleshy_punishment": "Potion persistante de punition charnue"
+  "item.minecraft.lingering_potion.effect.fleshy_punishment": "Potion persistante de punition charnue",
+
+  "item.minecraft.tipped_arrow.effect.milky_resistance": "Flèche de résistance laiteuse",
+  "item.minecraft.tipped_arrow.effect.freezing_resistance": "Flèche de résistance au gel",
+  "item.minecraft.tipped_arrow.effect.fleshy_punishment": "Flèche de punition charnue"
 }

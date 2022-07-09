@@ -6,5 +6,6 @@
 
   "item.minecraft.potion.effect.harming_resistance": "Potion de résistance aux dégâts",
   "item.minecraft.splash_potion.effect.harming_resistance": "Potion de résistance aux dégâts",
-  "item.minecraft.lingering_potion.effect.harming_resistance": "Potion de résistance aux dégâts"
+  "item.minecraft.lingering_potion.effect.harming_resistance": "Potion de résistance aux dégâts",
+  "item.minecraft.tipped_arrow.effect.harming_resistance": "Flèche de résistance aux dégâts"
 }

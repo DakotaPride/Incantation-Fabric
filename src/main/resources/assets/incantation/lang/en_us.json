@@ -30,5 +30,9 @@
 
   "item.minecraft.lingering_potion.effect.milky_resistance": "Lingering Potion Of Milky Resistance",
   "item.minecraft.lingering_potion.effect.freezing_resistance": "Lingering Potion Of Freezing Resistance",
-  "item.minecraft.lingering_potion.effect.fleshy_punishment": "Lingering Potion Of Fleshy Punishment"
+  "item.minecraft.lingering_potion.effect.fleshy_punishment": "Lingering Potion Of Fleshy Punishment",
+
+  "item.minecraft.tipped_arrow.effect.milky_resistance": "Arrow Of Milky Resistance",
+  "item.minecraft.tipped_arrow.effect.freezing_resistance": "Arrow Of Freezing Resistance",
+  "item.minecraft.tipped_arrow.effect.fleshy_punishment": "Arrow Of Fleshy Punishment"
 }

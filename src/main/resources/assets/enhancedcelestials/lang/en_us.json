@@ -8,5 +8,6 @@
 
   "item.minecraft.potion.effect.harvest_healing": "Potion Of Harvest Healing",
   "item.minecraft.splash_potion.effect.harvest_healing": "Potion Of Harvest Healing",
-  "item.minecraft.lingering_potion.effect.harvest_healing": "Potion Of Harvest Healing"
+  "item.minecraft.lingering_potion.effect.harvest_healing": "Potion Of Harvest Healing",
+  "item.minecraft.tipped_arrow.effect.harvest_healing": "Arrow Of Harvest Healing"
 }

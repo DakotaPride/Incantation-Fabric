@@ -6,5 +6,6 @@
 
   "item.minecraft.potion.effect.foreign_poison_resistance": "Poción de resistencia al veneno extranjero",
   "item.minecraft.splash_potion.effect.foreign_poison_resistance": "Poción de resistencia al veneno extranjero",
-  "item.minecraft.lingering_potion.effect.foreign_poison_resistance": "Poción de resistencia al veneno extranjero"
+  "item.minecraft.lingering_potion.effect.foreign_poison_resistance": "Poción de resistencia al veneno extranjero",
+  "item.minecraft.tipped_arrow.effect.foreign_poison_resistance": "Flecha de resistencia al veneno extranjero"
 }
