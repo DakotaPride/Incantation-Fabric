@@ -18,6 +18,7 @@ import net.dakotapride.incantation.common.item.unconcealed_scrolls.stronger.Unco
 import net.dakotapride.incantation.common.item.unconcealed_scrolls.stronger.UnconcealedStrongerFreezingResistanceScroll;
 import net.dakotapride.incantation.common.recipe.BewitchmentTableRecipe;
 import net.dakotapride.incantation.common.screen.BewitchmentTableScreenHandler;
+import net.dakotapride.incantation.common.util.IncantationTags;
 import net.dakotapride.incantation.compat.enhancedcelestials.EnhancedCelestialsCompat;
 import net.dakotapride.incantation.compat.moreweaponry.MoreWeaponryCompat;
 import net.dakotapride.incantation.compat.pickyourpoison.PickYourPoisonCompat;
@@ -237,7 +238,7 @@ public class IncantationMod implements ModInitializer {
 				HeightRangePlacementModifier.uniform(YOffset.aboveBottom(6), YOffset.aboveBottom(50)),
 				BiomePlacementModifier.of());
 
-		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(),
+		BiomeModifications.addFeature(BiomeSelectors.tag(IncantationTags.HAS_GREEN_JADE_GEODE),
 						GenerationStep.Feature.UNDERGROUND_DECORATION, Objects.requireNonNull(GREEN_JADE_GEODE_PLACED.getKey().orElse(null)));
 
 		UNCONCEALED_FLESHY_PUNISHMENT_SCROLL = registerItem("unconcealed_fleshy_punishment_scroll",
