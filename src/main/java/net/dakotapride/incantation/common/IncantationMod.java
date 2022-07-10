@@ -1,8 +1,6 @@
 package net.dakotapride.incantation.common;
 
-import net.dakotapride.incantation.common.block.GreenJadeBlock;
-import net.dakotapride.incantation.common.block.GreenJadeClusterBlock;
-import net.dakotapride.incantation.common.block.BuddingGreenJadeBlock;
+import net.dakotapride.incantation.common.block.*;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableBlock;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableEntity;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
@@ -32,7 +30,8 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
@@ -126,6 +125,14 @@ public class IncantationMod implements ModInitializer {
 	public static GreenJadeClusterBlock LARGE_GREEN_JADE_BUD;
 	public static Item GREEN_JADE_SHARD;
 
+	public static BuddingJadeBlock BUDDING_JADE;
+	public static JadeBlock JADE_BLOCK;
+	public static JadeClusterBlock JADE_CLUSTER;
+	public static JadeClusterBlock SMALL_JADE_BUD;
+	public static JadeClusterBlock MEDIUM_JADE_BUD;
+	public static JadeClusterBlock LARGE_JADE_BUD;
+	public static Item JADE_SHARD;
+
 	public static final ItemGroup INCANTATION_GROUP = FabricItemGroupBuilder.create(
 					new Identifier(INCANTATION_ID, "incantation"))
 			.icon(() -> new ItemStack(Items.SPLASH_POTION))
@@ -151,37 +158,56 @@ public class IncantationMod implements ModInitializer {
 				itemStacks.add(new ItemStack(UNCONCEALED_STRONG_FREEZING_RESISTANCE_SCROLL));
 				itemStacks.add(new ItemStack(UNCONCEALED_FROSTED_FREEZING_RESISTANCE_SCROLL));
 
-				itemStacks.add(new ItemStack(PickYourPoisonCompat.REFLECTION_RESISTANCE_SCROLL));
-				itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_REFLECTION_RESISTANCE_SCROLL));
-				itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_LONG_REFLECTION_RESISTANCE_SCROLL));
-				itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_STRONG_REFLECTION_RESISTANCE_SCROLL));
-				itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_FROSTED_REFLECTION_RESISTANCE_SCROLL));
-
-				itemStacks.add(new ItemStack(MoreWeaponryCompat.HARMING_RESISTANCE_SCROLL));
-				itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_HARMING_RESISTANCE_SCROLL));
-				itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_LONG_HARMING_RESISTANCE_SCROLL));
-				itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_STRONG_HARMING_RESISTANCE_SCROLL));
-				itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_FROSTED_HARMING_RESISTANCE_SCROLL));
-
-				itemStacks.add(new ItemStack(EnhancedCelestialsCompat.HARVEST_HEALING_SCROLL));
-				itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_HARVEST_HEALING_SCROLL));
-				itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_LONG_HARVEST_HEALING_SCROLL));
-				itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_STRONG_HARVEST_HEALING_SCROLL));
-				itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_FROSTED_HARVEST_HEALING_SCROLL));
-
-				itemStacks.add(new ItemStack(EnhancedCelestialsCompat.MOON_CREST_FRUIT));
-				itemStacks.add(new ItemStack(EnhancedCelestialsCompat.MENDING_MOON_CREST_FRUIT));
-
 				itemStacks.add(new ItemStack(BUDDING_GREEN_JADE));
 				itemStacks.add(new ItemStack(GREEN_JADE_BLOCK));
 				itemStacks.add(new ItemStack(GREEN_JADE_CLUSTER));
+				itemStacks.add(new ItemStack(SMALL_GREEN_JADE_BUD));
+				itemStacks.add(new ItemStack(MEDIUM_GREEN_JADE_BUD));
+				itemStacks.add(new ItemStack(LARGE_GREEN_JADE_BUD));
 				itemStacks.add(new ItemStack(GREEN_JADE_SHARD));
+				itemStacks.add(new ItemStack(BUDDING_JADE));
+				itemStacks.add(new ItemStack(JADE_BLOCK));
+				itemStacks.add(new ItemStack(JADE_CLUSTER));
+				itemStacks.add(new ItemStack(SMALL_JADE_BUD));
+				itemStacks.add(new ItemStack(MEDIUM_JADE_BUD));
+				itemStacks.add(new ItemStack(LARGE_JADE_BUD));
+				itemStacks.add(new ItemStack(JADE_SHARD));
+
+				if (FabricLoader.getInstance().isModLoaded("pickyourpoison")) {
+					itemStacks.add(new ItemStack(PickYourPoisonCompat.REFLECTION_RESISTANCE_SCROLL));
+					itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_REFLECTION_RESISTANCE_SCROLL));
+					itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_LONG_REFLECTION_RESISTANCE_SCROLL));
+					itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_STRONG_REFLECTION_RESISTANCE_SCROLL));
+					itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_FROSTED_REFLECTION_RESISTANCE_SCROLL));
+				}
+
+				if (FabricLoader.getInstance().isModLoaded("moreweaponry")) {
+					itemStacks.add(new ItemStack(MoreWeaponryCompat.HARMING_RESISTANCE_SCROLL));
+					itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_HARMING_RESISTANCE_SCROLL));
+					itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_LONG_HARMING_RESISTANCE_SCROLL));
+					itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_STRONG_HARMING_RESISTANCE_SCROLL));
+					itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_FROSTED_HARMING_RESISTANCE_SCROLL));
+				}
+
+				if (FabricLoader.getInstance().isModLoaded("enhancedcelestials")) {
+					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.HARVEST_HEALING_SCROLL));
+					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_HARVEST_HEALING_SCROLL));
+					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_LONG_HARVEST_HEALING_SCROLL));
+					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_STRONG_HARVEST_HEALING_SCROLL));
+					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_FROSTED_HARVEST_HEALING_SCROLL));
+
+					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.MOON_CREST_FRUIT));
+					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.MENDING_MOON_CREST_FRUIT));
+				}
 			})
 			.build();
 
 	public static RegistryEntry<ConfiguredFeature<GeodeFeatureConfig, ?>> GREEN_JADE_GEODE;
-
 	public static RegistryEntry<PlacedFeature> GREEN_JADE_GEODE_PLACED;
+
+	public static RegistryEntry<ConfiguredFeature<GeodeFeatureConfig, ?>> JADE_GEODE;
+	public static RegistryEntry<PlacedFeature> JADE_GEODE_PLACED;
+
 
 	@Override
 	public void onInitialize() {
@@ -238,8 +264,63 @@ public class IncantationMod implements ModInitializer {
 				HeightRangePlacementModifier.uniform(YOffset.aboveBottom(6), YOffset.aboveBottom(50)),
 				BiomePlacementModifier.of());
 
-		BiomeModifications.addFeature(BiomeSelectors.tag(IncantationTags.HAS_GREEN_JADE_GEODE),
+		BiomeModifications.addFeature(BiomeSelectors.tag(IncantationTags.HAS_JADE_GEODE),
 						GenerationStep.Feature.UNDERGROUND_DECORATION, Objects.requireNonNull(GREEN_JADE_GEODE_PLACED.getKey().orElse(null)));
+
+		BUDDING_JADE = registerBlock("budding_jade",
+				new BuddingJadeBlock(FabricBlockSettings.copy(Blocks.BUDDING_AMETHYST)));
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "budding_jade"), new BlockItem(BUDDING_JADE,
+				new FabricItemSettings().group(INCANTATION_GROUP)));
+
+		JADE_BLOCK = registerBlock("jade_block",
+				new JadeBlock(FabricBlockSettings.copy(Blocks.AMETHYST_BLOCK)));
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "jade_block"), new BlockItem(JADE_BLOCK,
+				new FabricItemSettings().group(INCANTATION_GROUP)));
+
+		JADE_SHARD = registerItem("jade_shard",
+				new Item(new FabricItemSettings().group(INCANTATION_GROUP)));
+
+		JADE_CLUSTER = registerBlock("jade_bud",
+				new JadeClusterBlock(7, 3, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER)));
+		SMALL_JADE_BUD = registerBlock("small_jade_bud",
+				new JadeClusterBlock(3, 4, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER)));
+		MEDIUM_JADE_BUD = registerBlock("medium_jade_bud",
+				new JadeClusterBlock(4, 3, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER)));
+		LARGE_JADE_BUD = registerBlock("large_jade_bud",
+				new JadeClusterBlock(5, 3, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER)));
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "jade_cluster"), new BlockItem(JADE_CLUSTER,
+				new FabricItemSettings().group(INCANTATION_GROUP)));
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "small_jade_cluster"), new BlockItem(SMALL_JADE_BUD,
+				new FabricItemSettings().group(INCANTATION_GROUP)));
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "medium_jade_cluster"), new BlockItem(MEDIUM_JADE_BUD,
+				new FabricItemSettings().group(INCANTATION_GROUP)));
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "large_jade_cluster"), new BlockItem(LARGE_JADE_BUD,
+				new FabricItemSettings().group(INCANTATION_GROUP)));
+
+		JADE_GEODE = ConfiguredFeatures.register("jade_geode", Feature.GEODE ,
+				new GeodeFeatureConfig(new GeodeLayerConfig(BlockStateProvider.of(Blocks.AIR),
+						BlockStateProvider.of(JADE_BLOCK),
+						BlockStateProvider.of(BUDDING_JADE),
+						BlockStateProvider.of(Blocks.CALCITE),
+						BlockStateProvider.of(Blocks.SMOOTH_BASALT),
+						List.of(BUDDING_JADE.getDefaultState()),
+						BlockTags.FEATURES_CANNOT_REPLACE , BlockTags.GEODE_INVALID_BLOCKS),
+						new GeodeLayerThicknessConfig(1.7D, 2.2D, 3.2D, 4.2D),
+						new GeodeCrackConfig(0.95D, 2.0D, 2),
+						0.35D, 0.083D, true,
+						UniformIntProvider.create(4, 6),
+						UniformIntProvider.create(3, 4),
+						UniformIntProvider.create(1, 2),
+						-16, 16, 0.05D, 1));
+
+		JADE_GEODE_PLACED = PlacedFeatures.register("jade_geode_placed",
+				JADE_GEODE, RarityFilterPlacementModifier.of(42),
+				SquarePlacementModifier.of(),
+				HeightRangePlacementModifier.uniform(YOffset.aboveBottom(6), YOffset.aboveBottom(50)),
+				BiomePlacementModifier.of());
+
+		BiomeModifications.addFeature(BiomeSelectors.tag(IncantationTags.HAS_JADE_GEODE),
+				GenerationStep.Feature.UNDERGROUND_DECORATION, Objects.requireNonNull(JADE_GEODE_PLACED.getKey().orElse(null)));
 
 		UNCONCEALED_FLESHY_PUNISHMENT_SCROLL = registerItem("unconcealed_fleshy_punishment_scroll",
 				new UnconcealedFleshyPunishmentScroll(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));

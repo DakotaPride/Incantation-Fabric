@@ -59,5 +59,17 @@
   "block.incantation.green_jade_cluster": "Green Jade Cluster",
   "block.incantation.small_green_jade_cluster": "Small Green Jade Cluster",
   "block.incantation.medium_green_jade_cluster": "Medium Green Jade Cluster",
-  "block.incantation.large_green_jade_cluster": "Large Green Jade Cluster"
+  "block.incantation.large_green_jade_cluster": "Large Green Jade Cluster",
+
+  "item.incantation.jade_shard": "Jade Shard",
+  "block.incantation.jade_bud": "Jade Bud",
+  "block.incantation.small_jade_bud": "Small Jade Bud",
+  "block.incantation.medium_jade_bud": "Medium Jade Bud",
+  "block.incantation.large_jade_bud": "Large Jade Bud",
+  "block.incantation.budding_jade": "Budding Jade",
+  "block.incantation.jade_block": "Jade Block",
+  "block.incantation.jade_cluster": "Jade Cluster",
+  "block.incantation.small_jade_cluster": "Small Jade Cluster",
+  "block.incantation.medium_jade_cluster": "Medium Jade Cluster",
+  "block.incantation.large_jade_cluster": "Large Jade Cluster"
 }

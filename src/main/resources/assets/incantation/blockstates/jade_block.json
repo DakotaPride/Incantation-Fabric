@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "incantation:block/jade_block"
+    }
+  }
+}

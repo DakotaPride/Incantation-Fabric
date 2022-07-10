@@ -1,0 +1,11 @@
+  {
+  "parent": "incantation:item/jade_bud",
+  "textures": {
+    "layer0": "incantation:block/large_jade_bud"
+  },
+  "display": {
+    "fixed": {
+      "translation": [ 0, 4, 0 ]
+    }
+  }
+}

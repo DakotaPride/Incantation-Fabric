@@ -11,6 +11,7 @@ public class IncantationClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+
         BlockRenderLayerMap.INSTANCE.putBlock(IncantationMod.GREEN_JADE_CLUSTER, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(IncantationMod.SMALL_GREEN_JADE_BUD, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(IncantationMod.MEDIUM_GREEN_JADE_BUD, RenderLayer.getCutout());
