@@ -47,5 +47,17 @@
   "item.incantation.unconcealed_fleshy_punishment_scroll": "Unconcealed Punishment Parchment",
   "item.incantation.long_unconcealed_fleshy_punishment_scroll": "Unconcealed Punishment Parchment",
   "item.incantation.strong_unconcealed_fleshy_punishment_scroll": "Unconcealed Punishment Parchment",
-  "item.incantation.frosted_unconcealed_fleshy_punishment_scroll": "Unconcealed Punishment Parchment"
+  "item.incantation.frosted_unconcealed_fleshy_punishment_scroll": "Unconcealed Punishment Parchment",
+
+  "item.incantation.green_jade_shard": "Green Jade Shard",
+  "block.incantation.green_jade_bud": "Green Jade Bud",
+  "block.incantation.small_green_jade_bud": "Small Green Jade Bud",
+  "block.incantation.medium_green_jade_bud": "Medium Green Jade Bud",
+  "block.incantation.large_green_jade_bud": "Large Green Jade Bud",
+  "block.incantation.budding_green_jade": "Budding Green Jade",
+  "block.incantation.green_jade_block": "Green Jade Block",
+  "block.incantation.green_jade_cluster": "Green Jade Cluster",
+  "block.incantation.small_green_jade_cluster": "Small Green Jade Cluster",
+  "block.incantation.medium_green_jade_cluster": "Medium Green Jade Cluster",
+  "block.incantation.large_green_jade_cluster": "Large Green Jade Cluster"
 }

@@ -47,5 +47,17 @@
   "item.incantation.unconcealed_fleshy_punishment_scroll": "Pergamino de castigo descubierto",
   "item.incantation.long_unconcealed_fleshy_punishment_scroll": "Pergamino de castigo descubierto",
   "item.incantation.strong_unconcealed_fleshy_punishment_scroll": "Pergamino de castigo descubierto",
-  "item.incantation.frosted_unconcealed_fleshy_punishment_scroll": "Pergamino de castigo descubierto"
+  "item.incantation.frosted_unconcealed_fleshy_punishment_scroll": "Pergamino de castigo descubierto",
+
+  "item.incantation.green_jade_shard": "Fragmento de jade verde",
+  "block.incantation.green_jade_bud": "Brote de jade verde",
+  "block.incantation.small_green_jade_bud": "Pequeño Brote de Jade Verde",
+  "block.incantation.medium_green_jade_bud": "Brote de jade verde mediano",
+  "block.incantation.large_green_jade_bud": "Gran Brote de Jade Verde",
+  "block.incantation.budding_green_jade": "Jade verde en ciernes",
+  "block.incantation.green_jade_block": "Bloque de jade verde",
+  "block.incantation.green_jade_cluster": "Cúmulo de jade verde",
+  "block.incantation.small_green_jade_cluster": "Pequeño racimo de jade verde",
+  "block.incantation.medium_green_jade_cluster": "Racimo de jade verde mediano",
+  "block.incantation.large_green_jade_cluster": "Grupo de jade verde grande"
 }

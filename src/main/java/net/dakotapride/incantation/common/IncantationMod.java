@@ -1,5 +1,8 @@
 package net.dakotapride.incantation.common;
 
+import net.dakotapride.incantation.common.block.GreenJadeBlock;
+import net.dakotapride.incantation.common.block.GreenJadeClusterBlock;
+import net.dakotapride.incantation.common.block.BuddingGreenJadeBlock;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableBlock;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableEntity;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
@@ -20,14 +23,15 @@ import net.dakotapride.incantation.compat.moreweaponry.MoreWeaponryCompat;
 import net.dakotapride.incantation.compat.pickyourpoison.PickYourPoisonCompat;
 import net.dakotapride.incantation.mixin.BrewingRecipeRegistryMixin;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
+import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
@@ -37,10 +41,24 @@ import net.minecraft.item.*;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.Potions;
 import net.minecraft.screen.ScreenHandlerType;
+import net.minecraft.tag.BlockTags;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryEntry;
+import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.YOffset;
+import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.placementmodifier.BiomePlacementModifier;
+import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
+import net.minecraft.world.gen.placementmodifier.RarityFilterPlacementModifier;
+import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
+import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.List;
+import java.util.Objects;
 
 public class IncantationMod implements ModInitializer {
 	public static final String INCANTATION_ID = ("incantation");
@@ -99,6 +117,14 @@ public class IncantationMod implements ModInitializer {
 		return potion;
 	}
 
+	public static BuddingGreenJadeBlock BUDDING_GREEN_JADE;
+	public static GreenJadeBlock GREEN_JADE_BLOCK;
+	public static GreenJadeClusterBlock GREEN_JADE_CLUSTER;
+	public static GreenJadeClusterBlock SMALL_GREEN_JADE_BUD;
+	public static GreenJadeClusterBlock MEDIUM_GREEN_JADE_BUD;
+	public static GreenJadeClusterBlock LARGE_GREEN_JADE_BUD;
+	public static Item GREEN_JADE_SHARD;
+
 	public static final ItemGroup INCANTATION_GROUP = FabricItemGroupBuilder.create(
 					new Identifier(INCANTATION_ID, "incantation"))
 			.icon(() -> new ItemStack(Items.SPLASH_POTION))
@@ -144,11 +170,75 @@ public class IncantationMod implements ModInitializer {
 
 				itemStacks.add(new ItemStack(EnhancedCelestialsCompat.MOON_CREST_FRUIT));
 				itemStacks.add(new ItemStack(EnhancedCelestialsCompat.MENDING_MOON_CREST_FRUIT));
+
+				itemStacks.add(new ItemStack(BUDDING_GREEN_JADE));
+				itemStacks.add(new ItemStack(GREEN_JADE_BLOCK));
+				itemStacks.add(new ItemStack(GREEN_JADE_CLUSTER));
+				itemStacks.add(new ItemStack(GREEN_JADE_SHARD));
 			})
 			.build();
 
+	public static RegistryEntry<ConfiguredFeature<GeodeFeatureConfig, ?>> GREEN_JADE_GEODE;
+
+	public static RegistryEntry<PlacedFeature> GREEN_JADE_GEODE_PLACED;
+
 	@Override
 	public void onInitialize() {
+
+		BUDDING_GREEN_JADE = registerBlock("budding_green_jade",
+				new BuddingGreenJadeBlock(FabricBlockSettings.copy(Blocks.BUDDING_AMETHYST)));
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "budding_green_jade"), new BlockItem(BUDDING_GREEN_JADE,
+				new FabricItemSettings().group(INCANTATION_GROUP)));
+
+		GREEN_JADE_BLOCK = registerBlock("green_jade_block",
+				new GreenJadeBlock(FabricBlockSettings.copy(Blocks.AMETHYST_BLOCK)));
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "green_jade_block"), new BlockItem(GREEN_JADE_BLOCK,
+				new FabricItemSettings().group(INCANTATION_GROUP)));
+
+		GREEN_JADE_SHARD = registerItem("green_jade_shard",
+				new Item(new FabricItemSettings().group(INCANTATION_GROUP)));
+
+		GREEN_JADE_CLUSTER = registerBlock("green_jade_bud",
+				new GreenJadeClusterBlock(7, 3, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER)));
+		SMALL_GREEN_JADE_BUD = registerBlock("small_green_jade_bud",
+				new GreenJadeClusterBlock(3, 4, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER)));
+		MEDIUM_GREEN_JADE_BUD = registerBlock("medium_green_jade_bud",
+				new GreenJadeClusterBlock(4, 3, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER)));
+		LARGE_GREEN_JADE_BUD = registerBlock("large_green_jade_bud",
+				new GreenJadeClusterBlock(5, 3, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER)));
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "green_jade_cluster"), new BlockItem(GREEN_JADE_CLUSTER,
+				new FabricItemSettings().group(INCANTATION_GROUP)));
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "small_green_jade_cluster"), new BlockItem(SMALL_GREEN_JADE_BUD,
+				new FabricItemSettings().group(INCANTATION_GROUP)));
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "medium_green_jade_cluster"), new BlockItem(MEDIUM_GREEN_JADE_BUD,
+				new FabricItemSettings().group(INCANTATION_GROUP)));
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "large_green_jade_cluster"), new BlockItem(LARGE_GREEN_JADE_BUD,
+				new FabricItemSettings().group(INCANTATION_GROUP)));
+
+		GREEN_JADE_GEODE = ConfiguredFeatures.register("green_jade_geode", Feature.GEODE ,
+						new GeodeFeatureConfig(new GeodeLayerConfig(BlockStateProvider.of(Blocks.AIR),
+								BlockStateProvider.of(GREEN_JADE_BLOCK),
+								BlockStateProvider.of(BUDDING_GREEN_JADE),
+								BlockStateProvider.of(Blocks.CALCITE),
+								BlockStateProvider.of(Blocks.SMOOTH_BASALT),
+								List.of(BUDDING_GREEN_JADE.getDefaultState()),
+								BlockTags.FEATURES_CANNOT_REPLACE , BlockTags.GEODE_INVALID_BLOCKS),
+								new GeodeLayerThicknessConfig(1.7D, 2.2D, 3.2D, 4.2D),
+								new GeodeCrackConfig(0.95D, 2.0D, 2),
+								0.35D, 0.083D, true,
+								UniformIntProvider.create(4, 6),
+								UniformIntProvider.create(3, 4),
+								UniformIntProvider.create(1, 2),
+								-16, 16, 0.05D, 1));
+
+		GREEN_JADE_GEODE_PLACED = PlacedFeatures.register("green_jade_geode_placed",
+				GREEN_JADE_GEODE, RarityFilterPlacementModifier.of(42),
+				SquarePlacementModifier.of(),
+				HeightRangePlacementModifier.uniform(YOffset.aboveBottom(6), YOffset.aboveBottom(50)),
+				BiomePlacementModifier.of());
+
+		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(),
+						GenerationStep.Feature.UNDERGROUND_DECORATION, Objects.requireNonNull(GREEN_JADE_GEODE_PLACED.getKey().orElse(null)));
 
 		UNCONCEALED_FLESHY_PUNISHMENT_SCROLL = registerItem("unconcealed_fleshy_punishment_scroll",
 				new UnconcealedFleshyPunishmentScroll(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));

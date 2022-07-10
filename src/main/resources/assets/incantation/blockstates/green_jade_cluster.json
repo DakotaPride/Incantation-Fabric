@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "incantation:block/green_jade_cluster",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "incantation:block/green_jade_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "incantation:block/green_jade_cluster",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "incantation:block/green_jade_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "incantation:block/green_jade_cluster"
+    },
+    "facing=west": {
+      "model": "incantation:block/green_jade_cluster",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

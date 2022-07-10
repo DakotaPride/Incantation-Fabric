@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "incantation:block/large_green_jade_bud"
+  }
+}

@@ -47,5 +47,17 @@
   "item.incantation.unconcealed_fleshy_punishment_scroll": "Parchemin de punition non dissimulé",
   "item.incantation.long_unconcealed_fleshy_punishment_scroll": "Parchemin de punition non dissimulé",
   "item.incantation.strong_unconcealed_fleshy_punishment_scroll": "Parchemin de punition non dissimulé",
-  "item.incantation.frosted_unconcealed_fleshy_punishment_scroll": "Parchemin de punition non dissimulé"
+  "item.incantation.frosted_unconcealed_fleshy_punishment_scroll": "Parchemin de punition non dissimulé",
+
+  "item.incantation.green_jade_shard": "Éclat de jade vert",
+  "block.incantation.green_jade_bud": "Bourgeon de jade vert",
+  "block.incantation.small_green_jade_bud": "Petit bourgeon de jade vert",
+  "block.incantation.medium_green_jade_bud": "Bourgeon de jade vert moyen",
+  "block.incantation.large_green_jade_bud": "Grand bourgeon de jade vert",
+  "block.incantation.budding_green_jade": "Jade vert en herbe",
+  "block.incantation.green_jade_block": "Bloc de jade vert",
+  "block.incantation.green_jade_cluster": "Amas de jade vert",
+  "block.incantation.small_green_jade_cluster": "Petit amas de jade vert",
+  "block.incantation.medium_green_jade_cluster": "Amas de jade vert moyen",
+  "block.incantation.large_green_jade_cluster": "Grand amas de jade vert"
 }

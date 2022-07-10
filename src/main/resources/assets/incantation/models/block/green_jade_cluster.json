@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "incantation:block/green_jade_cluster"
+  }
+}
