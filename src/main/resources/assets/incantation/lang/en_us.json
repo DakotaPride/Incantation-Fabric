@@ -71,5 +71,9 @@
   "block.incantation.jade_cluster": "Jade Cluster",
   "block.incantation.small_jade_cluster": "Small Jade Cluster",
   "block.incantation.medium_jade_cluster": "Medium Jade Cluster",
-  "block.incantation.large_jade_cluster": "Large Jade Cluster"
+  "block.incantation.large_jade_cluster": "Large Jade Cluster",
+
+  "block.incantation.ammolite_ore": "Ammolite Ore",
+  "block.incantation.deepslate_ammolite_ore": "Deepslate Ammolite Ore",
+  "item.incantation.ammolite_gem": "Ammolite Gem"
 }

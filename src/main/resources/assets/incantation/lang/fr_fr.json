@@ -59,5 +59,21 @@
   "block.incantation.green_jade_cluster": "Amas de jade vert",
   "block.incantation.small_green_jade_cluster": "Petit amas de jade vert",
   "block.incantation.medium_green_jade_cluster": "Amas de jade vert moyen",
-  "block.incantation.large_green_jade_cluster": "Grand amas de jade vert"
+  "block.incantation.large_green_jade_cluster": "Grand amas de jade vert",
+
+  "item.incantation.jade_shard": "Éclat de jade",
+  "block.incantation.jade_bud": "Bourgeon de jade",
+  "block.incantation.small_jade_bud": "Petit bourgeon de jade",
+  "block.incantation.medium_jade_bud": "Bourgeon de jade moyen",
+  "block.incantation.large_jade_bud": "Grand bourgeon de jade",
+  "block.incantation.budding_jade": "Jade en herbe",
+  "block.incantation.jade_block": "Bloc de jade",
+  "block.incantation.jade_cluster": "Amas de jade",
+  "block.incantation.small_jade_cluster": "Petit amas de jade",
+  "block.incantation.medium_jade_cluster": "Amas de jade moyen",
+  "block.incantation.large_jade_cluster": "Grand amas de jade",
+
+  "block.incantation.ammolite_ore": "Minerai d'ammolite",
+  "block.incantation.deepslate_ammolite_ore": "Minerai d'ammolite Deepslate",
+  "item.incantation.ammolite_gem": "Gemme d'ammolite"
 }

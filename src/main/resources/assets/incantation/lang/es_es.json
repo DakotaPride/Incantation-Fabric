@@ -59,5 +59,21 @@
   "block.incantation.green_jade_cluster": "Cúmulo de jade verde",
   "block.incantation.small_green_jade_cluster": "Pequeño racimo de jade verde",
   "block.incantation.medium_green_jade_cluster": "Racimo de jade verde mediano",
-  "block.incantation.large_green_jade_cluster": "Grupo de jade verde grande"
+  "block.incantation.large_green_jade_cluster": "Grupo de jade verde grande",
+
+  "item.incantation.jade_shard": "Fragmento de jade",
+  "block.incantation.jade_bud": "Brote de jade",
+  "block.incantation.small_jade_bud": "Pequeño Brote de Jade",
+  "block.incantation.medium_jade_bud": "Brote de jade mediano",
+  "block.incantation.large_jade_bud": "Brote de jade grande",
+  "block.incantation.budding_jade": "Jade en ciernes",
+  "block.incantation.jade_block": "Bloque de Jade",
+  "block.incantation.jade_cluster": "Cúmulo de Jade",
+  "block.incantation.small_jade_cluster": "Pequeño Cúmulo de Jade",
+  "block.incantation.medium_jade_cluster": "Racimo de Jade Mediano",
+  "block.incantation.large_jade_cluster": "Grupo de jade grande",
+
+  "block.incantation.ammolite_ore": "Mena de ammolita",
+  "block.incantation.deepslate_ammolite_ore": "Mena de amolita de pizarra profunda",
+  "item.incantation.ammolite_gem": "Gema de ammolita"
 }

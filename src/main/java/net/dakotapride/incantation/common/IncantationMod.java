@@ -17,6 +17,7 @@ import net.dakotapride.incantation.common.item.unconcealed_scrolls.stronger.Unco
 import net.dakotapride.incantation.common.recipe.BewitchmentTableRecipe;
 import net.dakotapride.incantation.common.screen.BewitchmentTableScreenHandler;
 import net.dakotapride.incantation.common.util.IncantationTags;
+import net.dakotapride.incantation.common.util.world.IncantationPlacedFeatures;
 import net.dakotapride.incantation.compat.enhancedcelestials.EnhancedCelestialsCompat;
 import net.dakotapride.incantation.compat.moreweaponry.MoreWeaponryCompat;
 import net.dakotapride.incantation.compat.pickyourpoison.PickYourPoisonCompat;
@@ -32,6 +33,7 @@ import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.OreBlock;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
@@ -49,10 +51,7 @@ import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.feature.*;
-import net.minecraft.world.gen.placementmodifier.BiomePlacementModifier;
-import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
-import net.minecraft.world.gen.placementmodifier.RarityFilterPlacementModifier;
-import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
+import net.minecraft.world.gen.placementmodifier.*;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -133,6 +132,10 @@ public class IncantationMod implements ModInitializer {
 	public static JadeClusterBlock LARGE_JADE_BUD;
 	public static Item JADE_SHARD;
 
+	public static OreBlock AMMOLITE_ORE;
+	public static OreBlock DEEPSLATE_AMMOLITE_ORE;
+	public static Item AMMOLITE_GEM;
+
 	public static final ItemGroup INCANTATION_GROUP = FabricItemGroupBuilder.create(
 					new Identifier(INCANTATION_ID, "incantation"))
 			.icon(() -> new ItemStack(Items.SPLASH_POTION))
@@ -173,6 +176,10 @@ public class IncantationMod implements ModInitializer {
 				itemStacks.add(new ItemStack(LARGE_JADE_BUD));
 				itemStacks.add(new ItemStack(JADE_SHARD));
 
+				itemStacks.add(new ItemStack(AMMOLITE_ORE));
+				itemStacks.add(new ItemStack(DEEPSLATE_AMMOLITE_ORE));
+				itemStacks.add(new ItemStack(AMMOLITE_GEM));
+
 				if (FabricLoader.getInstance().isModLoaded("pickyourpoison")) {
 					itemStacks.add(new ItemStack(PickYourPoisonCompat.REFLECTION_RESISTANCE_SCROLL));
 					itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_REFLECTION_RESISTANCE_SCROLL));
@@ -211,6 +218,21 @@ public class IncantationMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+
+		AMMOLITE_ORE = registerBlock("ammolite_ore",
+				new OreBlock(FabricBlockSettings.copy(Blocks.IRON_ORE)));
+		DEEPSLATE_AMMOLITE_ORE = registerBlock("deepslate_ammolite_ore",
+				new OreBlock(FabricBlockSettings.copy(Blocks.DEEPSLATE_IRON_ORE)));
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "ammolite_ore"), new BlockItem(AMMOLITE_ORE,
+				new FabricItemSettings().group(INCANTATION_GROUP)));
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "deepslate_ammolite_ore"), new BlockItem(DEEPSLATE_AMMOLITE_ORE,
+				new FabricItemSettings().group(INCANTATION_GROUP)));
+
+		AMMOLITE_GEM = registerItem("ammolite_gem",
+				new Item(new FabricItemSettings().group(INCANTATION_GROUP)));
+
+		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(),
+				GenerationStep.Feature.UNDERGROUND_ORES, Objects.requireNonNull(IncantationPlacedFeatures.AMMOLITE_ORE_PLACED.getKey().orElse(null)));
 
 		BUDDING_GREEN_JADE = registerBlock("budding_green_jade",
 				new BuddingGreenJadeBlock(FabricBlockSettings.copy(Blocks.BUDDING_AMETHYST)));
