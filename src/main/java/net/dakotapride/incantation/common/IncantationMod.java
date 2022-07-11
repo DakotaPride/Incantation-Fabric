@@ -215,9 +215,23 @@ public class IncantationMod implements ModInitializer {
 	public static RegistryEntry<ConfiguredFeature<GeodeFeatureConfig, ?>> JADE_GEODE;
 	public static RegistryEntry<PlacedFeature> JADE_GEODE_PLACED;
 
+	public static CastingJadeItem CASTING_JADE;
+	public static CastingGreenJadeItem CASTING_GREEN_JADE;
+	public static CastingAmethystItem CASTING_AMETHYST;
+	public static Item AMMOLITE_LENS;
+
 
 	@Override
 	public void onInitialize() {
+
+		CASTING_JADE = registerItem("casting_jade",
+				new CastingJadeItem(new FabricItemSettings().group(INCANTATION_GROUP)));
+		CASTING_GREEN_JADE = registerItem("casting_green_jade",
+				new CastingGreenJadeItem(new FabricItemSettings().group(INCANTATION_GROUP)));
+		CASTING_AMETHYST = registerItem("casting_amethyst",
+				new CastingAmethystItem(new FabricItemSettings().group(INCANTATION_GROUP)));
+		AMMOLITE_LENS = registerItem("ammolite_lens",
+				new Item(new FabricItemSettings().group(INCANTATION_GROUP)));
 
 		AMMOLITE_ORE = registerBlock("ammolite_ore",
 				new OreBlock(FabricBlockSettings.copy(Blocks.IRON_ORE)));
