@@ -27,6 +27,7 @@ import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
@@ -40,6 +41,12 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.condition.RandomChanceLootCondition;
+import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
+import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.Potions;
 import net.minecraft.screen.ScreenHandlerType;
@@ -134,7 +141,13 @@ public class IncantationMod implements ModInitializer {
 
 	public static OreBlock AMMOLITE_ORE;
 	public static OreBlock DEEPSLATE_AMMOLITE_ORE;
+	public static Item RAW_AMMOLITE;
 	public static Item AMMOLITE_GEM;
+
+	public static OreBlock ALEXANDRITE_ORE;
+	public static OreBlock DEEPSLATE_ALEXANDRITE_ORE;
+	public static Item RAW_ALEXANDRITE;
+	public static Item ALEXANDRITE_GEM;
 
 	public static CastingJadeItem CASTING_JADE;
 	public static CastingGreenJadeItem CASTING_GREEN_JADE;
@@ -162,18 +175,23 @@ public class IncantationMod implements ModInitializer {
 				itemStacks.add(new ItemStack(SMALL_JADE_BUD));
 				itemStacks.add(new ItemStack(MEDIUM_JADE_BUD));
 				itemStacks.add(new ItemStack(LARGE_JADE_BUD));
+				itemStacks.add(new ItemStack(ALEXANDRITE_ORE));
+				itemStacks.add(new ItemStack(DEEPSLATE_ALEXANDRITE_ORE));
 				itemStacks.add(new ItemStack(PLAINS_CHERRIES));
 				itemStacks.add(new ItemStack(FROSTED_PLAINS_CHERRIES));
 				itemStacks.add(new ItemStack(SILVER_NUGGET_APPLE));
 				itemStacks.add(new ItemStack(ENCHANTED_BERRIES));
 				itemStacks.add(new ItemStack(ENCHANTED_BERRY_JAM));
 				itemStacks.add(new ItemStack(MYSTIC_LEATHER));
+				itemStacks.add(new ItemStack(RAW_AMMOLITE));
 				itemStacks.add(new ItemStack(AMMOLITE_GEM));
 				itemStacks.add(new ItemStack(AMMOLITE_LENS));
 				itemStacks.add(new ItemStack(IRON_CAST_MOLD));
 				itemStacks.add(new ItemStack(EMPTY_IRON_CASTING));
 				itemStacks.add(new ItemStack(GREEN_JADE_SHARD));
 				itemStacks.add(new ItemStack(JADE_SHARD));
+				itemStacks.add(new ItemStack(RAW_ALEXANDRITE));
+				itemStacks.add(new ItemStack(ALEXANDRITE_GEM));
 				itemStacks.add(new ItemStack(FLESHY_PUNISHMENT_SCROLL));
 				itemStacks.add(new ItemStack(UNCONCEALED_FLESHY_PUNISHMENT_SCROLL));
 				itemStacks.add(new ItemStack(UNCONCEALED_LONG_FLESHY_PUNISHMENT_SCROLL));
@@ -218,9 +236,37 @@ public class IncantationMod implements ModInitializer {
 	public static RegistryEntry<ConfiguredFeature<GeodeFeatureConfig, ?>> JADE_GEODE;
 	public static RegistryEntry<PlacedFeature> JADE_GEODE_PLACED;
 
+    private static final Identifier BIRCH_LEAVES_BLOCK_ID
+            = new Identifier("minecraft", "blocks/birch_leaves");
 
 	@Override
 	public void onInitialize() {
+
+        LootTableEvents.MODIFY.register(((resourceManager, manager, id, supplier, setter) -> {
+            if (BIRCH_LEAVES_BLOCK_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.30f))
+                        .with(ItemEntry.builder(ENCHANTED_BERRIES))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0f, 2.0f)).build());
+                supplier.pool(poolBuilder.build());
+            }
+
+        }));
+
+		ALEXANDRITE_ORE = registerBlock("alexandrite_ore",
+				new OreBlock(FabricBlockSettings.copy(Blocks.DIAMOND_ORE)));
+		DEEPSLATE_ALEXANDRITE_ORE = registerBlock("deepslate_alexandrite_ore",
+				new OreBlock(FabricBlockSettings.copy(Blocks.DEEPSLATE_DIAMOND_ORE)));
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "alexandrite_ore"), new BlockItem(ALEXANDRITE_ORE,
+				new FabricItemSettings().group(INCANTATION_GROUP)));
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "deepslate_alexandrite_ore"), new BlockItem(DEEPSLATE_ALEXANDRITE_ORE,
+				new FabricItemSettings().group(INCANTATION_GROUP)));
+
+		RAW_ALEXANDRITE = registerItem("raw_alexandrite",
+				new Item(new FabricItemSettings().group(INCANTATION_GROUP)));
+		ALEXANDRITE_GEM = registerItem("alexandrite_gem",
+				new Item(new FabricItemSettings().group(INCANTATION_GROUP)));
 
 		CASTING_JADE = registerItem("casting_jade",
 				new CastingJadeItem(new FabricItemSettings().group(INCANTATION_GROUP)));
@@ -244,6 +290,8 @@ public class IncantationMod implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "deepslate_ammolite_ore"), new BlockItem(DEEPSLATE_AMMOLITE_ORE,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
 
+		RAW_AMMOLITE = registerItem("raw_ammolite",
+				new Item(new FabricItemSettings().group(INCANTATION_GROUP)));
 		AMMOLITE_GEM = registerItem("ammolite_gem",
 				new Item(new FabricItemSettings().group(INCANTATION_GROUP)));
 
@@ -426,7 +474,7 @@ public class IncantationMod implements ModInitializer {
 				BewitchmentTableRecipe.Type.INSTANCE);
 
 		BEWITCHMENT_TABLE = registerBlock("bewitchment_table",
-				new BewitchmentTableBlock(FabricBlockSettings.copy(Blocks.CAULDRON)));
+				new BewitchmentTableBlock(FabricBlockSettings.copy(Blocks.LECTERN)));
 		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "bewitchment_table"), new BlockItem(BEWITCHMENT_TABLE,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
 

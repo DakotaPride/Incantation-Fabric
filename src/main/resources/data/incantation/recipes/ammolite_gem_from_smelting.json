@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "incantation:raw_ammolite"
+  },
+  "result": "incantation:ammolite_gem"
+}

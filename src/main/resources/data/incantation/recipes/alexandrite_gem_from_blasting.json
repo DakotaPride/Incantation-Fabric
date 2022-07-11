@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "incantation:raw_alexandrite"
+  },
+  "result": "incantation:alexandrite_gem"
+}
