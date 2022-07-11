@@ -76,8 +76,10 @@
   "block.incantation.ammolite_ore": "Ammolite Ore",
   "block.incantation.deepslate_ammolite_ore": "Deepslate Ammolite Ore",
   "item.incantation.ammolite_gem": "Ammolite Gem",
-  "item.incantation.casting_jade": "Casting Jade",
-  "item.incantation.casting_green_jade": "Casting Green Jade",
-  "item.incantation.casting_amethyst": "Casting Amethyst",
-  "item.incantation.ammolite_lens": "Ammolite Lens"
+  "item.incantation.casting_jade": "Jade Casting",
+  "item.incantation.casting_green_jade": "Green Jade Casting",
+  "item.incantation.casting_amethyst": "Amethyst Casting",
+  "item.incantation.ammolite_lens": "Ammolite Lens",
+  "item.incantation.iron_casting_mold": "Iron Casting Mold",
+  "item.incantation.empty_iron_casting": "Empty Iron Casting"
 }

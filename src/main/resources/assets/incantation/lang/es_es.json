@@ -75,5 +75,11 @@
 
   "block.incantation.ammolite_ore": "Mena de ammolita",
   "block.incantation.deepslate_ammolite_ore": "Mena de amolita de pizarra profunda",
-  "item.incantation.ammolite_gem": "Gema de ammolita"
+  "item.incantation.ammolite_gem": "Gema de ammolita",
+  "item.incantation.casting_jade": "Lanzamiento de jade",
+  "item.incantation.casting_green_jade": "Lanzamiento de jade verde",
+  "item.incantation.casting_amethyst": "Fundición de amatista",
+  "item.incantation.ammolite_lens": "Lente de ammolita",
+  "item.incantation.iron_casting_mold": "Molde de fundición de hierro",
+  "item.incantation.empty_iron_casting": "Fundición de hierro vacía"
 }

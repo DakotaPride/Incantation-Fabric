@@ -75,5 +75,11 @@
 
   "block.incantation.ammolite_ore": "Minerai d'ammolite",
   "block.incantation.deepslate_ammolite_ore": "Minerai d'ammolite Deepslate",
-  "item.incantation.ammolite_gem": "Gemme d'ammolite"
+  "item.incantation.ammolite_gem": "Gemme d'ammolite",
+  "item.incantation.casting_jade": "Coupe de jade",
+  "item.incantation.casting_green_jade": "Moulage de jade vert",
+  "item.incantation.casting_amethyst": "Coupe d'améthyste",
+  "item.incantation.ammolite_lens": "Lentille d'ammolite",
+  "item.incantation.iron_casting_mold": "Moule de fonte",
+  "item.incantation.empty_iron_casting": "Pièce moulée en fer vide"
 }

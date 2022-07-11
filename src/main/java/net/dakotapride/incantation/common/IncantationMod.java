@@ -136,18 +136,44 @@ public class IncantationMod implements ModInitializer {
 	public static OreBlock DEEPSLATE_AMMOLITE_ORE;
 	public static Item AMMOLITE_GEM;
 
+	public static CastingJadeItem CASTING_JADE;
+	public static CastingGreenJadeItem CASTING_GREEN_JADE;
+	public static CastingAmethystItem CASTING_AMETHYST;
+	public static Item AMMOLITE_LENS;
+	public static Item IRON_CAST_MOLD;
+	public static Item EMPTY_IRON_CASTING;
+
 	public static final ItemGroup INCANTATION_GROUP = FabricItemGroupBuilder.create(
 					new Identifier(INCANTATION_ID, "incantation"))
 			.icon(() -> new ItemStack(Items.SPLASH_POTION))
 			.appendItems(itemStacks -> {
+				itemStacks.add(new ItemStack(AMMOLITE_ORE));
+				itemStacks.add(new ItemStack(DEEPSLATE_AMMOLITE_ORE));
 				itemStacks.add(new ItemStack(BEWITCHMENT_TABLE));
+				itemStacks.add(new ItemStack(BUDDING_GREEN_JADE));
+				itemStacks.add(new ItemStack(GREEN_JADE_BLOCK));
+				itemStacks.add(new ItemStack(GREEN_JADE_CLUSTER));
+				itemStacks.add(new ItemStack(SMALL_GREEN_JADE_BUD));
+				itemStacks.add(new ItemStack(MEDIUM_GREEN_JADE_BUD));
+				itemStacks.add(new ItemStack(LARGE_GREEN_JADE_BUD));
+				itemStacks.add(new ItemStack(BUDDING_JADE));
+				itemStacks.add(new ItemStack(JADE_BLOCK));
+				itemStacks.add(new ItemStack(JADE_CLUSTER));
+				itemStacks.add(new ItemStack(SMALL_JADE_BUD));
+				itemStacks.add(new ItemStack(MEDIUM_JADE_BUD));
+				itemStacks.add(new ItemStack(LARGE_JADE_BUD));
 				itemStacks.add(new ItemStack(PLAINS_CHERRIES));
 				itemStacks.add(new ItemStack(FROSTED_PLAINS_CHERRIES));
 				itemStacks.add(new ItemStack(SILVER_NUGGET_APPLE));
 				itemStacks.add(new ItemStack(ENCHANTED_BERRIES));
 				itemStacks.add(new ItemStack(ENCHANTED_BERRY_JAM));
 				itemStacks.add(new ItemStack(MYSTIC_LEATHER));
-
+				itemStacks.add(new ItemStack(AMMOLITE_GEM));
+				itemStacks.add(new ItemStack(AMMOLITE_LENS));
+				itemStacks.add(new ItemStack(IRON_CAST_MOLD));
+				itemStacks.add(new ItemStack(EMPTY_IRON_CASTING));
+				itemStacks.add(new ItemStack(GREEN_JADE_SHARD));
+				itemStacks.add(new ItemStack(JADE_SHARD));
 				itemStacks.add(new ItemStack(FLESHY_PUNISHMENT_SCROLL));
 				itemStacks.add(new ItemStack(UNCONCEALED_FLESHY_PUNISHMENT_SCROLL));
 				itemStacks.add(new ItemStack(UNCONCEALED_LONG_FLESHY_PUNISHMENT_SCROLL));
@@ -160,26 +186,6 @@ public class IncantationMod implements ModInitializer {
 				itemStacks.add(new ItemStack(UNCONCEALED_LONG_FREEZING_RESISTANCE_SCROLL));
 				itemStacks.add(new ItemStack(UNCONCEALED_STRONG_FREEZING_RESISTANCE_SCROLL));
 				itemStacks.add(new ItemStack(UNCONCEALED_FROSTED_FREEZING_RESISTANCE_SCROLL));
-
-				itemStacks.add(new ItemStack(BUDDING_GREEN_JADE));
-				itemStacks.add(new ItemStack(GREEN_JADE_BLOCK));
-				itemStacks.add(new ItemStack(GREEN_JADE_CLUSTER));
-				itemStacks.add(new ItemStack(SMALL_GREEN_JADE_BUD));
-				itemStacks.add(new ItemStack(MEDIUM_GREEN_JADE_BUD));
-				itemStacks.add(new ItemStack(LARGE_GREEN_JADE_BUD));
-				itemStacks.add(new ItemStack(GREEN_JADE_SHARD));
-				itemStacks.add(new ItemStack(BUDDING_JADE));
-				itemStacks.add(new ItemStack(JADE_BLOCK));
-				itemStacks.add(new ItemStack(JADE_CLUSTER));
-				itemStacks.add(new ItemStack(SMALL_JADE_BUD));
-				itemStacks.add(new ItemStack(MEDIUM_JADE_BUD));
-				itemStacks.add(new ItemStack(LARGE_JADE_BUD));
-				itemStacks.add(new ItemStack(JADE_SHARD));
-
-				itemStacks.add(new ItemStack(AMMOLITE_ORE));
-				itemStacks.add(new ItemStack(DEEPSLATE_AMMOLITE_ORE));
-				itemStacks.add(new ItemStack(AMMOLITE_GEM));
-
 				if (FabricLoader.getInstance().isModLoaded("pickyourpoison")) {
 					itemStacks.add(new ItemStack(PickYourPoisonCompat.REFLECTION_RESISTANCE_SCROLL));
 					itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_REFLECTION_RESISTANCE_SCROLL));
@@ -187,7 +193,6 @@ public class IncantationMod implements ModInitializer {
 					itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_STRONG_REFLECTION_RESISTANCE_SCROLL));
 					itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_FROSTED_REFLECTION_RESISTANCE_SCROLL));
 				}
-
 				if (FabricLoader.getInstance().isModLoaded("moreweaponry")) {
 					itemStacks.add(new ItemStack(MoreWeaponryCompat.HARMING_RESISTANCE_SCROLL));
 					itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_HARMING_RESISTANCE_SCROLL));
@@ -195,14 +200,12 @@ public class IncantationMod implements ModInitializer {
 					itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_STRONG_HARMING_RESISTANCE_SCROLL));
 					itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_FROSTED_HARMING_RESISTANCE_SCROLL));
 				}
-
 				if (FabricLoader.getInstance().isModLoaded("enhancedcelestials")) {
 					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.HARVEST_HEALING_SCROLL));
 					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_HARVEST_HEALING_SCROLL));
 					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_LONG_HARVEST_HEALING_SCROLL));
 					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_STRONG_HARVEST_HEALING_SCROLL));
 					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_FROSTED_HARVEST_HEALING_SCROLL));
-
 					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.MOON_CREST_FRUIT));
 					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.MENDING_MOON_CREST_FRUIT));
 				}
@@ -215,11 +218,6 @@ public class IncantationMod implements ModInitializer {
 	public static RegistryEntry<ConfiguredFeature<GeodeFeatureConfig, ?>> JADE_GEODE;
 	public static RegistryEntry<PlacedFeature> JADE_GEODE_PLACED;
 
-	public static CastingJadeItem CASTING_JADE;
-	public static CastingGreenJadeItem CASTING_GREEN_JADE;
-	public static CastingAmethystItem CASTING_AMETHYST;
-	public static Item AMMOLITE_LENS;
-
 
 	@Override
 	public void onInitialize() {
@@ -231,6 +229,10 @@ public class IncantationMod implements ModInitializer {
 		CASTING_AMETHYST = registerItem("casting_amethyst",
 				new CastingAmethystItem(new FabricItemSettings().group(INCANTATION_GROUP)));
 		AMMOLITE_LENS = registerItem("ammolite_lens",
+				new Item(new FabricItemSettings().group(INCANTATION_GROUP)));
+		IRON_CAST_MOLD = registerItem("iron_casting_mold",
+				new Item(new FabricItemSettings().group(INCANTATION_GROUP)));
+		EMPTY_IRON_CASTING = registerItem("empty_iron_casting",
 				new Item(new FabricItemSettings().group(INCANTATION_GROUP)));
 
 		AMMOLITE_ORE = registerBlock("ammolite_ore",
