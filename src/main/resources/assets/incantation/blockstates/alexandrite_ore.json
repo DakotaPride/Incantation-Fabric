@@ -3,12 +3,6 @@
     "": [
       {
         "model": "incantation:block/alexandrite_ore"
-      },
-      {
-        "model": "incantation:block/alexandrite_ore_1"
-      },
-      {
-        "model": "incantation:block/alexandrite_ore_2"
       }
     ]
   }
