@@ -34,9 +34,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityT
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.yarn.constants.MiningLevels;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.OreBlock;
+import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -55,6 +53,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.Potions;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.screen.ScreenHandlerType;
+import net.minecraft.state.property.Properties;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Lazy;
@@ -72,50 +71,76 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Supplier;
+import java.util.function.ToIntFunction;
 
 public class IncantationMod implements ModInitializer {
 	public static final String INCANTATION_ID = ("incantation");
 	public static final Logger LOGGER = LoggerFactory.getLogger("incantation");
 
+
 	public static StatusEffect MILKY_RESISTANCE = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0xF9F7F7);
 	public static MilkyResistanceScrollItem MILKY_RESISTANCE_SCROLL;
-
 	public static StatusEffect FREEZING_RESISTANCE = new EmptyStatusEffect(StatusEffectCategory.BENEFICIAL, 0xCEFFF2);
 	public static FreezingResistanceScrollItem FREEZING_RESISTANCE_SCROLL;
-
 	public static StatusEffect FLESHY_PUNISHMENT = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0xC89661);
 	public static FleshyPunishmentScrollItem FLESHY_PUNISHMENT_SCROLL;
-
 	public static StatusEffect ENCHANTED_BERRY_STRENGTH = new EmptyDamageModifierStatusEffect(StatusEffectCategory.NEUTRAL, 0x4F3F54, 6.0D)
 			.addAttributeModifier(EntityAttributes.GENERIC_ATTACK_DAMAGE, "648D7064-6A60-4F59-8ABE-C2C23A6DD7A9", 0.0D,EntityAttributeModifier.Operation.ADDITION);
-
 	public static ScreenHandlerType<BewitchmentTableScreenHandler> BEWITCHMENT_TABLE_SCREEN_HANDLER;
 	public static BewitchmentTableBlock BEWITCHMENT_TABLE;
 	public static BlockEntityType<BewitchmentTableEntity> BEWITCHMENT_TABLE_BLOCK_ENTITY;
-
 	public static Potion MILKY_RESISTANCE_POTION;
 	public static Potion FREEZING_RESISTANCE_POTION;
 	public static Potion FLESHY_PUNISHMENT_POTION;
-
-
 	public static Item PLAINS_CHERRIES;
 	public static Item FROSTED_PLAINS_CHERRIES;
 	public static Item SILVER_NUGGET_APPLE;
 	public static Item MYSTIC_LEATHER;
 	public static EnchantedBerryItem ENCHANTED_BERRIES;
 	public static EnchantedBerryJamItem ENCHANTED_BERRY_JAM;
-
 	public static UnconcealedMilkyResistanceScroll UNCONCEALED_MILKY_RESISTANCE_SCROLL;
-
 	public static UnconcealedFreezingResistanceScroll UNCONCEALED_FREEZING_RESISTANCE_SCROLL;
 	public static UnconcealedExtendedFreezingResistanceScroll UNCONCEALED_LONG_FREEZING_RESISTANCE_SCROLL;
 	public static UnconcealedStrongerFreezingResistanceScroll UNCONCEALED_STRONG_FREEZING_RESISTANCE_SCROLL;
 	public static UnconcealedFrostedFreezingResistanceScroll UNCONCEALED_FROSTED_FREEZING_RESISTANCE_SCROLL;
-
 	public static UnconcealedFleshyPunishmentScroll UNCONCEALED_FLESHY_PUNISHMENT_SCROLL;
 	public static UnconcealedExtendedFleshyPunishmentScroll UNCONCEALED_LONG_FLESHY_PUNISHMENT_SCROLL;
 	public static UnconcealedStrongerFleshyPunishmentScroll UNCONCEALED_STRONG_FLESHY_PUNISHMENT_SCROLL;
 	public static UnconcealedFrostedFleshyPunishmentScroll UNCONCEALED_FROSTED_FLESHY_PUNISHMENT_SCROLL;
+	public static BuddingGreenJadeBlock BUDDING_GREEN_JADE;
+	public static GreenJadeBlock GREEN_JADE_BLOCK;
+	public static GreenJadeClusterBlock GREEN_JADE_CLUSTER;
+	public static GreenJadeClusterBlock SMALL_GREEN_JADE_BUD;
+	public static GreenJadeClusterBlock MEDIUM_GREEN_JADE_BUD;
+	public static GreenJadeClusterBlock LARGE_GREEN_JADE_BUD;
+	public static Item GREEN_JADE_SHARD;
+	public static BuddingJadeBlock BUDDING_JADE;
+	public static JadeBlock JADE_BLOCK;
+	public static JadeClusterBlock JADE_CLUSTER;
+	public static JadeClusterBlock SMALL_JADE_BUD;
+	public static JadeClusterBlock MEDIUM_JADE_BUD;
+	public static JadeClusterBlock LARGE_JADE_BUD;
+	public static Item JADE_SHARD;
+	public static OreBlock AMMOLITE_ORE;
+	public static OreBlock DEEPSLATE_AMMOLITE_ORE;
+	public static Item RAW_AMMOLITE;
+	public static Item AMMOLITE_GEM;
+	public static OreBlock ALEXANDRITE_ORE;
+	public static OreBlock DEEPSLATE_ALEXANDRITE_ORE;
+	public static Item RAW_ALEXANDRITE;
+	public static Item ALEXANDRITE_GEM;
+	public static CastingJadeItem CASTING_JADE;
+	public static CastingGreenJadeItem CASTING_GREEN_JADE;
+	public static CastingAmethystItem CASTING_AMETHYST;
+	public static Item AMMOLITE_LENS;
+	public static Item IRON_CAST_MOLD;
+	public static Item EMPTY_IRON_CASTING;
+	public static Item FABRIC_PATCH;
+	public static Block QUILTED_FABRIC_BLOCK;
+	public static Item IRON_CAST_SHARD;
+	public static RedstoneLampBlock JADE_CRYSTAL_LAMP;
+	public static RedstoneLampBlock GREEN_JADE_CRYSTAL_LAMP;
+	public static RedstoneLampBlock AMETHYST_CRYSTAL_LAMP;
 
 	// Registration
 	public static <T extends Block> T registerBlock(String name, T block) {
@@ -132,43 +157,6 @@ public class IncantationMod implements ModInitializer {
 		Registry.register(Registry.POTION, new Identifier(INCANTATION_ID, name), potion);
 		return potion;
 	}
-
-	public static BuddingGreenJadeBlock BUDDING_GREEN_JADE;
-	public static GreenJadeBlock GREEN_JADE_BLOCK;
-	public static GreenJadeClusterBlock GREEN_JADE_CLUSTER;
-	public static GreenJadeClusterBlock SMALL_GREEN_JADE_BUD;
-	public static GreenJadeClusterBlock MEDIUM_GREEN_JADE_BUD;
-	public static GreenJadeClusterBlock LARGE_GREEN_JADE_BUD;
-	public static Item GREEN_JADE_SHARD;
-
-	public static BuddingJadeBlock BUDDING_JADE;
-	public static JadeBlock JADE_BLOCK;
-	public static JadeClusterBlock JADE_CLUSTER;
-	public static JadeClusterBlock SMALL_JADE_BUD;
-	public static JadeClusterBlock MEDIUM_JADE_BUD;
-	public static JadeClusterBlock LARGE_JADE_BUD;
-	public static Item JADE_SHARD;
-
-	public static OreBlock AMMOLITE_ORE;
-	public static OreBlock DEEPSLATE_AMMOLITE_ORE;
-	public static Item RAW_AMMOLITE;
-	public static Item AMMOLITE_GEM;
-
-	public static OreBlock ALEXANDRITE_ORE;
-	public static OreBlock DEEPSLATE_ALEXANDRITE_ORE;
-	public static Item RAW_ALEXANDRITE;
-	public static Item ALEXANDRITE_GEM;
-
-	public static CastingJadeItem CASTING_JADE;
-	public static CastingGreenJadeItem CASTING_GREEN_JADE;
-	public static CastingAmethystItem CASTING_AMETHYST;
-	public static Item AMMOLITE_LENS;
-	public static Item IRON_CAST_MOLD;
-	public static Item EMPTY_IRON_CASTING;
-
-	public static Item FABRIC_PATCH;
-	public static Block QUILTED_FABRIC_BLOCK;
-	public static Item IRON_CAST_SHARD;
 
 	public enum IncantationMaterials implements ToolMaterial {
 		FABRIC_PATCHING(MiningLevels.HAND, 60, 1f,
@@ -234,18 +222,21 @@ public class IncantationMod implements ModInitializer {
 			.icon(() -> new ItemStack(Items.SPLASH_POTION))
 			.appendItems(itemStacks -> {
 				itemStacks.add(new ItemStack(BEWITCHMENT_TABLE));
+				itemStacks.add(new ItemStack(GREEN_JADE_CRYSTAL_LAMP));
 				itemStacks.add(new ItemStack(BUDDING_GREEN_JADE));
 				itemStacks.add(new ItemStack(GREEN_JADE_BLOCK));
 				itemStacks.add(new ItemStack(GREEN_JADE_CLUSTER));
 				itemStacks.add(new ItemStack(SMALL_GREEN_JADE_BUD));
 				itemStacks.add(new ItemStack(MEDIUM_GREEN_JADE_BUD));
 				itemStacks.add(new ItemStack(LARGE_GREEN_JADE_BUD));
+				itemStacks.add(new ItemStack(JADE_CRYSTAL_LAMP));
 				itemStacks.add(new ItemStack(BUDDING_JADE));
 				itemStacks.add(new ItemStack(JADE_BLOCK));
 				itemStacks.add(new ItemStack(JADE_CLUSTER));
 				itemStacks.add(new ItemStack(SMALL_JADE_BUD));
 				itemStacks.add(new ItemStack(MEDIUM_JADE_BUD));
 				itemStacks.add(new ItemStack(LARGE_JADE_BUD));
+				itemStacks.add(new ItemStack(AMETHYST_CRYSTAL_LAMP));
 				itemStacks.add(new ItemStack(AMMOLITE_ORE));
 				itemStacks.add(new ItemStack(DEEPSLATE_AMMOLITE_ORE));
 				itemStacks.add(new ItemStack(ALEXANDRITE_ORE));
@@ -327,6 +318,22 @@ public class IncantationMod implements ModInitializer {
             }
 
         }));
+
+		JADE_CRYSTAL_LAMP = registerBlock("jade_crystal_lamp",
+				new RedstoneLampBlock(FabricBlockSettings.copy(Blocks.REDSTONE_LAMP)
+						.luminance((state) -> state.get(RedstoneLampBlock.LIT) ? 13 : 0)));
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "jade_crystal_lamp"), new BlockItem(JADE_CRYSTAL_LAMP,
+				new FabricItemSettings().group(INCANTATION_GROUP)));
+		GREEN_JADE_CRYSTAL_LAMP = registerBlock("green_jade_crystal_lamp",
+				new RedstoneLampBlock(FabricBlockSettings.copy(Blocks.REDSTONE_LAMP)
+						.luminance((state) -> state.get(RedstoneLampBlock.LIT) ? 13 : 0)));
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "green_jade_crystal_lamp"), new BlockItem(GREEN_JADE_CRYSTAL_LAMP,
+				new FabricItemSettings().group(INCANTATION_GROUP)));
+		AMETHYST_CRYSTAL_LAMP = registerBlock("amethyst_crystal_lamp",
+				new RedstoneLampBlock(FabricBlockSettings.copy(Blocks.REDSTONE_LAMP)
+						.luminance((state) -> state.get(RedstoneLampBlock.LIT) ? 15 : 0)));
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "amethyst_crystal_lamp"), new BlockItem(AMETHYST_CRYSTAL_LAMP,
+				new FabricItemSettings().group(INCANTATION_GROUP)));
 
 		ALEXANDRITE_ORE = registerBlock("alexandrite_ore",
 				new OreBlock(FabricBlockSettings.copy(Blocks.DIAMOND_ORE)));

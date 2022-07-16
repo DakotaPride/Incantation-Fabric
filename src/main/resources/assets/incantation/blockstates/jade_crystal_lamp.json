@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "incantation:block/jade_crystal_lamp"
+    },
+    "lit=true": {
+      "model": "incantation:block/jade_crystal_lamp_on"
+    }
+  }
+}

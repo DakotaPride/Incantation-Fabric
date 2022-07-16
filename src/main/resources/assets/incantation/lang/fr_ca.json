@@ -84,5 +84,8 @@
   "effect.incantation.enchanted_berry_strength": "Force bloquée",
   "item.incantation.fabric_patching": "Correction de tissu",
   "block.incantation.quilted_fabric_block": "Bloc de tissu matelassé",
-  "item.incantation.iron_casting_shard": "Éclat de fonte de fer"
+  "item.incantation.iron_casting_shard": "Éclat de fonte de fer",
+  "block.incantation.jade_crystal_lamp": "Lampe en cristal de jade",
+  "block.incantation.green_jade_crystal_lamp": "Lampe en cristal de jade vert",
+  "block.incantation.amethyst_crystal_lamp": "Lampe en cristal d'améthyste"
 }

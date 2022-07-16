@@ -84,5 +84,8 @@
   "effect.incantation.enchanted_berry_strength": "Fuerza atascada",
   "item.incantation.fabric_patching": "Parches de tela",
   "block.incantation.quilted_fabric_block": "Bloque de tela acolchada",
-  "item.incantation.iron_casting_shard": "Fragmento de fundición de hierro"
+  "item.incantation.iron_casting_shard": "Fragmento de fundición de hierro",
+  "block.incantation.jade_crystal_lamp": "Lámpara de cristal de jade",
+  "block.incantation.green_jade_crystal_lamp": "Lámpara de cristal de jade verde",
+  "block.incantation.amethyst_crystal_lamp": "Lámpara de cristal de amatista"
 }

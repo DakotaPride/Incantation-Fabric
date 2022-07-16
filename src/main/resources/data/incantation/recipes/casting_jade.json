@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+
+  "ingredients": [
+    {
+      "item": "incantation:empty_iron_casting"
+    },
+    {
+      "item": "incantation:jade_shard"
+    }
+  ],
+  "result": {
+    "item": "incantation:casting_jade",
+    "count": 1
+  }
+}
