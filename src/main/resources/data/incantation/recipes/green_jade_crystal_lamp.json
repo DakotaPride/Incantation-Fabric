@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "G": {
+      "item": "minecraft:redstone_lamp"
+    },
+    "R": {
+      "item": "incantation:green_jade_shard"
+    }
+  },
+  "pattern": [
+    "RRR",
+    "RGR",
+    "RRR"
+  ],
+  "result": {
+    "item": "incantation:green_jade_crystal_lamp",
+    "count": 4
+  }
+}
