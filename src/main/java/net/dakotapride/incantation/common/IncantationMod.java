@@ -3,6 +3,7 @@ package net.dakotapride.incantation.common;
 import net.dakotapride.incantation.common.block.*;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableBlock;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableEntity;
+import net.dakotapride.incantation.common.effect.EmptyDamageModifierStatusEffect;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
 import net.dakotapride.incantation.common.item.*;
 import net.dakotapride.incantation.common.item.unconcealed_scrolls.base.UnconcealedFleshyPunishmentScroll;
@@ -32,10 +33,13 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.yarn.constants.MiningLevels;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.OreBlock;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -49,9 +53,11 @@ import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.Potions;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Lazy;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryEntry;
@@ -65,6 +71,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Supplier;
 
 public class IncantationMod implements ModInitializer {
 	public static final String INCANTATION_ID = ("incantation");
@@ -78,6 +85,9 @@ public class IncantationMod implements ModInitializer {
 
 	public static StatusEffect FLESHY_PUNISHMENT = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0xC89661);
 	public static FleshyPunishmentScrollItem FLESHY_PUNISHMENT_SCROLL;
+
+	public static StatusEffect ENCHANTED_BERRY_STRENGTH = new EmptyDamageModifierStatusEffect(StatusEffectCategory.NEUTRAL, 0x4F3F54, 6.0D)
+			.addAttributeModifier(EntityAttributes.GENERIC_ATTACK_DAMAGE, "648D7064-6A60-4F59-8ABE-C2C23A6DD7A9", 0.0D,EntityAttributeModifier.Operation.ADDITION);
 
 	public static ScreenHandlerType<BewitchmentTableScreenHandler> BEWITCHMENT_TABLE_SCREEN_HANDLER;
 	public static BewitchmentTableBlock BEWITCHMENT_TABLE;
@@ -156,12 +166,73 @@ public class IncantationMod implements ModInitializer {
 	public static Item IRON_CAST_MOLD;
 	public static Item EMPTY_IRON_CASTING;
 
+	public static Item FABRIC_PATCH;
+	public static Block QUILTED_FABRIC_BLOCK;
+	public static Item IRON_CAST_SHARD;
+
+	public enum IncantationMaterials implements ToolMaterial {
+		FABRIC_PATCHING(MiningLevels.HAND, 60, 1f,
+				0f, 0,
+				() -> Ingredient.ofItems(FABRIC_PATCH)),
+		PACKED_FABRIC_PATCHING(MiningLevels.HAND, 80, 1f,
+				0f, 0,
+				() -> Ingredient.ofItems(QUILTED_FABRIC_BLOCK.asItem())),
+		IRON_CASTING(MiningLevels.HAND, 20, 1f,
+				0f, 0,
+				() -> Ingredient.ofItems(IRON_CAST_SHARD));
+
+
+		private final int miningLevel;
+		private final int itemDurability;
+		private final float miningSpeed;
+		private final float attackDamage;
+		private final int enchantability;
+		private final Lazy<Ingredient> repairIngredient;
+
+		IncantationMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
+			this.miningLevel = miningLevel;
+			this.itemDurability = itemDurability;
+			this.miningSpeed = miningSpeed;
+			this.attackDamage = attackDamage;
+			this.enchantability = enchantability;
+			this.repairIngredient = new Lazy<Ingredient>(repairIngredient);
+		}
+
+		@Override
+		public int getDurability() {
+			return this.itemDurability;
+		}
+
+		@Override
+		public float getMiningSpeedMultiplier() {
+			return this.miningSpeed;
+		}
+
+		@Override
+		public float getAttackDamage() {
+			return this.attackDamage;
+		}
+
+		@Override
+		public int getMiningLevel() {
+			return this.miningLevel;
+		}
+
+		@Override
+		public int getEnchantability() {
+			return this.enchantability;
+		}
+
+		@Override
+		public Ingredient getRepairIngredient() {
+			return this.repairIngredient.get();
+		}
+	}
+
 	public static final ItemGroup INCANTATION_GROUP = FabricItemGroupBuilder.create(
 					new Identifier(INCANTATION_ID, "incantation"))
 			.icon(() -> new ItemStack(Items.SPLASH_POTION))
 			.appendItems(itemStacks -> {
-				itemStacks.add(new ItemStack(AMMOLITE_ORE));
-				itemStacks.add(new ItemStack(DEEPSLATE_AMMOLITE_ORE));
 				itemStacks.add(new ItemStack(BEWITCHMENT_TABLE));
 				itemStacks.add(new ItemStack(BUDDING_GREEN_JADE));
 				itemStacks.add(new ItemStack(GREEN_JADE_BLOCK));
@@ -175,6 +246,8 @@ public class IncantationMod implements ModInitializer {
 				itemStacks.add(new ItemStack(SMALL_JADE_BUD));
 				itemStacks.add(new ItemStack(MEDIUM_JADE_BUD));
 				itemStacks.add(new ItemStack(LARGE_JADE_BUD));
+				itemStacks.add(new ItemStack(AMMOLITE_ORE));
+				itemStacks.add(new ItemStack(DEEPSLATE_AMMOLITE_ORE));
 				itemStacks.add(new ItemStack(ALEXANDRITE_ORE));
 				itemStacks.add(new ItemStack(DEEPSLATE_ALEXANDRITE_ORE));
 				itemStacks.add(new ItemStack(PLAINS_CHERRIES));
@@ -183,6 +256,7 @@ public class IncantationMod implements ModInitializer {
 				itemStacks.add(new ItemStack(ENCHANTED_BERRIES));
 				itemStacks.add(new ItemStack(ENCHANTED_BERRY_JAM));
 				itemStacks.add(new ItemStack(MYSTIC_LEATHER));
+				itemStacks.add(new ItemStack(FABRIC_PATCH));
 				itemStacks.add(new ItemStack(RAW_AMMOLITE));
 				itemStacks.add(new ItemStack(AMMOLITE_GEM));
 				itemStacks.add(new ItemStack(AMMOLITE_LENS));
@@ -269,11 +343,14 @@ public class IncantationMod implements ModInitializer {
 				new Item(new FabricItemSettings().group(INCANTATION_GROUP)));
 
 		CASTING_JADE = registerItem("casting_jade",
-				new CastingJadeItem(new FabricItemSettings().group(INCANTATION_GROUP)));
+				new CastingJadeItem(IncantationMaterials.IRON_CASTING,
+						new FabricItemSettings().maxDamage(150).group(INCANTATION_GROUP)));
 		CASTING_GREEN_JADE = registerItem("casting_green_jade",
-				new CastingGreenJadeItem(new FabricItemSettings().group(INCANTATION_GROUP)));
+				new CastingGreenJadeItem(IncantationMaterials.IRON_CASTING,
+						new FabricItemSettings().maxDamage(150).group(INCANTATION_GROUP)));
 		CASTING_AMETHYST = registerItem("casting_amethyst",
-				new CastingAmethystItem(new FabricItemSettings().group(INCANTATION_GROUP)));
+				new CastingAmethystItem(IncantationMaterials.IRON_CASTING,
+						new FabricItemSettings().maxDamage(150).group(INCANTATION_GROUP)));
 		AMMOLITE_LENS = registerItem("ammolite_lens",
 				new Item(new FabricItemSettings().group(INCANTATION_GROUP)));
 		IRON_CAST_MOLD = registerItem("iron_casting_mold",
@@ -297,6 +374,8 @@ public class IncantationMod implements ModInitializer {
 
 		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(),
 				GenerationStep.Feature.UNDERGROUND_ORES, Objects.requireNonNull(IncantationPlacedFeatures.AMMOLITE_ORE_PLACED.getKey().orElse(null)));
+		BiomeModifications.addFeature(BiomeSelectors.foundInTheEnd(),
+				GenerationStep.Feature.UNDERGROUND_ORES, Objects.requireNonNull(IncantationPlacedFeatures.ALEXANDRITE_ORE_PLACED.getKey().orElse(null)));
 
 		BUDDING_GREEN_JADE = registerBlock("budding_green_jade",
 				new BuddingGreenJadeBlock(FabricBlockSettings.copy(Blocks.BUDDING_AMETHYST)));
@@ -310,6 +389,15 @@ public class IncantationMod implements ModInitializer {
 
 		GREEN_JADE_SHARD = registerItem("green_jade_shard",
 				new Item(new FabricItemSettings().group(INCANTATION_GROUP)));
+
+		FABRIC_PATCH = registerItem("fabric_patching",
+				new Item(new FabricItemSettings().group(INCANTATION_GROUP)));
+		IRON_CAST_SHARD = registerItem("iron_casting_shard",
+				new Item(new FabricItemSettings().group(INCANTATION_GROUP)));
+		QUILTED_FABRIC_BLOCK = registerBlock("quilted_fabric_block",
+				new GreenJadeBlock(FabricBlockSettings.copy(Blocks.WHITE_WOOL).strength(2.3f)));
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "quilted_fabric_block"), new BlockItem(QUILTED_FABRIC_BLOCK,
+				new FabricItemSettings().group(INCANTATION_GROUP)));
 
 		GREEN_JADE_CLUSTER = registerBlock("green_jade_bud",
 				new GreenJadeClusterBlock(7, 3, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER)));
@@ -409,25 +497,34 @@ public class IncantationMod implements ModInitializer {
 				GenerationStep.Feature.UNDERGROUND_DECORATION, Objects.requireNonNull(JADE_GEODE_PLACED.getKey().orElse(null)));
 
 		UNCONCEALED_FLESHY_PUNISHMENT_SCROLL = registerItem("unconcealed_fleshy_punishment_scroll",
-				new UnconcealedFleshyPunishmentScroll(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+				new UnconcealedFleshyPunishmentScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
+						new FabricItemSettings().maxCount(1).maxDamage(80).group(INCANTATION_GROUP)));
 		UNCONCEALED_FROSTED_FLESHY_PUNISHMENT_SCROLL = registerItem("frosted_unconcealed_fleshy_punishment_scroll",
-				new UnconcealedFrostedFleshyPunishmentScroll(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+				new UnconcealedFrostedFleshyPunishmentScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
+						new FabricItemSettings().maxCount(1).maxDamage(80).group(INCANTATION_GROUP)));
 		UNCONCEALED_LONG_FLESHY_PUNISHMENT_SCROLL = registerItem("long_unconcealed_fleshy_punishment_scroll",
-				new UnconcealedExtendedFleshyPunishmentScroll(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+				new UnconcealedExtendedFleshyPunishmentScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
+						new FabricItemSettings().maxCount(1).maxDamage(80).group(INCANTATION_GROUP)));
 		UNCONCEALED_STRONG_FLESHY_PUNISHMENT_SCROLL = registerItem("strong_unconcealed_fleshy_punishment_scroll",
-				new UnconcealedStrongerFleshyPunishmentScroll(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+				new UnconcealedStrongerFleshyPunishmentScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
+						new FabricItemSettings().maxCount(1).maxDamage(80).group(INCANTATION_GROUP)));
 
 		UNCONCEALED_MILKY_RESISTANCE_SCROLL = registerItem("unconcealed_milky_resistance_scroll",
-				new UnconcealedMilkyResistanceScroll(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+				new UnconcealedMilkyResistanceScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
+						new FabricItemSettings().maxCount(1).group(INCANTATION_GROUP)));
 
 		UNCONCEALED_FREEZING_RESISTANCE_SCROLL = registerItem("unconcealed_freezing_resistance_scroll",
-				new UnconcealedFreezingResistanceScroll(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+				new UnconcealedFreezingResistanceScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
+						new FabricItemSettings().maxCount(1).group(INCANTATION_GROUP)));
 		UNCONCEALED_FROSTED_FREEZING_RESISTANCE_SCROLL = registerItem("frosted_unconcealed_freezing_resistance_scroll",
-				new UnconcealedFrostedFreezingResistanceScroll(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+				new UnconcealedFrostedFreezingResistanceScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
+						new FabricItemSettings().maxCount(1).group(INCANTATION_GROUP)));
 		UNCONCEALED_LONG_FREEZING_RESISTANCE_SCROLL = registerItem("long_unconcealed_freezing_resistance_scroll",
-				new UnconcealedExtendedFreezingResistanceScroll(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+				new UnconcealedExtendedFreezingResistanceScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
+						new FabricItemSettings().maxCount(1).group(INCANTATION_GROUP)));
 		UNCONCEALED_STRONG_FREEZING_RESISTANCE_SCROLL = registerItem("strong_unconcealed_freezing_resistance_scroll",
-				new UnconcealedStrongerFreezingResistanceScroll(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+				new UnconcealedStrongerFreezingResistanceScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
+						new FabricItemSettings().maxCount(1).group(INCANTATION_GROUP)));
 
 		PLAINS_CHERRIES = registerItem("plains_cherries",
 				new Item(new FabricItemSettings().food(new FoodComponent.Builder()
@@ -478,17 +575,22 @@ public class IncantationMod implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "bewitchment_table"), new BlockItem(BEWITCHMENT_TABLE,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
 
+		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "enchanted_berry_strength"), ENCHANTED_BERRY_STRENGTH);
+
 		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "milky_resistance"), MILKY_RESISTANCE);
 		MILKY_RESISTANCE_SCROLL = registerItem("milky_resistance_scroll",
-				new MilkyResistanceScrollItem(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+				new MilkyResistanceScrollItem(IncantationMaterials.FABRIC_PATCHING,
+						new FabricItemSettings().maxCount(1).maxDamage(60).group(INCANTATION_GROUP)));
 
 		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "freezing_resistance"), FREEZING_RESISTANCE);
 		FREEZING_RESISTANCE_SCROLL = registerItem("freezing_resistance_scroll",
-				new FreezingResistanceScrollItem(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+				new FreezingResistanceScrollItem(IncantationMaterials.FABRIC_PATCHING,
+						new FabricItemSettings().maxCount(1).maxDamage(60).group(INCANTATION_GROUP)));
 
 		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "fleshy_punishment"), FLESHY_PUNISHMENT);
 		FLESHY_PUNISHMENT_SCROLL = registerItem("fleshy_punishment_scroll",
-				new FleshyPunishmentScrollItem(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));
+				new FleshyPunishmentScrollItem(IncantationMaterials.FABRIC_PATCHING,
+						new FabricItemSettings().maxCount(1).maxDamage(60).group(INCANTATION_GROUP)));
 
 		if (FabricLoader.getInstance().isModLoaded("moreweaponry")) {
 			MoreWeaponryCompat.moreWeaponryCompatRegistry();

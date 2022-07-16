@@ -7,13 +7,14 @@ import net.dakotapride.incantation.compat.enhancedcelestials.item.HarvestHealing
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
 public class UnconcealedStrongerHarvestHealingScroll extends HarvestHealingScrollItem {
-    public UnconcealedStrongerHarvestHealingScroll(Settings settings) {
-        super(settings);
+    public UnconcealedStrongerHarvestHealingScroll(ToolMaterial material, Settings settings) {
+        super(material, settings);
     }
 
     @Override

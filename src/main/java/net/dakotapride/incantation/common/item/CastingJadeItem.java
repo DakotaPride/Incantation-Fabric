@@ -6,6 +6,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
@@ -13,9 +14,9 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class CastingJadeItem extends Item {
-    public CastingJadeItem(Settings settings) {
-        super(settings);
+public class CastingJadeItem extends IronCastingItem {
+    public CastingJadeItem(ToolMaterial material, Settings settings) {
+        super(material, settings);
     }
 
     @Override

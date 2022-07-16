@@ -1,4 +1,5 @@
 {
+  // Encantamiento v0.1.0
   "item.incantation.milky_resistance_scroll": "Pergamino de Resistencia",
   "effect.incantation.milky_resistance": "Resistencia lechosa",
   "item.incantation.resistance_parchment.milk": "Resistencia lechosa",
@@ -12,43 +13,39 @@
   "effect.incantation.fleshy_punishment": "Castigo carnoso",
   "item.incantation.punishment_parchment.fleshy": "Castigo carnoso",
   "item.incantation.punishment_parchment.fleshy.description": "Te quemas indefinidamente, pero es más fuerte",
+  "item.minecraft.potion.effect.milky_resistance": "Poción de resistencia lechosa",
+  "item.minecraft.potion.effect.freezing_resistance": "Poción de resistencia al congelamiento",
+  "item.minecraft.potion.effect.fleshy_punishment": "Poción de castigo carnoso",
+  "item.minecraft.splash_potion.effect.milky_resistance": "Poción de salpicadura de resistencia lechosa",
+  "item.minecraft.splash_potion.effect.freezing_resistance": "Poción de salpicadura de resistencia al congelamiento",
+  "item.minecraft.splash_potion.effect.fleshy_punishment": "Poción de salpicadura de castigo carnoso",
+  "item.minecraft.lingering_potion.effect.milky_resistance": "Poción persistente de resistencia lechosa",
+  "item.minecraft.lingering_potion.effect.freezing_resistance": "Poción persistente de resistencia al congelamiento",
+  "item.minecraft.lingering_potion.effect.fleshy_punishment": "Poción persistente de castigo carnal",
+  "item.minecraft.tipped_arrow.effect.milky_resistance": "Flecha de resistencia lechosa",
+  "item.minecraft.tipped_arrow.effect.freezing_resistance": "Flecha de resistencia al congelamiento",
+  "item.minecraft.tipped_arrow.effect.fleshy_punishment": "Flecha del castigo carnoso",
+  "block.incantation.bewitchment_table": "Tabla de Embrujo",
+  "itemGroup.incantation.incantation": "Encantamiento",
+
+  // Encantamiento v0.1.3
   "item.incantation.plains_cherries": "Cerezas de las Llanuras",
   "item.incantation.frosted_plains_cherries": "Cerezas heladas de las llanuras",
   "item.incantation.silver_nugget_apple": "Manzana pepita de plata",
   "item.incantation.enchanted_berries": "Bayas encantadas",
   "item.incantation.enchanted_berry_jam": "Botella de mermelada de bayas encantada",
   "item.incantation.mystic_leather": "Cuero Místico",
-  "block.incantation.bewitchment_table": "Tabla de Embrujo",
-  "itemGroup.incantation.incantation": "Encantamiento",
-
-  "item.minecraft.potion.effect.milky_resistance": "Poción de resistencia lechosa",
-  "item.minecraft.potion.effect.freezing_resistance": "Poción de resistencia al congelamiento",
-  "item.minecraft.potion.effect.fleshy_punishment": "Poción de castigo carnoso",
-
-  "item.minecraft.splash_potion.effect.milky_resistance": "Poción de salpicadura de resistencia lechosa",
-  "item.minecraft.splash_potion.effect.freezing_resistance": "Poción de salpicadura de resistencia al congelamiento",
-  "item.minecraft.splash_potion.effect.fleshy_punishment": "Poción de salpicadura de castigo carnoso",
-
-  "item.minecraft.lingering_potion.effect.milky_resistance": "Poción persistente de resistencia lechosa",
-  "item.minecraft.lingering_potion.effect.freezing_resistance": "Poción persistente de resistencia al congelamiento",
-  "item.minecraft.lingering_potion.effect.fleshy_punishment": "Poción persistente de castigo carnal",
-
-  "item.minecraft.tipped_arrow.effect.milky_resistance": "Flecha de resistencia lechosa",
-  "item.minecraft.tipped_arrow.effect.freezing_resistance": "Flecha de resistencia al congelamiento",
-  "item.minecraft.tipped_arrow.effect.fleshy_punishment": "Flecha del castigo carnoso",
-
   "item.incantation.unconcealed_milky_resistance_scroll": "Pergamino de resistencia descubierto",
-
   "item.incantation.unconcealed_freezing_resistance_scroll": "Pergamino de resistencia descubierto",
   "item.incantation.long_unconcealed_freezing_resistance_scroll": "Pergamino de resistencia descubierto",
   "item.incantation.strong_unconcealed_freezing_resistance_scroll": "Pergamino de resistencia descubierto",
   "item.incantation.frosted_unconcealed_freezing_resistance_scroll": "Pergamino de resistencia descubierto",
-
   "item.incantation.unconcealed_fleshy_punishment_scroll": "Pergamino de castigo descubierto",
   "item.incantation.long_unconcealed_fleshy_punishment_scroll": "Pergamino de castigo descubierto",
   "item.incantation.strong_unconcealed_fleshy_punishment_scroll": "Pergamino de castigo descubierto",
   "item.incantation.frosted_unconcealed_fleshy_punishment_scroll": "Pergamino de castigo descubierto",
 
+  // Encantamiento v0.1.4
   "item.incantation.green_jade_shard": "Fragmento de jade verde",
   "block.incantation.green_jade_bud": "Brote de jade verde",
   "block.incantation.small_green_jade_bud": "Pequeño Brote de Jade Verde",
@@ -60,7 +57,6 @@
   "block.incantation.small_green_jade_cluster": "Pequeño racimo de jade verde",
   "block.incantation.medium_green_jade_cluster": "Racimo de jade verde mediano",
   "block.incantation.large_green_jade_cluster": "Grupo de jade verde grande",
-
   "item.incantation.jade_shard": "Fragmento de jade",
   "block.incantation.jade_bud": "Brote de jade",
   "block.incantation.small_jade_bud": "Pequeño Brote de Jade",
@@ -72,7 +68,6 @@
   "block.incantation.small_jade_cluster": "Pequeño Cúmulo de Jade",
   "block.incantation.medium_jade_cluster": "Racimo de Jade Mediano",
   "block.incantation.large_jade_cluster": "Grupo de jade grande",
-
   "block.incantation.ammolite_ore": "Mena de ammolita",
   "block.incantation.deepslate_ammolite_ore": "Mena de amolita de pizarra profunda",
   "item.incantation.ammolite_gem": "Gema de ammolita",
@@ -81,5 +76,13 @@
   "item.incantation.casting_amethyst": "Fundición de amatista",
   "item.incantation.ammolite_lens": "Lente de ammolita",
   "item.incantation.iron_casting_mold": "Molde de fundición de hierro",
-  "item.incantation.empty_iron_casting": "Fundición de hierro vacía"
+  "item.incantation.empty_iron_casting": "Fundición de hierro vacía",
+  "block.incantation.alexandrite_ore": "Mineral de Alejandrita",
+  "block.incantation.deepslate_alexandrite_ore": "Mineral de Alejandrita Deepslate",
+  "item.incantation.raw_alexandrite": "Alejandrita en bruto",
+  "item.incantation.alexandrite_gem": "Gema de Alejandrita",
+  "effect.incantation.enchanted_berry_strength": "Fuerza atascada",
+  "item.incantation.fabric_patching": "Parches de tela",
+  "block.incantation.quilted_fabric_block": "Bloque de tela acolchada",
+  "item.incantation.iron_casting_shard": "Fragmento de fundición de hierro"
 }

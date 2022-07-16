@@ -57,13 +57,17 @@ public class PickYourPoisonCompat {
     public static void pickYourPoisonCompatRegistry() {
 
         UNCONCEALED_REFLECTION_RESISTANCE_SCROLL = registerItem("unconcealed_reflection_resistance_scroll",
-                new UnconcealedReflectionResistanceScroll(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+                new UnconcealedReflectionResistanceScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
         UNCONCEALED_FROSTED_REFLECTION_RESISTANCE_SCROLL = registerItem("frosted_unconcealed_reflection_resistance_scroll",
-                new UnconcealedFrostedReflectionResistanceScroll(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+                new UnconcealedFrostedReflectionResistanceScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
         UNCONCEALED_LONG_REFLECTION_RESISTANCE_SCROLL = registerItem("long_unconcealed_reflection_resistance_scroll",
-                new UnconcealedExtendedReflectionResistanceScroll(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+                new UnconcealedExtendedReflectionResistanceScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
         UNCONCEALED_STRONG_REFLECTION_RESISTANCE_SCROLL = registerItem("strong_unconcealed_reflection_resistance_scroll",
-                new UnconcealedStrongerReflectionResistanceScroll(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+                new UnconcealedStrongerReflectionResistanceScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
 
         REFLECTION_RESISTANCE_POTION = registerPotion("reflection_resistance",
                 new Potion(new StatusEffectInstance(REFLECTION_RESISTANCE, 220, 0)));
@@ -72,7 +76,8 @@ public class PickYourPoisonCompat {
 
         Registry.register(Registry.STATUS_EFFECT, new Identifier(PICK_YOUR_POISON_ID, "reflection_resistance"), REFLECTION_RESISTANCE);
         REFLECTION_RESISTANCE_SCROLL = registerItem("reflection_resistance_scroll",
-                new ReflectionResistanceScrollItem(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+                new ReflectionResistanceScrollItem(IncantationMod.IncantationMaterials.FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
 
     }
 

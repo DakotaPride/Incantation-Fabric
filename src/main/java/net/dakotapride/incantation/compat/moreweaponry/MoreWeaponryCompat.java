@@ -55,13 +55,17 @@ public class MoreWeaponryCompat {
     public static void moreWeaponryCompatRegistry() {
 
         UNCONCEALED_HARMING_RESISTANCE_SCROLL = registerItem("unconcealed_harming_resistance_scroll",
-                new UnconcealedHarmingResistanceScroll(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+                new UnconcealedHarmingResistanceScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(16).maxDamage(80).group(IncantationMod.INCANTATION_GROUP)));
         UNCONCEALED_FROSTED_HARMING_RESISTANCE_SCROLL = registerItem("frosted_unconcealed_harming_resistance_scroll",
-                new UnconcealedFrostedHarmingResistanceScroll(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+                new UnconcealedFrostedHarmingResistanceScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(16).maxDamage(80).group(IncantationMod.INCANTATION_GROUP)));
         UNCONCEALED_LONG_HARMING_RESISTANCE_SCROLL = registerItem("long_unconcealed_harming_resistance_scroll",
-                new UnconcealedExtendedHarmingResistanceScroll(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+                new UnconcealedExtendedHarmingResistanceScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(16).maxDamage(80).group(IncantationMod.INCANTATION_GROUP)));
         UNCONCEALED_STRONG_HARMING_RESISTANCE_SCROLL = registerItem("strong_unconcealed_harming_resistance_scroll",
-                new UnconcealedStrongerHarmingResistanceScroll(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+                new UnconcealedStrongerHarmingResistanceScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(16).maxDamage(80).group(IncantationMod.INCANTATION_GROUP)));
 
         HARMING_RESISTANCE_POTION = registerPotion("harming_resistance",
                 new Potion(new StatusEffectInstance(HARMING_RESISTANCE, 220, 0)));
@@ -70,7 +74,8 @@ public class MoreWeaponryCompat {
 
         Registry.register(Registry.STATUS_EFFECT, new Identifier(MORE_WEAPONRY_ID, "harming_resistance"), HARMING_RESISTANCE);
         HARMING_RESISTANCE_SCROLL = registerItem("harming_resistance_scroll",
-                new HarmingResistanceScrollItem(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+                new HarmingResistanceScrollItem(IncantationMod.IncantationMaterials.FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(16).maxDamage(60).group(IncantationMod.INCANTATION_GROUP)));
 
     }
 

@@ -1,9 +1,7 @@
 {
   "variants": {
-    "": [
-      {
+    "": {
         "model": "incantation:block/alexandrite_ore"
       }
-    ]
   }
 }

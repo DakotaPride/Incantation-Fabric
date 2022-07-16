@@ -2,6 +2,7 @@ package net.dakotapride.incantation.common.item;
 
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
@@ -10,8 +11,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class MilkyResistanceScrollItem extends EffectScrollItem {
-    public MilkyResistanceScrollItem(Settings settings) {
-        super(settings);
+    public MilkyResistanceScrollItem(ToolMaterial material, Settings settings) {
+        super(material, settings);
     }
 
     @Override

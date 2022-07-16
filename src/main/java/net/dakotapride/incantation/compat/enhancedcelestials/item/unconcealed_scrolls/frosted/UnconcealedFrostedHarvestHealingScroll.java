@@ -1,20 +1,19 @@
 package net.dakotapride.incantation.compat.enhancedcelestials.item.unconcealed_scrolls.frosted;
 
-import net.dakotapride.incantation.common.IncantationMod;
-import net.dakotapride.incantation.common.item.FleshyPunishmentScrollItem;
 import net.dakotapride.incantation.compat.enhancedcelestials.EnhancedCelestialsCompat;
 import net.dakotapride.incantation.compat.enhancedcelestials.item.HarvestHealingScrollItem;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
 public class UnconcealedFrostedHarvestHealingScroll extends HarvestHealingScrollItem {
-    public UnconcealedFrostedHarvestHealingScroll(Settings settings) {
-        super(settings);
+    public UnconcealedFrostedHarvestHealingScroll(ToolMaterial material, Settings settings) {
+        super(material, settings);
     }
 
     @Override

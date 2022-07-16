@@ -71,13 +71,17 @@ public class EnhancedCelestialsCompat {
     public static void enhancedCelestialsCompatRegistry() {
 
         UNCONCEALED_HARVEST_HEALING_SCROLL = registerItem("unconcealed_harvest_healing_scroll",
-                new UnconcealedHarvestHealingScroll(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+                new UnconcealedHarvestHealingScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(16).maxDamage(80).group(IncantationMod.INCANTATION_GROUP)));
         UNCONCEALED_FROSTED_HARVEST_HEALING_SCROLL = registerItem("frosted_unconcealed_harvest_healing_scroll",
-                new UnconcealedFrostedHarvestHealingScroll(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+                new UnconcealedFrostedHarvestHealingScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(16).maxDamage(80).group(IncantationMod.INCANTATION_GROUP)));
         UNCONCEALED_LONG_HARVEST_HEALING_SCROLL = registerItem("long_unconcealed_harvest_healing_scroll",
-                new UnconcealedExtendedHarvestHealingScroll(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+                new UnconcealedExtendedHarvestHealingScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(16).maxDamage(80).group(IncantationMod.INCANTATION_GROUP)));
         UNCONCEALED_STRONG_HARVEST_HEALING_SCROLL = registerItem("strong_unconcealed_harvest_healing_scroll",
-                new UnconcealedStrongerHarvestHealingScroll(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+                new UnconcealedStrongerHarvestHealingScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(16).maxDamage(80).group(IncantationMod.INCANTATION_GROUP)));
 
         HARVEST_HEALING_POTION = registerPotion("harvest_healing",
                 new Potion(new StatusEffectInstance(HARVEST_HEALING, 220, 0)));
@@ -86,7 +90,8 @@ public class EnhancedCelestialsCompat {
 
         Registry.register(Registry.STATUS_EFFECT, new Identifier(ENHANCED_CELESTIALS_ID, "harvest_healing"), HARVEST_HEALING);
         HARVEST_HEALING_SCROLL = registerItem("harvest_healing_scroll",
-                new HarvestHealingScrollItem(new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+                new HarvestHealingScrollItem(IncantationMod.IncantationMaterials.FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(16).maxDamage(60).group(IncantationMod.INCANTATION_GROUP)));
 
         MOON_CREST_FRUIT = registerItem("moon_crest_fruit",
                 new Item(new FabricItemSettings().group(IncantationMod.INCANTATION_GROUP).food(

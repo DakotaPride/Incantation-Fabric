@@ -1,9 +1,7 @@
 {
   "variants": {
-    "": [
-      {
+    "": {
         "model": "incantation:block/deepslate_alexandrite_ore"
       }
-    ]
   }
 }

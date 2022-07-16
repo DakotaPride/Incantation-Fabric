@@ -29,6 +29,20 @@ public abstract class LivingEntityMixin<O> extends Entity {
             livingEntity.clearStatusEffects();
         }
 
+        if (livingEntity.hasStatusEffect(PickYourPoisonCompat.REFLECTION_RESISTANCE)) {
+            if (livingEntity.hasStatusEffect(StatusEffects.POISON)) {
+                if (attacker != null) {
+                    attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 260, 1));
+                }
+            }
+
+            if (livingEntity.hasStatusEffect(StatusEffects.WITHER)) {
+                if (attacker != null) {
+                    attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 420, 1));
+                }
+            }
+        }
+
         if (livingEntity.hasStatusEffect(MoreWeaponryCompat.HARMING_RESISTANCE)) {
             livingEntity.removeStatusEffect(StatusEffects.POISON);
             livingEntity.removeStatusEffect(StatusEffects.WITHER);
@@ -43,20 +57,6 @@ public abstract class LivingEntityMixin<O> extends Entity {
 
         if (livingEntity.hasStatusEffect(IncantationMod.FREEZING_RESISTANCE)) {
             livingEntity.setFrozenTicks(0);
-        }
-
-        if (livingEntity.hasStatusEffect(PickYourPoisonCompat.REFLECTION_RESISTANCE)) {
-            if (livingEntity.hasStatusEffect(StatusEffects.POISON)) {
-                if (attacker != null) {
-                    attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 260, 1));
-                }
-            }
-
-            if (livingEntity.hasStatusEffect(StatusEffects.WITHER)) {
-                if (attacker != null) {
-                    attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 420, 1));
-                }
-            }
         }
 
     }

@@ -1,7 +1,10 @@
 package net.dakotapride.incantation.common.item;
 
+import net.dakotapride.incantation.common.IncantationMod;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -24,6 +27,8 @@ public class EnchantedBerryJamItem extends Item {
         if (user instanceof ServerPlayerEntity serverPlayerEntity) {
             Criteria.CONSUME_ITEM.trigger(serverPlayerEntity, stack);
             serverPlayerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
+            user.addStatusEffect(new StatusEffectInstance(StatusEffects.LUCK, 800, 0));
+            user.addStatusEffect(new StatusEffectInstance(IncantationMod.ENCHANTED_BERRY_STRENGTH, 1000, 1));
         }
 
         if (user instanceof PlayerEntity && !((PlayerEntity)user).getAbilities().creativeMode) {
