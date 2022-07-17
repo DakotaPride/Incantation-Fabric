@@ -1,4 +1,4 @@
-package net.dakotapride.incantation.common.config;
+package net.dakotapride.incantation.config;
 
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;

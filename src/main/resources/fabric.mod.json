@@ -25,7 +25,7 @@
       "net.dakotapride.incantation.client.IncantationClient"
     ],
     "modmenu": [
-      "net.dakotapride.incantation.common.config.modmenu.ModMenu"
+      "net.dakotapride.incantation.config.modmenu.ModMenu"
     ]
   },
   "mixins": [

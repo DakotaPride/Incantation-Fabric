@@ -1,4 +1,4 @@
-package net.dakotapride.incantation.common.config.modmenu;
+package net.dakotapride.incantation.config.modmenu;
 
 /*
        Copyright 2022 nu11une
@@ -19,7 +19,7 @@ package net.dakotapride.incantation.common.config.modmenu;
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
 import me.shedaniel.autoconfig.AutoConfig;
-import net.dakotapride.incantation.common.config.IncantationConfig;
+import net.dakotapride.incantation.config.IncantationConfig;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 
