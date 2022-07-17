@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "incantation:block/enchanted_berry_bush"
+    },
+    "age=1": {
+      "model": "incantation:block/enchanted_berry_bush"
+    },
+    "age=2": {
+      "model": "incantation:block/enchanted_berry_bush"
+    },
+    "age=3": {
+      "model": "incantation:block/enchanted_berry_bush_grown"
+    }
+  }
+}

@@ -22,6 +22,8 @@ public class IncantationClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(IncantationMod.MEDIUM_JADE_BUD, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(IncantationMod.LARGE_JADE_BUD, RenderLayer.getCutout());
 
+        BlockRenderLayerMap.INSTANCE.putBlock(IncantationMod.ENCHANTED_BERRY_BUSH, RenderLayer.getCutout());
+
         ScreenRegistry.register(IncantationMod.BEWITCHMENT_TABLE_SCREEN_HANDLER, BewitchmentTableScreen::new);
     }
 }

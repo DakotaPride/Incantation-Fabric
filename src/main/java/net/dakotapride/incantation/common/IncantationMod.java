@@ -1,8 +1,11 @@
 package net.dakotapride.incantation.common;
 
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.dakotapride.incantation.common.block.*;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableBlock;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableEntity;
+import net.dakotapride.incantation.common.config.IncantationConfig;
 import net.dakotapride.incantation.common.effect.EmptyDamageModifierStatusEffect;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
 import net.dakotapride.incantation.common.item.*;
@@ -25,6 +28,7 @@ import net.dakotapride.incantation.compat.pickyourpoison.PickYourPoisonCompat;
 import net.dakotapride.incantation.mixin.BrewingRecipeRegistryMixin;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -53,25 +57,32 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.Potions;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.screen.ScreenHandlerType;
-import net.minecraft.state.property.Properties;
 import net.minecraft.tag.BlockTags;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Lazy;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
+import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryEntry;
+import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.YOffset;
+import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.*;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
-import java.util.function.ToIntFunction;
 
 public class IncantationMod implements ModInitializer {
 	public static final String INCANTATION_ID = ("incantation");
@@ -141,6 +152,7 @@ public class IncantationMod implements ModInitializer {
 	public static RedstoneLampBlock JADE_CRYSTAL_LAMP;
 	public static RedstoneLampBlock GREEN_JADE_CRYSTAL_LAMP;
 	public static RedstoneLampBlock AMETHYST_CRYSTAL_LAMP;
+	public static EnchantedBerryBushBlock ENCHANTED_BERRY_BUSH;
 
 	// Registration
 	public static <T extends Block> T registerBlock(String name, T block) {
@@ -295,23 +307,79 @@ public class IncantationMod implements ModInitializer {
 			})
 			.build();
 
-	public static RegistryEntry<ConfiguredFeature<GeodeFeatureConfig, ?>> GREEN_JADE_GEODE;
+	public static RegistryEntry<ConfiguredFeature<GeodeFeatureConfig, ?>> GREEN_JADE_GEODE_FEATURE;
 	public static RegistryEntry<PlacedFeature> GREEN_JADE_GEODE_PLACED;
 
-	public static RegistryEntry<ConfiguredFeature<GeodeFeatureConfig, ?>> JADE_GEODE;
+	public static RegistryEntry<ConfiguredFeature<GeodeFeatureConfig, ?>> JADE_GEODE_FEATURE;
 	public static RegistryEntry<PlacedFeature> JADE_GEODE_PLACED;
 
     private static final Identifier BIRCH_LEAVES_BLOCK_ID
             = new Identifier("minecraft", "blocks/birch_leaves");
 
+	private void registerGeneration (String spawnBiomes, EnchantedBerryBushBlock bushBlock, int spawnChance, String name) {
+		String[] biomes = spawnBiomes.replaceAll(" ", "").split(",");
+
+		// Configure feature
+		BlockPredicate blockPredicate = BlockPredicate.allOf(BlockPredicate.IS_AIR, BlockPredicate.wouldSurvive(bushBlock.getDefaultState(),
+				BlockPos.ORIGIN), BlockPredicate.not(BlockPredicate.matchingBlocks(new Vec3i(0, -1, 0),
+				List.of(bushBlock))));
+		BlockStateProvider berryBushProvider = BlockStateProvider.of(bushBlock.getDefaultState().with(SweetBerryBushBlock.AGE, 3));
+		RegistryEntry<PlacedFeature> placedFeatureEntry = PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(
+				berryBushProvider), blockPredicate);
+		RandomPatchFeatureConfig randomPatchConfig = new RandomPatchFeatureConfig(32, 2, 3, placedFeatureEntry);
+		ConfiguredFeature<RandomPatchFeatureConfig, ?> featureConfig = new ConfiguredFeature<>(Feature.RANDOM_PATCH, randomPatchConfig);
+
+		// Place feature
+		List<PlacementModifier> placementModifiers = List.of(RarityFilterPlacementModifier.of(spawnChance), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP);
+		RegistryEntry<PlacedFeature> placedFeature = PlacedFeatures.createEntry(Feature.RANDOM_PATCH, randomPatchConfig, placementModifiers.stream().toArray(PlacementModifier[]::new));
+
+		// Register feature
+		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(INCANTATION_ID, "enchanted_berry_bush"), featureConfig);
+		Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(INCANTATION_ID,"enchanted_berry_bush"), placedFeature.getKeyOrValue().right().get());
+
+		// Add to existing biome generation
+		ArrayList<RegistryKey<Biome>> biomeKeys = new ArrayList<>();
+		ArrayList<TagKey<Biome>> biomeTags = new ArrayList<>();
+
+		for (String biome : biomes){
+			// Category
+			if (biome.charAt(0) == '#') {
+				biomeTags.add(TagKey.of(Registry.BIOME_KEY, new Identifier(biome.substring(1))));
+			} else {
+				// Biome
+				biomeKeys.add(RegistryKey.of(Registry.BIOME_KEY, new Identifier(biome)));
+			}
+		}
+
+		registerBiomeGeneration(biomeKeys, biomeTags, placedFeature.getKeyOrValue().right().get());
+	}
+
+	private void registerBiomeGeneration(ArrayList<RegistryKey<Biome>> biomeKeys, ArrayList<TagKey<Biome>> biomeTags, PlacedFeature feature) {
+		Predicate<BiomeSelectionContext> biomeSelector = BiomeSelectors.includeByKey(biomeKeys);
+
+		if (!biomeTags.isEmpty()) {
+			for (TagKey<Biome> biomeTag : biomeTags) {
+				biomeSelector = biomeSelector.or(BiomeSelectors.tag(biomeTag));
+			}
+		}
+
+		BiomeModifications.addFeature(biomeSelector, GenerationStep.Feature.VEGETAL_DECORATION, BuiltinRegistries.PLACED_FEATURE.getKey(feature).get());
+	}
+
+	public static IncantationConfig config;
+	public String enchantedBerrySpawnBiomes = "#incantation:has_enchanted_berry_bushes";
+
 	@Override
 	public void onInitialize() {
+
+		AutoConfig.register(IncantationConfig.class, JanksonConfigSerializer::new);
+		config = AutoConfig.getConfigHolder(IncantationConfig.class).getConfig();
 
         LootTableEvents.MODIFY.register(((resourceManager, manager, id, supplier, setter) -> {
             if (BIRCH_LEAVES_BLOCK_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.30f))
+                        .conditionally(RandomChanceLootCondition.builder(0.05f))
                         .with(ItemEntry.builder(ENCHANTED_BERRIES))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0f, 2.0f)).build());
                 supplier.pool(poolBuilder.build());
@@ -334,6 +402,10 @@ public class IncantationMod implements ModInitializer {
 						.luminance((state) -> state.get(RedstoneLampBlock.LIT) ? 15 : 0)));
 		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "amethyst_crystal_lamp"), new BlockItem(AMETHYST_CRYSTAL_LAMP,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
+
+		ENCHANTED_BERRY_BUSH = registerBlock("enchanted_berry_bush",
+				new EnchantedBerryBushBlock(FabricBlockSettings.copy(Blocks.SWEET_BERRY_BUSH)));
+		registerGeneration(enchantedBerrySpawnBiomes, ENCHANTED_BERRY_BUSH, config.enchantedBerryBushSpawnChance, "enchanted_berry_bush");
 
 		ALEXANDRITE_ORE = registerBlock("alexandrite_ore",
 				new OreBlock(FabricBlockSettings.copy(Blocks.DIAMOND_ORE)));
@@ -423,7 +495,7 @@ public class IncantationMod implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "large_green_jade_cluster"), new BlockItem(LARGE_GREEN_JADE_BUD,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
 
-		GREEN_JADE_GEODE = ConfiguredFeatures.register("green_jade_geode", Feature.GEODE ,
+		GREEN_JADE_GEODE_FEATURE = ConfiguredFeatures.register("green_jade_geode", Feature.GEODE ,
 						new GeodeFeatureConfig(new GeodeLayerConfig(BlockStateProvider.of(Blocks.AIR),
 								BlockStateProvider.of(GREEN_JADE_BLOCK),
 								BlockStateProvider.of(BUDDING_GREEN_JADE),
@@ -440,7 +512,7 @@ public class IncantationMod implements ModInitializer {
 								-16, 16, 0.05D, 1));
 
 		GREEN_JADE_GEODE_PLACED = PlacedFeatures.register("green_jade_geode_placed",
-				GREEN_JADE_GEODE, RarityFilterPlacementModifier.of(42),
+				GREEN_JADE_GEODE_FEATURE, RarityFilterPlacementModifier.of(42),
 				SquarePlacementModifier.of(),
 				HeightRangePlacementModifier.uniform(YOffset.aboveBottom(6), YOffset.aboveBottom(50)),
 				BiomePlacementModifier.of());
@@ -478,7 +550,7 @@ public class IncantationMod implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "large_jade_cluster"), new BlockItem(LARGE_JADE_BUD,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
 
-		JADE_GEODE = ConfiguredFeatures.register("jade_geode", Feature.GEODE ,
+		JADE_GEODE_FEATURE = ConfiguredFeatures.register("jade_geode", Feature.GEODE ,
 				new GeodeFeatureConfig(new GeodeLayerConfig(BlockStateProvider.of(Blocks.AIR),
 						BlockStateProvider.of(JADE_BLOCK),
 						BlockStateProvider.of(BUDDING_JADE),
@@ -495,7 +567,7 @@ public class IncantationMod implements ModInitializer {
 						-16, 16, 0.05D, 1));
 
 		JADE_GEODE_PLACED = PlacedFeatures.register("jade_geode_placed",
-				JADE_GEODE, RarityFilterPlacementModifier.of(42),
+				JADE_GEODE_FEATURE, RarityFilterPlacementModifier.of(42),
 				SquarePlacementModifier.of(),
 				HeightRangePlacementModifier.uniform(YOffset.aboveBottom(6), YOffset.aboveBottom(50)),
 				BiomePlacementModifier.of());
@@ -547,7 +619,7 @@ public class IncantationMod implements ModInitializer {
 						.statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 200, 1), 1.0f)
 						.build()).group(INCANTATION_GROUP)));
 		ENCHANTED_BERRIES = registerItem("enchanted_berries",
-				new EnchantedBerryItem(new FabricItemSettings().food(new FoodComponent.Builder()
+				new EnchantedBerryItem(ENCHANTED_BERRY_BUSH, new FabricItemSettings().food(new FoodComponent.Builder()
 						.saturationModifier(4.0f).hunger(6).snack().build()).group(INCANTATION_GROUP)));
 		ENCHANTED_BERRY_JAM = registerItem("enchanted_berry_jam",
 				new EnchantedBerryJamItem(new FabricItemSettings().maxCount(16).group(INCANTATION_GROUP)));

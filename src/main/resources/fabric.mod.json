@@ -23,6 +23,9 @@
     ],
     "client": [
       "net.dakotapride.incantation.client.IncantationClient"
+    ],
+    "modmenu": [
+      "net.dakotapride.incantation.common.config.modmenu.ModMenu"
     ]
   },
   "mixins": [
@@ -33,7 +36,8 @@
     "fabricloader": "*",
     "fabric": "*",
     "minecraft": "1.19",
-    "java": ">=17"
+    "java": ">=17",
+    "cloth-config": "*"
   },
   "suggests": {
     "another-mod": "*"

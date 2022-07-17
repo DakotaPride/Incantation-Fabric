@@ -1,11 +1,13 @@
 package net.dakotapride.incantation.common.item;
 
+import net.minecraft.block.Block;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class EnchantedBerryItem extends Item {
-    public EnchantedBerryItem(Settings settings) {
-        super(settings);
+public class EnchantedBerryItem extends BlockItem {
+    public EnchantedBerryItem(Block block, Settings settings) {
+        super(block, settings);
     }
 
     @Override
