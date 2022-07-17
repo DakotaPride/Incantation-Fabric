@@ -2,6 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
+      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
@@ -24,26 +25,25 @@
                   }
                 }
               ],
-              "name": "incantation:deepslate_alexandrite_ore"
+              "name": "incantation:ammolite_ore"
             },
             {
               "type": "minecraft:item",
               "functions": [
                 {
+                  "function": "minecraft:apply_bonus",
                   "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:ore_drops",
-                  "function": "minecraft:apply_bonus"
+                  "formula": "minecraft:ore_drops"
                 },
                 {
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "incantation:raw_alexandrite"
+              "name": "incantation:raw_ammolite"
             }
           ]
         }
-      ],
-      "rolls": 1.0
+      ]
     }
   ]
 }

@@ -1,21 +1,14 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "SDS",
-    "DCD",
-    "SDS"
-  ],
-  "key": {
-    "S": {
-      "item": "minecraft:gold_nugget"
+  "type": "minecraft:crafting_shapeless",
+
+  "ingredients": [
+    {
+      "item": "incantation:iron_casting_mold"
     },
-    "C": {
-      "item": "minecraft:iron_ingot"
-    },
-    "D": {
-      "item": "minecraft:iron_nugget"
+    {
+      "item": "incantation:ammolite_lens"
     }
-  },
+  ],
   "result": {
     "item": "incantation:empty_iron_casting",
     "count": 3

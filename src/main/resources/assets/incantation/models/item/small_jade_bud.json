@@ -11,6 +11,9 @@
     },
     "fixed": {
       "translation": [ 0, 7, 0 ]
+    },
+    "gui": {
+      "translation": [ 0, 2, 0 ]
     }
   }
 }

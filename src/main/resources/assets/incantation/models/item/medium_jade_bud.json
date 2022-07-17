@@ -6,6 +6,9 @@
   "display": {
     "fixed": {
       "translation": [ 0, 6, 0 ]
+    },
+    "gui": {
+      "translation": [ 0, 2, 0 ]
     }
   }
 }

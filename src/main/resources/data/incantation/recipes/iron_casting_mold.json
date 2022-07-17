@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SDS",
+    "DCD",
+    "SDS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:gold_nugget"
+    },
+    "C": {
+      "item": "minecraft:iron_ingot"
+    },
+    "D": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "result": {
+    "item": "incantation:iron_casting_mold",
+    "count": 3
+  }
+}

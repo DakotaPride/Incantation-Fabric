@@ -388,17 +388,17 @@ public class IncantationMod implements ModInitializer {
         }));
 
 		JADE_CRYSTAL_LAMP = registerBlock("jade_crystal_lamp",
-				new RedstoneLampBlock(FabricBlockSettings.copy(Blocks.REDSTONE_LAMP)
+				new RedstoneLampBlock(FabricBlockSettings.copy(Blocks.REDSTONE_LAMP).requiresTool()
 						.luminance((state) -> state.get(RedstoneLampBlock.LIT) ? 13 : 0)));
 		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "jade_crystal_lamp"), new BlockItem(JADE_CRYSTAL_LAMP,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
 		GREEN_JADE_CRYSTAL_LAMP = registerBlock("green_jade_crystal_lamp",
-				new RedstoneLampBlock(FabricBlockSettings.copy(Blocks.REDSTONE_LAMP)
+				new RedstoneLampBlock(FabricBlockSettings.copy(Blocks.REDSTONE_LAMP).requiresTool()
 						.luminance((state) -> state.get(RedstoneLampBlock.LIT) ? 13 : 0)));
 		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "green_jade_crystal_lamp"), new BlockItem(GREEN_JADE_CRYSTAL_LAMP,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
 		AMETHYST_CRYSTAL_LAMP = registerBlock("amethyst_crystal_lamp",
-				new RedstoneLampBlock(FabricBlockSettings.copy(Blocks.REDSTONE_LAMP)
+				new RedstoneLampBlock(FabricBlockSettings.copy(Blocks.REDSTONE_LAMP).requiresTool()
 						.luminance((state) -> state.get(RedstoneLampBlock.LIT) ? 15 : 0)));
 		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "amethyst_crystal_lamp"), new BlockItem(AMETHYST_CRYSTAL_LAMP,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
@@ -408,9 +408,9 @@ public class IncantationMod implements ModInitializer {
 		registerGeneration(enchantedBerrySpawnBiomes, ENCHANTED_BERRY_BUSH, config.enchantedBerryBushSpawnChance, "enchanted_berry_bush");
 
 		ALEXANDRITE_ORE = registerBlock("alexandrite_ore",
-				new OreBlock(FabricBlockSettings.copy(Blocks.DIAMOND_ORE)));
+				new OreBlock(FabricBlockSettings.copy(Blocks.DIAMOND_ORE).requiresTool()));
 		DEEPSLATE_ALEXANDRITE_ORE = registerBlock("deepslate_alexandrite_ore",
-				new OreBlock(FabricBlockSettings.copy(Blocks.DEEPSLATE_DIAMOND_ORE)));
+				new OreBlock(FabricBlockSettings.copy(Blocks.DEEPSLATE_DIAMOND_ORE).requiresTool().requiresTool()));
 		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "alexandrite_ore"), new BlockItem(ALEXANDRITE_ORE,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
 		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "deepslate_alexandrite_ore"), new BlockItem(DEEPSLATE_ALEXANDRITE_ORE,
@@ -438,9 +438,9 @@ public class IncantationMod implements ModInitializer {
 				new Item(new FabricItemSettings().group(INCANTATION_GROUP)));
 
 		AMMOLITE_ORE = registerBlock("ammolite_ore",
-				new OreBlock(FabricBlockSettings.copy(Blocks.IRON_ORE)));
+				new OreBlock(FabricBlockSettings.copy(Blocks.IRON_ORE).requiresTool()));
 		DEEPSLATE_AMMOLITE_ORE = registerBlock("deepslate_ammolite_ore",
-				new OreBlock(FabricBlockSettings.copy(Blocks.DEEPSLATE_IRON_ORE)));
+				new OreBlock(FabricBlockSettings.copy(Blocks.DEEPSLATE_IRON_ORE).requiresTool()));
 		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "ammolite_ore"), new BlockItem(AMMOLITE_ORE,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
 		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "deepslate_ammolite_ore"), new BlockItem(DEEPSLATE_AMMOLITE_ORE,
@@ -457,12 +457,12 @@ public class IncantationMod implements ModInitializer {
 				GenerationStep.Feature.UNDERGROUND_ORES, Objects.requireNonNull(IncantationPlacedFeatures.ALEXANDRITE_ORE_PLACED.getKey().orElse(null)));
 
 		BUDDING_GREEN_JADE = registerBlock("budding_green_jade",
-				new BuddingGreenJadeBlock(FabricBlockSettings.copy(Blocks.BUDDING_AMETHYST)));
+				new BuddingGreenJadeBlock(FabricBlockSettings.copy(Blocks.BUDDING_AMETHYST).requiresTool()));
 		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "budding_green_jade"), new BlockItem(BUDDING_GREEN_JADE,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
 
 		GREEN_JADE_BLOCK = registerBlock("green_jade_block",
-				new GreenJadeBlock(FabricBlockSettings.copy(Blocks.AMETHYST_BLOCK)));
+				new GreenJadeBlock(FabricBlockSettings.copy(Blocks.AMETHYST_BLOCK).requiresTool()));
 		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "green_jade_block"), new BlockItem(GREEN_JADE_BLOCK,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
 
@@ -479,20 +479,20 @@ public class IncantationMod implements ModInitializer {
 				new FabricItemSettings().group(INCANTATION_GROUP)));
 
 		GREEN_JADE_CLUSTER = registerBlock("green_jade_bud",
-				new GreenJadeClusterBlock(7, 3, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER)));
+				new GreenJadeClusterBlock(7, 3, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER).requiresTool()));
 		SMALL_GREEN_JADE_BUD = registerBlock("small_green_jade_bud",
-				new GreenJadeClusterBlock(3, 4, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER)));
+				new GreenJadeClusterBlock(3, 4, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER).requiresTool()));
 		MEDIUM_GREEN_JADE_BUD = registerBlock("medium_green_jade_bud",
-				new GreenJadeClusterBlock(4, 3, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER)));
+				new GreenJadeClusterBlock(4, 3, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER).requiresTool()));
 		LARGE_GREEN_JADE_BUD = registerBlock("large_green_jade_bud",
-				new GreenJadeClusterBlock(5, 3, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER)));
-		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "green_jade_cluster"), new BlockItem(GREEN_JADE_CLUSTER,
+				new GreenJadeClusterBlock(5, 3, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER).requiresTool()));
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "green_jade_bud"), new BlockItem(GREEN_JADE_CLUSTER,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
-		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "small_green_jade_cluster"), new BlockItem(SMALL_GREEN_JADE_BUD,
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "small_green_jade_bud"), new BlockItem(SMALL_GREEN_JADE_BUD,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
-		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "medium_green_jade_cluster"), new BlockItem(MEDIUM_GREEN_JADE_BUD,
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "medium_green_jade_bud"), new BlockItem(MEDIUM_GREEN_JADE_BUD,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
-		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "large_green_jade_cluster"), new BlockItem(LARGE_GREEN_JADE_BUD,
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "large_green_jade_bud"), new BlockItem(LARGE_GREEN_JADE_BUD,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
 
 		GREEN_JADE_GEODE_FEATURE = ConfiguredFeatures.register("green_jade_geode", Feature.GEODE ,
@@ -521,12 +521,12 @@ public class IncantationMod implements ModInitializer {
 						GenerationStep.Feature.UNDERGROUND_DECORATION, Objects.requireNonNull(GREEN_JADE_GEODE_PLACED.getKey().orElse(null)));
 
 		BUDDING_JADE = registerBlock("budding_jade",
-				new BuddingJadeBlock(FabricBlockSettings.copy(Blocks.BUDDING_AMETHYST)));
+				new BuddingJadeBlock(FabricBlockSettings.copy(Blocks.BUDDING_AMETHYST).requiresTool()));
 		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "budding_jade"), new BlockItem(BUDDING_JADE,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
 
 		JADE_BLOCK = registerBlock("jade_block",
-				new JadeBlock(FabricBlockSettings.copy(Blocks.AMETHYST_BLOCK)));
+				new JadeBlock(FabricBlockSettings.copy(Blocks.AMETHYST_BLOCK).requiresTool()));
 		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "jade_block"), new BlockItem(JADE_BLOCK,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
 
@@ -534,20 +534,20 @@ public class IncantationMod implements ModInitializer {
 				new Item(new FabricItemSettings().group(INCANTATION_GROUP)));
 
 		JADE_CLUSTER = registerBlock("jade_bud",
-				new JadeClusterBlock(7, 3, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER)));
+				new JadeClusterBlock(7, 3, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER).requiresTool()));
 		SMALL_JADE_BUD = registerBlock("small_jade_bud",
-				new JadeClusterBlock(3, 4, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER)));
+				new JadeClusterBlock(3, 4, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER).requiresTool()));
 		MEDIUM_JADE_BUD = registerBlock("medium_jade_bud",
-				new JadeClusterBlock(4, 3, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER)));
+				new JadeClusterBlock(4, 3, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER).requiresTool()));
 		LARGE_JADE_BUD = registerBlock("large_jade_bud",
-				new JadeClusterBlock(5, 3, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER)));
-		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "jade_cluster"), new BlockItem(JADE_CLUSTER,
+				new JadeClusterBlock(5, 3, FabricBlockSettings.copy(Blocks.AMETHYST_CLUSTER).requiresTool()));
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "jade_bud"), new BlockItem(JADE_CLUSTER,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
-		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "small_jade_cluster"), new BlockItem(SMALL_JADE_BUD,
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "small_jade_bud"), new BlockItem(SMALL_JADE_BUD,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
-		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "medium_jade_cluster"), new BlockItem(MEDIUM_JADE_BUD,
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "medium_jade_bud"), new BlockItem(MEDIUM_JADE_BUD,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
-		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "large_jade_cluster"), new BlockItem(LARGE_JADE_BUD,
+		Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, "large_jade_bud"), new BlockItem(LARGE_JADE_BUD,
 				new FabricItemSettings().group(INCANTATION_GROUP)));
 
 		JADE_GEODE_FEATURE = ConfiguredFeatures.register("jade_geode", Feature.GEODE ,

@@ -6,13 +6,16 @@
     "incantation:deepslate_ammolite_ore",
     "incantation:jade_block",
     "incantation:green_jade_block",
-    "incantation:jade_cluster",
+    "incantation:jade_bud",
     "incantation:small_jade_bud",
     "incantation:medium_jade_bud",
     "incantation:large_jade_bud",
-    "incantation:green_jade_cluster",
+    "incantation:green_jade_bud",
     "incantation:small_green_jade_bud",
     "incantation:medium_green_jade_bud",
-    "incantation:large_green_jade_bud"
+    "incantation:large_green_jade_bud",
+    "incantation:amethyst_crystal_lamp",
+    "incantation:jade_crystal_lamp",
+    "incantation:green_jade_crystal_lamp"
   ]
 }
