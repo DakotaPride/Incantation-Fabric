@@ -1,0 +1,26 @@
+{
+  "type": "incantation:bewitchment_table",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:hay_block"
+    },
+    {
+      "item": "minecraft:string"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "incantation:scroll"
+    },
+    {
+      "item": "minecraft:string"
+    }
+  ],
+  "output": {
+    "item": "enhancedcelestials:remedy_scroll"
+  }
+}

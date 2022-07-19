@@ -1,16 +1,20 @@
 {
-  "item.moreweaponry.harming_resistance_scroll": "Resistance Parchment",
-  "effect.moreweaponry.harming_resistance": "Harming Resistance",
-  "item.moreweaponry.resistance_parchment.harming": "Harming Resistance",
-  "item.moreweaponry.resistance_parchment.harming.description": "Rid Any Damaging Effects",
+  "item.moreweaponry.unwounded_scroll": "Resistance Parchment",
+  "effect.moreweaponry.unwounded": "Unwounded",
+  "item.incantation.cannot_use.unwounded": "Unwounded I (0:00)",
 
-  "item.minecraft.potion.effect.harming_resistance": "Potion Of Harming Resistance",
-  "item.minecraft.splash_potion.effect.harming_resistance": "Potion Of Harming Resistance",
-  "item.minecraft.lingering_potion.effect.harming_resistance": "Potion Of Harming Resistance",
-  "item.minecraft.tipped_arrow.effect.harming_resistance": "Arrow Of Harming Resistance",
+  "item.minecraft.potion.effect.unwounded": "Potion Of Unwounded",
+  "item.minecraft.splash_potion.effect.unwounded": "Potion Of Unwounded",
+  "item.minecraft.lingering_potion.effect.unwounded": "Potion Of Unwounded",
+  "item.minecraft.tipped_arrow.effect.unwounded": "Arrow Of Unwounded",
 
-  "item.moreweaponry.unconcealed_harming_resistance_scroll": "Unconcealed Resistance Parchment",
-  "item.moreweaponry.long_unconcealed_harming_resistance_scroll": "Unconcealed Resistance Parchment",
-  "item.moreweaponry.strong_unconcealed_harming_resistance_scroll": "Unconcealed Resistance Parchment",
-  "item.moreweaponry.frosted_unconcealed_harming_resistance_scroll": "Unconcealed Resistance Parchment"
+  "item.moreweaponry.unconcealed_unwounded_scroll": "Unconcealed Parchment",
+  "item.moreweaponry.long_unconcealed_unwounded_scroll": "Unconcealed Parchment",
+  "item.moreweaponry.strong_unconcealed_unwounded_scroll": "Unconcealed Parchment",
+  "item.moreweaponry.frosted_unconcealed_unwounded_scroll": "Unconcealed Parchment",
+  
+  "item.incantation.unconcealed.unwounded": "Unwounded I (0:23)",
+  "item.incantation.unconcealed.unwounded.frosted": "Unwounded I (0:23)",
+  "item.incantation.unconcealed.unwounded.extended": "Unwounded I (0:37)",
+  "item.incantation.unconcealed.unwounded.strong": "Unwounded II (0:23)"
 }

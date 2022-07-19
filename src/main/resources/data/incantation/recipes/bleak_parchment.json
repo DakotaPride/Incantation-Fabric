@@ -1,0 +1,34 @@
+{
+  "type": "incantation:bewitchment_table",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    [
+      {
+      "item": "minecraft:ice"
+      },
+      {
+        "item": "minecraft:packed_ice"
+      },
+      {
+        "item": "minecraft:blue_ice"
+      }
+    ],
+    {
+      "item": "minecraft:string"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "incantation:scroll"
+    },
+    {
+      "item": "minecraft:string"
+    }
+  ],
+  "output": {
+    "item": "incantation:bleak_scroll"
+  }
+}

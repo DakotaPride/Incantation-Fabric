@@ -1,16 +1,20 @@
 {
-  "item.pickyourpoison.reflection_resistance_scroll": "Resistance Parchment",
-  "effect.pickyourpoison.reflection_resistance": "Reflection Resistance",
-  "item.pickyourpoison.resistance_parchment.reflection": "Reflection Resistance",
-  "item.pickyourpoison.resistance_parchment.reflection.description": "Others Suffer Your Fate",
+  "item.pickyourpoison.echoing_scroll": "Resistance Parchment",
+  "effect.pickyourpoison.echoing": "Echoing",
+  "item.incantation.cannot_use.echoing": "Echoing",
 
-  "item.minecraft.potion.effect.reflection_resistance": "Potion Of Reflection Resistance",
-  "item.minecraft.splash_potion.effect.reflection_resistance": "Potion Of Reflection Resistance",
-  "item.minecraft.lingering_potion.effect.reflection_resistance": "Potion Of Reflection Resistance",
-  "item.minecraft.tipped_arrow.effect.reflection_resistance": "Arrow Of Reflection Resistance",
+  "item.minecraft.potion.effect.echoing": "Potion Of Echoing",
+  "item.minecraft.splash_potion.effect.echoing": "Potion Of Echoing",
+  "item.minecraft.lingering_potion.effect.echoing": "Potion Of Echoing",
+  "item.minecraft.tipped_arrow.effect.echoing": "Arrow Of Echoing",
 
-  "item.pickyourpoison.unconcealed_reflection_resistance_scroll": "Unconcealed Resistance Parchment",
-  "item.pickyourpoison.long_unconcealed_reflection_resistance_scroll": "Unconcealed Resistance Parchment",
-  "item.pickyourpoison.strong_unconcealed_reflection_resistance_scroll": "Unconcealed Resistance Parchment",
-  "item.pickyourpoison.frosted_unconcealed_reflection_resistance_scroll": "Unconcealed Resistance Parchment"
+  "item.pickyourpoison.unconcealed_echoing_scroll": "Unconcealed Parchment",
+  "item.pickyourpoison.long_unconcealed_echoing_scroll": "Unconcealed Parchment",
+  "item.pickyourpoison.strong_unconcealed_echoing_scroll": "Unconcealed Parchment",
+  "item.pickyourpoison.frosted_unconcealed_echoing_scroll": "Unconcealed Parchment",
+
+  "item.incantation.unconcealed.echoing": "Echoing I (0:23)",
+  "item.incantation.unconcealed.echoing.frosted": "Echoing I (0:23)",
+  "item.incantation.unconcealed.echoing.extended": "Echoing I (0:37)",
+  "item.incantation.unconcealed.echoing.strong": "Echoing II (0:23)"
 }

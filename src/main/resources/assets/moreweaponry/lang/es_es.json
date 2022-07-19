@@ -1,16 +1,20 @@
 {
-  "item.moreweaponry.harming_resistance_scroll": "Pergamino de Resistencia",
-  "effect.moreweaponry.harming_resistance": "Resistencia al Daño",
-  "item.moreweaponry.resistance_parchment.harming": "Resistencia Dañante",
-  "item.moreweaponry.resistance_parchment.harming.description": "Elimina cualquier efecto dañino",
+  "item.moreweaponry.unwounded_scroll": "Pergamino de Resistencia",
+  "effect.moreweaponry.unwounded": "Ileno",
+  "item.incantation.cannot_use.unwounded": "Ileno I (0:00)",
 
-  "item.minecraft.potion.effect.harming_resistance": "Poción de resistencia al daño",
-  "item.minecraft.splash_potion.effect.harming_resistance": "Poción de resistencia al daño",
-  "item.minecraft.lingering_potion.effect.harming_resistance": "Poción de resistencia al daño",
-  "item.minecraft.tipped_arrow.effect.harming_resistance": "Flecha de resistencia al daño",
+  "item.minecraft.potion.effect.unwounded": "Poción de ileso",
+  "item.minecraft.splash_potion.effect.unwounded": "Poción de ilesos",
+  "item.minecraft.lingering_potion.effect.unwounded": "Poción de ilesos",
+  "item.minecraft.tipped_arrow.effect.unwounded": "Flecha de ileso",
 
-  "item.moreweaponry.unconcealed_harming_resistance_scroll": "Pergamino de resistencia descubierto",
-  "item.moreweaponry.long_unconcealed_harming_resistance_scroll": "Pergamino de resistencia descubierto",
-  "item.moreweaponry.strong_unconcealed_harming_resistance_scroll": "Pergamino de resistencia descubierto",
-  "item.moreweaponry.frosted_unconcealed_harming_resistance_scroll": "Pergamino de resistencia descubierto"
+  "item.moreweaponry.unconcealed_unwounded_scroll": "Pergamino descubierto",
+  "item.moreweaponry.long_unconcealed_unwounded_scroll": "Pergamino descubierto",
+  "item.moreweaponry.strong_unconcealed_unwounded_scroll": "Pergamino descubierto",
+  "item.moreweaponry.frosted_unconcealed_unwounded_scroll": "Pergamino descubierto",
+
+  "item.incantation.unconcealed.unwounded": "I ileso (0:23)",
+  "item.incantation.unconcealed.unwounded.frosted": "I ileso (0:23)",
+  "item.incantation.unconcealed.unwounded.extended": "I ileso (0:37)",
+  "item.incantation.unconcealed.unwounded.strong": "Ileso II (0:23)"
 }

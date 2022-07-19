@@ -1,18 +1,22 @@
 {
-  "item.enhancedcelestials.harvest_healing_scroll": "Pergamino curativo",
-  "effect.enhancedcelestials.harvest_healing": "Cosecha de curación",
-  "item.enhancedcelestials.healing_parchment.harvest": "Cosecha de curación",
-  "item.enhancedcelestials.healing_parchment.harvest.description": "Curar al comer una cosecha",
+  "item.enhancedcelestials.remedy_scroll": "Pergamino",
+  "effect.enhancedcelestials.remedy": "Remedio",
+  "item.incantation.cannot_use.remedy": "Remedio I (0:00)",
   "item.enhancedcelestials.moon_crest_fruit": "Cresta de la Luna",
   "item.enhancedcelestials.mending_moon_crest_fruit": "Reparando Cresta Lunar",
 
-  "item.minecraft.potion.effect.harvest_healing": "Poción de curación de la cosecha",
-  "item.minecraft.splash_potion.effect.harvest_healing": "Poción de curación de la cosecha",
-  "item.minecraft.lingering_potion.effect.harvest_healing": "Poción de curación de la cosecha",
-  "item.minecraft.tipped_arrow.effect.harvest_healing": "Flecha de curación de la cosecha",
+  "item.minecraft.potion.effect.remedy": "Poción de remedio",
+  "item.minecraft.splash_potion.effect.remedy": "Poción de remedio",
+  "item.minecraft.lingering_potion.effect.remedy": "Poción de remedio",
+  "item.minecraft.tipped_arrow.effect.remedy": "Flecha de remedio",
 
-  "item.enhancedcelestials.unconcealed_harvest_healing_scroll": "Pergamino curativo descubierto",
-  "item.enhancedcelestials.long_unconcealed_harvest_healing_scroll": "Pergamino curativo descubierto",
-  "item.enhancedcelestials.strong_unconcealed_harvest_healing_scroll": "Pergamino curativo descubierto",
-  "item.enhancedcelestials.frosted_unconcealed_harvest_healing_scroll": "Pergamino curativo descubierto"
+  "item.enhancedcelestials.unconcealed_remedy_scroll": "Pergamino descubierto",
+  "item.enhancedcelestials.long_unconcealed_remedy_scroll": "Pergamino descubierto",
+  "item.enhancedcelestials.strong_unconcealed_remedy_scroll": "Pergamino descubierto",
+  "item.enhancedcelestials.frosted_unconcealed_remedy_scroll": "Pergamino descubierto",
+
+  "item.incantation.unconcealed.remedy": "Remedio I (0:23)",
+  "item.incantation.unconcealed.remedy.frosted": "Remedio I (0:23)",
+  "item.incantation.unconcealed.remedy.extended": "Remedio I (0:37)",
+  "item.incantation.unconcealed.remedy.strong": "Remedio II (0:23)"
 }

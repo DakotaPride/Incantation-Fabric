@@ -2,20 +2,11 @@ package net.dakotapride.incantation.compat.enhancedcelestials;
 
 import net.dakotapride.incantation.common.IncantationMod;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
-import net.dakotapride.incantation.compat.enhancedcelestials.item.HarvestHealingScrollItem;
-import net.dakotapride.incantation.compat.enhancedcelestials.item.unconcealed_scrolls.base.UnconcealedHarvestHealingScroll;
-import net.dakotapride.incantation.compat.enhancedcelestials.item.unconcealed_scrolls.extended.UnconcealedExtendedHarvestHealingScroll;
-import net.dakotapride.incantation.compat.enhancedcelestials.item.unconcealed_scrolls.frosted.UnconcealedFrostedHarvestHealingScroll;
-import net.dakotapride.incantation.compat.enhancedcelestials.item.unconcealed_scrolls.stronger.UnconcealedStrongerHarvestHealingScroll;
-import net.dakotapride.incantation.compat.moreweaponry.item.HarmingResistanceScrollItem;
-import net.dakotapride.incantation.compat.moreweaponry.item.unconcealed_scrolls.base.UnconcealedHarmingResistanceScroll;
-import net.dakotapride.incantation.compat.moreweaponry.item.unconcealed_scrolls.extended.UnconcealedExtendedHarmingResistanceScroll;
-import net.dakotapride.incantation.compat.moreweaponry.item.unconcealed_scrolls.frosted.UnconcealedFrostedHarmingResistanceScroll;
-import net.dakotapride.incantation.compat.moreweaponry.item.unconcealed_scrolls.stronger.UnconcealedStrongerHarmingResistanceScroll;
-import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.base.UnconcealedReflectionResistanceScroll;
-import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.extended.UnconcealedExtendedReflectionResistanceScroll;
-import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.frosted.UnconcealedFrostedReflectionResistanceScroll;
-import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.stronger.UnconcealedStrongerReflectionResistanceScroll;
+import net.dakotapride.incantation.compat.enhancedcelestials.item.RemedyScrollItem;
+import net.dakotapride.incantation.compat.enhancedcelestials.item.unconcealed_scrolls.base.UnconcealedRemedyScroll;
+import net.dakotapride.incantation.compat.enhancedcelestials.item.unconcealed_scrolls.extended.UnconcealedExtendedRemedyScroll;
+import net.dakotapride.incantation.compat.enhancedcelestials.item.unconcealed_scrolls.frosted.UnconcealedFrostedRemedyScroll;
+import net.dakotapride.incantation.compat.enhancedcelestials.item.unconcealed_scrolls.stronger.UnconcealedStrongerRemedyScroll;
 import net.dakotapride.incantation.mixin.BrewingRecipeRegistryMixin;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
@@ -41,17 +32,17 @@ public class EnhancedCelestialsCompat {
 
     // Items
 
-    public static StatusEffect HARVEST_HEALING = new EmptyStatusEffect(StatusEffectCategory.BENEFICIAL, 0xF4FFDB);
-    public static HarvestHealingScrollItem HARVEST_HEALING_SCROLL;
+    public static StatusEffect REMEDY = new EmptyStatusEffect(StatusEffectCategory.BENEFICIAL, 0xF4FFDB);
+    public static RemedyScrollItem REMEDY_SCROLL;
     public static Item MENDING_MOON_CREST_FRUIT;
     public static Item MOON_CREST_FRUIT;
 
-    public static UnconcealedHarvestHealingScroll UNCONCEALED_HARVEST_HEALING_SCROLL;
-    public static UnconcealedExtendedHarvestHealingScroll UNCONCEALED_LONG_HARVEST_HEALING_SCROLL;
-    public static UnconcealedStrongerHarvestHealingScroll UNCONCEALED_STRONG_HARVEST_HEALING_SCROLL;
-    public static UnconcealedFrostedHarvestHealingScroll UNCONCEALED_FROSTED_HARVEST_HEALING_SCROLL;
+    public static UnconcealedRemedyScroll UNCONCEALED_REMEDY_SCROLL;
+    public static UnconcealedExtendedRemedyScroll UNCONCEALED_LONG_REMEDY_SCROLL;
+    public static UnconcealedStrongerRemedyScroll UNCONCEALED_STRONG_REMEDY_SCROLL;
+    public static UnconcealedFrostedRemedyScroll UNCONCEALED_FROSTED_REMEDY_SCROLL;
 
-    public static Potion HARVEST_HEALING_POTION;
+    public static Potion REMEDY_POTION;
 
     private static final Identifier GRASS_BLOCK_ID
             = new Identifier("minecraft", "blocks/grass");
@@ -70,28 +61,28 @@ public class EnhancedCelestialsCompat {
 
     public static void enhancedCelestialsCompatRegistry() {
 
-        UNCONCEALED_HARVEST_HEALING_SCROLL = registerItem("unconcealed_harvest_healing_scroll",
-                new UnconcealedHarvestHealingScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
-                        new FabricItemSettings().maxCount(16).maxDamage(80).group(IncantationMod.INCANTATION_GROUP)));
-        UNCONCEALED_FROSTED_HARVEST_HEALING_SCROLL = registerItem("frosted_unconcealed_harvest_healing_scroll",
-                new UnconcealedFrostedHarvestHealingScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
-                        new FabricItemSettings().maxCount(16).maxDamage(80).group(IncantationMod.INCANTATION_GROUP)));
-        UNCONCEALED_LONG_HARVEST_HEALING_SCROLL = registerItem("long_unconcealed_harvest_healing_scroll",
-                new UnconcealedExtendedHarvestHealingScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
-                        new FabricItemSettings().maxCount(16).maxDamage(80).group(IncantationMod.INCANTATION_GROUP)));
-        UNCONCEALED_STRONG_HARVEST_HEALING_SCROLL = registerItem("strong_unconcealed_harvest_healing_scroll",
-                new UnconcealedStrongerHarvestHealingScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
-                        new FabricItemSettings().maxCount(16).maxDamage(80).group(IncantationMod.INCANTATION_GROUP)));
+        UNCONCEALED_REMEDY_SCROLL = registerItem("unconcealed_remedy_scroll",
+                new UnconcealedRemedyScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(1).maxDamage(80).group(IncantationMod.INCANTATION_GROUP)));
+        UNCONCEALED_FROSTED_REMEDY_SCROLL = registerItem("frosted_unconcealed_remedy_scroll",
+                new UnconcealedFrostedRemedyScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(1).maxDamage(80).group(IncantationMod.INCANTATION_GROUP)));
+        UNCONCEALED_LONG_REMEDY_SCROLL = registerItem("long_unconcealed_remedy_scroll",
+                new UnconcealedExtendedRemedyScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(1).maxDamage(80).group(IncantationMod.INCANTATION_GROUP)));
+        UNCONCEALED_STRONG_REMEDY_SCROLL = registerItem("strong_unconcealed_remedy_scroll",
+                new UnconcealedStrongerRemedyScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(1).maxDamage(80).group(IncantationMod.INCANTATION_GROUP)));
 
-        HARVEST_HEALING_POTION = registerPotion("harvest_healing",
-                new Potion(new StatusEffectInstance(HARVEST_HEALING, 220, 0)));
+        REMEDY_POTION = registerPotion("remedy",
+                new Potion(new StatusEffectInstance(REMEDY, 220, 0)));
         BrewingRecipeRegistryMixin.invokeRegisterPotionRecipe(Potions.MUNDANE,
-                Items.WHEAT, HARVEST_HEALING_POTION);
+                Items.WHEAT, REMEDY_POTION);
 
-        Registry.register(Registry.STATUS_EFFECT, new Identifier(ENHANCED_CELESTIALS_ID, "harvest_healing"), HARVEST_HEALING);
-        HARVEST_HEALING_SCROLL = registerItem("harvest_healing_scroll",
-                new HarvestHealingScrollItem(IncantationMod.IncantationMaterials.FABRIC_PATCHING,
-                        new FabricItemSettings().maxCount(16).maxDamage(60).group(IncantationMod.INCANTATION_GROUP)));
+        Registry.register(Registry.STATUS_EFFECT, new Identifier(ENHANCED_CELESTIALS_ID, "remedy"), REMEDY);
+        REMEDY_SCROLL = registerItem("remedy_scroll",
+                new RemedyScrollItem(IncantationMod.IncantationMaterials.FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(1).maxDamage(60).group(IncantationMod.INCANTATION_GROUP)));
 
         MOON_CREST_FRUIT = registerItem("moon_crest_fruit",
                 new Item(new FabricItemSettings().group(IncantationMod.INCANTATION_GROUP).food(
@@ -102,7 +93,7 @@ public class EnhancedCelestialsCompat {
                 new Item(new FabricItemSettings().group(IncantationMod.INCANTATION_GROUP).food(
                         new FoodComponent.Builder().hunger((int) 5.0f)
                                 .saturationModifier(7.0f)
-                                .statusEffect(new StatusEffectInstance(HARVEST_HEALING, 400), 1.0f)
+                                .statusEffect(new StatusEffectInstance(REMEDY, 400), 1.0f)
                                 .build())));
 
         LootTableEvents.MODIFY.register(((resourceManager, manager, id, supplier, setter) -> {

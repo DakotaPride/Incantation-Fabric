@@ -1,16 +1,20 @@
 {
-  "item.moreweaponry.harming_resistance_scroll": "Parchemin de résistance",
-  "effect.moreweaponry.harming_resistance": "Résistance aux dégâts",
-  "item.moreweaponry.resistance_parchment.harming": "Endommager la résistance",
-  "item.moreweaponry.resistance_parchment.harming.description": "Éliminer tout effet dommageable",
+  "item.moreweaponry.unwounded_scroll": "Parchemin de résistance",
+  "effect.moreweaponry.unwounded": "Sans blessure",
+  "item.incantation.cannot_use.unwounded": "Sans blessure  I (0:00)",
 
-  "item.minecraft.potion.effect.harming_resistance": "Potion de résistance aux dégâts",
-  "item.minecraft.splash_potion.effect.harming_resistance": "Potion de résistance aux dégâts",
-  "item.minecraft.lingering_potion.effect.harming_resistance": "Potion de résistance aux dégâts",
-  "item.minecraft.tipped_arrow.effect.harming_resistance": "Flèche de résistance aux dégâts",
+  "item.minecraft.potion.effect.unwounded": "Potion de non blessé",
+  "item.minecraft.splash_potion.effect.unwounded": "Potion de non blessé",
+  "item.minecraft.lingering_potion.effect.unwounded": "Potion de non blessé",
+  "item.minecraft.tipped_arrow.effect.unwounded": "Flèche de non blessé",
 
-  "item.moreweaponry.unconcealed_harming_resistance_scroll": "Parchemin de résistance non dissimulé",
-  "item.moreweaponry.long_unconcealed_harming_resistance_scroll": "Parchemin de résistance non dissimulé",
-  "item.moreweaponry.strong_unconcealed_harming_resistance_scroll": "Parchemin de résistance non dissimulé",
-  "item.moreweaponry.frosted_unconcealed_harming_resistance_scroll": "Parchemin de résistance non dissimulé"
+  "item.moreweaponry.unconcealed_unwounded_scroll": "Parchemin non dissimulé",
+  "item.moreweaponry.long_unconcealed_unwounded_scroll": "Parchemin non dissimulé",
+  "item.moreweaponry.strong_unconcealed_unwounded_scroll": "Parchemin non dissimulé",
+  "item.moreweaponry.frosted_unconcealed_unwounded_scroll": "Parchemin non dissimulé",
+
+  "item.incantation.unconcealed.unwounded": "Sans blessure, je (0:23)",
+  "item.incantation.unconcealed.unwounded.frosted": "Je ne suis pas blessé (0:23)",
+  "item.incantation.unconcealed.unwounded.extended": "Je ne suis pas blessé (0:37)",
+  "item.incantation.unconcealed.unwounded.strong": "Sans blessure II (0:23)"
 }

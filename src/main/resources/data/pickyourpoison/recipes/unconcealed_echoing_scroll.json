@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  A",
+    "A#X"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:iron_nugget"
+    },
+    "X": {
+      "item": "incantation:silver_nugget_apple"
+    },
+    "#": {
+      "item": "pickyourpoison:echoing_scroll"
+    }
+  },
+  "result": {
+    "item": "pickyourpoison:unconcealed_echoing_scroll",
+    "count": 1
+  }
+}

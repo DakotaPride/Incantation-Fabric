@@ -2,19 +2,11 @@ package net.dakotapride.incantation.compat.pickyourpoison;
 
 import net.dakotapride.incantation.common.IncantationMod;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
-import net.dakotapride.incantation.common.item.unconcealed_scrolls.base.UnconcealedFleshyPunishmentScroll;
-import net.dakotapride.incantation.common.item.unconcealed_scrolls.base.UnconcealedFreezingResistanceScroll;
-import net.dakotapride.incantation.common.item.unconcealed_scrolls.extended.UnconcealedExtendedFleshyPunishmentScroll;
-import net.dakotapride.incantation.common.item.unconcealed_scrolls.extended.UnconcealedExtendedFreezingResistanceScroll;
-import net.dakotapride.incantation.common.item.unconcealed_scrolls.frosted.UnconcealedFrostedFleshyPunishmentScroll;
-import net.dakotapride.incantation.common.item.unconcealed_scrolls.frosted.UnconcealedFrostedFreezingResistanceScroll;
-import net.dakotapride.incantation.common.item.unconcealed_scrolls.stronger.UnconcealedStrongerFleshyPunishmentScroll;
-import net.dakotapride.incantation.common.item.unconcealed_scrolls.stronger.UnconcealedStrongerFreezingResistanceScroll;
-import net.dakotapride.incantation.compat.pickyourpoison.item.ReflectionResistanceScrollItem;
-import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.base.UnconcealedReflectionResistanceScroll;
-import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.extended.UnconcealedExtendedReflectionResistanceScroll;
-import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.frosted.UnconcealedFrostedReflectionResistanceScroll;
-import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.stronger.UnconcealedStrongerReflectionResistanceScroll;
+import net.dakotapride.incantation.compat.pickyourpoison.item.EchoingScrollItem;
+import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.base.UnconcealedEchoingScroll;
+import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.extended.UnconcealedExtendedEchoingScroll;
+import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.frosted.UnconcealedFrostedEchoingScroll;
+import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.stronger.UnconcealedStrongerEchoingScroll;
 import net.dakotapride.incantation.mixin.BrewingRecipeRegistryMixin;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.effect.StatusEffect;
@@ -32,15 +24,15 @@ public class PickYourPoisonCompat {
 
     // Items
 
-    public static StatusEffect REFLECTION_RESISTANCE = new EmptyStatusEffect(StatusEffectCategory.BENEFICIAL, 0xD85252);
-    public static ReflectionResistanceScrollItem REFLECTION_RESISTANCE_SCROLL;
+    public static StatusEffect ECHOING = new EmptyStatusEffect(StatusEffectCategory.BENEFICIAL, 0xD85252);
+    public static EchoingScrollItem ECHOING_SCROLL;
 
-    public static UnconcealedReflectionResistanceScroll UNCONCEALED_REFLECTION_RESISTANCE_SCROLL;
-    public static UnconcealedExtendedReflectionResistanceScroll UNCONCEALED_LONG_REFLECTION_RESISTANCE_SCROLL;
-    public static UnconcealedStrongerReflectionResistanceScroll UNCONCEALED_STRONG_REFLECTION_RESISTANCE_SCROLL;
-    public static UnconcealedFrostedReflectionResistanceScroll UNCONCEALED_FROSTED_REFLECTION_RESISTANCE_SCROLL;
+    public static UnconcealedEchoingScroll UNCONCEALED_ECHOING_SCROLL;
+    public static UnconcealedExtendedEchoingScroll UNCONCEALED_LONG_ECHOING_SCROLL;
+    public static UnconcealedStrongerEchoingScroll UNCONCEALED_STRONG_ECHOING_SCROLL;
+    public static UnconcealedFrostedEchoingScroll UNCONCEALED_FROSTED_ECHOING_SCROLL;
 
-    public static Potion REFLECTION_RESISTANCE_POTION;
+    public static Potion ECHOING_POTION;
 
     // Registration
 
@@ -56,28 +48,28 @@ public class PickYourPoisonCompat {
 
     public static void pickYourPoisonCompatRegistry() {
 
-        UNCONCEALED_REFLECTION_RESISTANCE_SCROLL = registerItem("unconcealed_reflection_resistance_scroll",
-                new UnconcealedReflectionResistanceScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
-                        new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
-        UNCONCEALED_FROSTED_REFLECTION_RESISTANCE_SCROLL = registerItem("frosted_unconcealed_reflection_resistance_scroll",
-                new UnconcealedFrostedReflectionResistanceScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
-                        new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
-        UNCONCEALED_LONG_REFLECTION_RESISTANCE_SCROLL = registerItem("long_unconcealed_reflection_resistance_scroll",
-                new UnconcealedExtendedReflectionResistanceScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
-                        new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
-        UNCONCEALED_STRONG_REFLECTION_RESISTANCE_SCROLL = registerItem("strong_unconcealed_reflection_resistance_scroll",
-                new UnconcealedStrongerReflectionResistanceScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
-                        new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+        UNCONCEALED_ECHOING_SCROLL = registerItem("unconcealed_echoing_scroll",
+                new UnconcealedEchoingScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(1).maxDamage(80).group(IncantationMod.INCANTATION_GROUP)));
+        UNCONCEALED_FROSTED_ECHOING_SCROLL = registerItem("frosted_unconcealed_echoing_scroll",
+                new UnconcealedFrostedEchoingScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(1).maxDamage(80).group(IncantationMod.INCANTATION_GROUP)));
+        UNCONCEALED_LONG_ECHOING_SCROLL = registerItem("long_unconcealed_echoing_scroll",
+                new UnconcealedExtendedEchoingScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(1).maxDamage(80).group(IncantationMod.INCANTATION_GROUP)));
+        UNCONCEALED_STRONG_ECHOING_SCROLL = registerItem("strong_unconcealed_echoing_scroll",
+                new UnconcealedStrongerEchoingScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(1).maxDamage(80).group(IncantationMod.INCANTATION_GROUP)));
 
-        REFLECTION_RESISTANCE_POTION = registerPotion("reflection_resistance",
-                new Potion(new StatusEffectInstance(REFLECTION_RESISTANCE, 220, 0)));
+        ECHOING_POTION = registerPotion("echoing",
+                new Potion(new StatusEffectInstance(ECHOING, 220, 0)));
         BrewingRecipeRegistryMixin.invokeRegisterPotionRecipe(Potions.MUNDANE,
-                Items.FERMENTED_SPIDER_EYE, REFLECTION_RESISTANCE_POTION);
+                Items.FERMENTED_SPIDER_EYE, ECHOING_POTION);
 
-        Registry.register(Registry.STATUS_EFFECT, new Identifier(PICK_YOUR_POISON_ID, "reflection_resistance"), REFLECTION_RESISTANCE);
-        REFLECTION_RESISTANCE_SCROLL = registerItem("reflection_resistance_scroll",
-                new ReflectionResistanceScrollItem(IncantationMod.IncantationMaterials.FABRIC_PATCHING,
-                        new FabricItemSettings().maxCount(16).group(IncantationMod.INCANTATION_GROUP)));
+        Registry.register(Registry.STATUS_EFFECT, new Identifier(PICK_YOUR_POISON_ID, "echoing"), ECHOING);
+        ECHOING_SCROLL = registerItem("echoing_scroll",
+                new EchoingScrollItem(IncantationMod.IncantationMaterials.FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(1).group(IncantationMod.INCANTATION_GROUP)));
 
     }
 

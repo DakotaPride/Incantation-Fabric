@@ -1,16 +1,20 @@
 {
-  "item.pickyourpoison.reflection_resistance_scroll": "Pergamino de Resistencia",
-  "effect.pickyourpoison.reflection_resistance": "Resistencia a la reflexión",
-  "item.pickyourpoison.resistance_parchment.reflection": "Resistencia a la reflexión",
-  "item.pickyourpoison.resistance_parchment.reflection.description": "Otros sufren tu destino",
+  "item.pickyourpoison.echoing_scroll": "Pergamino de Resistencia",
+  "effect.pickyourpoison.echoing": "Eco",
+  "item.incantation.cannot_use.echoing": "Hacer eco",
 
-  "item.minecraft.potion.effect.reflection_resistance": "Poción de resistencia a la reflexión",
-  "item.minecraft.splash_potion.effect.reflection_resistance": "Poción de resistencia a la reflexión",
-  "item.minecraft.lingering_potion.effect.reflection_resistance": "Poción de resistencia a la reflexión",
-  "item.minecraft.tipped_arrow.effect.reflection_resistance": "Flecha de resistencia a la reflexión",
+  "item.minecraft.potion.effect.echoing": "Poción del eco",
+  "item.minecraft.splash_potion.effect.echoing": "Poción de eco",
+  "item.minecraft.lingering_potion.effect.echoing": "Poción del eco",
+  "item.minecraft.tipped_arrow.effect.echoing": "Flecha de eco",
 
-  "item.pickyourpoison.unconcealed_reflection_resistance_scroll": "Pergamino de resistencia descubierto",
-  "item.pickyourpoison.long_unconcealed_reflection_resistance_scroll": "Pergamino de resistencia descubierto",
-  "item.pickyourpoison.strong_unconcealed_reflection_resistance_scroll": "Pergamino de resistencia descubierto",
-  "item.pickyourpoison.frosted_unconcealed_reflection_resistance_scroll": "Pergamino de resistencia descubierto"
+  "item.pickyourpoison.unconcealed_echoing_scroll": "Pergamino descubierto",
+  "item.pickyourpoison.long_unconcealed_echoing_scroll": "Pergamino descubierto",
+  "item.pickyourpoison.strong_unconcealed_echoing_scroll": "Pergamino descubierto",
+  "item.pickyourpoison.frosted_unconcealed_echoing_scroll": "Pergamino descubierto",
+
+  "item.incantation.unconcealed.echoing": "Haciendo eco I (0:23)",
+  "item.incantation.unconcealed.echoing.frosted": "Echoing I (0:23)",
+  "item.incantation.unconcealed.echoing.extended": "Echoing I (0:37)",
+  "item.incantation.unconcealed.echoing.strong": "Echoing II (0:23)"
 }

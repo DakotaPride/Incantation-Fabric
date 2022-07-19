@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "moreweaponry:item/frosted_unconcealed_harming_resistance_scroll"
-  }
-}

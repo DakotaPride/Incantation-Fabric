@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBA",
+    "#X "
+  ],
+  "key": {
+    "X": {
+      "item": "incantation:unconcealed_bleak_scroll"
+    },
+    "B": {
+      "item": "incantation:mystic_leather"
+    },
+    "A": {
+      "item": "incantation:enchanted_berry_jam"
+    },
+    "#": {
+      "item": "incantation:enchanted_berries"
+    }
+  },
+  "result": {
+    "item": "incantation:long_unconcealed_bleak_scroll",
+    "count": 1
+  }
+}

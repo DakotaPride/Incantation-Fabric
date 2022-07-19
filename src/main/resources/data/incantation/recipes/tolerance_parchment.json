@@ -1,0 +1,26 @@
+{
+  "type": "incantation:bewitchment_table",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:milk_bucket"
+    },
+    {
+      "item": "minecraft:string"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "incantation:scroll"
+    },
+    {
+      "item": "minecraft:string"
+    }
+  ],
+  "output": {
+    "item": "incantation:tolerance_scroll"
+  }
+}

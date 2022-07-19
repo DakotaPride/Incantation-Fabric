@@ -1,18 +1,22 @@
 {
-  "item.enhancedcelestials.harvest_healing_scroll": "Healing Parchment",
-  "effect.enhancedcelestials.harvest_healing": "Harvest Healing",
-  "item.enhancedcelestials.healing_parchment.harvest": "Harvest Healing",
-  "item.enhancedcelestials.healing_parchment.harvest.description": "Heal Upon Eating A Crop",
+  "item.enhancedcelestials.remedy_scroll": "Parchment",
+  "effect.enhancedcelestials.remedy": "Remedy",
+  "item.incantation.cannot_use.remedy": "Remedy I (0:00)",
   "item.enhancedcelestials.moon_crest_fruit": "Moon Crest",
   "item.enhancedcelestials.mending_moon_crest_fruit": "Mending Moon Crest",
 
-  "item.minecraft.potion.effect.harvest_healing": "Potion Of Harvest Healing",
-  "item.minecraft.splash_potion.effect.harvest_healing": "Potion Of Harvest Healing",
-  "item.minecraft.lingering_potion.effect.harvest_healing": "Potion Of Harvest Healing",
-  "item.minecraft.tipped_arrow.effect.harvest_healing": "Arrow Of Harvest Healing",
+  "item.minecraft.potion.effect.remedy": "Potion Of Remedy",
+  "item.minecraft.splash_potion.effect.remedy": "Potion Of Remedy",
+  "item.minecraft.lingering_potion.effect.remedy": "Potion Of Remedy",
+  "item.minecraft.tipped_arrow.effect.remedy": "Arrow Of Remedy",
 
-  "item.enhancedcelestials.unconcealed_harvest_healing_scroll": "Unconcealed Healing Parchment",
-  "item.enhancedcelestials.long_unconcealed_harvest_healing_scroll": "Unconcealed Healing Parchment",
-  "item.enhancedcelestials.strong_unconcealed_harvest_healing_scroll": "Unconcealed Healing Parchment",
-  "item.enhancedcelestials.frosted_unconcealed_harvest_healing_scroll": "Unconcealed Healing Parchment"
+  "item.enhancedcelestials.unconcealed_remedy_scroll": "Unconcealed Parchment",
+  "item.enhancedcelestials.long_unconcealed_remedy_scroll": "Unconcealed Parchment",
+  "item.enhancedcelestials.strong_unconcealed_remedy_scroll": "Unconcealed Parchment",
+  "item.enhancedcelestials.frosted_unconcealed_remedy_scroll": "Unconcealed Parchment",
+
+  "item.incantation.unconcealed.remedy": "Remedy I (0:23)",
+  "item.incantation.unconcealed.remedy.frosted": "Remedy I (0:23)",
+  "item.incantation.unconcealed.remedy.extended": "Remedy I (0:37)",
+  "item.incantation.unconcealed.remedy.strong": "Remedy II (0:23)"
 }

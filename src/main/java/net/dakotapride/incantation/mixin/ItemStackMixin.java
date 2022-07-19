@@ -7,13 +7,8 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.text.Text;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -27,7 +22,7 @@ public abstract class ItemStackMixin {
     private void canHaveStatusEffect(World world, LivingEntity entity, CallbackInfoReturnable<ItemStack> cir) {
         if (FabricLoader.getInstance().isModLoaded("enhancedcelestials")) {
             if (entity.getActiveItem().isIn(IncantationTags.HARVESTABLE_FOODS)
-                    && entity.hasStatusEffect(EnhancedCelestialsCompat.HARVEST_HEALING)) {
+                    && entity.hasStatusEffect(EnhancedCelestialsCompat.REMEDY)) {
                 entity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 300, 1));
                 entity.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 100, 0));
             }
@@ -40,7 +35,7 @@ public abstract class ItemStackMixin {
                 || entity.getActiveItem().isOf(Items.HONEY_BOTTLE)
                 || entity.getActiveItem().isOf(EnhancedCelestialsCompat.MENDING_MOON_CREST_FRUIT)
                 || entity.getActiveItem().isOf(EnhancedCelestialsCompat.MOON_CREST_FRUIT)) {
-            entity.removeStatusEffect(IncantationMod.FLESHY_PUNISHMENT);
+            entity.removeStatusEffect(IncantationMod.RA_WRATH);
             entity.setFireTicks(0);
         }
     }

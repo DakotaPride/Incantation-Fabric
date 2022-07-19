@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": [
+    {
+      "item": "incantation:alexandrite_ore"
+    },
+    {
+      "item": "incantation:deepslate_ore"
+    }
+  ],
+  "result": "incantation:raw_alexandrite"
+}

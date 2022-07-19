@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBA",
+    "#X "
+  ],
+  "key": {
+    "X": {
+      "item": "incantation:unconcealed_ra_wrath_scroll"
+    },
+    "B": {
+      "item": "incantation:mystic_leather"
+    },
+    "A": {
+      "item": "incantation:enchanted_berry_jam"
+    },
+    "#": {
+      "item": "incantation:silver_nugget_apple"
+    }
+  },
+  "result": {
+    "item": "incantation:strong_unconcealed_ra_wrath_scroll",
+    "count": 1
+  }
+}

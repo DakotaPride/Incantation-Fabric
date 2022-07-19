@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "incantation:item/unconcealed_milky_resistance_scroll"
-  }
-}

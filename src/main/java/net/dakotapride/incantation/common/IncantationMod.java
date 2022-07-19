@@ -5,19 +5,20 @@ import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.dakotapride.incantation.common.block.*;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableBlock;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableEntity;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.frosted.UnconcealedFrostedToleranceScroll;
 import net.dakotapride.incantation.config.IncantationConfig;
 import net.dakotapride.incantation.common.effect.EmptyDamageModifierStatusEffect;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
 import net.dakotapride.incantation.common.item.*;
-import net.dakotapride.incantation.common.item.unconcealed_scrolls.base.UnconcealedFleshyPunishmentScroll;
-import net.dakotapride.incantation.common.item.unconcealed_scrolls.base.UnconcealedFreezingResistanceScroll;
-import net.dakotapride.incantation.common.item.unconcealed_scrolls.base.UnconcealedMilkyResistanceScroll;
-import net.dakotapride.incantation.common.item.unconcealed_scrolls.extended.UnconcealedExtendedFleshyPunishmentScroll;
-import net.dakotapride.incantation.common.item.unconcealed_scrolls.extended.UnconcealedExtendedFreezingResistanceScroll;
-import net.dakotapride.incantation.common.item.unconcealed_scrolls.frosted.UnconcealedFrostedFleshyPunishmentScroll;
-import net.dakotapride.incantation.common.item.unconcealed_scrolls.frosted.UnconcealedFrostedFreezingResistanceScroll;
-import net.dakotapride.incantation.common.item.unconcealed_scrolls.stronger.UnconcealedStrongerFleshyPunishmentScroll;
-import net.dakotapride.incantation.common.item.unconcealed_scrolls.stronger.UnconcealedStrongerFreezingResistanceScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.base.UnconcealedRaWrathScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.base.UnconcealedBleakScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.base.UnconcealedToleranceScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.extended.UnconcealedExtendedRaWrathScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.extended.UnconcealedExtendedBleakScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.frosted.UnconcealedFrostedRaWrathScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.frosted.UnconcealedFrostedBleakScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.stronger.UnconcealedStrongerRaWrathScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.stronger.UnconcealedStrongerBleakScroll;
 import net.dakotapride.incantation.common.recipe.BewitchmentTableRecipe;
 import net.dakotapride.incantation.common.screen.BewitchmentTableScreenHandler;
 import net.dakotapride.incantation.common.util.IncantationTags;
@@ -89,35 +90,36 @@ public class IncantationMod implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("incantation");
 
 
-	public static StatusEffect MILKY_RESISTANCE = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0xF9F7F7);
-	public static MilkyResistanceScrollItem MILKY_RESISTANCE_SCROLL;
-	public static StatusEffect FREEZING_RESISTANCE = new EmptyStatusEffect(StatusEffectCategory.BENEFICIAL, 0xCEFFF2);
-	public static FreezingResistanceScrollItem FREEZING_RESISTANCE_SCROLL;
-	public static StatusEffect FLESHY_PUNISHMENT = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0xC89661);
-	public static FleshyPunishmentScrollItem FLESHY_PUNISHMENT_SCROLL;
+	public static StatusEffect TOLERANCE = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0xF9F7F7);
+	public static ToleranceScrollItem TOLERANCE_SCROLL;
+	public static StatusEffect BLEAK = new EmptyStatusEffect(StatusEffectCategory.BENEFICIAL, 0xCEFFF2);
+	public static BleakScrollItem BLEAK_SCROLL;
+	public static StatusEffect RA_WRATH = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0xC89661);
+	public static RaWrathScrollItem RA_WRATH_SCROLL;
 	public static StatusEffect ENCHANTED_BERRY_STRENGTH = new EmptyDamageModifierStatusEffect(StatusEffectCategory.NEUTRAL, 0x4F3F54, 6.0D)
 			.addAttributeModifier(EntityAttributes.GENERIC_ATTACK_DAMAGE, "648D7064-6A60-4F59-8ABE-C2C23A6DD7A9", 0.0D,EntityAttributeModifier.Operation.ADDITION);
 	public static ScreenHandlerType<BewitchmentTableScreenHandler> BEWITCHMENT_TABLE_SCREEN_HANDLER;
 	public static BewitchmentTableBlock BEWITCHMENT_TABLE;
 	public static BlockEntityType<BewitchmentTableEntity> BEWITCHMENT_TABLE_BLOCK_ENTITY;
-	public static Potion MILKY_RESISTANCE_POTION;
-	public static Potion FREEZING_RESISTANCE_POTION;
-	public static Potion FLESHY_PUNISHMENT_POTION;
+	public static Potion TOLERANCE_POTION;
+	public static Potion BLEAK_POTION;
+	public static Potion RA_WRATH_POTION;
 	public static Item PLAINS_CHERRIES;
 	public static Item FROSTED_PLAINS_CHERRIES;
 	public static Item SILVER_NUGGET_APPLE;
 	public static Item MYSTIC_LEATHER;
 	public static EnchantedBerryItem ENCHANTED_BERRIES;
 	public static EnchantedBerryJamItem ENCHANTED_BERRY_JAM;
-	public static UnconcealedMilkyResistanceScroll UNCONCEALED_MILKY_RESISTANCE_SCROLL;
-	public static UnconcealedFreezingResistanceScroll UNCONCEALED_FREEZING_RESISTANCE_SCROLL;
-	public static UnconcealedExtendedFreezingResistanceScroll UNCONCEALED_LONG_FREEZING_RESISTANCE_SCROLL;
-	public static UnconcealedStrongerFreezingResistanceScroll UNCONCEALED_STRONG_FREEZING_RESISTANCE_SCROLL;
-	public static UnconcealedFrostedFreezingResistanceScroll UNCONCEALED_FROSTED_FREEZING_RESISTANCE_SCROLL;
-	public static UnconcealedFleshyPunishmentScroll UNCONCEALED_FLESHY_PUNISHMENT_SCROLL;
-	public static UnconcealedExtendedFleshyPunishmentScroll UNCONCEALED_LONG_FLESHY_PUNISHMENT_SCROLL;
-	public static UnconcealedStrongerFleshyPunishmentScroll UNCONCEALED_STRONG_FLESHY_PUNISHMENT_SCROLL;
-	public static UnconcealedFrostedFleshyPunishmentScroll UNCONCEALED_FROSTED_FLESHY_PUNISHMENT_SCROLL;
+	public static UnconcealedToleranceScroll UNCONCEALED_TOLERANCE_SCROLL;
+	public static UnconcealedFrostedToleranceScroll UNCONCEALED_FROSTED_TOLERANCE_SCROLL;
+	public static UnconcealedBleakScroll UNCONCEALED_BLEAK_SCROLL;
+	public static UnconcealedExtendedBleakScroll UNCONCEALED_LONG_BLEAK_SCROLL;
+	public static UnconcealedStrongerBleakScroll UNCONCEALED_STRONG_BLEAK_SCROLL;
+	public static UnconcealedFrostedBleakScroll UNCONCEALED_FROSTED_BLEAK_SCROLL;
+	public static UnconcealedRaWrathScroll UNCONCEALED_RA_WRATH_SCROLL;
+	public static UnconcealedExtendedRaWrathScroll UNCONCEALED_LONG_RA_WRATH_SCROLL;
+	public static UnconcealedStrongerRaWrathScroll UNCONCEALED_STRONG_RA_WRATH_SCROLL;
+	public static UnconcealedFrostedRaWrathScroll UNCONCEALED_FROSTED_RA_WRATH_SCROLL;
 	public static BuddingGreenJadeBlock BUDDING_GREEN_JADE;
 	public static GreenJadeBlock GREEN_JADE_BLOCK;
 	public static GreenJadeClusterBlock GREEN_JADE_CLUSTER;
@@ -153,6 +155,7 @@ public class IncantationMod implements ModInitializer {
 	public static RedstoneLampBlock GREEN_JADE_CRYSTAL_LAMP;
 	public static RedstoneLampBlock AMETHYST_CRYSTAL_LAMP;
 	public static EnchantedBerryBushBlock ENCHANTED_BERRY_BUSH;
+	public static NoEffectScrollItem BASE_SCROLL;
 
 	// Registration
 	public static <T extends Block> T registerBlock(String name, T block) {
@@ -269,38 +272,39 @@ public class IncantationMod implements ModInitializer {
 				itemStacks.add(new ItemStack(JADE_SHARD));
 				itemStacks.add(new ItemStack(RAW_ALEXANDRITE));
 				itemStacks.add(new ItemStack(ALEXANDRITE_GEM));
-				itemStacks.add(new ItemStack(FLESHY_PUNISHMENT_SCROLL));
-				itemStacks.add(new ItemStack(UNCONCEALED_FLESHY_PUNISHMENT_SCROLL));
-				itemStacks.add(new ItemStack(UNCONCEALED_LONG_FLESHY_PUNISHMENT_SCROLL));
-				itemStacks.add(new ItemStack(UNCONCEALED_STRONG_FLESHY_PUNISHMENT_SCROLL));
-				itemStacks.add(new ItemStack(UNCONCEALED_FROSTED_FLESHY_PUNISHMENT_SCROLL));
-				itemStacks.add(new ItemStack(MILKY_RESISTANCE_SCROLL));
-				itemStacks.add(new ItemStack(UNCONCEALED_MILKY_RESISTANCE_SCROLL));
-				itemStacks.add(new ItemStack(FREEZING_RESISTANCE_SCROLL));
-				itemStacks.add(new ItemStack(UNCONCEALED_FREEZING_RESISTANCE_SCROLL));
-				itemStacks.add(new ItemStack(UNCONCEALED_LONG_FREEZING_RESISTANCE_SCROLL));
-				itemStacks.add(new ItemStack(UNCONCEALED_STRONG_FREEZING_RESISTANCE_SCROLL));
-				itemStacks.add(new ItemStack(UNCONCEALED_FROSTED_FREEZING_RESISTANCE_SCROLL));
+				itemStacks.add(new ItemStack(BASE_SCROLL));
+				itemStacks.add(new ItemStack(RA_WRATH_SCROLL));
+				itemStacks.add(new ItemStack(UNCONCEALED_RA_WRATH_SCROLL));
+				itemStacks.add(new ItemStack(UNCONCEALED_LONG_RA_WRATH_SCROLL));
+				itemStacks.add(new ItemStack(UNCONCEALED_STRONG_RA_WRATH_SCROLL));
+				itemStacks.add(new ItemStack(UNCONCEALED_FROSTED_RA_WRATH_SCROLL));
+				itemStacks.add(new ItemStack(TOLERANCE_SCROLL));
+				itemStacks.add(new ItemStack(UNCONCEALED_TOLERANCE_SCROLL));
+				itemStacks.add(new ItemStack(BLEAK_SCROLL));
+				itemStacks.add(new ItemStack(UNCONCEALED_BLEAK_SCROLL));
+				itemStacks.add(new ItemStack(UNCONCEALED_LONG_BLEAK_SCROLL));
+				itemStacks.add(new ItemStack(UNCONCEALED_STRONG_BLEAK_SCROLL));
+				itemStacks.add(new ItemStack(UNCONCEALED_FROSTED_BLEAK_SCROLL));
 				if (FabricLoader.getInstance().isModLoaded("pickyourpoison")) {
-					itemStacks.add(new ItemStack(PickYourPoisonCompat.REFLECTION_RESISTANCE_SCROLL));
-					itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_REFLECTION_RESISTANCE_SCROLL));
-					itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_LONG_REFLECTION_RESISTANCE_SCROLL));
-					itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_STRONG_REFLECTION_RESISTANCE_SCROLL));
-					itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_FROSTED_REFLECTION_RESISTANCE_SCROLL));
+					itemStacks.add(new ItemStack(PickYourPoisonCompat.ECHOING_SCROLL));
+					itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_ECHOING_SCROLL));
+					itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_LONG_ECHOING_SCROLL));
+					itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_STRONG_ECHOING_SCROLL));
+					itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_FROSTED_ECHOING_SCROLL));
 				}
 				if (FabricLoader.getInstance().isModLoaded("moreweaponry")) {
-					itemStacks.add(new ItemStack(MoreWeaponryCompat.HARMING_RESISTANCE_SCROLL));
-					itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_HARMING_RESISTANCE_SCROLL));
-					itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_LONG_HARMING_RESISTANCE_SCROLL));
-					itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_STRONG_HARMING_RESISTANCE_SCROLL));
-					itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_FROSTED_HARMING_RESISTANCE_SCROLL));
+					itemStacks.add(new ItemStack(MoreWeaponryCompat.UNWOUNDED_SCROLL));
+					itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_UNWOUNDED_SCROLL));
+					itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_LONG_UNWOUNDED_SCROLL));
+					itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_STRONG_UNWOUNDED_SCROLL));
+					itemStacks.add(new ItemStack(MoreWeaponryCompat.UNCONCEALED_FROSTED_UNWOUNDED_SCROLL));
 				}
 				if (FabricLoader.getInstance().isModLoaded("enhancedcelestials")) {
-					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.HARVEST_HEALING_SCROLL));
-					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_HARVEST_HEALING_SCROLL));
-					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_LONG_HARVEST_HEALING_SCROLL));
-					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_STRONG_HARVEST_HEALING_SCROLL));
-					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_FROSTED_HARVEST_HEALING_SCROLL));
+					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.REMEDY_SCROLL));
+					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_REMEDY_SCROLL));
+					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_LONG_REMEDY_SCROLL));
+					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_STRONG_REMEDY_SCROLL));
+					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.UNCONCEALED_FROSTED_REMEDY_SCROLL));
 					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.MOON_CREST_FRUIT));
 					itemStacks.add(new ItemStack(EnhancedCelestialsCompat.MENDING_MOON_CREST_FRUIT));
 				}
@@ -575,35 +579,41 @@ public class IncantationMod implements ModInitializer {
 		BiomeModifications.addFeature(BiomeSelectors.tag(IncantationTags.HAS_JADE_GEODE),
 				GenerationStep.Feature.UNDERGROUND_DECORATION, Objects.requireNonNull(JADE_GEODE_PLACED.getKey().orElse(null)));
 
-		UNCONCEALED_FLESHY_PUNISHMENT_SCROLL = registerItem("unconcealed_fleshy_punishment_scroll",
-				new UnconcealedFleshyPunishmentScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
+		BASE_SCROLL = registerItem("scroll",
+				new NoEffectScrollItem(new FabricItemSettings().group(INCANTATION_GROUP)));
+
+		UNCONCEALED_RA_WRATH_SCROLL = registerItem("unconcealed_ra_wrath_scroll",
+				new UnconcealedRaWrathScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
 						new FabricItemSettings().maxCount(1).maxDamage(80).group(INCANTATION_GROUP)));
-		UNCONCEALED_FROSTED_FLESHY_PUNISHMENT_SCROLL = registerItem("frosted_unconcealed_fleshy_punishment_scroll",
-				new UnconcealedFrostedFleshyPunishmentScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
+		UNCONCEALED_FROSTED_RA_WRATH_SCROLL = registerItem("frosted_unconcealed_ra_wrath_scroll",
+				new UnconcealedFrostedRaWrathScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
 						new FabricItemSettings().maxCount(1).maxDamage(80).group(INCANTATION_GROUP)));
-		UNCONCEALED_LONG_FLESHY_PUNISHMENT_SCROLL = registerItem("long_unconcealed_fleshy_punishment_scroll",
-				new UnconcealedExtendedFleshyPunishmentScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
+		UNCONCEALED_LONG_RA_WRATH_SCROLL = registerItem("long_unconcealed_ra_wrath_scroll",
+				new UnconcealedExtendedRaWrathScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
 						new FabricItemSettings().maxCount(1).maxDamage(80).group(INCANTATION_GROUP)));
-		UNCONCEALED_STRONG_FLESHY_PUNISHMENT_SCROLL = registerItem("strong_unconcealed_fleshy_punishment_scroll",
-				new UnconcealedStrongerFleshyPunishmentScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
+		UNCONCEALED_STRONG_RA_WRATH_SCROLL = registerItem("strong_unconcealed_ra_wrath_scroll",
+				new UnconcealedStrongerRaWrathScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
 						new FabricItemSettings().maxCount(1).maxDamage(80).group(INCANTATION_GROUP)));
 
-		UNCONCEALED_MILKY_RESISTANCE_SCROLL = registerItem("unconcealed_milky_resistance_scroll",
-				new UnconcealedMilkyResistanceScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
-						new FabricItemSettings().maxCount(1).group(INCANTATION_GROUP)));
+		UNCONCEALED_TOLERANCE_SCROLL = registerItem("unconcealed_tolerance_scroll",
+				new UnconcealedToleranceScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
+						new FabricItemSettings().maxCount(1).maxDamage(80).group(INCANTATION_GROUP)));
+		UNCONCEALED_FROSTED_TOLERANCE_SCROLL = registerItem("unconcealed_frosted_tolerance_scroll",
+				new UnconcealedFrostedToleranceScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
+						new FabricItemSettings().maxCount(1).maxDamage(80).group(INCANTATION_GROUP)));
 
-		UNCONCEALED_FREEZING_RESISTANCE_SCROLL = registerItem("unconcealed_freezing_resistance_scroll",
-				new UnconcealedFreezingResistanceScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
-						new FabricItemSettings().maxCount(1).group(INCANTATION_GROUP)));
-		UNCONCEALED_FROSTED_FREEZING_RESISTANCE_SCROLL = registerItem("frosted_unconcealed_freezing_resistance_scroll",
-				new UnconcealedFrostedFreezingResistanceScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
-						new FabricItemSettings().maxCount(1).group(INCANTATION_GROUP)));
-		UNCONCEALED_LONG_FREEZING_RESISTANCE_SCROLL = registerItem("long_unconcealed_freezing_resistance_scroll",
-				new UnconcealedExtendedFreezingResistanceScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
-						new FabricItemSettings().maxCount(1).group(INCANTATION_GROUP)));
-		UNCONCEALED_STRONG_FREEZING_RESISTANCE_SCROLL = registerItem("strong_unconcealed_freezing_resistance_scroll",
-				new UnconcealedStrongerFreezingResistanceScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
-						new FabricItemSettings().maxCount(1).group(INCANTATION_GROUP)));
+		UNCONCEALED_BLEAK_SCROLL = registerItem("unconcealed_bleak_scroll",
+				new UnconcealedBleakScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
+						new FabricItemSettings().maxCount(1).maxDamage(80).group(INCANTATION_GROUP)));
+		UNCONCEALED_FROSTED_BLEAK_SCROLL = registerItem("frosted_unconcealed_bleak_scroll",
+				new UnconcealedFrostedBleakScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
+						new FabricItemSettings().maxCount(1).maxDamage(80).group(INCANTATION_GROUP)));
+		UNCONCEALED_LONG_BLEAK_SCROLL = registerItem("long_unconcealed_bleak_scroll",
+				new UnconcealedExtendedBleakScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
+						new FabricItemSettings().maxCount(1).maxDamage(80).group(INCANTATION_GROUP)));
+		UNCONCEALED_STRONG_BLEAK_SCROLL = registerItem("strong_unconcealed_bleak_scroll",
+				new UnconcealedStrongerBleakScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
+						new FabricItemSettings().maxCount(1).maxDamage(80).group(INCANTATION_GROUP)));
 
 		PLAINS_CHERRIES = registerItem("plains_cherries",
 				new Item(new FabricItemSettings().food(new FoodComponent.Builder()
@@ -626,19 +636,19 @@ public class IncantationMod implements ModInitializer {
 		MYSTIC_LEATHER = registerItem("mystic_leather",
 				new Item(new FabricItemSettings().group(INCANTATION_GROUP)));
 
-		MILKY_RESISTANCE_POTION  = registerPotion("milky_resistance",
-				new Potion(new StatusEffectInstance(MILKY_RESISTANCE, 340, 0)));
-		FLESHY_PUNISHMENT_POTION  = registerPotion("fleshy_punishment",
-				new Potion(new StatusEffectInstance(FLESHY_PUNISHMENT, 180, 0)));
-		FREEZING_RESISTANCE_POTION  = registerPotion("freezing_resistance",
-				new Potion(new StatusEffectInstance(FREEZING_RESISTANCE, 260, 0)));
+		TOLERANCE_POTION = registerPotion("tolerance",
+				new Potion(new StatusEffectInstance(TOLERANCE, 500, 0)));
+		RA_WRATH_POTION = registerPotion("ra_wrath",
+				new Potion(new StatusEffectInstance(RA_WRATH, 520, 0)));
+		BLEAK_POTION = registerPotion("bleak",
+				new Potion(new StatusEffectInstance(BLEAK, 480, 0)));
 
 		BrewingRecipeRegistryMixin.invokeRegisterPotionRecipe(Potions.MUNDANE,
-				Items.MILK_BUCKET, MILKY_RESISTANCE_POTION);
+				Items.MILK_BUCKET, TOLERANCE_POTION);
 		BrewingRecipeRegistryMixin.invokeRegisterPotionRecipe(Potions.MUNDANE,
-				Items.ICE, FREEZING_RESISTANCE_POTION);
+				Items.ICE, BLEAK_POTION);
 		BrewingRecipeRegistryMixin.invokeRegisterPotionRecipe(Potions.MUNDANE,
-				Items.ROTTEN_FLESH, FLESHY_PUNISHMENT_POTION);
+				Items.ROTTEN_FLESH, RA_WRATH_POTION);
 
 		BEWITCHMENT_TABLE_SCREEN_HANDLER =
 				ScreenHandlerRegistry.registerSimple(new Identifier(INCANTATION_ID, "bewitchment_table"),
@@ -656,19 +666,19 @@ public class IncantationMod implements ModInitializer {
 
 		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "enchanted_berry_strength"), ENCHANTED_BERRY_STRENGTH);
 
-		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "milky_resistance"), MILKY_RESISTANCE);
-		MILKY_RESISTANCE_SCROLL = registerItem("milky_resistance_scroll",
-				new MilkyResistanceScrollItem(IncantationMaterials.FABRIC_PATCHING,
+		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "tolerance"), TOLERANCE);
+		TOLERANCE_SCROLL = registerItem("tolerance_scroll",
+				new ToleranceScrollItem(IncantationMaterials.FABRIC_PATCHING,
 						new FabricItemSettings().maxCount(1).maxDamage(60).group(INCANTATION_GROUP)));
 
-		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "freezing_resistance"), FREEZING_RESISTANCE);
-		FREEZING_RESISTANCE_SCROLL = registerItem("freezing_resistance_scroll",
-				new FreezingResistanceScrollItem(IncantationMaterials.FABRIC_PATCHING,
+		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "bleak"), BLEAK);
+		BLEAK_SCROLL = registerItem("bleak_scroll",
+				new BleakScrollItem(IncantationMaterials.FABRIC_PATCHING,
 						new FabricItemSettings().maxCount(1).maxDamage(60).group(INCANTATION_GROUP)));
 
-		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "fleshy_punishment"), FLESHY_PUNISHMENT);
-		FLESHY_PUNISHMENT_SCROLL = registerItem("fleshy_punishment_scroll",
-				new FleshyPunishmentScrollItem(IncantationMaterials.FABRIC_PATCHING,
+		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "ra_wrath"), RA_WRATH);
+		RA_WRATH_SCROLL = registerItem("ra_wrath_scroll",
+				new RaWrathScrollItem(IncantationMaterials.FABRIC_PATCHING,
 						new FabricItemSettings().maxCount(1).maxDamage(60).group(INCANTATION_GROUP)));
 
 		if (FabricLoader.getInstance().isModLoaded("moreweaponry")) {
