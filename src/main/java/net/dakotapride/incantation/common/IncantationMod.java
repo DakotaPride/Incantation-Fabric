@@ -6,6 +6,7 @@ import net.dakotapride.incantation.common.block.*;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableBlock;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableEntity;
 import net.dakotapride.incantation.common.item.unconcealed_scrolls.frosted.UnconcealedFrostedToleranceScroll;
+import net.dakotapride.incantation.common.util.soul_update.SoulsComeAliveAddon;
 import net.dakotapride.incantation.config.IncantationConfig;
 import net.dakotapride.incantation.common.effect.EmptyDamageModifierStatusEffect;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
@@ -79,6 +80,8 @@ import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoField;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -691,6 +694,15 @@ public class IncantationMod implements ModInitializer {
 
 		if (FabricLoader.getInstance().isModLoaded("enhancedcelestials")) {
 			EnhancedCelestialsCompat.enhancedCelestialsCompatRegistry();
+		}
+
+		LocalDate isSoulsComeAliveActive;
+
+		isSoulsComeAliveActive = LocalDate.now();
+		int localMonth = isSoulsComeAliveActive.get(ChronoField.MONTH_OF_YEAR);
+
+		if (localMonth == 10 && IncantationConfig.isSoulsComeAliveAddonActive) {
+			SoulsComeAliveAddon.registerSoulsComeAliveAddon();
 		}
 
 		BEWITCHMENT_TABLE_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,

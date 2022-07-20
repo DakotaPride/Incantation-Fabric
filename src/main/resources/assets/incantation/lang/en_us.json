@@ -101,5 +101,10 @@
   "item.incantation.scroll": "Parchment",
   "item.incantation.scroll.no_effect": "No Effects",
   "advancement.incantation.use_an_unconcealed_frosted_bleak_scroll.title": "Stayin' Frosty",
-  "advancement.incantation.use_an_unconcealed_frosted_bleak_scroll.description": "Contradict The Magical Ways By Using A Frosted Bleak Scroll"
+  "advancement.incantation.use_an_unconcealed_frosted_bleak_scroll.description": "Contradict The Magical Ways By Using A Frosted Bleak Scroll",
+
+  // Souls Come Alive
+  "soulsComeAlive.fragment_type.player": "Fragment Type: [Player]",
+  "soulsComeAlive.fragment_type.hostile": "Fragment Type: [Hostile]",
+  "soulsComeAlive.fragment_type.passive": "Fragment Type: [Passive]"
 }

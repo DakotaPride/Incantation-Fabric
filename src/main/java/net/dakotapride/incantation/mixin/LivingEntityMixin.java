@@ -1,17 +1,21 @@
 package net.dakotapride.incantation.mixin;
 
 import net.dakotapride.incantation.common.IncantationMod;
+import net.dakotapride.incantation.common.util.soul_update.SoulsComeAliveAddon;
 import net.dakotapride.incantation.compat.moreweaponry.MoreWeaponryCompat;
 import net.dakotapride.incantation.compat.pickyourpoison.PickYourPoisonCompat;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffectCategory;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.mob.HostileEntity;
+import net.minecraft.entity.passive.PassiveEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -21,13 +25,24 @@ import java.util.Objects;
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin extends Entity {
 
-    @Shadow public abstract boolean clearStatusEffects();
-
     private final LivingEntity livingEntity = (LivingEntity) (Object) this;
     private final LivingEntity attacker = livingEntity.getAttacker();
 
     public LivingEntityMixin(EntityType<?> type, World world) {
         super(type, world);
+    }
+
+    @Inject(method = "dropEquipment", at = @At(value = "TAIL"))
+    private void incantation$dropSoulFragment(DamageSource source, int lootingMultiplier, boolean allowDrops, CallbackInfo ci) {
+        if (source.getAttacker() instanceof PlayerEntity) {
+            dropStack(new ItemStack(SoulsComeAliveAddon.PLAYER_SOUL_FRAGMENT));
+        }
+        if (source.getAttacker() instanceof HostileEntity) {
+            dropStack(new ItemStack(SoulsComeAliveAddon.HOSTILE_SOUL_FRAGMENT));
+        }
+        if (source.getAttacker() instanceof PassiveEntity) {
+            dropStack(new ItemStack(SoulsComeAliveAddon.PASSIVE_SOUL_FRAGMENT));
+        }
     }
 
     @Inject(method = "tick", at = @At("HEAD"))
