@@ -6,9 +6,12 @@
   "mixins": [
     "BrewingRecipeRegistryMixin",
     "ItemStackMixin",
-    "LivingEntityMixin"
+    "LivingEntityMixin",
+    "StatusEffectUtilMixin",
+    "VillagerEntityMixin"
   ],
   "client": [
+    "ClientPlayNetworkHandlerMixin",
     "TitleScreenMixin"
   ],
   "injectors": {

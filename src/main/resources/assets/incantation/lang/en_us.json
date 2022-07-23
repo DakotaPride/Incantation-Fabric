@@ -104,7 +104,26 @@
   "advancement.incantation.use_an_unconcealed_frosted_bleak_scroll.description": "Contradict The Magical Ways By Using A Frosted Bleak Scroll",
 
   // Souls Come Alive
+  "item.incantation.player_soul_shard": "Soul Shard",
   "soulsComeAlive.fragment_type.player": "Fragment Type: [Player]",
+  "item.incantation.hostile_soul_shard": "Soul Shard",
   "soulsComeAlive.fragment_type.hostile": "Fragment Type: [Hostile]",
-  "soulsComeAlive.fragment_type.passive": "Fragment Type: [Passive]"
+  "item.incantation.passive_soul_shard": "Soul Shard",
+  "soulsComeAlive.fragment_type.passive": "Fragment Type: [Passive]",
+  "item.incantation.darkened_soul_shard": "Soul Shard",
+  "soulsComeAlive.fragment_type.darkened": "Fragment Type: [Darkened]",
+  "item.incantation.lightened_soul_shard": "Soul Shard",
+  "soulsComeAlive.fragment_type.lightened": "Fragment Type: [Lightened]",
+  "item.incantation.soul_fire_shard": "Soul Shard",
+  "soulsComeAlive.fragment_type.soul_fire": "Fragment Type: [Soul Fire]",
+  "item.incantation.totem_of_salvation": "[WIP] Totem Of Salvation",
+  "soulsComeAlive.totemOfSalvation.max_uses": "Uses Left: %d / %d",
+  "item.incantation.angelic_soul_shard": "Soul Shard",
+  "soulsComeAlive.fragment_type.angel_stiffness": "Fragment Type: [Angelic Punishment]",
+  "item.incantation.disruptive_soul_shard": "Soul Shard",
+  "soulsComeAlive.fragment_type.siren_warning": "Fragment Type: [Siren's Calling]",
+  "effect.incantation.soul_blessing": "Soul's Blessing",
+  "effect.incantation.devilish_bargain": "Devilish Bargain",
+  "advancement.incantation.use_bewitchment_center_locatable_item.title": "That's Not An Eye Of Ender!",
+  "advancement.incantation.use_bewitchment_center_locatable_item.description": "Use A Certain Item To Locate The Bewitchment Center"
 }

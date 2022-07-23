@@ -99,5 +99,31 @@
   "item.incantation.unconcealed.ra_wrath.strong": "Colère de Ra II (0:23)",
   "item.incantation.unconcealed.bleak.strong": "Bleak II (0:23)",
   "item.incantation.scroll": "Parchemin",
-  "item.incantation.scroll.no_effect": "Aucun effet"
+  "item.incantation.scroll.no_effect": "Aucun effet",
+  "advancement.incantation.use_an_unconcealed_frosted_bleak_scroll.title": "Rester givré",
+  "advancement.incantation.use_an_unconcealed_frosted_bleak_scroll.description": "Contraire aux voies magiques en utilisant un parchemin sombre givré",
+
+  // Les âmes prennent vie
+  "item.incantation.player_soul_shard": "Fragment d'âme",
+  "soulsComeAlive.fragment_type.player": "Type de fragment: [Joueur]",
+  "item.incantation.hostile_soul_shard": "Fragment d'âme",
+  "soulsComeAlive.fragment_type.hostile": "Type de fragment: [Hostile]",
+  "item.incantation.passive_soul_shard": "Fragment d'âme",
+  "soulsComeAlive.fragment_type.passive": "Type de fragment: [Passif]",
+  "item.incantation.darkened_soul_shard": "Fragment d'âme",
+  "soulsComeAlive.fragment_type.darkened": "Type de fragment: [Assombri]",
+  "item.incantation.lightened_soul_shard": "Fragment d'âme",
+  "soulsComeAlive.fragment_type.lightened": "Type de fragment: [Allégé]",
+  "item.incantation.soul_fire_shard": "Fragment d'âme",
+  "soulsComeAlive.fragment_type.soul_fire": "Type de fragment: [Soul Fire]",
+  "item.incantation.totem_of_salvation": "[WIP] Totem du salut",
+  "soulsComeAlive.totemOfSalvation.max_uses": "Utilisations restantes: %d / %d",
+  "item.incantation.angelic_soul_shard": "Fragment d'âme",
+  "soulsComeAlive.fragment_type.angel_stiffness": "Type de fragment: [Punition angélique]",
+  "item.incantation.disruptive_soul_shard": "Fragment d'âme",
+  "soulsComeAlive.fragment_type.siren_warning": "Type de fragment: [L'appel de la sirène]",
+  "effect.incantation.soul_blessing": "Bénédiction de l'âme",
+  "effect.incantation.devilish_bargain": "Marché diabolique",
+  "advancement.incantation.use_bewitchment_center_locatable_item.title": "Ce n'est pas un œil d'Ender",
+  "advancement.incantation.use_bewitchment_center_locatable_item.description": "Utilisez un certain objet pour localiser le centre d'envoûtement"
 }

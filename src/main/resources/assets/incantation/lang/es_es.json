@@ -99,5 +99,31 @@
   "item.incantation.unconcealed.ra_wrath.strong": "La ira de Ra II (0:23)",
   "item.incantation.unconcealed.bleak.strong": "Bleak II (0:23)",
   "item.incantation.scroll": "Pergamino",
-  "item.incantation.scroll.no_effect": "Sin efectos"
+  "item.incantation.scroll.no_effect": "Sin efectos",
+  "advancement.incantation.use_an_unconcealed_frosted_bleak_scroll.title": "Mantenerse helado",
+  "advancement.incantation.use_an_unconcealed_frosted_bleak_scroll.description": "Contradice las formas mágicas usando un pergamino sombrío helado",
+
+  // Las almas cobran vida
+  "item.incantation.player_soul_shard": "Fragmento de alma",
+  "soulsComeAlive.fragment_type.player": "Tipo de fragmento: [Jugador]",
+  "item.incantation.hostile_soul_shard": "Fragmento de alma",
+  "soulsComeAlive.fragment_type.hostile": "Tipo de fragmento: [Hostil]",
+  "item.incantation.passive_soul_shard": "Fragmento de alma",
+  "soulsComeAlive.fragment_type.passive": "Tipo de fragmento: [Pasivo]",
+  "item.incantation.darkened_soul_shard": "Fragmento de alma",
+  "soulsComeAlive.fragment_type.darkened": "Tipo de fragmento: [Oscurecido]",
+  "item.incantation.lightened_soul_shard": "Fragmento de alma",
+  "soulsComeAlive.fragment_type.lightened": "Tipo de fragmento: [Aligerado]",
+  "item.incantation.soul_fire_shard": "Fragmento de alma",
+  "soulsComeAlive.fragment_type.soul_fire": "Tipo de fragmento: [Fuego de alma]",
+  "item.incantation.totem_of_salvation": "[WIP] Tótem de la Salvación",
+  "soulsComeAlive.totemOfSalvation.max_uses": "Usos restantes: %d / %d",
+  "item.incantation.angelic_soul_shard": "Fragmento de alma",
+  "soulsComeAlive.fragment_type.angel_stiffness": "Tipo de fragmento: [Castigo angelical]",
+  "item.incantation.disruptive_soul_shard": "Fragmento de alma",
+  "soulsComeAlive.fragment_type.siren_warning": "Tipo de fragmento: [Llamada de sirena]",
+  "effect.incantation.soul_blessing": "Bendición del alma",
+  "effect.incantation.devilish_bargain": "Negociación diabólica",
+  "advancement.incantation.use_bewitchment_center_locatable_item.title": "Eso no es un ojo de Ender",
+  "advancement.incantation.use_bewitchment_center_locatable_item.description": "Usar un elemento determinado para ubicar el centro de hechizos"
 }

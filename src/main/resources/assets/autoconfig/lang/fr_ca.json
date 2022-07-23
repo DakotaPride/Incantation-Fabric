@@ -1,4 +1,5 @@
 {
   "text.autoconfig.incantation.option.enchantedBerryBushSpawnChance": "Chance d'apparition du buisson de baies enchanté",
+  "text.autoconfig.incantation.option.showTotemOfSalvationRemainingUses": "Afficher les utilisations restantes du totem de salut",
   "text.autoconfig.incantation.title": "Configuration d'incantation"
 }
