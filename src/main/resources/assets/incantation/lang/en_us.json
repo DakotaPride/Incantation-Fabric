@@ -119,6 +119,8 @@
   "item.incantation.totem_of_salvation": "[WIP] Totem Of Salvation",
   "soulsComeAlive.totemOfSalvation.max_uses": "Uses Left: %d / %d",
   "item.incantation.angelic_soul_shard": "Soul Shard",
+  "effect.incantation.angel_stiffness": "Angelic Stiffness",
+  "effect.incantation.siren_warning": "Siren's Warning",
   "soulsComeAlive.fragment_type.angel_stiffness": "Fragment Type: [Angelic Punishment]",
   "item.incantation.disruptive_soul_shard": "Soul Shard",
   "soulsComeAlive.fragment_type.siren_warning": "Fragment Type: [Siren's Calling]",
