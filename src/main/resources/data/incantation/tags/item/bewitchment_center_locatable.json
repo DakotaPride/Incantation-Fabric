@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "incantation:player_soul_shard",
+    "incantation:passive_soul_shard",
+    "incantation:hostile_soul_shard",
+    "incantation:darkened_soul_shard",
+    "incantation:lightened_soul_shard",
+    "incantation:soul_fire_shard"
+  ]
+}

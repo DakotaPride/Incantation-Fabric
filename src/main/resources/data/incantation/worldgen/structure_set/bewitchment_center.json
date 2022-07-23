@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "incantation:bewitchment_center",
+      "weight": 4
+    }
+  ],
+  "placement": {
+    "salt": 12,
+
+    "spacing": 16,
+
+    "separation": 6,
+
+    "type": "minecraft:random_spread"
+  }
+}
