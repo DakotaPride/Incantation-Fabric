@@ -25,11 +25,11 @@ public class SoulFragmentItem extends Item {
     @Override
     public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
         Item item = user.getActiveItem().getItem();
-        if (entity instanceof DrownedEntity && getSoulShard(item) == fragmentTypeList.SIREN_WARNING) {
+        if (entity instanceof DrownedEntity && getSoulShard(item) != fragmentTypeList.SIREN_WARNING) {
             stack.decrement(1);
 
             user.giveItemStack(new ItemStack(SoulsComeAlive.DISRUPTIVE_SOUL_FRAGMENT, 1));
-        } else if (entity instanceof AllayEntity && getSoulShard(item) == fragmentTypeList.ANGEL_STIFFNESS) {
+        } else if (entity instanceof AllayEntity && getSoulShard(item) != fragmentTypeList.ANGEL_STIFFNESS) {
             stack.decrement(1);
 
             user.giveItemStack(new ItemStack(SoulsComeAlive.ANGELIC_SOUL_FRAGMENT));
@@ -96,7 +96,7 @@ public class SoulFragmentItem extends Item {
         }
 
         else if (item == SoulsComeAlive.ANGELIC_SOUL_FRAGMENT) {
-            type = fragmentTypeList.SIREN_WARNING;
+            type = fragmentTypeList.ANGEL_STIFFNESS;
         } else if (item == SoulsComeAlive.DISRUPTIVE_SOUL_FRAGMENT) {
             type = fragmentTypeList.SIREN_WARNING;
         }
