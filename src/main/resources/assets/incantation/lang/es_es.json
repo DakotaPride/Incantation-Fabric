@@ -126,6 +126,7 @@
   "soulsComeAlive.fragment_type.siren_warning": "Tipo de fragmento: [Llamada de sirena]",
   "effect.incantation.soul_blessing": "Bendición del alma",
   "effect.incantation.devilish_bargain": "Negociación diabólica",
+  "effect.incantation.midas_favour": "El Favor de Midas",
   "advancement.incantation.use_bewitchment_center_locatable_item.title": "Eso no es un ojo de Ender",
   "advancement.incantation.use_bewitchment_center_locatable_item.description": "Usar un elemento determinado para ubicar el centro de hechizos"
 }

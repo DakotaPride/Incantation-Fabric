@@ -126,6 +126,7 @@
   "soulsComeAlive.fragment_type.siren_warning": "Type de fragment: [L'appel de la sirène]",
   "effect.incantation.soul_blessing": "Bénédiction de l'âme",
   "effect.incantation.devilish_bargain": "Marché diabolique",
+  "effect.incantation.midas_favour": "Faveur de Midas",
   "advancement.incantation.use_bewitchment_center_locatable_item.title": "Ce n'est pas un œil d'Ender",
   "advancement.incantation.use_bewitchment_center_locatable_item.description": "Utilisez un certain objet pour localiser le centre d'envoûtement"
 }
