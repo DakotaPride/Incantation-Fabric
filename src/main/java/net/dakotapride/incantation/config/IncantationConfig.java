@@ -9,22 +9,11 @@ import java.time.temporal.ChronoField;
 @Config(name = "incantation")
 public class IncantationConfig implements ConfigData {
 
-    public static boolean isSoulsComeAliveAddonActive;
+    public static boolean showTotemOfSalvationRemainingUses;
     public int enchantedBerryBushSpawnChance = 16;
 
     @Override
     public void validatePostLoad() {
-
-        LocalDate isSoulsComeAliveActive;
-
-        isSoulsComeAliveActive = LocalDate.now();
-        int localMonth = isSoulsComeAliveActive.get(ChronoField.MONTH_OF_YEAR);
-
         enchantedBerryBushSpawnChance = Math.max(enchantedBerryBushSpawnChance, 1);
-        if (localMonth == 10) {
-            isSoulsComeAliveAddonActive = true;
-        } else {
-            isSoulsComeAliveAddonActive = false;
-        }
     }
 }

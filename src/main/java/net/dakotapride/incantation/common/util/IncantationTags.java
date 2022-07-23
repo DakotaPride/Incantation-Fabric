@@ -1,11 +1,14 @@
 package net.dakotapride.incantation.common.util;
 
 import net.dakotapride.incantation.common.IncantationMod;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.Item;
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
+
+import java.util.Collection;
 
 public class IncantationTags {
 
