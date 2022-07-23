@@ -3,10 +3,10 @@ package net.dakotapride.incantation.mixin;
 import net.dakotapride.incantation.common.soulsComeAlive.SoulsComeAlive;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -25,7 +25,18 @@ public abstract class VillagerEntityMixin extends MerchantEntity {
     }
 
     @Inject(method = "prepareOffersFor", at = @At("TAIL"))
-    private void incantation$feelingThreatened(PlayerEntity player, CallbackInfo ci) {
+    private void prepareOffersFor(PlayerEntity player, CallbackInfo ci) {
+        int i = villagerEntity.getReputation(player) - 10;
+        if (i != 0) {
+            Iterator var3 = this.getOffers().iterator();
+
+            if (player.hasStatusEffect(SoulsComeAlive.MIDAS_FAVOUR)) {
+                while(var3.hasNext()) {
+                    TradeOffer tradeOffer = (TradeOffer)var3.next();
+                    tradeOffer.increaseSpecialPrice(-MathHelper.floor((float)i * tradeOffer.getPriceMultiplier()));
+                }
+            }
+        }
         if (player.hasStatusEffect(SoulsComeAlive.DEVILISH_BARGAIN)) {
             StatusEffectInstance statusEffectInstance = player.getStatusEffect(SoulsComeAlive.DEVILISH_BARGAIN);
             int j = statusEffectInstance.getAmplifier();

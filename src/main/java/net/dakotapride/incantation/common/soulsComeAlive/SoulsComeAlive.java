@@ -6,6 +6,7 @@ import net.dakotapride.incantation.common.soulsComeAlive.item.TotemOfSalvationIt
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.effect.HealthBoostStatusEffect;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.item.Item;
@@ -34,6 +35,9 @@ public class SoulsComeAlive {
     public static SoulFragmentItem DISRUPTIVE_SOUL_FRAGMENT;
     public static StatusEffect SOUL_BLESSING = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0x16DDB2);
     public static StatusEffect DEVILISH_BARGAIN = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0x16DDB2);
+    public static StatusEffect MIDAS_FAVOUR = new HealthBoostStatusEffect(StatusEffectCategory.BENEFICIAL, 0x16DDB2)
+            .addAttributeModifier(EntityAttributes.GENERIC_LUCK, "03C3C89D-7037-4B42-869F-B146BCB64D2E",
+                    4.0D, EntityAttributeModifier.Operation.ADDITION);
 
     public static <T extends Item> T registerItem(String name, T item) {
         Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, name), item);
@@ -45,6 +49,8 @@ public class SoulsComeAlive {
 
         Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "soul_blessing"), SOUL_BLESSING);
         Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "devilish_bargain"), DEVILISH_BARGAIN);
+
+        Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "midas_favour"), MIDAS_FAVOUR);
 
         Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "angel_stiffness"), ANGEL_STIFFNESS);
         ANGELIC_SOUL_FRAGMENT = registerItem("angelic_soul_shard",
