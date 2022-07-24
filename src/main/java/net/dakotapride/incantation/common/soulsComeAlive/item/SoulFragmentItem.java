@@ -25,11 +25,17 @@ public class SoulFragmentItem extends Item {
     @Override
     public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
         Item item = user.getActiveItem().getItem();
-        if (entity instanceof DrownedEntity && getSoulShard(item) != fragmentTypeList.SIREN_WARNING) {
+        if (entity instanceof AllayEntity && getSoulShard(item) == fragmentTypeList.PLAYER
+                || entity instanceof AllayEntity && getSoulShard(item) == fragmentTypeList.PASSIVE
+                || entity instanceof AllayEntity && getSoulShard(item) == fragmentTypeList.HOSTILE
+                || entity instanceof AllayEntity && getSoulShard(item) == fragmentTypeList.DARKENED) {
             stack.decrement(1);
 
             user.giveItemStack(new ItemStack(SoulsComeAlive.DISRUPTIVE_SOUL_FRAGMENT, 1));
-        } else if (entity instanceof AllayEntity && getSoulShard(item) != fragmentTypeList.ANGEL_STIFFNESS) {
+        } else if (entity instanceof DrownedEntity && getSoulShard(item) == fragmentTypeList.PLAYER
+                || entity instanceof DrownedEntity && getSoulShard(item) == fragmentTypeList.PASSIVE
+                || entity instanceof DrownedEntity && getSoulShard(item) == fragmentTypeList.HOSTILE
+                || entity instanceof DrownedEntity && getSoulShard(item) == fragmentTypeList.LIGHTENED) {
             stack.decrement(1);
 
             user.giveItemStack(new ItemStack(SoulsComeAlive.ANGELIC_SOUL_FRAGMENT));
