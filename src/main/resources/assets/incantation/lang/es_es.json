@@ -126,7 +126,13 @@
   "soulsComeAlive.fragment_type.siren_warning": "Tipo de fragmento: [Llamada de sirena]",
   "effect.incantation.soul_blessing": "Bendición del alma",
   "effect.incantation.devilish_bargain": "Negociación diabólica",
+  "item.incantation.midas_favour_scroll": "Pergamino",
   "effect.incantation.midas_favour": "El Favor de Midas",
+  "item.soulsComeAlive.cannot_use.midas_favour": "El favor de Midas I (0:00)",
+  "item.soulsComeAlive.unconcealed.midas_favour": "El favor de Midas I (0:23)",
+  "item.soulsComeAlive.unconcealed.midas_favour.extended": "El favor de Midas I (0:37)",
+  "item.soulsComeAlive.unconcealed.midas_favour.frosted": "El favor de Midas I (0:23)",
+  "item.soulsComeAlive.unconcealed.midas_favour.strong": "El favor de Midas II (0:23)",
   "advancement.incantation.use_bewitchment_center_locatable_item.title": "Eso no es un ojo de Ender",
   "advancement.incantation.use_bewitchment_center_locatable_item.description": "Usar un elemento determinado para ubicar el centro de hechizos"
 }

@@ -126,7 +126,13 @@
   "soulsComeAlive.fragment_type.siren_warning": "Type de fragment: [L'appel de la sirène]",
   "effect.incantation.soul_blessing": "Bénédiction de l'âme",
   "effect.incantation.devilish_bargain": "Marché diabolique",
+  "item.incantation.midas_favour_scroll": "Parchemin",
   "effect.incantation.midas_favour": "Faveur de Midas",
+  "item.soulsComeAlive.cannot_use.midas_favour": "Faveur de Midas I (0:00)",
+  "item.soulsComeAlive.unconcealed.midas_favour": "Faveur de Midas I (0:23)",
+  "item.soulsComeAlive.unconcealed.midas_favour.extended": "Faveur de Midas I (0:37)",
+  "item.soulsComeAlive.unconcealed.midas_favour.frosted": "Faveur de Midas I (0:23)",
+  "item.soulsComeAlive.unconcealed.midas_favour.strong": "Faveur de Midas II (0:23)",
   "advancement.incantation.use_bewitchment_center_locatable_item.title": "Ce n'est pas un œil d'Ender",
   "advancement.incantation.use_bewitchment_center_locatable_item.description": "Utilisez un certain objet pour localiser le centre d'envoûtement"
 }
