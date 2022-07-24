@@ -1,8 +1,13 @@
 package net.dakotapride.incantation.common.soulsComeAlive;
 
+import net.dakotapride.incantation.common.IncantationMod;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
-import net.dakotapride.incantation.common.soulsComeAlive.item.SoulFragmentItem;
-import net.dakotapride.incantation.common.soulsComeAlive.item.TotemOfSalvationItem;
+import net.dakotapride.incantation.common.soulsComeAlive.item.*;
+import net.dakotapride.incantation.common.soulsComeAlive.item.MidasFavourScrollItem;
+import net.dakotapride.incantation.common.soulsComeAlive.item.unconcealed_scrolls.base.UnconcealedMidasFavourScroll;
+import net.dakotapride.incantation.common.soulsComeAlive.item.unconcealed_scrolls.extended.UnconcealedExtendedMidasFavourScroll;
+import net.dakotapride.incantation.common.soulsComeAlive.item.unconcealed_scrolls.frosted.UnconcealedFrostedMidasFavourScroll;
+import net.dakotapride.incantation.common.soulsComeAlive.item.unconcealed_scrolls.stronger.UnconcealedStrongerMidasFavourScroll;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -33,11 +38,17 @@ public class SoulsComeAlive {
     public static SoulFragmentItem ANGELIC_SOUL_FRAGMENT;
     public static StatusEffect SIREN_WARNING = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0x16DDB2);
     public static SoulFragmentItem DISRUPTIVE_SOUL_FRAGMENT;
-    public static StatusEffect SOUL_BLESSING = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0x16DDB2);
-    public static StatusEffect DEVILISH_BARGAIN = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0x16DDB2);
-    public static StatusEffect MIDAS_FAVOUR = new HealthBoostStatusEffect(StatusEffectCategory.BENEFICIAL, 0x16DDB2)
+    public static StatusEffect SOUL_BLESSING = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0x8DF4D7);
+    public static StatusEffect DEVILISH_BARGAIN = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0xA3282C);
+    public static StatusEffect MIDAS_FAVOUR = new EmptyStatusEffect(StatusEffectCategory.BENEFICIAL, 0xFFBC21)
             .addAttributeModifier(EntityAttributes.GENERIC_LUCK, "03C3C89D-7037-4B42-869F-B146BCB64D2E",
                     4.0D, EntityAttributeModifier.Operation.ADDITION);
+
+    public static MidasFavourScrollItem MIDAS_FAVOUR_SCROLL;
+    public static UnconcealedMidasFavourScroll UNCONCEALED_MIDAS_FAVOUR_SCROLL;
+    public static UnconcealedExtendedMidasFavourScroll UNCONCEALED_LONG_MIDAS_FAVOUR_SCROLL;
+    public static UnconcealedStrongerMidasFavourScroll UNCONCEALED_STRONG_MIDAS_FAVOUR_SCROLL;
+    public static UnconcealedFrostedMidasFavourScroll UNCONCEALED_FROSTED_MIDAS_FAVOUR_SCROLL;
 
     public static <T extends Item> T registerItem(String name, T item) {
         Registry.register(Registry.ITEM, new Identifier(INCANTATION_ID, name), item);
@@ -51,6 +62,21 @@ public class SoulsComeAlive {
         Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "devilish_bargain"), DEVILISH_BARGAIN);
 
         Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "midas_favour"), MIDAS_FAVOUR);
+        UNCONCEALED_MIDAS_FAVOUR_SCROLL = registerItem("unconcealed_midas_favour_scroll",
+                new UnconcealedMidasFavourScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(1).maxDamage(80).group(INCANTATION_GROUP)));
+        UNCONCEALED_FROSTED_MIDAS_FAVOUR_SCROLL = registerItem("frosted_unconcealed_midas_favour_scroll",
+                new UnconcealedFrostedMidasFavourScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(1).maxDamage(80).group(INCANTATION_GROUP)));
+        UNCONCEALED_LONG_MIDAS_FAVOUR_SCROLL = registerItem("long_unconcealed_midas_favour_scroll",
+                new UnconcealedExtendedMidasFavourScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(1).maxDamage(80).group(INCANTATION_GROUP)));
+        UNCONCEALED_STRONG_MIDAS_FAVOUR_SCROLL = registerItem("strong_unconcealed_midas_favour_scroll",
+                new UnconcealedStrongerMidasFavourScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(1).maxDamage(80).group(INCANTATION_GROUP)));
+        MIDAS_FAVOUR_SCROLL = registerItem("midas_favour_scroll",
+                new MidasFavourScrollItem(IncantationMod.IncantationMaterials.FABRIC_PATCHING,
+                        new FabricItemSettings().maxCount(1).maxDamage(60).group(INCANTATION_GROUP)));
 
         Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "angel_stiffness"), ANGEL_STIFFNESS);
         ANGELIC_SOUL_FRAGMENT = registerItem("angelic_soul_shard",

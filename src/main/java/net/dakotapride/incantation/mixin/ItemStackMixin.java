@@ -1,6 +1,7 @@
 package net.dakotapride.incantation.mixin;
 
 import net.dakotapride.incantation.common.IncantationMod;
+import net.dakotapride.incantation.common.soulsComeAlive.SoulsComeAlive;
 import net.dakotapride.incantation.common.util.IncantationTags;
 import net.dakotapride.incantation.compat.enhancedcelestials.EnhancedCelestialsCompat;
 import net.fabricmc.loader.api.FabricLoader;
@@ -26,6 +27,13 @@ public abstract class ItemStackMixin {
                 entity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 300, 1));
                 entity.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 100, 0));
             }
+        }
+
+        if (entity.getActiveItem().isOf(Items.GOLDEN_APPLE)
+                || entity.getActiveItem().isOf(Items.GOLDEN_CARROT)
+                || entity.getActiveItem().isOf(Items.GLISTERING_MELON_SLICE)) {
+            entity.addStatusEffect(new StatusEffectInstance(SoulsComeAlive.MIDAS_FAVOUR, 600, 1));
+            entity.setFireTicks(0);
         }
 
         if (entity.getActiveItem().isOf(Items.HONEY_BOTTLE)

@@ -1,16 +1,13 @@
 package net.dakotapride.incantation.mixin;
 
 import net.dakotapride.incantation.common.IncantationMod;
+import net.dakotapride.incantation.common.soulsComeAlive.SoulsComeAlive;
 import net.dakotapride.incantation.common.soulsComeAlive.entity.source.IncantationDamageSource;
-import net.dakotapride.incantation.common.util.IncantationTags;
 import net.dakotapride.incantation.compat.moreweaponry.MoreWeaponryCompat;
 import net.dakotapride.incantation.compat.pickyourpoison.PickYourPoisonCompat;
-import net.dakotapride.incantation.common.soulsComeAlive.SoulsComeAlive;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.EntityAttributeModifier;
-import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -20,7 +17,6 @@ import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
-import net.minecraft.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -42,8 +38,6 @@ public abstract class LivingEntityMixin extends Entity {
     @Shadow protected abstract int getNextAirOnLand(int air);
 
     @Shadow protected abstract int getNextAirUnderwater(int air);
-
-    @Shadow public abstract boolean clearStatusEffects();
 
     @Shadow public abstract boolean addStatusEffect(StatusEffectInstance effect, @Nullable Entity source);
 
@@ -127,17 +121,6 @@ public abstract class LivingEntityMixin extends Entity {
             }
 
             livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 40, 0));
-        }
-    }
-
-    @Inject(method = "damage", cancellable = true, at = @At("HEAD"))
-    private void incantation$sellYourSoul(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        if (source == DamageSource.OUT_OF_WORLD && livingEntity.getStatusEffect(SoulsComeAlive.SOUL_BLESSING) != null) {
-            clearStatusEffects();
-
-            livingEntity.addStatusEffect(new StatusEffectInstance(SoulsComeAlive.DEVILISH_BARGAIN));
-
-            cir.setReturnValue(false);
         }
     }
 
