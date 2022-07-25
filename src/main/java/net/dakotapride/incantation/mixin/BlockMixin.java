@@ -1,10 +1,9 @@
 package net.dakotapride.incantation.mixin;
 
-import net.dakotapride.incantation.common.soulsComeAlive.SoulsComeAlive;
+import net.dakotapride.incantation.common.util.SoulsComeAlive;
 import net.dakotapride.incantation.common.util.IncantationTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;

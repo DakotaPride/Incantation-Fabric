@@ -1,0 +1,25 @@
+{
+  "name": "Devilish Bargain Status Effect",
+  "icon": "minecraft:flint_and_steel",
+  "category": "incantation:effects",
+  "pages": [
+    {
+      "type": "image",
+      "images": [
+        "incantation:textures/patchouli_images/effect/devilish_bargain.png"
+      ],
+      "title": "Devilish Bargain",
+      "text": "Devilish Bargain Provides Discounted Villager Trades At The Price Of Half Of Your Health For The Duration Of The Effect.",
+      "border": true
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:angel_stiffness/angel_stiffness_effect",
+        "incantation:soul_shards/darkened_soul_shard",
+        "incantation:soul_shards/what_is_a_soul_shard",
+        "incantation:soul_shards/totem_of_salvation"
+      ]
+    }
+  ]
+}

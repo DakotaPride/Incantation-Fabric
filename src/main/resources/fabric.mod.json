@@ -33,6 +33,7 @@
     "incantation.mixins.json"
   ],
 
+  "accessWidener": "incantation.accesswidener",
   "depends": {
     "fabricloader": "*",
     "fabric": "*",

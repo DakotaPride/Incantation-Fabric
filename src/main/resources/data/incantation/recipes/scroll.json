@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "G": {
+      "tag": "minecraft:wool"
+    },
+    "R": {
+      "item": "minecraft:paper"
+    }
+  },
+  "pattern": [
+    "  R",
+    " G ",
+    "R  "
+  ],
+  "result": {
+    "item": "incantation:scroll",
+    "count": 1
+  }
+}

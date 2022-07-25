@@ -129,11 +129,24 @@
   "item.incantation.midas_favour_scroll": "Pergamino",
   "effect.incantation.midas_favour": "El Favor de Midas",
   "item.incantation.unconcealed_midas_favour_scroll": "Pergamino descubierto",
+  "item.incantation.strong_unconcealed_midas_favour_scroll": "Pergamino descubierto",
+  "item.incantation.long_unconcealed_midas_favour_scroll": "Pergamino descubierto",
+  "item.incantation.frosted_unconcealed_midas_favour_scroll": "Pergamino descubierto",
   "item.soulsComeAlive.cannot_use.midas_favour": "El favor de Midas I (0:00)",
   "item.soulsComeAlive.unconcealed.midas_favour": "El favor de Midas I (0:23)",
   "item.soulsComeAlive.unconcealed.midas_favour.extended": "El favor de Midas I (0:37)",
   "item.soulsComeAlive.unconcealed.midas_favour.frosted": "El favor de Midas I (0:23)",
-  "item.soulsComeAlive.unconcealed.midas_favour.strong": "El favor de Midas II (0:23)",
+  "item.soulsComeAlive.unconcealed.midas_favour.stronger": "El favor de Midas II (0:23)",
   "advancement.incantation.use_bewitchment_center_locatable_item.title": "Eso no es un ojo de Ender",
-  "advancement.incantation.use_bewitchment_center_locatable_item.description": "Usar un elemento determinado para ubicar el centro de hechizos"
+  "advancement.incantation.use_bewitchment_center_locatable_item.description": "Usar un elemento determinado para ubicar el centro de hechizos",
+  "item.casting_gem.effect.jade": "Gema de lanzamiento: [Jade]",
+  "item.casting_gem.effect.green_jade": "Gema de lanzamiento: [Jade verde]",
+  "item.casting_gem.effect.amethyst": "Gema de lanzamiento: [Amatista]",
+
+  "item.incantation.frosted_unconcealed_tolerance_scroll": "Pergamino descubierto",
+
+  "effect.incantation.radiance": "Resplandor",
+  "effect.incantation.dusk": "Anochecer",
+  "item.incantation.kingsoul": "Rey alma",
+  "item.incantation.void_heart": "Corazón vacío"
 }

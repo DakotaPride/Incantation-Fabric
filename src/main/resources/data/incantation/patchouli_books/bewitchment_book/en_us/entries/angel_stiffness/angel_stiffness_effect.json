@@ -1,0 +1,25 @@
+{
+  "name": "Angelic Stiffness Status Effect",
+  "icon": "minecraft:feather",
+  "category": "incantation:effects",
+  "pages": [
+    {
+      "type": "image",
+      "images": [
+        "incantation:textures/patchouli_images/effect/angel_stiffness.png"
+      ],
+      "title": "Angelic Stiffness",
+      "text": "Angelic Stiffness Rids You From All Fall Damage And Provides A Luck Boost. Though, You Are Slower.",
+      "border": true
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:devilish_bargain/devilish_bargain_effect",
+        "incantation:soul_shards/lightened_soul_shard",
+        "incantation:soul_shards/what_is_a_soul_shard",
+        "incantation:soul_shards/totem_of_salvation"
+      ]
+    }
+  ]
+}

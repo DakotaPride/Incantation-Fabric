@@ -1,6 +1,6 @@
 package net.dakotapride.incantation.mixin;
 
-import net.dakotapride.incantation.common.soulsComeAlive.SoulsComeAlive;
+import net.dakotapride.incantation.common.util.SoulsComeAlive;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectUtil;
 import net.minecraft.entity.effect.StatusEffects;

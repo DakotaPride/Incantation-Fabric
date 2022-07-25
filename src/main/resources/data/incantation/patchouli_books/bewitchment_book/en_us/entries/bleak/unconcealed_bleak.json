@@ -1,0 +1,26 @@
+{
+  "name": "Unconcealed Bleak Parchment",
+  "icon": "incantation:bleak_scroll",
+  "category": "incantation:parchments",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "incantation:unconcealed_bleak_scroll",
+      "link_recipe": true,
+      "text": "The Bleak Parchment Cannot Do Anything By Itself, But Is Used In Crafting Recipes!"
+    },
+    {
+      "type": "crafting",
+      "recipe": "incantation:unconcealed_bleak_scroll",
+      "title": "Parchment"
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:bleak/bleak",
+        "incantation:bleak/frosted_unconcealed_bleak",
+        "incantation:bleak/bleak_effect"
+      ]
+    }
+  ]
+}

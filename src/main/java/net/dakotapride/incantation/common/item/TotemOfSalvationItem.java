@@ -1,6 +1,6 @@
-package net.dakotapride.incantation.common.soulsComeAlive.item;
+package net.dakotapride.incantation.common.item;
 
-import net.dakotapride.incantation.common.soulsComeAlive.SoulsComeAlive;
+import net.dakotapride.incantation.common.util.SoulsComeAlive;
 import net.dakotapride.incantation.config.IncantationConfig;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -11,7 +11,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 

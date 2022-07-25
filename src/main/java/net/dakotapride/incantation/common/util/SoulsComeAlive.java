@@ -1,17 +1,17 @@
-package net.dakotapride.incantation.common.soulsComeAlive;
+package net.dakotapride.incantation.common.util;
 
 import net.dakotapride.incantation.common.IncantationMod;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
-import net.dakotapride.incantation.common.soulsComeAlive.item.*;
-import net.dakotapride.incantation.common.soulsComeAlive.item.MidasFavourScrollItem;
-import net.dakotapride.incantation.common.soulsComeAlive.item.unconcealed_scrolls.base.UnconcealedMidasFavourScroll;
-import net.dakotapride.incantation.common.soulsComeAlive.item.unconcealed_scrolls.extended.UnconcealedExtendedMidasFavourScroll;
-import net.dakotapride.incantation.common.soulsComeAlive.item.unconcealed_scrolls.frosted.UnconcealedFrostedMidasFavourScroll;
-import net.dakotapride.incantation.common.soulsComeAlive.item.unconcealed_scrolls.stronger.UnconcealedStrongerMidasFavourScroll;
+import net.dakotapride.incantation.common.item.SoulFragmentItem;
+import net.dakotapride.incantation.common.item.TotemOfSalvationItem;
+import net.dakotapride.incantation.common.item.MidasFavourScrollItem;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.base.UnconcealedMidasFavourScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.extended.UnconcealedExtendedMidasFavourScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.frosted.UnconcealedFrostedMidasFavourScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.stronger.UnconcealedStrongerMidasFavourScroll;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.effect.HealthBoostStatusEffect;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.item.Item;

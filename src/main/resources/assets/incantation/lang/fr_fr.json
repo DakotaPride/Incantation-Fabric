@@ -103,7 +103,6 @@
   "advancement.incantation.use_an_unconcealed_frosted_bleak_scroll.title": "Rester givré",
   "advancement.incantation.use_an_unconcealed_frosted_bleak_scroll.description": "Contraire aux voies magiques en utilisant un parchemin sombre givré",
 
-  // Les âmes prennent vie
   "item.incantation.player_soul_shard": "Fragment d'âme",
   "soulsComeAlive.fragment_type.player": "Type de fragment: [Joueur]",
   "item.incantation.hostile_soul_shard": "Fragment d'âme",
@@ -129,11 +128,24 @@
   "item.incantation.midas_favour_scroll": "Parchemin",
   "effect.incantation.midas_favour": "Faveur de Midas",
   "item.incantation.unconcealed_midas_favour_scroll": "Parchemin non dissimulé",
+  "item.incantation.strong_unconcealed_midas_favour_scroll": "Parchemin non dissimulé",
+  "item.incantation.long_unconcealed_midas_favour_scroll": "Parchemin non dissimulé",
+  "item.incantation.frosted_unconcealed_midas_favour_scroll": "Parchemin non dissimulé",
   "item.soulsComeAlive.cannot_use.midas_favour": "Faveur de Midas I (0:00)",
   "item.soulsComeAlive.unconcealed.midas_favour": "Faveur de Midas I (0:23)",
   "item.soulsComeAlive.unconcealed.midas_favour.extended": "Faveur de Midas I (0:37)",
   "item.soulsComeAlive.unconcealed.midas_favour.frosted": "Faveur de Midas I (0:23)",
-  "item.soulsComeAlive.unconcealed.midas_favour.strong": "Faveur de Midas II (0:23)",
+  "item.soulsComeAlive.unconcealed.midas_favour.stronger": "Faveur de Midas II (0:23)",
   "advancement.incantation.use_bewitchment_center_locatable_item.title": "Ce n'est pas un œil d'Ender",
-  "advancement.incantation.use_bewitchment_center_locatable_item.description": "Utilisez un certain objet pour localiser le centre d'envoûtement"
+  "advancement.incantation.use_bewitchment_center_locatable_item.description": "Utilisez un certain objet pour localiser le centre d'envoûtement",
+  "item.casting_gem.effect.jade": "Gemme d'incantation: [Jade]",
+  "item.casting_gem.effect.green_jade": "Gemme d'incantation: [Jade vert]",
+  "item.casting_gem.effect.amethyst": "Gemme d'incantation: [Améthyste]",
+
+  "item.incantation.frosted_unconcealed_tolerance_scroll": "Parchemin non dissimulé",
+
+  "effect.incantation.radiance": "Éclat",
+  "effect.incantation.dusk": "Crépuscule",
+  "item.incantation.kingsoul": "Âme de roi",
+  "item.incantation.void_heart": "Cœur vide"
 }

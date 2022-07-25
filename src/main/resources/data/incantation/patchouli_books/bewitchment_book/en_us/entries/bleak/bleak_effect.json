@@ -1,0 +1,24 @@
+{
+  "name": "Bleak Status Effect",
+  "icon": "minecraft:ice",
+  "category": "incantation:effects",
+  "pages": [
+    {
+      "type": "image",
+      "images": [
+        "incantation:textures/patchouli_images/effect/bleak.png"
+      ],
+      "title": "Bleak",
+      "text": "While Bleak Is Applied, You Are Resistant To Freezing Damage",
+      "border": true
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:bleak/bleak",
+        "incantation:bleak/unconcealed_bleak",
+        "incantation:bleak/frosted_unconcealed_bleak"
+      ]
+    }
+  ]
+}

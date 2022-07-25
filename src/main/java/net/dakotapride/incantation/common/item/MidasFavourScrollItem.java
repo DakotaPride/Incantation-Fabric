@@ -1,4 +1,4 @@
-package net.dakotapride.incantation.common.soulsComeAlive.item;
+package net.dakotapride.incantation.common.item;
 
 import net.dakotapride.incantation.common.item.EffectScrollItem;
 import net.minecraft.client.item.TooltipContext;
