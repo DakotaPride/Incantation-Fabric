@@ -1,0 +1,31 @@
+{
+  "name": "Radiance Status Effect",
+  "icon": "minecraft:glowstone",
+  "category": "incantation:effects",
+  "pages": [
+    {
+      "type": "image",
+      "images": [
+        "incantation:textures/patchouli_images/effect/radiance.png"
+      ],
+      "title": "Radiance",
+      "text": "Radiance Is A Sickness-Like Effect, That If You Don't Cure It, You Will Eventually Die. It Continually Deals Damage To You, Similar To Normal Poison. You Cannot Heal While This Effect Is Applied, So Be Quick To Cure It.",
+      "border": true
+    },
+    {
+      "type": "text",
+      "title": "How To Apply Radiance",
+      "text": "While I'm Not Sure Why You Would Want To Receive This Status Effect, You Can Make Yourself Prone To It By Holding The Kingsoul In Your Offhand Slot. Good Luck From There!"
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:hollow_knight/dusk_effect",
+        "incantation:hollow_knight/curing_radiance",
+        "incantation:hollow_knight/the_infection",
+        "incantation:hollow_knight/kingsoul",
+        "incantation:hollow_knight/void_heart"
+      ]
+    }
+  ]
+}

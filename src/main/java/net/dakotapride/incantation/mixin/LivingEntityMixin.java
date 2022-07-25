@@ -1,8 +1,8 @@
 package net.dakotapride.incantation.mixin;
 
 import net.dakotapride.incantation.common.IncantationMod;
-import net.dakotapride.incantation.common.soulsComeAlive.SoulsComeAlive;
-import net.dakotapride.incantation.common.soulsComeAlive.entity.source.IncantationDamageSource;
+import net.dakotapride.incantation.common.util.SoulsComeAlive;
+import net.dakotapride.incantation.common.entity.source.IncantationDamageSource;
 import net.dakotapride.incantation.compat.moreweaponry.MoreWeaponryCompat;
 import net.dakotapride.incantation.compat.pickyourpoison.PickYourPoisonCompat;
 import net.minecraft.entity.Entity;
@@ -124,9 +124,30 @@ public abstract class LivingEntityMixin extends Entity {
         }
     }
 
+    @Inject(method = "heal", at = @At("HEAD"), cancellable = true)
+    private void heal(float amount, CallbackInfo ci) {
+        if (this.hasStatusEffect(IncantationMod.RADIANCE)) {
+            ci.cancel();
+        }
+    }
+
+    @Inject(method = "canSee", at = @At("HEAD"), cancellable = true)
+    public void canSee(Entity entity, CallbackInfoReturnable<Boolean> cir) {
+        if (this.hasStatusEffect(SoulsComeAlive.SIREN_WARNING) && !this.isSpectator()) {
+            cir.setReturnValue(false);
+        }
+    }
+
     @Inject(method = "tick", at = @At("HEAD"))
     private void tick(CallbackInfo ci) {
         hasSirenWarningEffect();
+
+        if (livingEntity.getOffHandStack().isOf(IncantationMod.KINGSOUL)) {
+            livingEntity.addStatusEffect(new StatusEffectInstance(IncantationMod.RADIANCE, 999999, 1));
+        }
+        if (livingEntity.hasStatusEffect(IncantationMod.DUSK)) {
+            livingEntity.removeStatusEffect(IncantationMod.RADIANCE);
+        }
 
         if (livingEntity.hasStatusEffect(SoulsComeAlive.SOUL_BLESSING)) {
             livingEntity.removeStatusEffect(SoulsComeAlive.DEVILISH_BARGAIN);

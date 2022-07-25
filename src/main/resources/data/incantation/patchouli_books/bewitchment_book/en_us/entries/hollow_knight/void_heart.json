@@ -1,0 +1,29 @@
+{
+  "name": "The Void Heart",
+  "icon": "incantation:void_heart",
+  "category": "incantation:easter_eggs",
+  "pages": [
+    {
+      "type": "text",
+      "title": "What Is It?",
+      "text": "The Void Heart Is The Product Of Forging Obsidian Together With The Kingsoul. Again, Almost Nothing Is Known About It."
+    },
+    {
+      "type": "spotlight",
+      "item": "incantation:void_heart",
+      "link_recipe": false,
+      "title": "How To Use",
+      "text": "Right-Clicking With It In Your Offhand Will Give You Dusk, Which Cures You Of Radiance. This Is The Only Way To Cure Radiance."
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:hollow_knight/kingsoul",
+        "incantation:hollow_knight/curing_radiance",
+        "incantation:hollow_knight/the_infection",
+        "incantation:hollow_knight/dusk_effect",
+        "incantation:hollow_knight/radiance_effect"
+      ]
+    }
+  ]
+}

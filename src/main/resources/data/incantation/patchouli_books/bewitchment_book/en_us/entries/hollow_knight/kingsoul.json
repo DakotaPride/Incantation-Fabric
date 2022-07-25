@@ -1,0 +1,33 @@
+{
+  "name": "The Kingsoul",
+  "icon": "incantation:kingsoul",
+  "category": "incantation:easter_eggs",
+  "pages": [
+    {
+      "type": "text",
+      "title": "What Is It?",
+      "text": "The Kingsoul Is Said To Hold Magical Abilities. Though, Only One Being Has Ever Processed This Item, So No One Can Confirm Or Deny It's Power."
+    },
+    {
+      "type": "spotlight",
+      "item": "incantation:kingsoul",
+      "link_recipe": true,
+      "title": "How To Use",
+      "text": "When The Kingsoul Is In Your Offhand Slot, You Are Prone To The Radiance's Influence. In Order To Further Protect Yourself From The Radiance, You Will Need To Create The Void Heart."
+    },
+    {
+      "type": "crafting",
+      "recipe": "incantation:kingsoul"
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:hollow_knight/void_heart",
+        "incantation:hollow_knight/curing_radiance",
+        "incantation:hollow_knight/the_infection",
+        "incantation:hollow_knight/dusk_effect",
+        "incantation:hollow_knight/radiance_effect"
+      ]
+    }
+  ]
+}

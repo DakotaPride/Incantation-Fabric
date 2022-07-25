@@ -1,0 +1,29 @@
+{
+  "name": "Curing Radiance",
+  "icon": "minecraft:glass_bottle",
+  "category": "incantation:easter_eggs",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "incantation:kingsoul",
+      "link_recipe": true,
+      "text": "The Kingsoul Can Be Used To Create The Void Heart."
+    },
+    {
+      "type": "spotlight",
+      "item": "incantation:void_heart",
+      "link_recipe": false,
+      "text": "The Void Heart, On Use, Gives You Dusk, An Effect That Cures Radiance."
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:hollow_knight/radiance_effect",
+        "incantation:hollow_knight/dusk_effect",
+        "incantation:hollow_knight/kingsoul",
+        "incantation:hollow_knight/void_heart",
+        "incantation:hollow_knight/the_infection"
+      ]
+    }
+  ]
+}

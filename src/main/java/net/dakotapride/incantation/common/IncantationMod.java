@@ -5,8 +5,10 @@ import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.dakotapride.incantation.common.block.*;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableBlock;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableEntity;
+import net.dakotapride.incantation.common.effect.RadianceStatusEffect;
 import net.dakotapride.incantation.common.item.unconcealed_scrolls.frosted.UnconcealedFrostedToleranceScroll;
-import net.dakotapride.incantation.common.soulsComeAlive.SoulsComeAlive;
+import net.dakotapride.incantation.common.util.SoulsComeAlive;
+import net.dakotapride.incantation.compat.patchouli.items.BewitchmentBookItem;
 import net.dakotapride.incantation.config.IncantationConfig;
 import net.dakotapride.incantation.common.effect.EmptyDamageModifierStatusEffect;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
@@ -63,6 +65,7 @@ import net.minecraft.tag.BlockTags;
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Lazy;
+import net.minecraft.util.Rarity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
@@ -157,6 +160,13 @@ public class IncantationMod implements ModInitializer {
 	public static RedstoneLampBlock AMETHYST_CRYSTAL_LAMP;
 	public static EnchantedBerryBushBlock ENCHANTED_BERRY_BUSH;
 	public static NoEffectScrollItem BASE_SCROLL;
+	public static BewitchmentBookItem BEWITCHMENT_BOOK;
+	public static StatusEffect RADIANCE = new RadianceStatusEffect(StatusEffectCategory.HARMFUL, 0xFFD39B)
+			.addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED, "91AEAA56-376B-4498-935B-2F7F68070635",
+					0.40000000596D, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+	public static StatusEffect DUSK = new EmptyStatusEffect(StatusEffectCategory.BENEFICIAL, 0x30271D);
+	public static KingsoulItem KINGSOUL;
+	public static VoidHeartItem VOID_HEART;
 
 	// Registration
 	public static <T extends Block> T registerBlock(String name, T block) {
@@ -237,6 +247,9 @@ public class IncantationMod implements ModInitializer {
 					new Identifier(INCANTATION_ID, "incantation"))
 			.icon(() -> new ItemStack(Items.SPLASH_POTION))
 			.appendItems(itemStacks -> {
+				if (FabricLoader.getInstance().isModLoaded("patchouli")) {
+					itemStacks.add(new ItemStack(BEWITCHMENT_BOOK));
+				}
 				itemStacks.add(new ItemStack(BEWITCHMENT_TABLE));
 				itemStacks.add(new ItemStack(GREEN_JADE_CRYSTAL_LAMP));
 				itemStacks.add(new ItemStack(BUDDING_GREEN_JADE));
@@ -281,11 +294,28 @@ public class IncantationMod implements ModInitializer {
 				itemStacks.add(new ItemStack(UNCONCEALED_FROSTED_RA_WRATH_SCROLL));
 				itemStacks.add(new ItemStack(TOLERANCE_SCROLL));
 				itemStacks.add(new ItemStack(UNCONCEALED_TOLERANCE_SCROLL));
+				itemStacks.add(new ItemStack(UNCONCEALED_FROSTED_TOLERANCE_SCROLL));
 				itemStacks.add(new ItemStack(BLEAK_SCROLL));
 				itemStacks.add(new ItemStack(UNCONCEALED_BLEAK_SCROLL));
 				itemStacks.add(new ItemStack(UNCONCEALED_LONG_BLEAK_SCROLL));
 				itemStacks.add(new ItemStack(UNCONCEALED_STRONG_BLEAK_SCROLL));
 				itemStacks.add(new ItemStack(UNCONCEALED_FROSTED_BLEAK_SCROLL));
+				itemStacks.add(new ItemStack(SoulsComeAlive.MIDAS_FAVOUR_SCROLL));
+				itemStacks.add(new ItemStack(SoulsComeAlive.UNCONCEALED_MIDAS_FAVOUR_SCROLL));
+				itemStacks.add(new ItemStack(SoulsComeAlive.UNCONCEALED_LONG_MIDAS_FAVOUR_SCROLL));
+				itemStacks.add(new ItemStack(SoulsComeAlive.UNCONCEALED_STRONG_MIDAS_FAVOUR_SCROLL));
+				itemStacks.add(new ItemStack(SoulsComeAlive.UNCONCEALED_FROSTED_MIDAS_FAVOUR_SCROLL));
+				itemStacks.add(new ItemStack(SoulsComeAlive.PLAYER_SOUL_FRAGMENT));
+				itemStacks.add(new ItemStack(SoulsComeAlive.PASSIVE_SOUL_FRAGMENT));
+				itemStacks.add(new ItemStack(SoulsComeAlive.HOSTILE_SOUL_FRAGMENT));
+				itemStacks.add(new ItemStack(SoulsComeAlive.DARKENED_SOUL_FRAGMENT));
+				itemStacks.add(new ItemStack(SoulsComeAlive.LIGHTENED_SOUL_FRAGMENT));
+				itemStacks.add(new ItemStack(SoulsComeAlive.SOUL_FIRE_FRAGMENT));
+				itemStacks.add(new ItemStack(SoulsComeAlive.DISRUPTIVE_SOUL_FRAGMENT));
+				itemStacks.add(new ItemStack(SoulsComeAlive.ANGELIC_SOUL_FRAGMENT));
+				itemStacks.add(new ItemStack(SoulsComeAlive.TOTEM_OF_SALVATION));
+				itemStacks.add(new ItemStack(KINGSOUL));
+				itemStacks.add(new ItemStack(VOID_HEART));
 				if (FabricLoader.getInstance().isModLoaded("pickyourpoison")) {
 					itemStacks.add(new ItemStack(PickYourPoisonCompat.ECHOING_SCROLL));
 					itemStacks.add(new ItemStack(PickYourPoisonCompat.UNCONCEALED_ECHOING_SCROLL));
@@ -376,6 +406,15 @@ public class IncantationMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+
+		// Hollow Knight
+		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "radiance"), RADIANCE);
+		Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "dusk"), DUSK);
+		KINGSOUL = registerItem("kingsoul", new KingsoulItem(new FabricItemSettings().maxCount(1).group(INCANTATION_GROUP)));
+		VOID_HEART = registerItem("void_heart", new VoidHeartItem(new FabricItemSettings().maxCount(1).group(INCANTATION_GROUP)));
+
+		BEWITCHMENT_BOOK = registerItem("bewitchment_book",
+				new BewitchmentBookItem(new FabricItemSettings().maxCount(1).rarity(Rarity.RARE).group(INCANTATION_GROUP)));
 
 		AutoConfig.register(IncantationConfig.class, JanksonConfigSerializer::new);
 		config = AutoConfig.getConfigHolder(IncantationConfig.class).getConfig();
@@ -599,7 +638,7 @@ public class IncantationMod implements ModInitializer {
 		UNCONCEALED_TOLERANCE_SCROLL = registerItem("unconcealed_tolerance_scroll",
 				new UnconcealedToleranceScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
 						new FabricItemSettings().maxCount(1).maxDamage(80).group(INCANTATION_GROUP)));
-		UNCONCEALED_FROSTED_TOLERANCE_SCROLL = registerItem("unconcealed_frosted_tolerance_scroll",
+		UNCONCEALED_FROSTED_TOLERANCE_SCROLL = registerItem("frosted_unconcealed_tolerance_scroll",
 				new UnconcealedFrostedToleranceScroll(IncantationMaterials.PACKED_FABRIC_PATCHING,
 						new FabricItemSettings().maxCount(1).maxDamage(80).group(INCANTATION_GROUP)));
 

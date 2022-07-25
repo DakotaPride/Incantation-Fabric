@@ -1,0 +1,31 @@
+{
+  "name": "Dusk Status Effect",
+  "icon": "minecraft:blackstone",
+  "category": "incantation:effects",
+  "pages": [
+    {
+      "type": "image",
+      "images": [
+        "incantation:textures/patchouli_images/effect/dusk.png"
+      ],
+      "title": "Dusk",
+      "text": "The Dusk Effect Is Used To Cure Radiance, Similar To A Zombie Villager.",
+      "border": true
+    },
+    {
+      "type": "text",
+      "title": "How To Apply Dusk",
+      "text": "Dusk can Be Applied By Using The Void Heart While In Your Offhand Slot."
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:hollow_knight/radiance_effect",
+        "incantation:hollow_knight/curing_radiance",
+        "incantation:hollow_knight/the_infection",
+        "incantation:hollow_knight/kingsoul",
+        "incantation:hollow_knight/void_heart"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Radiance Infection",
+  "icon": "incantation:shroomlight",
+  "category": "incantation:easter_eggs",
+  "pages": [
+    {
+      "type": "text",
+      "title": "Infection Origins",
+      "text": "The Radiance Is Said To Have Been A God To The People Of A Nation. Eventually, These Same People Would Go To A Different Source Of Power. The Radiance Decided One Day That It Would Take It's Revenge By Infecting Those Who Had Left It To Basically Shrivel Up And Disappear."
+    },
+    {
+      "type": "text",
+      "title": "Curing Radiance",
+      "text": "Radiance Can Only Be Cured By Activating The Void Heart, Giving You The Dusk Effect."
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:hollow_knight/radiance_effect",
+        "incantation:hollow_knight/dusk_effect",
+        "incantation:hollow_knight/kingsoul",
+        "incantation:hollow_knight/void_heart",
+        "incantation:hollow_knight/the_infection",
+        "incantation:incantation/curing_radiance"
+      ]
+    }
+  ]
+}

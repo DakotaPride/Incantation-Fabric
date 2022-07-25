@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#M#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:polished_diorite"
+    },
+    "M": {
+      "tag": "incantation:bewitchment_center_locatable"
+    }
+  },
+  "result": {
+    "item": "incantation:kingsoul",
+    "count": 1
+  }
+}
