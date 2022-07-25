@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#L#",
+    "###"
+  ],
+  "key": {
+    "#": [
+      {
+        "item": "minecraft:soul_soil"
+      },
+      {
+        "item": "minecraft:soul_sand"
+      }
+    ],
+    "L": [
+      {
+        "item": "minecraft:book"
+      },
+      {
+        "item": "minecraft:writable_book"
+      }
+    ]
+  },
+  "result": {
+    "item": "incantation:bewitchment_book",
+    "count": 1
+  }
+}
