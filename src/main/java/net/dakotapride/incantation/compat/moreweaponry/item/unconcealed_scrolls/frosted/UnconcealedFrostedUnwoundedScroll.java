@@ -35,5 +35,6 @@ public class UnconcealedFrostedUnwoundedScroll extends UnwoundedScrollItem {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         tooltip.add(Text.translatable("item.incantation.unconcealed.unwounded.frosted").formatted(Formatting.BLUE));
+        tooltip.add(Text.translatable("item.minecraft.frosted_effect.slowness").formatted(Formatting.RED));
     }
 }
