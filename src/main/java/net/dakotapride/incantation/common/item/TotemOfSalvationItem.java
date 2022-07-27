@@ -35,10 +35,18 @@ public class TotemOfSalvationItem extends Item {
             user.addStatusEffect(new StatusEffectInstance(SoulsComeAlive.DEVILISH_BARGAIN, 3600, 1));
         } else if (user.getOffHandStack().isOf(SoulsComeAlive.SOUL_FIRE_FRAGMENT)) {
             user.addStatusEffect(new StatusEffectInstance(SoulsComeAlive.SOUL_BLESSING, 3600, 1));
+        } else if (user.getOffHandStack().isOf(SoulsComeAlive.ANGELIC_SOUL_FRAGMENT)) {
+            user.addStatusEffect(new StatusEffectInstance(SoulsComeAlive.ANGEL_STIFFNESS, 3600, 1));
+        } else if (user.getOffHandStack().isOf(SoulsComeAlive.LIGHTENED_SOUL_FRAGMENT)) {
+            user.addStatusEffect(new StatusEffectInstance(SoulsComeAlive.MIDAS_FAVOUR, 3600, 1));
+        } else if (user.getOffHandStack().isOf(SoulsComeAlive.DISRUPTIVE_SOUL_FRAGMENT)) {
+            user.addStatusEffect(new StatusEffectInstance(SoulsComeAlive.SIREN_WARNING, 3600, 1));
         }
 
-        stack.damage(1, user, (playerEntity -> playerEntity.sendToolBreakStatus(hand)));
-        user.getItemCooldownManager().set(this, 400);
+        if (!user.getAbilities().creativeMode) {
+            stack.damage(1, user, (playerEntity -> playerEntity.sendToolBreakStatus(hand)));
+            user.getItemCooldownManager().set(this, 400);
+        }
 
         return super.use(world, user, hand);
     }

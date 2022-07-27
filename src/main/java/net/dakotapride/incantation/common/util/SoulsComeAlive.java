@@ -43,7 +43,6 @@ public class SoulsComeAlive {
     public static StatusEffect MIDAS_FAVOUR = new EmptyStatusEffect(StatusEffectCategory.BENEFICIAL, 0xFFBC21)
             .addAttributeModifier(EntityAttributes.GENERIC_LUCK, "03C3C89D-7037-4B42-869F-B146BCB64D2E",
                     4.0D, EntityAttributeModifier.Operation.ADDITION);
-
     public static MidasFavourScrollItem MIDAS_FAVOUR_SCROLL;
     public static UnconcealedMidasFavourScroll UNCONCEALED_MIDAS_FAVOUR_SCROLL;
     public static UnconcealedExtendedMidasFavourScroll UNCONCEALED_LONG_MIDAS_FAVOUR_SCROLL;

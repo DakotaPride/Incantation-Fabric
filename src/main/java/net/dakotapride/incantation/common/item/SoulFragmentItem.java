@@ -4,7 +4,9 @@ import net.dakotapride.incantation.common.util.SoulsComeAlive;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.DrownedEntity;
+import net.minecraft.entity.mob.PhantomEntity;
 import net.minecraft.entity.passive.AllayEntity;
+import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -38,7 +40,20 @@ public class SoulFragmentItem extends Item {
                 || entity instanceof DrownedEntity && getSoulShard(item) == fragmentTypeList.LIGHTENED) {
             stack.decrement(1);
 
-            user.giveItemStack(new ItemStack(SoulsComeAlive.ANGELIC_SOUL_FRAGMENT));
+            user.giveItemStack(new ItemStack(SoulsComeAlive.ANGELIC_SOUL_FRAGMENT, 1));
+        } else if (entity instanceof PhantomEntity && getSoulShard(item) == fragmentTypeList.PLAYER
+                || entity instanceof PhantomEntity && getSoulShard(item) == fragmentTypeList.PASSIVE
+                || entity instanceof PhantomEntity && getSoulShard(item) == fragmentTypeList.HOSTILE
+                || entity instanceof PhantomEntity && getSoulShard(item) == fragmentTypeList.LIGHTENED) {
+            stack.decrement(1);
+
+            user.giveItemStack(new ItemStack(SoulsComeAlive.DARKENED_SOUL_FRAGMENT, 1));
+        } else if (entity instanceof MerchantEntity && getSoulShard(item) == fragmentTypeList.PLAYER
+                || entity instanceof PhantomEntity && getSoulShard(item) == fragmentTypeList.PASSIVE
+                || entity instanceof PhantomEntity && getSoulShard(item) == fragmentTypeList.HOSTILE) {
+            stack.decrement(1);
+
+            user.giveItemStack(new ItemStack(SoulsComeAlive.LIGHTENED_SOUL_FRAGMENT, 1));
         }
 
         return super.useOnEntity(stack, user, entity, hand);
@@ -58,7 +73,6 @@ public class SoulFragmentItem extends Item {
                     tooltip.add(Text.translatable("soulsComeAlive.fragment_type.lightened").formatted(Formatting.YELLOW));
             case SOUL_FIRE ->
                     tooltip.add(Text.translatable("soulsComeAlive.fragment_type.soul_fire").formatted(Formatting.AQUA));
-
             case SIREN_WARNING ->
                     tooltip.add(Text.translatable("soulsComeAlive.fragment_type.siren_warning"));
             case ANGEL_STIFFNESS ->
@@ -78,8 +92,6 @@ public class SoulFragmentItem extends Item {
         DARKENED,
         LIGHTENED,
         SOUL_FIRE,
-
-
         ANGEL_STIFFNESS,
         SIREN_WARNING
     }
@@ -99,9 +111,7 @@ public class SoulFragmentItem extends Item {
             type = fragmentTypeList.LIGHTENED;
         } else if (item == SoulsComeAlive.SOUL_FIRE_FRAGMENT) {
             type = fragmentTypeList.SOUL_FIRE;
-        }
-
-        else if (item == SoulsComeAlive.ANGELIC_SOUL_FRAGMENT) {
+        } else if (item == SoulsComeAlive.ANGELIC_SOUL_FRAGMENT) {
             type = fragmentTypeList.ANGEL_STIFFNESS;
         } else if (item == SoulsComeAlive.DISRUPTIVE_SOUL_FRAGMENT) {
             type = fragmentTypeList.SIREN_WARNING;
