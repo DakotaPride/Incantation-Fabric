@@ -146,5 +146,72 @@
   "effect.incantation.radiance": "Radiance",
   "effect.incantation.dusk": "Dusk",
   "item.incantation.kingsoul": "Kingsoul",
-  "item.incantation.void_heart": "Void Heart"
+  "item.incantation.void_heart": "Void Heart",
+
+
+  // Enhanced Celestials
+  "item.enhancedcelestials.remedy_scroll": "Parchment",
+  "effect.enhancedcelestials.remedy": "Remedy",
+  "item.incantation.cannot_use.remedy": "Remedy I (0:00)",
+  "item.enhancedcelestials.moon_crest_fruit": "Moon Crest",
+  "item.enhancedcelestials.mending_moon_crest_fruit": "Mending Moon Crest",
+
+  "item.minecraft.potion.effect.remedy": "Potion Of Remedy",
+  "item.minecraft.splash_potion.effect.remedy": "Potion Of Remedy",
+  "item.minecraft.lingering_potion.effect.remedy": "Potion Of Remedy",
+  "item.minecraft.tipped_arrow.effect.remedy": "Arrow Of Remedy",
+
+  "item.enhancedcelestials.unconcealed_remedy_scroll": "Unconcealed Parchment",
+  "item.enhancedcelestials.long_unconcealed_remedy_scroll": "Unconcealed Parchment",
+  "item.enhancedcelestials.strong_unconcealed_remedy_scroll": "Unconcealed Parchment",
+  "item.enhancedcelestials.frosted_unconcealed_remedy_scroll": "Unconcealed Parchment",
+
+  "item.incantation.unconcealed.remedy": "Remedy I (0:23)",
+  "item.incantation.unconcealed.remedy.frosted": "Remedy I (0:23)",
+  "item.incantation.unconcealed.remedy.extended": "Remedy I (0:37)",
+  "item.incantation.unconcealed.remedy.strong": "Remedy II (0:23)",
+  // Auto Config
+  "text.autoconfig.incantation.option.enchantedBerryBushSpawnChance": "Enchanted Berry Bush Spawn Chance",
+  "text.autoconfig.incantation.option.showTotemOfSalvationRemainingUses": "Show Remaining Totem Of Salvation Uses",
+  "text.autoconfig.incantation.title": "Incantation Config",
+  // More Weaponry
+  "item.moreweaponry.unwounded_scroll": "Resistance Parchment",
+  "effect.moreweaponry.unwounded": "Unwounded",
+  "item.incantation.cannot_use.unwounded": "Unwounded I (0:00)",
+
+  "item.minecraft.potion.effect.unwounded": "Potion Of Unwounded",
+  "item.minecraft.splash_potion.effect.unwounded": "Potion Of Unwounded",
+  "item.minecraft.lingering_potion.effect.unwounded": "Potion Of Unwounded",
+  "item.minecraft.tipped_arrow.effect.unwounded": "Arrow Of Unwounded",
+
+  "item.moreweaponry.unconcealed_unwounded_scroll": "Unconcealed Parchment",
+  "item.moreweaponry.long_unconcealed_unwounded_scroll": "Unconcealed Parchment",
+  "item.moreweaponry.strong_unconcealed_unwounded_scroll": "Unconcealed Parchment",
+  "item.moreweaponry.frosted_unconcealed_unwounded_scroll": "Unconcealed Parchment",
+
+  "item.incantation.unconcealed.unwounded": "Unwounded I (0:23)",
+  "item.incantation.unconcealed.unwounded.frosted": "Unwounded I (0:23)",
+  "item.incantation.unconcealed.unwounded.extended": "Unwounded I (0:37)",
+  "item.incantation.unconcealed.unwounded.strong": "Unwounded II (0:23)",
+  // Patchouli
+  "item.incantation.bewitchment_book": "Incantation",
+  // Pick Your Poison
+  "item.pickyourpoison.echoing_scroll": "Resistance Parchment",
+  "effect.pickyourpoison.echoing": "Echoing",
+  "item.incantation.cannot_use.echoing": "Echoing",
+
+  "item.minecraft.potion.effect.echoing": "Potion Of Echoing",
+  "item.minecraft.splash_potion.effect.echoing": "Potion Of Echoing",
+  "item.minecraft.lingering_potion.effect.echoing": "Potion Of Echoing",
+  "item.minecraft.tipped_arrow.effect.echoing": "Arrow Of Echoing",
+
+  "item.pickyourpoison.unconcealed_echoing_scroll": "Unconcealed Parchment",
+  "item.pickyourpoison.long_unconcealed_echoing_scroll": "Unconcealed Parchment",
+  "item.pickyourpoison.strong_unconcealed_echoing_scroll": "Unconcealed Parchment",
+  "item.pickyourpoison.frosted_unconcealed_echoing_scroll": "Unconcealed Parchment",
+
+  "item.incantation.unconcealed.echoing": "Echoing I (0:23)",
+  "item.incantation.unconcealed.echoing.frosted": "Echoing I (0:23)",
+  "item.incantation.unconcealed.echoing.extended": "Echoing I (0:37)",
+  "item.incantation.unconcealed.echoing.strong": "Echoing II (0:23)"
 }
