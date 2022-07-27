@@ -1,5 +1,6 @@
 package net.dakotapride.incantation.client;
 
+import de.guntram.mcmod.crowdintranslate.CrowdinTranslate;
 import net.dakotapride.incantation.common.IncantationMod;
 import net.dakotapride.incantation.common.screen.BewitchmentTableScreen;
 import net.fabricmc.api.ClientModInitializer;
@@ -18,6 +19,8 @@ public class IncantationClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+
+        CrowdinTranslate.downloadTranslations("incantation", "incantation");
 
         BlockRenderLayerMap.INSTANCE.putBlock(IncantationMod.GREEN_JADE_CLUSTER, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(IncantationMod.SMALL_GREEN_JADE_BUD, RenderLayer.getCutout());
