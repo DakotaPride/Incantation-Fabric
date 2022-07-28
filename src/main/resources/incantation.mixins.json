@@ -8,6 +8,7 @@
     "BrewingRecipeRegistryMixin",
     "ItemStackMixin",
     "LivingEntityMixin",
+    "PlayerEntityMixin",
     "StatusEffectUtilMixin",
     "VillagerEntityMixin"
   ],
