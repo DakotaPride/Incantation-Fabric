@@ -1,5 +1,5 @@
 {
-  "_comment_": "Pick Your Poison",
+  "_comment_": "Incantation v0.1.6",
   "item.incantation.tolerance_scroll": "Parchment",
   "effect.incantation.tolerance": "Tolerance",
   "item.incantation.cannot_use.tolerance": "Tolerance I (0:00)",
@@ -137,7 +137,6 @@
   "effect.incantation.dusk": "Dusk",
   "item.incantation.kingsoul": "Kingsoul",
   "item.incantation.void_heart": "Void Heart",
-  "_comment": "Enhanced Celestials",
   "item.enhancedcelestials.remedy_scroll": "Parchment",
   "effect.enhancedcelestials.remedy": "Remedy",
   "item.incantation.cannot_use.remedy": "Remedy I (0:00)",
