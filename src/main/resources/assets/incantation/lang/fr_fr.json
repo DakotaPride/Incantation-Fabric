@@ -187,5 +187,11 @@
   "item.incantation.unconcealed.echoing": "Echoing I (0:23)",
   "item.incantation.unconcealed.echoing.frosted": "Echoing I (0:23)",
   "item.incantation.unconcealed.echoing.extended": "Echoing I (0:37)",
-  "item.incantation.unconcealed.echoing.strong": "Echoing II (0:23)"
+  "item.incantation.unconcealed.echoing.strong": "Echoing II (0:23)",
+  "item.incantation.cinnamon_bun": "Cinnamon Bun",
+  "item.incantation.golden_cinnamon_bun": "Golden Cinnamon Bun",
+  "item.incantation.enchanted_cinnamon_bun": "Cinnamon Bun",
+  "item.incantation.enchanted_golden_cinnamon_bun": "Golden Cinnamon Bun",
+  "item.incantation.sweetened_modifier_pack": "Modifier Pack",
+  "randomModifiersGo.modifier_type.sweetened": "Sweetened Modifier"
 }
