@@ -1,5 +1,5 @@
 {
-  // Incantation v0.1.0
+  "_comment_": "Incantation v0.1.0",
   "item.incantation.tolerance_scroll": "Parchment",
   "effect.incantation.tolerance": "Tolerance",
   "item.incantation.cannot_use.tolerance": "Tolerance I (0:00)",
@@ -24,7 +24,7 @@
   "block.incantation.bewitchment_table": "Bewitchment Table",
   "itemGroup.incantation.incantation": "Incantation",
 
-  // Incantation v0.1.3
+  "_comment_": "Incantation v0.1.3",
   "item.incantation.plains_cherries": "Plains Cherries",
   "item.incantation.frosted_plains_cherries": "Frosted Plains Cherries",
   "item.incantation.silver_nugget_apple": "Silver Nugget Apple",
@@ -41,7 +41,7 @@
   "item.incantation.strong_unconcealed_ra_wrath_scroll": "Unconcealed Parchment",
   "item.incantation.frosted_unconcealed_ra_wrath_scroll": "Unconcealed Parchment",
 
-  // Incantation v0.1.4
+  "_comment_": "Incantation v0.1.4",
   "item.incantation.green_jade_shard": "Green Jade Shard",
   "block.incantation.green_jade_bud": "Green Jade Cluster",
   "block.incantation.small_green_jade_bud": "Small Green Jade Bud",
@@ -86,7 +86,7 @@
   "block.incantation.green_jade_crystal_lamp": "Green Jade Crystal Lamp",
   "block.incantation.amethyst_crystal_lamp": "Amethyst Crystal Lamp",
 
-  // Incantation v0.1.5
+  "_comment_": "Incantation v0.1.5",
   "item.minecraft.frosted_effect.slowness": "Slowness II (0:26)",
   "item.incantation.unconcealed.bleak": "Bleak I (0:23)",
   "item.incantation.unconcealed.ra_wrath": "Ra's Wrath I (0:23)",
@@ -103,7 +103,7 @@
   "advancement.incantation.use_an_unconcealed_frosted_bleak_scroll.title": "Stayin' Frosty",
   "advancement.incantation.use_an_unconcealed_frosted_bleak_scroll.description": "Contradict The Magical Ways By Using A Frosted Bleak Scroll",
 
-  // Souls Come Alive
+  "_comment_": "Souls Come Alive",
   "item.incantation.player_soul_shard": "Soul Shard",
   "soulsComeAlive.fragment_type.player": "Fragment Type: [Player]",
   "item.incantation.hostile_soul_shard": "Soul Shard",
@@ -149,7 +149,7 @@
   "item.incantation.void_heart": "Void Heart",
 
 
-  // Enhanced Celestials
+  "_comment": "Enhanced Celestials",
   "item.enhancedcelestials.remedy_scroll": "Parchment",
   "effect.enhancedcelestials.remedy": "Remedy",
   "item.incantation.cannot_use.remedy": "Remedy I (0:00)",
@@ -170,11 +170,11 @@
   "item.incantation.unconcealed.remedy.frosted": "Remedy I (0:23)",
   "item.incantation.unconcealed.remedy.extended": "Remedy I (0:37)",
   "item.incantation.unconcealed.remedy.strong": "Remedy II (0:23)",
-  // Auto Config
+  "_comment_": "Auto Config",
   "text.autoconfig.incantation.option.enchantedBerryBushSpawnChance": "Enchanted Berry Bush Spawn Chance",
   "text.autoconfig.incantation.option.showTotemOfSalvationRemainingUses": "Show Remaining Totem Of Salvation Uses",
   "text.autoconfig.incantation.title": "Incantation Config",
-  // More Weaponry
+  "_comment_": "More Weaponry",
   "item.moreweaponry.unwounded_scroll": "Resistance Parchment",
   "effect.moreweaponry.unwounded": "Unwounded",
   "item.incantation.cannot_use.unwounded": "Unwounded I (0:00)",
@@ -193,9 +193,9 @@
   "item.incantation.unconcealed.unwounded.frosted": "Unwounded I (0:23)",
   "item.incantation.unconcealed.unwounded.extended": "Unwounded I (0:37)",
   "item.incantation.unconcealed.unwounded.strong": "Unwounded II (0:23)",
-  // Patchouli
+  "_comment_": "Patchouli",
   "item.incantation.bewitchment_book": "Incantation",
-  // Pick Your Poison
+  "_comment_": "Pick Your Poison",
   "item.pickyourpoison.echoing_scroll": "Resistance Parchment",
   "effect.pickyourpoison.echoing": "Echoing",
   "item.incantation.cannot_use.echoing": "Echoing",
