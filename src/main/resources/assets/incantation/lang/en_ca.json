@@ -147,7 +147,7 @@
   "item.incantation.void_heart": "Void Heart",
 
 
-  "_comment": "Enhanced Celestials",
+  "_comment_": "Enhanced Celestials",
   "item.enhancedcelestials.remedy_scroll": "Parchment",
   "effect.enhancedcelestials.remedy": "Remedy",
   "item.incantation.cannot_use.remedy": "Remedy I (0:00)",
@@ -211,5 +211,7 @@
   "item.incantation.unconcealed.echoing": "Echoing I (0:23)",
   "item.incantation.unconcealed.echoing.frosted": "Echoing I (0:23)",
   "item.incantation.unconcealed.echoing.extended": "Echoing I (0:37)",
-  "item.incantation.unconcealed.echoing.strong": "Echoing II (0:23)"
+  "item.incantation.unconcealed.echoing.strong": "Echoing II (0:23)",
+
+  "_comment_": "Incantation v0.1.6"
 }
