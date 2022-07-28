@@ -1,6 +1,6 @@
 package net.dakotapride.incantation.common.item;
 
-import net.dakotapride.incantation.common.util.SoulsComeAlive;
+import net.dakotapride.incantation.common.util.update_classes.SoulsComeAlive;
 import net.dakotapride.incantation.config.IncantationConfig;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.effect.StatusEffectInstance;

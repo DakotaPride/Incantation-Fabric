@@ -1,6 +1,5 @@
-package net.dakotapride.incantation.common.item;
+package net.dakotapride.incantation.common.item.scrolls;
 
-import net.dakotapride.incantation.common.item.EffectScrollItem;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;

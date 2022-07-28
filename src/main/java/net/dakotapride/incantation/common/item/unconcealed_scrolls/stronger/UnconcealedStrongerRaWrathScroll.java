@@ -1,7 +1,7 @@
 package net.dakotapride.incantation.common.item.unconcealed_scrolls.stronger;
 
 import net.dakotapride.incantation.common.IncantationMod;
-import net.dakotapride.incantation.common.item.BleakScrollItem;
+import net.dakotapride.incantation.common.item.scrolls.BleakScrollItem;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;

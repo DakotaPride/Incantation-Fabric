@@ -1,11 +1,9 @@
-package net.dakotapride.incantation.common.item;
+package net.dakotapride.incantation.common.item.hollow_knight;
 
 import net.dakotapride.incantation.common.IncantationMod;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;

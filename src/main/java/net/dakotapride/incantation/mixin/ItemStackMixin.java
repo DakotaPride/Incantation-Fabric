@@ -1,7 +1,7 @@
 package net.dakotapride.incantation.mixin;
 
 import net.dakotapride.incantation.common.IncantationMod;
-import net.dakotapride.incantation.common.util.SoulsComeAlive;
+import net.dakotapride.incantation.common.util.update_classes.SoulsComeAlive;
 import net.dakotapride.incantation.common.util.IncantationTags;
 import net.dakotapride.incantation.compat.enhancedcelestials.EnhancedCelestialsCompat;
 import net.fabricmc.loader.api.FabricLoader;

@@ -5,30 +5,40 @@ import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.dakotapride.incantation.common.block.*;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableBlock;
 import net.dakotapride.incantation.common.block.entity.BewitchmentTableEntity;
+import net.dakotapride.incantation.common.effect.RadianceStatusEffect;
+import net.dakotapride.incantation.common.item.casting_gems.CastingAmethystItem;
+import net.dakotapride.incantation.common.item.casting_gems.CastingGreenJadeItem;
+import net.dakotapride.incantation.common.item.casting_gems.CastingJadeItem;
+import net.dakotapride.incantation.common.item.hollow_knight.KingsoulItem;
+import net.dakotapride.incantation.common.item.hollow_knight.VoidHeartItem;
+import net.dakotapride.incantation.common.item.scrolls.BleakScrollItem;
+import net.dakotapride.incantation.common.item.scrolls.NoEffectScrollItem;
+import net.dakotapride.incantation.common.item.scrolls.RaWrathScrollItem;
+import net.dakotapride.incantation.common.item.scrolls.ToleranceScrollItem;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.frosted.UnconcealedFrostedToleranceScroll;
+import net.dakotapride.incantation.common.util.update_classes.RandomModifiersGo;
+import net.dakotapride.incantation.common.util.update_classes.SoulsComeAlive;
+import net.dakotapride.incantation.compat.patchouli.items.BewitchmentBookItem;
+import net.dakotapride.incantation.config.IncantationConfig;
 import net.dakotapride.incantation.common.effect.EmptyDamageModifierStatusEffect;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
-import net.dakotapride.incantation.common.effect.RadianceStatusEffect;
 import net.dakotapride.incantation.common.item.*;
-import net.dakotapride.incantation.common.item.unconcealed_scrolls.base.UnconcealedBleakScroll;
 import net.dakotapride.incantation.common.item.unconcealed_scrolls.base.UnconcealedRaWrathScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.base.UnconcealedBleakScroll;
 import net.dakotapride.incantation.common.item.unconcealed_scrolls.base.UnconcealedToleranceScroll;
-import net.dakotapride.incantation.common.item.unconcealed_scrolls.extended.UnconcealedExtendedBleakScroll;
 import net.dakotapride.incantation.common.item.unconcealed_scrolls.extended.UnconcealedExtendedRaWrathScroll;
-import net.dakotapride.incantation.common.item.unconcealed_scrolls.frosted.UnconcealedFrostedBleakScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.extended.UnconcealedExtendedBleakScroll;
 import net.dakotapride.incantation.common.item.unconcealed_scrolls.frosted.UnconcealedFrostedRaWrathScroll;
-import net.dakotapride.incantation.common.item.unconcealed_scrolls.frosted.UnconcealedFrostedToleranceScroll;
-import net.dakotapride.incantation.common.item.unconcealed_scrolls.stronger.UnconcealedStrongerBleakScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.frosted.UnconcealedFrostedBleakScroll;
 import net.dakotapride.incantation.common.item.unconcealed_scrolls.stronger.UnconcealedStrongerRaWrathScroll;
+import net.dakotapride.incantation.common.item.unconcealed_scrolls.stronger.UnconcealedStrongerBleakScroll;
 import net.dakotapride.incantation.common.recipe.BewitchmentTableRecipe;
 import net.dakotapride.incantation.common.screen.BewitchmentTableScreenHandler;
 import net.dakotapride.incantation.common.util.IncantationTags;
-import net.dakotapride.incantation.common.util.SoulsComeAlive;
 import net.dakotapride.incantation.common.util.world.IncantationPlacedFeatures;
 import net.dakotapride.incantation.compat.enhancedcelestials.EnhancedCelestialsCompat;
 import net.dakotapride.incantation.compat.moreweaponry.MoreWeaponryCompat;
-import net.dakotapride.incantation.compat.patchouli.items.BewitchmentBookItem;
 import net.dakotapride.incantation.compat.pickyourpoison.PickYourPoisonCompat;
-import net.dakotapride.incantation.config.IncantationConfig;
 import net.dakotapride.incantation.mixin.BrewingRecipeRegistryMixin;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
@@ -733,7 +743,8 @@ public class IncantationMod implements ModInitializer {
 			EnhancedCelestialsCompat.enhancedCelestialsCompatRegistry();
 		}
 
-		SoulsComeAlive.registerSoulsComeAliveAddon();
+		SoulsComeAlive.registerSoulsComeAliveFeatures();
+		RandomModifiersGo.registerRandomModifiersGoFeatures();
 
 		BEWITCHMENT_TABLE_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
 				new Identifier(INCANTATION_ID, "bewitchment_table"),

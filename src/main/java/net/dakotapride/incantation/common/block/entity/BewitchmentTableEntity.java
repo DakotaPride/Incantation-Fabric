@@ -34,6 +34,11 @@ public class BewitchmentTableEntity extends BlockEntity implements NamedScreenHa
     private int fuelTime = 0;
     private int maxFuelTime = 0;
 
+    @Override
+    public boolean canPlayerUse(PlayerEntity player) {
+        return pos.isWithinDistance(player.getBlockPos(), 5.0);
+    }
+
     public BewitchmentTableEntity(BlockPos pos, BlockState state) {
         super(IncantationMod.BEWITCHMENT_TABLE_BLOCK_ENTITY, pos, state);
         this.propertyDelegate = new PropertyDelegate() {

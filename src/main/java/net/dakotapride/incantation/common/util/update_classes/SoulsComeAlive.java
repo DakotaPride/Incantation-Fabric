@@ -1,10 +1,10 @@
-package net.dakotapride.incantation.common.util;
+package net.dakotapride.incantation.common.util.update_classes;
 
 import net.dakotapride.incantation.common.IncantationMod;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
 import net.dakotapride.incantation.common.item.SoulFragmentItem;
 import net.dakotapride.incantation.common.item.TotemOfSalvationItem;
-import net.dakotapride.incantation.common.item.MidasFavourScrollItem;
+import net.dakotapride.incantation.common.item.scrolls.MidasFavourScrollItem;
 import net.dakotapride.incantation.common.item.unconcealed_scrolls.base.UnconcealedMidasFavourScroll;
 import net.dakotapride.incantation.common.item.unconcealed_scrolls.extended.UnconcealedExtendedMidasFavourScroll;
 import net.dakotapride.incantation.common.item.unconcealed_scrolls.frosted.UnconcealedFrostedMidasFavourScroll;
@@ -55,7 +55,7 @@ public class SoulsComeAlive {
     }
 
 
-    public static void registerSoulsComeAliveAddon() {
+    public static void registerSoulsComeAliveFeatures() {
 
         Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "soul_blessing"), SOUL_BLESSING);
         Registry.register(Registry.STATUS_EFFECT, new Identifier(INCANTATION_ID, "devilish_bargain"), DEVILISH_BARGAIN);

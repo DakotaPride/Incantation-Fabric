@@ -1,7 +1,7 @@
 package net.dakotapride.incantation.common.item.unconcealed_scrolls.frosted;
 
-import net.dakotapride.incantation.common.util.SoulsComeAlive;
-import net.dakotapride.incantation.common.item.MidasFavourScrollItem;
+import net.dakotapride.incantation.common.util.update_classes.SoulsComeAlive;
+import net.dakotapride.incantation.common.item.scrolls.MidasFavourScrollItem;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;

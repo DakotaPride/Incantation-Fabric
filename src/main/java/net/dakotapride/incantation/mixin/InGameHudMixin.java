@@ -24,6 +24,8 @@ public abstract class InGameHudMixin extends DrawableHelper {
     @Unique
     private static final Identifier DUSK_HEARTS = new Identifier(IncantationMod.INCANTATION_ID, "textures/gui/dusk_hearts.png");
 
+
+
     @Inject(method = "drawHeart", at = @At("HEAD"), cancellable = true)
     private void drawHeart(MatrixStack matrices, InGameHud.HeartType type, int x, int y, int v, boolean blinking, boolean halfHeart, CallbackInfo ci) {
         if (!blinking && type == InGameHud.HeartType.NORMAL

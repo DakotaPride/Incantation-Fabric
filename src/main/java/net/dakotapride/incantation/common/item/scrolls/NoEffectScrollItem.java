@@ -1,4 +1,4 @@
-package net.dakotapride.incantation.common.item;
+package net.dakotapride.incantation.common.item.scrolls;
 
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
@@ -11,13 +11,13 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class CastingAmethystItem extends IronCastingItem {
-    public CastingAmethystItem(ToolMaterial material, Settings settings) {
-        super(material, settings);
+public class NoEffectScrollItem extends Item {
+    public NoEffectScrollItem(Settings settings) {
+        super(settings);
     }
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable("item.casting_gem.effect.amethyst").formatted(Formatting.AQUA));
+        tooltip.add(Text.translatable("item.incantation.scroll.no_effect").formatted(Formatting.GRAY));
     }
 }

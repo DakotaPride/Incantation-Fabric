@@ -1,7 +1,7 @@
 package net.dakotapride.incantation.common.item.unconcealed_scrolls.frosted;
 
 import net.dakotapride.incantation.common.IncantationMod;
-import net.dakotapride.incantation.common.item.ToleranceScrollItem;
+import net.dakotapride.incantation.common.item.scrolls.ToleranceScrollItem;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;

@@ -1,4 +1,4 @@
-package net.dakotapride.incantation.common.item;
+package net.dakotapride.incantation.common.item.hollow_knight;
 
 import net.dakotapride.incantation.common.IncantationMod;
 import net.minecraft.entity.player.PlayerEntity;

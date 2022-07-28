@@ -1,10 +1,6 @@
-package net.dakotapride.incantation.common.item;
+package net.dakotapride.incantation.common.item.scrolls;
 
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.text.Text;
@@ -14,13 +10,14 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class CastingJadeItem extends IronCastingItem {
-    public CastingJadeItem(ToolMaterial material, Settings settings) {
+public class ToleranceScrollItem extends EffectScrollItem {
+    public ToleranceScrollItem(ToolMaterial material, Settings settings) {
         super(material, settings);
     }
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable("item.casting_gem.effect.jade").formatted(Formatting.AQUA));
+        tooltip.add(Text.translatable("item.incantation.cannot_use.tolerance").formatted(Formatting.BLUE));
     }
+
 }

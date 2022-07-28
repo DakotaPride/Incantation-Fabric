@@ -1,6 +1,6 @@
 package net.dakotapride.incantation.mixin;
 
-import net.dakotapride.incantation.common.util.SoulsComeAlive;
+import net.dakotapride.incantation.common.util.update_classes.SoulsComeAlive;
 import net.dakotapride.incantation.common.util.IncantationTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

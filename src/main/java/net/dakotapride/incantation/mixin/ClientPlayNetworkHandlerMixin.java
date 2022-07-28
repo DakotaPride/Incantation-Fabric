@@ -1,6 +1,6 @@
 package net.dakotapride.incantation.mixin;
 
-import net.dakotapride.incantation.common.util.SoulsComeAlive;
+import net.dakotapride.incantation.common.util.update_classes.SoulsComeAlive;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.client.world.ClientWorld;

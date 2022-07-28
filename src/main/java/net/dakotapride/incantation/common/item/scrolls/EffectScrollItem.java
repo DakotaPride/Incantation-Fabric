@@ -1,4 +1,4 @@
-package net.dakotapride.incantation.common.item;
+package net.dakotapride.incantation.common.item.scrolls;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

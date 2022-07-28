@@ -1,6 +1,6 @@
 package net.dakotapride.incantation.compat.enhancedcelestials.item;
 
-import net.dakotapride.incantation.common.item.EffectScrollItem;
+import net.dakotapride.incantation.common.item.scrolls.EffectScrollItem;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;

@@ -1,7 +1,6 @@
-package net.dakotapride.incantation.common.item;
+package net.dakotapride.incantation.common.item.casting_gems;
 
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.text.Text;
