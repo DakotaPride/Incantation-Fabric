@@ -220,7 +220,7 @@
   "item.incantation.enchanted_golden_cinnamon_bun": "Golden Cinnamon Bun",
   "item.incantation.sweetened_modifier_pack": "Modifier Pack",
   "item.incantation.golden_touch_modifier_pack": "Modifier Pack",
-  "item.incantation.empty_modifier": "Modifier Pack",
+  "item.incantation.empty_modifier_pack": "Modifier Pack",
   "randomModifiersGo.modifier_type.sweetened": "Sweetened Modifier",
   "randomModifiersGo.modifier_type.golden_touch": "Golden Touch Modifier",
   "text.minecraft.hasShiftDown.modifiers": "[Shift] View Potential Items",
@@ -232,5 +232,10 @@
   "item.randomModifiersGo.golden_touch.modifier": "- Golden Touch",
   "item.randomModifiersGo.sweetened.modifier": "- Sweetened",
   "text.incantation.modifier.description.sweetened": "  - Provides Speed For A Short Period Of Time",
-  "text.incantation.modifier.description.golden_touch": " - Provides Midas' Favour For A Short Period Of Time"
+  "text.incantation.modifier.description.golden_touch": " - Provides Midas' Favour For A Short Period Of Time",
+  "item.incantation.unconcealed_bleak_scroll_gt": "Modified Parchment",
+  "item.incantation.unconcealed_bleak_scroll_sweet": "Modified Parchment",
+  "text.minecraft.modifiers.list_of": "Modifier:",
+  "item.incantation.dough": "Dough",
+  "item.incantation.golden_dough": "Golden Dough"
 }

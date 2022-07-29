@@ -82,10 +82,10 @@ public class GoldenTouchModifierItemPack extends Item {
                 world.addParticle(ParticleTypes.SOUL,
                         pos.getX() + 0.5d, pos.getY() + 1, pos.getZ() + 0.5d,
                         Math.cos(i) * 0.25d, 0.15d, Math.sin(i) * 0.25d);
-                world.addParticle(ParticleTypes.WAX_ON,
-                        pos.getX() + 0.5d, pos.getY() + 1, pos.getZ() + 0.5d,
-                        Math.cos(i) * 0.25d, 0.15d, Math.sin(i) * 0.25d);
             }
+            world.addParticle(ParticleTypes.CRIT,
+                    pos.getX() + 0.5d, pos.getY() + 1, pos.getZ() + 0.5d,
+                    Math.cos(i) * 0.25d, 0.15d, Math.sin(i) * 0.25d);
         }
     }
 

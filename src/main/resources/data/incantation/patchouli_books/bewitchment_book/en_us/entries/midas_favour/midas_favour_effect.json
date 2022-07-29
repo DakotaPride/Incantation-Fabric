@@ -1,0 +1,30 @@
+{
+  "name": "Midas' Favour Status Effect",
+  "icon": "minecraft:gold_ingot",
+  "category": "incantation:effects",
+  "pages": [
+    {
+      "type": "image",
+      "images": [
+        "incantation:textures/patchouli_images/effect/midas_favour.png"
+      ],
+      "title": "Midas' Favour",
+      "text": "While Midas' Favour Is Applied, You Will Gain Regeneration If You Are Standing On Most Golden Blocks.",
+      "border": true
+    },
+    {
+      "type": "text",
+      "title": "Applying Midas' Favour",
+      "text": "You Can Apply Midas' Favour By Right-Clicking A Totem Of Salvation With A Lightened Soul Shard In Your Offhand."
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:soul_shards/lightened_soul_shard",
+        "incantation:soul_shards/totem_of_salvation",
+        "incantation:soul_shards/what_is_a_soul_shard",
+        "incantation:modifiers/modifier_list"
+      ]
+    }
+  ]
+}
