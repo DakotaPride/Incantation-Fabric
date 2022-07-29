@@ -219,5 +219,17 @@
   "item.incantation.enchanted_cinnamon_bun": "Cinnamon Bun",
   "item.incantation.enchanted_golden_cinnamon_bun": "Golden Cinnamon Bun",
   "item.incantation.sweetened_modifier_pack": "Modifier Pack",
-  "randomModifiersGo.modifier_type.sweetened": "Sweetened Modifier"
+  "item.incantation.golden_touch_modifier_pack": "Modifier Pack",
+  "randomModifiersGo.modifier_type.sweetened": "Sweetened Modifier",
+  "randomModifiersGo.modifier_type.golden_touch": "Golden Touch Modifier",
+  "text.minecraft.hasShiftDown.modifiers": "[Shift] View Potential Items",
+  "death.attack.siren_breathing.player": "%1$s Has Perished Because They Thought They Needed Oxygen...",
+  "death.attack.siren_breathing": "%1$s Has Perished Because They Thought They Needed Oxygen...",
+  "death.attack.radiance_plague.player": "%1$s Died Because Of A Moth God",
+  "death.attack.radiance_plague": "%1$s Died Because Of A Moth God",
+  "text.minecraft.modifiers.outcome": "Possible Prizes:",
+  "item.randomModifiersGo.golden_touch.modifier": "- Golden Touch",
+  "item.randomModifiersGo.sweetened.modifier": "- Sweetened",
+  "text.incantation.modifier.description.sweetened": "  - Provides Speed For A Short Period Of Time",
+  "text.incantation.modifier.description.golden_touch": " - Provides Midas' Favour For A Short Period Of Time"
 }

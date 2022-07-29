@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "incantation:bleak_scroll",
+    "incantation:unconcealed_bleak_scroll",
+    "incantation:frosted_unconcealed_bleak_scroll",
+    "incantation:long_unconcealed_bleak_scroll",
+    "incantation:strong_unconcealed_bleak_scroll"
+  ]
+}

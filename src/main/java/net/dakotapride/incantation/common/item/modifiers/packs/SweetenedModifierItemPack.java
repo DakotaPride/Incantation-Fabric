@@ -1,6 +1,7 @@
-package net.dakotapride.incantation.common.item.artefacts;
+package net.dakotapride.incantation.common.item.modifiers.packs;
 
 import net.dakotapride.incantation.common.util.update_classes.RandomModifiersGo;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -39,6 +40,7 @@ public class SweetenedModifierItemPack extends Item {
         // Reference For Potential Items From Item Pack
         SweetenedModifierItems itemsList;
 
+        ItemStack itemStack = user.getStackInHand(hand);
         BlockPos pos = user.getBlockPos();
         if (user.isSneaking()) {
             ItemStack stackToDrop = null;
@@ -72,7 +74,7 @@ public class SweetenedModifierItemPack extends Item {
             }
         }
 
-        return super.use(world, user, hand);
+        return TypedActionResult.success(itemStack);
     }
 
     private static void spawnSweetenedModifierParticles(World world, BlockPos pos) {
@@ -90,6 +92,22 @@ public class SweetenedModifierItemPack extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable("randomModifiersGo.modifier_type.sweetened").formatted(Formatting.AQUA));
+        tooltip.add(Text.translatable("randomModifiersGo.modifier_type.sweetened").formatted(Formatting.LIGHT_PURPLE));
+        tooltip.add(Text.literal(" "));
+        if (!Screen.hasShiftDown()) {
+            tooltip.add(Text.translatable("text.minecraft.hasShiftDown.modifiers"));
+        } else if (Screen.hasShiftDown()) {
+            tooltip.add(Text.translatable("text.minecraft.modifiers.outcome"));
+            tooltip.add(Text.translatable(RandomModifiersGo.CINNAMON_BUN.getTranslationKey(stack)).formatted(Formatting.AQUA));
+            tooltip.add(Text.translatable(RandomModifiersGo.ENCHANTED_CINNAMON_BUN.getTranslationKey(stack)).formatted(Formatting.AQUA));
+            tooltip.add(Text.translatable(RandomModifiersGo.GOLDEN_CINNAMON_BUN.getTranslationKey(stack)).formatted(Formatting.AQUA));
+            tooltip.add(Text.translatable(RandomModifiersGo.ENCHANTED_GOLDEN_CINNAMON_BUN.getTranslationKey(stack)).formatted(Formatting.AQUA));
+            tooltip.add(Text.translatable(Items.COOKIE.getTranslationKey(stack)).formatted(Formatting.AQUA));
+            tooltip.add(Text.translatable(Items.SUGAR.getTranslationKey(stack)).formatted(Formatting.AQUA));
+            tooltip.add(Text.translatable(Items.CAKE.getTranslationKey(stack)).formatted(Formatting.AQUA));
+            tooltip.add(Text.translatable(Items.HONEY_BOTTLE.getTranslationKey(stack)).formatted(Formatting.AQUA));
+            tooltip.add(Text.translatable(Items.PUMPKIN_PIE.getTranslationKey(stack)).formatted(Formatting.AQUA));
+            tooltip.add(Text.translatable(Items.SWEET_BERRIES.getTranslationKey(stack)).formatted(Formatting.AQUA));
+        }
     }
 }
