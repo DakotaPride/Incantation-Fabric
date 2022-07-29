@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X#X",
+    "#M#",
+    "X#X"
+  ],
+  "key": {
+    "#": {
+      "tag": "c:gems/alexandrite"
+    },
+    "X": {
+      "item": "minecraft:iron_ingot"
+    },
+    "M": {
+      "tag": "incantation:casting_gems"
+    }
+  },
+  "result": {
+    "item": "incantation:empty_modifier_pack",
+    "count": 1
+  }
+}

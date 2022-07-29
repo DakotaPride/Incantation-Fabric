@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X#X",
+    "#M#",
+    "X#X"
+  ],
+  "key": {
+    "#": {
+      "tag": "c:doughs"
+    },
+    "X": {
+      "item": "minecraft:sugar"
+    },
+    "M": {
+      "item": "incantation:empty_modifier_pack"
+    }
+  },
+  "result": {
+    "item": "incantation:sweetened_modifier_pack",
+    "count": 1
+  }
+}

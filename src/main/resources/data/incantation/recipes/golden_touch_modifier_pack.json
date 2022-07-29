@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X#X",
+    "#M#",
+    "X#X"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:gold_ingot"
+    },
+    "X": {
+      "item": "minecraft:golden_apple"
+    },
+    "M": {
+      "item": "incantation:empty_modifier_pack"
+    }
+  },
+  "result": {
+    "item": "incantation:golden_touch_modifier_pack",
+    "count": 1
+  }
+}
