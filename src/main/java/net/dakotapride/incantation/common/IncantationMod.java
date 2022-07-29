@@ -111,7 +111,7 @@ public class IncantationMod implements ModInitializer {
 	public static StatusEffect RA_WRATH = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0xC89661);
 	public static RaWrathScrollItem RA_WRATH_SCROLL;
 	public static StatusEffect ENCHANTED_BERRY_STRENGTH = new EmptyDamageModifierStatusEffect(StatusEffectCategory.NEUTRAL, 0x4F3F54, 6.0D)
-			.addAttributeModifier(EntityAttributes.GENERIC_ATTACK_DAMAGE, "648D7064-6A60-4F59-8ABE-C2C23A6DD7A9", 0.0D,EntityAttributeModifier.Operation.ADDITION);
+			.addAttributeModifier(EntityAttributes.GENERIC_ATTACK_DAMAGE, "648D7064-6A60-4F59-8ABE-C2C23A6DD7A9", 2.0D,EntityAttributeModifier.Operation.ADDITION);
 	public static ScreenHandlerType<BewitchmentTableScreenHandler> BEWITCHMENT_TABLE_SCREEN_HANDLER;
 	public static BewitchmentTableBlock BEWITCHMENT_TABLE;
 	public static BlockEntityType<BewitchmentTableEntity> BEWITCHMENT_TABLE_BLOCK_ENTITY;
@@ -360,6 +360,8 @@ public class IncantationMod implements ModInitializer {
 
     private static final Identifier BIRCH_LEAVES_BLOCK_ID
             = new Identifier("minecraft", "blocks/birch_leaves");
+	private static final Identifier GRASS_ID
+			= new Identifier("minecraft", "blocks/grass");
 
 	private void registerGeneration (String spawnBiomes, EnchantedBerryBushBlock bushBlock, int spawnChance, String name) {
 		String[] biomes = spawnBiomes.replaceAll(" ", "").split(",");
@@ -440,6 +442,17 @@ public class IncantationMod implements ModInitializer {
             }
 
         }));
+		LootTableEvents.MODIFY.register(((resourceManager, manager, id, supplier, setter) -> {
+			if (GRASS_ID.equals(id)) {
+				LootPool.Builder poolBuilder = LootPool.builder()
+						.rolls(ConstantLootNumberProvider.create(1))
+						.conditionally(RandomChanceLootCondition.builder(0.05f))
+						.with(ItemEntry.builder(PLAINS_CHERRIES))
+						.apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0f, 2.0f)).build());
+				supplier.pool(poolBuilder.build());
+			}
+
+		}));
 
 		JADE_CRYSTAL_LAMP = registerBlock("jade_crystal_lamp",
 				new RedstoneLampBlock(FabricBlockSettings.copy(Blocks.REDSTONE_LAMP).requiresTool()
