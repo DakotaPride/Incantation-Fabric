@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "incantation:dough"
+    "incantation:dough",
+    "incantation:golden_dough"
   ]
 }
