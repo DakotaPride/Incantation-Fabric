@@ -22,6 +22,7 @@ public class RandomModifiersGo {
     public static EnchantedItem ENCHANTED_GOLDEN_CINNAMON_BUN;
     public static SweetenedModifierItemPack SWEETENED_MODIFIER_ITEM_PACK;
     public static GoldenTouchModifierItemPack GOLDEN_TOUCH_MODIFIER_ITEM_PACK;
+    public static Item EMPTY_MODIFIER_PACK;
     public static GTUnconcealedBleakScroll gtUNCONCEALED_BLEAK_SCROLL;
     public static SweetUnconcealedBleakScroll sweetUNCONCEALED_BLEAK_SCROLL;
 
@@ -55,6 +56,8 @@ public class RandomModifiersGo {
                 new SweetenedModifierItemPack(new FabricItemSettings().rarity(Rarity.UNCOMMON).group(INCANTATION_GROUP)));
         GOLDEN_TOUCH_MODIFIER_ITEM_PACK = registerItem("golden_touch_modifier_pack",
                 new GoldenTouchModifierItemPack(new FabricItemSettings().rarity(Rarity.UNCOMMON).group(INCANTATION_GROUP)));
+        EMPTY_MODIFIER_PACK = registerItem("empty_modifier_pack",
+                new Item(new FabricItemSettings().group(INCANTATION_GROUP)));
     }
 
 }

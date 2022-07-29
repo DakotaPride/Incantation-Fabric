@@ -220,6 +220,7 @@
   "item.incantation.enchanted_golden_cinnamon_bun": "Golden Cinnamon Bun",
   "item.incantation.sweetened_modifier_pack": "Modifier Pack",
   "item.incantation.golden_touch_modifier_pack": "Modifier Pack",
+  "item.incantation.empty_modifier": "Modifier Pack",
   "randomModifiersGo.modifier_type.sweetened": "Sweetened Modifier",
   "randomModifiersGo.modifier_type.golden_touch": "Golden Touch Modifier",
   "text.minecraft.hasShiftDown.modifiers": "[Shift] View Potential Items",
