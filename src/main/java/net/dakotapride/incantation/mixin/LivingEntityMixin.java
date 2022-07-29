@@ -133,7 +133,7 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Inject(method = "canSee", at = @At("HEAD"), cancellable = true)
     public void canSee(Entity entity, CallbackInfoReturnable<Boolean> cir) {
-        if (this.hasStatusEffect(SoulsComeAlive.SIREN_WARNING) && !this.isSpectator()) {
+        if (this.hasStatusEffect(SoulsComeAlive.SIREN_WARNING) && !this.isSpectator() && !this.isSubmergedInWater()) {
             cir.setReturnValue(false);
         }
     }
