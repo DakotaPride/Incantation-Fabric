@@ -1,0 +1,26 @@
+{
+  "name": "Frosted Ra's Wrath Parchment",
+  "icon": "incantation:frosted_unconcealed_ra_wrath_scroll",
+  "category": "incantation:parchments",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "incantation:frosted_unconcealed_ra_wrath_scroll",
+      "link_recipe": true,
+      "text": "The Ra's Wrath Parchment Cannot Do Anything By Itself, But Is Used In Crafting Recipes!"
+    },
+    {
+      "type": "crafting",
+      "recipe": "incantation:frosted_unconcealed_ra_wrath_scroll",
+      "title": "Parchment"
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:ra_wrath/ra_wrath",
+        "incantation:ra_wrath/unconcealed_ra_wrath",
+        "incantation:ra_wrath/ra_wrath_effect"
+      ]
+    }
+  ]
+}
