@@ -1,0 +1,26 @@
+{
+  "name": "Frosted Tolerance Parchment",
+  "icon": "incantation:frosted_unconcealed_tolerance_scroll",
+  "category": "incantation:parchments",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "incantation:frosted_unconcealed_tolerance_scroll",
+      "link_recipe": true,
+      "text": "This Doesn't Serve Much Of A Purpose, Does It? Though, This Will Apply Both Slowness And Tolerance, And Then Both Will Be Immediately Removed Due To The Nature Of Tolerance."
+    },
+    {
+      "type": "crafting",
+      "recipe": "incantation:frosted_unconcealed_tolerance_scroll",
+      "title": "Parchment"
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:tolerance/tolerance",
+        "incantation:tolerance/unconcealed_tolerance",
+        "incantation:tolerance/tolerance_effect"
+      ]
+    }
+  ]
+}

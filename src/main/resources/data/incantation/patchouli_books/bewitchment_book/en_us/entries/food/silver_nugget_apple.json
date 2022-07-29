@@ -1,0 +1,18 @@
+{
+  "name": "Silver Nugget Apple",
+  "icon": "incantation:silver_nugget_apple",
+  "category": "incantation:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "incantation:silver_nugget_apple",
+      "link_recipe": true,
+      "text": "A Silver Nugget Apple Can Be Used As Food, Or A Crafting Ingredient To Strengthen Your Parchments' Power."
+    },
+    {
+      "type": "crafting",
+      "recipe": "incantation:silver_nugget_apple",
+      "title": "Silver Nugget Apple"
+    }
+  ]
+}

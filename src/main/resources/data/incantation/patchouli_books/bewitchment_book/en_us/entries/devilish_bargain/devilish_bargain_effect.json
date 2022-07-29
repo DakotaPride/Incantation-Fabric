@@ -13,10 +13,15 @@
       "border": true
     },
     {
+      "type": "text",
+      "title": "Applying Devilish Bargain",
+      "text": "You Can Apply Devilish Bargain By Right-Clicking A Totem Of Salvation With An Hostile Soul Shard In Your Offhand."
+    },
+    {
       "type": "relations",
       "entries": [
         "incantation:angel_stiffness/angel_stiffness_effect",
-        "incantation:soul_shards/darkened_soul_shard",
+        "incantation:soul_shards/hostile_soul_shard",
         "incantation:soul_shards/what_is_a_soul_shard",
         "incantation:soul_shards/totem_of_salvation"
       ]

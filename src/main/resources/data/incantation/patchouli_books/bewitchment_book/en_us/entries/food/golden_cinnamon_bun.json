@@ -1,0 +1,28 @@
+{
+  "name": "Golden Cinnamon Bun",
+  "icon": "incantation:cinnamon_bun",
+  "category": "incantation:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "incantation:golden_cinnamon_bun",
+      "link_recipe": true,
+      "text": "Golden Cinnamon Buns Can Either Be Crafted, By Using Golden Dough And Sugar, Or Can Be Obtained Via Sweetened Modifier Item Packs."
+    },
+    {
+      "type": "crafting",
+      "recipe": "incantation:golden_cinnamon_bun",
+      "title": "Golden Cinnamon Bun"
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:food/cinnamon_bun",
+        "incantation:food/enchanted_cinnamon_bun",
+        "incantation:food/enchanted_golden_cinnamon_bun",
+        "incantation:food/golden_dough",
+        "incantation:food/dough"
+      ]
+    }
+  ]
+}

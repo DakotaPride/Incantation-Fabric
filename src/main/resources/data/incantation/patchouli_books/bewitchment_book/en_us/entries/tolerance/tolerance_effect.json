@@ -1,0 +1,29 @@
+{
+  "name": "Tolerance Status Effect",
+  "icon": "minecraft:milk_bucket",
+  "category": "incantation:effects",
+  "pages": [
+    {
+      "type": "image",
+      "images": [
+        "incantation:textures/patchouli_images/effect/tolerance.png"
+      ],
+      "title": "Tolerance",
+      "text": "Tolerance Rids All Status Effects, Including Itself.",
+      "border": true
+    },
+    {
+      "type": "text",
+      "title": "Applying Tolerance",
+      "text": "Using An Unconcealed Tolerance Parchment Will Apply The Tolerance Effect."
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:tolerance/tolerance",
+        "incantation:tolerance/unconcealed_tolerance",
+        "incantation:tolerance/frosted_unconcealed_tolerance"
+      ]
+    }
+  ]
+}

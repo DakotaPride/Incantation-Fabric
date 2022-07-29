@@ -1,0 +1,46 @@
+{
+  "name": "Modifiers",
+  "icon": "incantation:empty_modifier_pack",
+  "category": "incantation:modifier",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "incantation:empty_modifier_pack",
+      "link_recipe": true,
+      "text": "Empty Modifier Packs Cannot Be Opened, As They Are Just A Crafting Ingredient Required To Make Other Modifier Packs."
+    },
+    {
+      "type": "crafting",
+      "recipe": "incantation:empty_modifier_pack",
+      "title": "Modifier Pack"
+    },
+    {
+      "type": "spotlight",
+      "item": "incantation:sweetened_modifier_pack",
+      "link_recipe": true,
+      "text": "A Sweetened Modifier Pack Can Be Used To Either Add Itself To Certain Parchments, Or It Can Be Opened To Receive A Random Item Related To It's Theme."
+    },
+    {
+      "type": "crafting",
+      "recipe": "incantation:sweetened_modifier_pack",
+      "title": "Modifier Pack"
+    },
+    {
+      "type": "spotlight",
+      "item": "incantation:golden_touch_modifier_pack",
+      "link_recipe": true,
+      "text": "A Golden Touch Modifier Pack Can Be Used To Either Add Itself To Certain Parchments, Or It Can Be Opened To Receive A Random Item Related To It's Theme."
+    },
+    {
+      "type": "crafting",
+      "recipe": "incantation:golden_touch_modifier_pack",
+      "title": "Modifier Pack"
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:midas_favour/midas_favour_effect"
+      ]
+    }
+  ]
+}

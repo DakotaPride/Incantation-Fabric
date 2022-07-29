@@ -1,0 +1,28 @@
+{
+  "name": "Dough",
+  "icon": "incantation:dough",
+  "category": "incantation:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "incantation:dough",
+      "link_recipe": true,
+      "text": "Though It Cannot Be Eaten, It Can Be Used To Craft Cinnamon Buns"
+    },
+    {
+      "type": "smelting",
+      "recipe": "incantation:dough_from_smelting",
+      "title": "Dough"
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:food/cinnamon_bun",
+        "incantation:food/golden_cinnamon_bun",
+        "incantation:food/enchanted_cinnamon_bun",
+        "incantation:food/enchanted_golden_cinnamon_bun",
+        "incantation:food/golden_dough"
+      ]
+    }
+  ]
+}

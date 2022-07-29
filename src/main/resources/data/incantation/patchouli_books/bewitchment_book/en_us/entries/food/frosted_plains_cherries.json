@@ -1,0 +1,24 @@
+{
+  "name": "Frosted Plains Cherries",
+  "icon": "incantation:frosted_plains_cherries",
+  "category": "incantation:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "incantation:frosted_plains_cherries",
+      "link_recipe": true,
+      "text": "Frosted Plains Cherries Can Be Used In Crafting Recipes To Apply Slowness To Any Parchment."
+    },
+    {
+      "type": "crafting",
+      "recipe": "incantation:frosted_plains_cherries",
+      "title": "Frosted Plains Cherries"
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:food/plains_cherries"
+      ]
+    }
+  ]
+}

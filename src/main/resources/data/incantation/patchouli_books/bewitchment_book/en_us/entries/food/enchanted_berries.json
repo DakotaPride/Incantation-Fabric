@@ -1,0 +1,19 @@
+{
+  "name": "Enchanted Berries",
+  "icon": "incantation:enchanted_berries",
+  "category": "incantation:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "incantation:enchanted_berries",
+      "link_recipe": true,
+      "text": "Enchanted Berries Can Be Picked From Enchanted Berry Bushes, Found In Most Birch Forests."
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:food/enchanted_berry_jam"
+      ]
+    }
+  ]
+}

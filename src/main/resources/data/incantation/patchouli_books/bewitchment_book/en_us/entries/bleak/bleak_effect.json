@@ -13,6 +13,11 @@
       "border": true
     },
     {
+      "type": "text",
+      "title": "Applying Bleak",
+      "text": "Using An Unconcealed Bleak Parchment Will Apply The Bleak Effect. Depending On The Parchment Used, You Will Receive It For A Longer Period Of Time Than A Normal Parchment Would Allow, Or You Can Receive It's Effects In A Stronger Variant."
+    },
+    {
       "type": "relations",
       "entries": [
         "incantation:bleak/bleak",

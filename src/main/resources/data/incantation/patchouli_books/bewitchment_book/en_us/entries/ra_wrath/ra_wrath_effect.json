@@ -1,0 +1,29 @@
+{
+  "name": "Ra's Wrath Status Effect",
+  "icon": "minecraft:flint_and_steel",
+  "category": "incantation:effects",
+  "pages": [
+    {
+      "type": "image",
+      "images": [
+        "incantation:textures/patchouli_images/effect/ra_wrath.png"
+      ],
+      "title": "Ra's Wrath",
+      "text": "While Ra's Wrath Is Applied, You Gain Resistance 3 And Strength 2. However, You Are Constantly On Fire Unless You Are In Water (For Obvious Reasons)",
+      "border": true
+    },
+    {
+      "type": "text",
+      "title": "Applying Ra's Wrath",
+      "text": "Using An Unconcealed Ra's Wrath Parchment Will Apply The Ra's Wrath Effect. Depending On The Parchment Used, You Will Receive It For A Longer Period Of Time Than A Normal Parchment Would Allow, Or You Can Receive It's Effects In A Stronger Variant."
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:ra_wrath/ra_wrath",
+        "incantation:ra_wrath/unconcealed_ra_wrath",
+        "incantation:ra_wrath/frosted_unconcealed_ra_wrath"
+      ]
+    }
+  ]
+}

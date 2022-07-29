@@ -1,0 +1,19 @@
+{
+  "name": "Plains Cherries",
+  "icon": "incantation:plains_cherries",
+  "category": "incantation:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "incantation:plains_cherries",
+      "link_recipe": true,
+      "text": "Plains Cherries Can Be Found By Scourging Through Grass, And Can Then Be Used As A Crafting Material"
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:food/frosted_plains_cherries"
+      ]
+    }
+  ]
+}

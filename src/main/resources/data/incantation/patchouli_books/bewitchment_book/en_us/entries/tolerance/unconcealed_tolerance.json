@@ -1,0 +1,27 @@
+{
+  "name": "Unconcealed Tolerance Parchment",
+  "icon": "incantation:tolerance_scroll",
+  "category": "incantation:parchments",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "incantation:unconcealed_tolerance_scroll",
+      "link_recipe": true,
+      "text": "The Unconcealed Tolerance Parchment Can Be Used To Apply The Tolerance Status Effect."
+    },
+    {
+      "type": "crafting",
+      "recipe": "incantation:unconcealed_tolerance_scroll",
+      "title": "Parchment"
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:tolerance/tolerance",
+        "incantation:tolerance/frosted_unconcealed_tolerance",
+        "incantation:tolerance/tolerance_effect",
+        "incantation:modifiers/modifier_list"
+      ]
+    }
+  ]
+}

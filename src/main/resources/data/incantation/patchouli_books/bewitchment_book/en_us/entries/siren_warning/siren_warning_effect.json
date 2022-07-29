@@ -1,0 +1,29 @@
+{
+  "name": "Siren's Warning Status Effect",
+  "icon": "minecraft:water_bucket",
+  "category": "incantation:effects",
+  "pages": [
+    {
+      "type": "image",
+      "images": [
+        "incantation:textures/patchouli_images/effect/siren_warning.png"
+      ],
+      "title": "Siren's Warning",
+      "text": "While Siren's Warning Is Applied, You Will Be Able To Breathe Underwater. Though, You Will No Longer Be Able To Breathe Oxygen. You Are Also Blinded, Due To Your Limited Vision While Above Water.",
+      "border": true
+    },
+    {
+      "type": "text",
+      "title": "Applying Siren's Warning",
+      "text": "You Can Apply Siren's Warning By Right-Clicking A Totem Of Salvation With A Disruptive Soul Shard In Your Offhand."
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:soul_shards/lightened_soul_shard",
+        "incantation:soul_shards/totem_of_salvation",
+        "incantation:soul_shards/what_is_a_soul_shard"
+      ]
+    }
+  ]
+}

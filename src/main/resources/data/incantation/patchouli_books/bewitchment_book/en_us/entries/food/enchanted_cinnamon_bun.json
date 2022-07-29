@@ -1,0 +1,23 @@
+{
+  "name": "Enchanted Cinnamon Bun",
+  "icon": "incantation:enchanted_cinnamon_bun",
+  "category": "incantation:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "incantation:enchanted_cinnamon_bun",
+      "link_recipe": true,
+      "text": "Enchanted Cinnamon Buns Can Currently Only Be Obtained Via Sweetened Modifier Item Packs."
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:food/cinnamon_bun",
+        "incantation:food/golden_cinnamon_bun",
+        "incantation:food/enchanted_golden_cinnamon_bun",
+        "incantation:food/golden_dough",
+        "incantation:food/dough"
+      ]
+    }
+  ]
+}

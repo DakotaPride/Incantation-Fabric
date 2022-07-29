@@ -7,7 +7,7 @@
       "type": "spotlight",
       "item": "incantation:unconcealed_bleak_scroll",
       "link_recipe": true,
-      "text": "The Bleak Parchment Cannot Do Anything By Itself, But Is Used In Crafting Recipes!"
+      "text": "The Unconcealed Bleak Parchment Can Be Used To Apply The Bleak Status Effect."
     },
     {
       "type": "crafting",
@@ -19,7 +19,8 @@
       "entries": [
         "incantation:bleak/bleak",
         "incantation:bleak/frosted_unconcealed_bleak",
-        "incantation:bleak/bleak_effect"
+        "incantation:bleak/bleak_effect",
+        "incantation:modifiers/modifier_list"
       ]
     }
   ]

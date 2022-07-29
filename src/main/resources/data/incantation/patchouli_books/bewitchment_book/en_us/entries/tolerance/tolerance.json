@@ -1,0 +1,21 @@
+{
+  "name": "Tolerance Parchment",
+  "icon": "incantation:tolerance_scroll",
+  "category": "incantation:parchments",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "incantation:tolerance_scroll",
+      "link_recipe": true,
+      "text": "The Tolerance Parchment Cannot Do Anything By Itself, But Is Used In Crafting Recipes!"
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:tolerance/unconcealed_tolerance",
+        "incantation:tolerance/frosted_unconcealed_tolerance",
+        "incantation:tolerance/tolerance_effect"
+      ]
+    }
+  ]
+}

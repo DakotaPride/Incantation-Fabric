@@ -1,0 +1,19 @@
+{
+  "name": "Enchanted Berry Jam",
+  "icon": "incantation:enchanted_berry_jam",
+  "category": "incantation:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "incantation:enchanted_berry_jam",
+      "link_recipe": true,
+      "text": "Enchanted Berry Jam Provides [WIP] Jammed Strength Status Effect, Which Provides A Strength Boost Larger Then Normal Strength."
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:food/enchanted_berries"
+      ]
+    }
+  ]
+}
