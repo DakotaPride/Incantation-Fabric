@@ -20,7 +20,6 @@
     {
       "type": "relations",
       "entries": [
-        "incantation:soul_shards/lightened_soul_shard",
         "incantation:soul_shards/totem_of_salvation",
         "incantation:soul_shards/what_is_a_soul_shard"
       ]

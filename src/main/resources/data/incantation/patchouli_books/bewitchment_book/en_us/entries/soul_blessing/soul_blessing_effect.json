@@ -1,0 +1,28 @@
+{
+  "name": "Soul's Blessing Status Effect",
+  "icon": "minecraft:soul_sand",
+  "category": "incantation:effects",
+  "pages": [
+    {
+      "type": "image",
+      "images": [
+        "incantation:textures/patchouli_images/effect/soul_blessing.png"
+      ],
+      "title": "Soul's Blessing",
+      "text": "While The Soul's Blessing Effect Is Applied, You Cannot Have The Devilish Bargain Effect At The Same Time. You Also Feel Extremely Lucky Due To The Spirits' Blessing",
+      "border": true
+    },
+    {
+      "type": "text",
+      "title": "Applying Soul's Blessing",
+      "text": "You Can Apply Soul's Blessing By Right-Clicking A Totem Of Salvation With A Soul Fire Shard In Your Offhand."
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:soul_shards/totem_of_salvation",
+        "incantation:soul_shards/what_is_a_soul_shard"
+      ]
+    }
+  ]
+}

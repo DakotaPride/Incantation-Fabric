@@ -1,0 +1,24 @@
+{
+  "name": "Totem Of Salvation",
+  "icon": "incantation:totem_of_salvation",
+  "category": "incantation:soul_shards",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "incantation:totem_of_salvation",
+      "link_recipe": true,
+      "text": "The Totem Of Salvation Is Said To Hold Many Mystical Properties, Including The Ability To Harness The Power From Beyond The Grave! Using Soul Shards In Combination With The Totem Of Salvation Will Give You Different Status Effects Depending On The Soul Shard."
+    },
+    {
+      "type": "crafting",
+      "recipe": "incantation:totem_of_salvation",
+      "title": "Totem Of Salvation"
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:soul_shards/what_is_a_soul_shard"
+      ]
+    }
+  ]
+}

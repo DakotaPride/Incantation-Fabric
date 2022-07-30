@@ -21,7 +21,6 @@
       "type": "relations",
       "entries": [
         "incantation:angel_stiffness/angel_stiffness_effect",
-        "incantation:soul_shards/hostile_soul_shard",
         "incantation:soul_shards/what_is_a_soul_shard",
         "incantation:soul_shards/totem_of_salvation"
       ]

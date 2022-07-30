@@ -1,0 +1,65 @@
+{
+  "name": "What's A Soul Shard?",
+  "icon": "incantation:disruptive_soul_shard",
+  "category": "incantation:soul_shards",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "incantation:passive_soul_shard",
+      "link_recipe": false,
+      "text": "This Is A Passive Soul Shard, Which Cannot Be Used For Anything By Itself Besides From Creating Other Soul Shards. Right-Clicking Certain Mobs With A Passive Soul Shard Will Give You A New Soul Shard."
+    },
+    {
+      "type": "spotlight",
+      "item": "incantation:player_soul_shard",
+      "link_recipe": false,
+      "text": "This Is A Player Soul Shard, Which Cannot Be Used For Anything By Itself Besides From Creating Other Soul Shards. Right-Clicking Certain Mobs With A Passive Soul Shard Will Give You A New Soul Shard."
+    },
+    {
+      "type": "spotlight",
+      "item": "incantation:hostile_soul_shard",
+      "link_recipe": false,
+      "text": "This Is A Hostile Soul Shard, Which Can Either Be Used For Anything By Itself Besides From Creating Other Soul Shards, Or Can Also Be Used In Combination With A Totem Of Salvation, Which Grants You The Devilish Bargain Effect. Right-Clicking Certain Mobs With A Passive Soul Shard Will Give You A New Soul Shard."
+    },
+    {
+      "type": "spotlight",
+      "item": "incantation:lightened_soul_shard",
+      "link_recipe": false,
+      "text": "This Is A Lightened Soul Shard, Which Can Be Obtained Via Using Any Hostile, Passive, Or Player Soul Shard On An Evoker. The Lightened Soul Shard Can Be Used In Combination With A Totem Of Salvation To Give You The Midas' Favour Effect."
+    },
+    {
+      "type": "spotlight",
+      "item": "incantation:darkened_soul_shard",
+      "link_recipe": false,
+      "text": "This Is A Darkened Soul Shard, Which Can Be Obtained Via Using Any Hostile, Passive, Or Player Soul Shard On A Phantom."
+    },
+    {
+      "type": "spotlight",
+      "item": "incantation:soul_fire_shard",
+      "link_recipe": false,
+      "text": "This Is A Soul Fire Shard, Which Can Be Obtained Via Using Either A Darkened Or A Lightened Soul Shard On A Hoglin. The Soul Fire Shard Can Be Used In Combination With A Totem Of Salvation To Give Yourself THe Soul's Blessing Status Effect."
+    },
+    {
+      "type": "spotlight",
+      "item": "incantation:disruptive_soul_shard",
+      "link_recipe": false,
+      "text": "This Is A Disruptive Soul Shard, Which Can Be Obtained Via Using A Darkened Soul Shard On An Allay. Disruptive Soul Shards Can Be Used In Combination With A Totem Of Salvation To Give You The Siren's Warning Status Effect."
+    },
+    {
+      "type": "spotlight",
+      "item": "incantation:angelic_soul_shard",
+      "link_recipe": false,
+      "text": "This Is An Angelic Soul Shard, Which Can Be Obtained Via Using A Lightened Soul Shard On A Drowned Zombie. Angelic Soul Shards Can Be Used In Combination With A Totem Of Salvation To Give You The Angelic Stiffness Status Effect."
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "incantation:soul_shards/totem_of_salvation",
+        "incantation:siren_warning/siren_warning_effect",
+        "incantation:midas_favour/midas_favour_effect",
+        "incantation:devilish_bargain/devilish_bargain_effect",
+        "incantation:angel_stiffness/angel_stiffness_effect"
+      ]
+    }
+  ]
+}

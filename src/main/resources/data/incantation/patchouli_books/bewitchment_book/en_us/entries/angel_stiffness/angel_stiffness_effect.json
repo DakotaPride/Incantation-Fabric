@@ -21,7 +21,6 @@
       "type": "relations",
       "entries": [
         "incantation:devilish_bargain/devilish_bargain_effect",
-        "incantation:soul_shards/angelic_soul_shard",
         "incantation:soul_shards/what_is_a_soul_shard",
         "incantation:soul_shards/totem_of_salvation"
       ]

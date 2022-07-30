@@ -5,6 +5,5 @@
   "custom_book_item": "incantation:bewitchment_book",
   "dont_generate_book": true,
   "model": "patchouli:book_cyan",
-  "show_progress": false,
-  "version": "v0.1.5"
+  "show_progress": false
 }
