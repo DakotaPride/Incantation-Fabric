@@ -1,0 +1,79 @@
+{
+  "name": "Alexandrite Gem",
+  "icon": "incantation:alexandrite_gem",
+  "category": "incantation:gems",
+  "pages": [
+    {
+      "type": "smelting",
+      "recipe": "incantation:alexandrite_gem_from_smelting",
+      "title": "Alexandrite Gem"
+    },
+    {
+      "type": "multiblock",
+      "text": "Ore Generation (Above y=0)",
+      "enable_visualize": false,
+      "multiblock": {
+        "pattern": [
+          [
+            "    ",
+            " S  ",
+            "    ",
+            "    "
+          ],
+          [
+            "  S ",
+            " SS ",
+            " S  ",
+            "    "
+          ],
+          [
+            "    ",
+            "  S ",
+            " S  ",
+            "  S "
+          ]
+        ],
+        "mapping": {
+          "S": "incantation:alexandrite_ore"
+        },
+        "symmetrical": true
+      }
+    },
+    {
+      "type": "multiblock",
+      "text": "Ore Generation (Below y=0)",
+      "enable_visualize": false,
+      "offset": [
+        0,
+        4,
+        0
+      ],
+      "multiblock": {
+        "pattern": [
+          [
+            "     ",
+            " S   ",
+            "     ",
+            "     "
+          ],
+          [
+            "  S  ",
+            " SS  ",
+            " S   ",
+            "     "
+          ],
+          [
+            "     ",
+            "  S  ",
+            " S   ",
+            "  S  "
+          ]
+        ],
+        "mapping": {
+          "S": "incantation:deepslate_alexandrite_ore"
+        },
+        "symmetrical": true
+      }
+    }
+  ]
+}
