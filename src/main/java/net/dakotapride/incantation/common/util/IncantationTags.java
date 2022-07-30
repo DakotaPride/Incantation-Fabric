@@ -22,7 +22,6 @@ public class IncantationTags {
     public static final TagKey<Block> ACCEPTABLE_MIDAS_FAVOUR = createCommonBlockTag("acceptable_midas_favour");
     public static final TagKey<Item> BEWITCHMENT_CENTER_LOCATABLE = createIncantationItemTag("bewitchment_center_locatable");
     public static final TagKey<Structure> SOUL_SHARD_LOCATED = createIncantationStructureTag("soul_shard_located");
-    public static final TagKey<Item> ALEXANDRITE_GEMS = createCommonItemTag("gems/alexandrite");
 
     private static TagKey<Item> createCommonItemTag(String name) {
         return TagKey.of(Registry.ITEM_KEY, new Identifier("c", name));
