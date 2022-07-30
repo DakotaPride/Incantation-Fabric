@@ -1,18 +1,18 @@
 {
-  "name": "Alexandrite Gem",
-  "icon": "incantation:alexandrite_gem",
+  "name": "Ammolite Gem",
+  "icon": "incantation:ammolite_gem",
   "category": "incantation:gems",
   "pages": [
     {
       "type": "spotlight",
-      "item": "incantation:alexandrite_gem",
+      "item": "incantation:ammolite_gem",
       "link_recipe": false,
-      "text": "Alexandrite Can Be Found In The Lower Stone Layers As Well As In Most Areas Below y=0. Alexandrite Can Be Used As A Crafting Ingredient, Mostly For Totems Of Salvation."
+      "text": "Ammolite Can Be Found In The Lower Stone Layers As Well As In Most Areas Below y=0. Ammolite Can Be Used As A Crafting Ingredient, Used For Making Modifier Packs As Well As Totems Of Salvation"
     },
     {
       "type": "smelting",
-      "recipe": "incantation:alexandrite_gem_from_smelting",
-      "title": "Alexandrite Gem"
+      "recipe": "incantation:ammolite_gem_from_smelting",
+      "title": "Ammolite Gem"
     },
     {
       "type": "multiblock",
@@ -43,8 +43,8 @@
           ]
         ],
         "mapping": {
-          "S": "incantation:alexandrite_ore",
-          "0": "incantation:alexandrite_ore"
+          "S": "incantation:ammolite_ore",
+          "0": "incantation:ammolite_ore"
         },
         "symmetrical": true
       }
@@ -78,8 +78,8 @@
           ]
         ],
         "mapping": {
-          "S": "incantation:deepslate_alexandrite_ore",
-          "0": "incantation:deepslate_alexandrite_ore"
+          "S": "incantation:deepslate_ammolite_ore",
+          "0": "incantation:deepslate_ammolite_ore"
         },
         "symmetrical": true
       }
