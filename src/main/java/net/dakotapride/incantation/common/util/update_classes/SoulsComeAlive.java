@@ -38,7 +38,9 @@ public class SoulsComeAlive {
     public static SoulFragmentItem ANGELIC_SOUL_FRAGMENT;
     public static StatusEffect SIREN_WARNING = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0x16DDB2);
     public static SoulFragmentItem DISRUPTIVE_SOUL_FRAGMENT;
-    public static StatusEffect SOUL_BLESSING = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0x8DF4D7);
+    public static StatusEffect SOUL_BLESSING = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0x8DF4D7)
+            .addAttributeModifier(EntityAttributes.GENERIC_LUCK, "03C3C89D-7037-4B42-869F-B146BCB64D2E",
+                    6.0D, EntityAttributeModifier.Operation.ADDITION);
     public static StatusEffect DEVILISH_BARGAIN = new EmptyStatusEffect(StatusEffectCategory.NEUTRAL, 0xA3282C);
     public static StatusEffect MIDAS_FAVOUR = new EmptyStatusEffect(StatusEffectCategory.BENEFICIAL, 0xFFBC21)
             .addAttributeModifier(EntityAttributes.GENERIC_LUCK, "03C3C89D-7037-4B42-869F-B146BCB64D2E",

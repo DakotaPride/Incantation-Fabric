@@ -4,9 +4,10 @@ import net.dakotapride.incantation.common.util.update_classes.SoulsComeAlive;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.DrownedEntity;
+import net.minecraft.entity.mob.EvokerEntity;
+import net.minecraft.entity.mob.HoglinEntity;
 import net.minecraft.entity.mob.PhantomEntity;
 import net.minecraft.entity.passive.AllayEntity;
-import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -17,6 +18,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+import java.rmi.server.Skeleton;
 import java.util.List;
 
 public class SoulFragmentItem extends Item {
@@ -27,33 +29,31 @@ public class SoulFragmentItem extends Item {
     @Override
     public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
         Item item = user.getActiveItem().getItem();
-        if (entity instanceof AllayEntity && getSoulShard(item) == fragmentTypeList.PLAYER
-                || entity instanceof AllayEntity && getSoulShard(item) == fragmentTypeList.PASSIVE
-                || entity instanceof AllayEntity && getSoulShard(item) == fragmentTypeList.HOSTILE
-                || entity instanceof AllayEntity && getSoulShard(item) == fragmentTypeList.DARKENED) {
+        if (entity instanceof AllayEntity && getSoulShard(item) == fragmentTypeList.DARKENED) {
             stack.decrement(1);
 
             user.giveItemStack(new ItemStack(SoulsComeAlive.DISRUPTIVE_SOUL_FRAGMENT, 1));
-        } else if (entity instanceof DrownedEntity && getSoulShard(item) == fragmentTypeList.PLAYER
-                || entity instanceof DrownedEntity && getSoulShard(item) == fragmentTypeList.PASSIVE
-                || entity instanceof DrownedEntity && getSoulShard(item) == fragmentTypeList.HOSTILE
-                || entity instanceof DrownedEntity && getSoulShard(item) == fragmentTypeList.LIGHTENED) {
+        } else if (entity instanceof DrownedEntity && getSoulShard(item) == fragmentTypeList.LIGHTENED) {
             stack.decrement(1);
 
             user.giveItemStack(new ItemStack(SoulsComeAlive.ANGELIC_SOUL_FRAGMENT, 1));
         } else if (entity instanceof PhantomEntity && getSoulShard(item) == fragmentTypeList.PLAYER
                 || entity instanceof PhantomEntity && getSoulShard(item) == fragmentTypeList.PASSIVE
-                || entity instanceof PhantomEntity && getSoulShard(item) == fragmentTypeList.HOSTILE
-                || entity instanceof PhantomEntity && getSoulShard(item) == fragmentTypeList.LIGHTENED) {
-            stack.decrement(1);
-
-            user.giveItemStack(new ItemStack(SoulsComeAlive.DARKENED_SOUL_FRAGMENT, 1));
-        } else if (entity instanceof MerchantEntity && getSoulShard(item) == fragmentTypeList.PLAYER
-                || entity instanceof PhantomEntity && getSoulShard(item) == fragmentTypeList.PASSIVE
                 || entity instanceof PhantomEntity && getSoulShard(item) == fragmentTypeList.HOSTILE) {
             stack.decrement(1);
 
+            user.giveItemStack(new ItemStack(SoulsComeAlive.DARKENED_SOUL_FRAGMENT, 1));
+        } else if (entity instanceof EvokerEntity && getSoulShard(item) == fragmentTypeList.PLAYER
+                || entity instanceof EvokerEntity && getSoulShard(item) == fragmentTypeList.PASSIVE
+                || entity instanceof EvokerEntity && getSoulShard(item) == fragmentTypeList.HOSTILE) {
+            stack.decrement(1);
+
             user.giveItemStack(new ItemStack(SoulsComeAlive.LIGHTENED_SOUL_FRAGMENT, 1));
+        } else if (entity instanceof HoglinEntity && getSoulShard(item) == fragmentTypeList.LIGHTENED
+                || entity instanceof HoglinEntity && getSoulShard(item) == fragmentTypeList.DARKENED) {
+            stack.decrement(1);
+
+            user.giveItemStack(new ItemStack(SoulsComeAlive.SOUL_FIRE_FRAGMENT, 1));
         }
 
         return super.useOnEntity(stack, user, entity, hand);
