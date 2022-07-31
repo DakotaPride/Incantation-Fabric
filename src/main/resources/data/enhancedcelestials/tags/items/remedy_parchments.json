@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "incantation:remedy_scroll",
+    "incantation:unconcealed_remedy_scroll",
+    "incantation:frosted_unconcealed_remedy_scroll",
+    "incantation:long_unconcealed_remedy_scroll",
+    "incantation:strong_unconcealed_remedy_scroll"
+  ]
+}

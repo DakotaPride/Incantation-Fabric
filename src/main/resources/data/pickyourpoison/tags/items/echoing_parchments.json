@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "incantation:echoing_scroll",
+    "incantation:unconcealed_echoing_scroll",
+    "incantation:frosted_unconcealed_echoing_scroll",
+    "incantation:long_unconcealed_echoing_scroll",
+    "incantation:strong_unconcealed_echoing_scroll"
+  ]
+}

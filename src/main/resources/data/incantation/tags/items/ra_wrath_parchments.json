@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "incantation:ra_wrath_scroll",
+    "incantation:unconcealed_ra_wrath_scroll",
+    "incantation:frosted_unconcealed_ra_wrath_scroll",
+    "incantation:long_unconcealed_ra_wrath_scroll",
+    "incantation:strong_unconcealed_ra_wrath_scroll"
+  ]
+}

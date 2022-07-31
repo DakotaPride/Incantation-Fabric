@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "incantation:unwounded_scroll",
+    "incantation:unconcealed_unwounded_scroll",
+    "incantation:frosted_unconcealed_unwounded_scroll",
+    "incantation:long_unconcealed_unwounded_scroll",
+    "incantation:strong_unconcealed_unwounded_scroll"
+  ]
+}
