@@ -15,16 +15,29 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.Objects;
+
 @Mixin(Block.class)
 public class BlockMixin {
 
     @Inject(method = "onSteppedOn", at = @At("HEAD"))
     private void incantation$onGoldenBlockSteppedOn(World world, BlockPos pos, BlockState state, Entity entity, CallbackInfo ci) {
         if (entity instanceof LivingEntity livingEntity) {
-            BlockState getBlockBelowEntity = livingEntity.getSteppingBlockState();
             if (livingEntity.hasStatusEffect(SoulsComeAlive.MIDAS_FAVOUR)) {
-                if (getBlockBelowEntity.isIn(IncantationTags.ACCEPTABLE_MIDAS_FAVOUR)) {
-                    livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 40, 1));
+                if (state.isIn(IncantationTags.ACCEPTABLE_MIDAS_FAVOUR)) {
+                    if (Objects.requireNonNull(livingEntity.getStatusEffect(SoulsComeAlive.MIDAS_FAVOUR)).getAmplifier() == 0) {
+                        livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 40, 0));
+                    } else if (Objects.requireNonNull(livingEntity.getStatusEffect(SoulsComeAlive.MIDAS_FAVOUR)).getAmplifier() == 1) {
+                        livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 40, 1));
+                    } else if (Objects.requireNonNull(livingEntity.getStatusEffect(SoulsComeAlive.MIDAS_FAVOUR)).getAmplifier() == 2) {
+                        livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 40, 2));
+                    } else if (Objects.requireNonNull(livingEntity.getStatusEffect(SoulsComeAlive.MIDAS_FAVOUR)).getAmplifier() == 3) {
+                        livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 40, 3));
+                    } else if (Objects.requireNonNull(livingEntity.getStatusEffect(SoulsComeAlive.MIDAS_FAVOUR)).getAmplifier() == 4) {
+                        livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 40, 4));
+                    } else {
+                        livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 40, 5));
+                    }
                 }
             }
         }
