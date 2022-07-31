@@ -11,6 +11,7 @@ public class EffectScrollItem extends Item {
         this.material = material;
     }
 
+    @Override
     public boolean canRepair(ItemStack stack, ItemStack ingredient) {
         return (this.material.getRepairIngredient().test(ingredient) || super.canRepair(stack, ingredient));
     }
