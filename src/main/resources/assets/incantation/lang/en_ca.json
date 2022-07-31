@@ -168,6 +168,9 @@
   "item.incantation.unconcealed.remedy.frosted": "Remedy I (0:23)",
   "item.incantation.unconcealed.remedy.extended": "Remedy I (0:37)",
   "item.incantation.unconcealed.remedy.strong": "Remedy II (0:23)",
+
+  "item.enhancedcelestials.unconcealed_remedy_scroll_gt": "Modified Parchment",
+  "item.enhancedcelestials.unconcealed_remedy_scroll_sweet": "Modified Parchment",
   "_comment_": "Auto Config",
   "text.autoconfig.incantation.option.enchantedBerryBushSpawnChance": "Enchanted Berry Bush Spawn Chance",
   "text.autoconfig.incantation.option.showTotemOfSalvationRemainingUses": "Show Remaining Totem Of Salvation Uses",
@@ -191,6 +194,9 @@
   "item.incantation.unconcealed.unwounded.frosted": "Unwounded I (0:23)",
   "item.incantation.unconcealed.unwounded.extended": "Unwounded I (0:37)",
   "item.incantation.unconcealed.unwounded.strong": "Unwounded II (0:23)",
+
+  "item.moreweaponry.unconcealed_unwounded_scroll_gt": "Modified Parchment",
+  "item.moreweaponry.unconcealed_unwounded_scroll_sweet": "Modified Parchment",
   "_comment_": "Patchouli",
   "item.incantation.bewitchment_book": "Incantation",
   "_comment_": "Pick Your Poison",
@@ -213,6 +219,8 @@
   "item.incantation.unconcealed.echoing.extended": "Echoing I (0:37)",
   "item.incantation.unconcealed.echoing.strong": "Echoing II (0:23)",
 
+  "item.pickyourpoison.unconcealed_echoing_scroll_gt": "Modified Parchment",
+  "item.pickyourpoison.unconcealed_echoing_scroll_sweet": "Modified Parchment",
   "_comment_": "Incantation v0.1.6",
   "item.incantation.cinnamon_bun": "Cinnamon Bun",
   "item.incantation.golden_cinnamon_bun": "Golden Cinnamon Bun",
@@ -231,10 +239,12 @@
   "text.minecraft.modifiers.outcome": "Possible Prizes:",
   "item.randomModifiersGo.golden_touch.modifier": "- Golden Touch",
   "item.randomModifiersGo.sweetened.modifier": "- Sweetened",
-  "text.incantation.modifier.description.sweetened": "  - Provides Speed For A Short Period Of Time",
-  "text.incantation.modifier.description.golden_touch": " - Provides Midas' Favour For A Short Period Of Time",
+  "text.incantation.modifier.description.sweetened": "  - Provides Speed II For A Short Period Of Time",
+  "text.incantation.modifier.description.golden_touch": " - Provides Midas' Favour II For A Short Period Of Time",
   "item.incantation.unconcealed_bleak_scroll_gt": "Modified Parchment",
   "item.incantation.unconcealed_bleak_scroll_sweet": "Modified Parchment",
+  "item.incantation.unconcealed_ra_wrath_scroll_gt": "Modified Parchment",
+  "item.incantation.unconcealed_ra_wrath_scroll_sweet": "Modified Parchment",
   "text.minecraft.modifiers.list_of": "Modifier:",
   "item.incantation.dough": "Dough",
   "item.incantation.golden_dough": "Golden Dough"
