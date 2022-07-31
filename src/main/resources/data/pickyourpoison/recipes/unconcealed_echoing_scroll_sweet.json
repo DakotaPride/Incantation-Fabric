@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "tag": "moreweaponry:echoing_parchments"
+  },
+  "addition": {
+    "item": "incantation:sweetened_modifier_pack"
+  },
+  "result": {
+    "item": "incantation:unconcealed_echoing_scroll_sweet",
+    "count": 1
+  }
+}

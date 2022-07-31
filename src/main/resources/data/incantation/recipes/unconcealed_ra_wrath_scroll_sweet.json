@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "tag": "incantation:ra_wrath_parchments"
+  },
+  "addition": {
+    "item": "incantation:sweetened_modifier_pack"
+  },
+  "result": {
+    "item": "incantation:unconcealed_ra_wrath_scroll_sweet",
+    "count": 1
+  }
+}

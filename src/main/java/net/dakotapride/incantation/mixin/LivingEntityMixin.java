@@ -5,6 +5,7 @@ import net.dakotapride.incantation.common.util.update_classes.SoulsComeAlive;
 import net.dakotapride.incantation.common.entity.source.IncantationDamageSource;
 import net.dakotapride.incantation.compat.moreweaponry.MoreWeaponryCompat;
 import net.dakotapride.incantation.compat.pickyourpoison.PickYourPoisonCompat;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -120,7 +121,9 @@ public abstract class LivingEntityMixin extends Entity {
                 this.setAir(this.getNextAirOnLand(this.getAir()));
             }
 
-            livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 40, 0));
+            if (!this.isSubmergedInWater()) {
+                livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 40, 0));
+            }
         }
     }
 
@@ -162,21 +165,25 @@ public abstract class LivingEntityMixin extends Entity {
             livingEntity.clearStatusEffects();
         }
 
-        if (livingEntity.hasStatusEffect(PickYourPoisonCompat.ECHOING)) {
-            if (!(livingEntity.getAttacker() == null)) {
-                livingEntity.getActiveStatusEffects().forEach((statusEffect, statusEffectInstance) -> {
-                    if (!attacker.hasStatusEffect(statusEffect) || (attacker.getStatusEffect(statusEffect) != null
-                            && Objects.requireNonNull(attacker.getStatusEffect(statusEffect)).getAmplifier() <= statusEffectInstance.getAmplifier())) {
-                        attacker.addStatusEffect(new StatusEffectInstance(statusEffect, 60, statusEffectInstance.getAmplifier()));
-                    }
-                });
+        if (FabricLoader.getInstance().isModLoaded("pickyourpoison")) {
+            if (livingEntity.hasStatusEffect(PickYourPoisonCompat.ECHOING)) {
+                if (!(livingEntity.getAttacker() == null)) {
+                    livingEntity.getActiveStatusEffects().forEach((statusEffect, statusEffectInstance) -> {
+                        if (!attacker.hasStatusEffect(statusEffect) || (attacker.getStatusEffect(statusEffect) != null
+                                && Objects.requireNonNull(attacker.getStatusEffect(statusEffect)).getAmplifier() <= statusEffectInstance.getAmplifier())) {
+                            attacker.addStatusEffect(new StatusEffectInstance(statusEffect, 60, statusEffectInstance.getAmplifier()));
+                        }
+                    });
+                }
             }
         }
 
-        if (livingEntity.hasStatusEffect(MoreWeaponryCompat.UNWOUNDED)) {
-            livingEntity.removeStatusEffect(StatusEffects.POISON);
-            livingEntity.removeStatusEffect(StatusEffects.WITHER);
-            livingEntity.removeStatusEffect(StatusEffects.INSTANT_DAMAGE);
+        if (FabricLoader.getInstance().isModLoaded("moreweaponry")) {
+            if (livingEntity.hasStatusEffect(MoreWeaponryCompat.UNWOUNDED)) {
+                livingEntity.removeStatusEffect(StatusEffects.POISON);
+                livingEntity.removeStatusEffect(StatusEffects.WITHER);
+                livingEntity.removeStatusEffect(StatusEffects.INSTANT_DAMAGE);
+            }
         }
 
         if (livingEntity.hasStatusEffect(IncantationMod.RA_WRATH)) {

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "tag": "moreweaponry:echoing_parchments"
+  },
+  "addition": {
+    "item": "incantation:golden_touch_modifier_pack"
+  },
+  "result": {
+    "item": "incantation:unconcealed_echoing_scroll_gt",
+    "count": 1
+  }
+}

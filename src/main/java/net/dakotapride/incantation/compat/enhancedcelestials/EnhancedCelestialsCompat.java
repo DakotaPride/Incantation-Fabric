@@ -2,7 +2,11 @@ package net.dakotapride.incantation.compat.enhancedcelestials;
 
 import net.dakotapride.incantation.common.IncantationMod;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
+import net.dakotapride.incantation.common.item.modifiers.items_modified.GTUnconcealedBleakScroll;
+import net.dakotapride.incantation.common.item.modifiers.items_modified.SweetUnconcealedBleakScroll;
 import net.dakotapride.incantation.compat.enhancedcelestials.item.RemedyScrollItem;
+import net.dakotapride.incantation.compat.enhancedcelestials.item.items_modified.GTUnconcealedRemedyScroll;
+import net.dakotapride.incantation.compat.enhancedcelestials.item.items_modified.SweetUnconcealedRemedyScroll;
 import net.dakotapride.incantation.compat.enhancedcelestials.item.unconcealed_scrolls.base.UnconcealedRemedyScroll;
 import net.dakotapride.incantation.compat.enhancedcelestials.item.unconcealed_scrolls.extended.UnconcealedExtendedRemedyScroll;
 import net.dakotapride.incantation.compat.enhancedcelestials.item.unconcealed_scrolls.frosted.UnconcealedFrostedRemedyScroll;
@@ -27,6 +31,8 @@ import net.minecraft.potion.Potions;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+import static net.dakotapride.incantation.common.IncantationMod.*;
+
 public class EnhancedCelestialsCompat {
     public static final String ENHANCED_CELESTIALS_ID = ("enhancedcelestials");
 
@@ -47,6 +53,10 @@ public class EnhancedCelestialsCompat {
     private static final Identifier GRASS_BLOCK_ID
             = new Identifier("minecraft", "blocks/grass");
 
+    // Random Modifiers, Go!
+    public static GTUnconcealedRemedyScroll gtUNCONCEALED_REMEDY_SCROLL;
+    public static SweetUnconcealedRemedyScroll sweetUNCONCEALED_REMEDY_SCROLL;
+
     // Registration
 
     public static <T extends Item> T registerItem(String name, T item) {
@@ -60,6 +70,14 @@ public class EnhancedCelestialsCompat {
     }
 
     public static void enhancedCelestialsCompatRegistry() {
+
+        gtUNCONCEALED_REMEDY_SCROLL = registerItem("unconcealed_remedy_scroll_gt",
+                new GTUnconcealedRemedyScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxDamage(80).group(INCANTATION_GROUP)));
+        sweetUNCONCEALED_REMEDY_SCROLL = registerItem("unconcealed_remedy_scroll_sweet",
+                new SweetUnconcealedRemedyScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxDamage(80).group(INCANTATION_GROUP)));
+
 
         UNCONCEALED_REMEDY_SCROLL = registerItem("unconcealed_remedy_scroll",
                 new UnconcealedRemedyScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,

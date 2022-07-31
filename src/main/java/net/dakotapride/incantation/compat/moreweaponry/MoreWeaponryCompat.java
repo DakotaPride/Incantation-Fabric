@@ -4,6 +4,8 @@ package net.dakotapride.incantation.compat.moreweaponry;
 import net.dakotapride.incantation.common.IncantationMod;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
 import net.dakotapride.incantation.compat.moreweaponry.item.UnwoundedScrollItem;
+import net.dakotapride.incantation.compat.moreweaponry.item.items_modified.GTUnconcealedUnwoundedScroll;
+import net.dakotapride.incantation.compat.moreweaponry.item.items_modified.SweetUnconcealedUnwoundedScroll;
 import net.dakotapride.incantation.compat.moreweaponry.item.unconcealed_scrolls.base.UnconcealedUnwoundedScroll;
 import net.dakotapride.incantation.compat.moreweaponry.item.unconcealed_scrolls.extended.UnconcealedExtendedUnwoundedScroll;
 import net.dakotapride.incantation.compat.moreweaponry.item.unconcealed_scrolls.frosted.UnconcealedFrostedUnwoundedScroll;
@@ -20,6 +22,8 @@ import net.minecraft.potion.Potions;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+import static net.dakotapride.incantation.common.IncantationMod.INCANTATION_GROUP;
+
 public class MoreWeaponryCompat {
     public static final String MORE_WEAPONRY_ID = ("moreweaponry");
 
@@ -35,6 +39,10 @@ public class MoreWeaponryCompat {
 
     public static Potion UNWOUNDED_POTION;
 
+    // Random Modifiers, Go!
+    public static GTUnconcealedUnwoundedScroll gtUNCONCEALED_UNWOUNDED_SCROLL;
+    public static SweetUnconcealedUnwoundedScroll sweetUNCONCEALED_UNWOUNDED_SCROLL;
+
     // Registration
 
     public static <T extends Item> T registerItem(String name, T item) {
@@ -49,6 +57,13 @@ public class MoreWeaponryCompat {
 
 
     public static void moreWeaponryCompatRegistry() {
+
+        gtUNCONCEALED_UNWOUNDED_SCROLL = registerItem("unconcealed_unwounded_scroll_gt",
+                new GTUnconcealedUnwoundedScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxDamage(80).group(INCANTATION_GROUP)));
+        sweetUNCONCEALED_UNWOUNDED_SCROLL = registerItem("unconcealed_unwounded_scroll_sweet",
+                new SweetUnconcealedUnwoundedScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxDamage(80).group(INCANTATION_GROUP)));
 
         UNCONCEALED_UNWOUNDED_SCROLL = registerItem("unconcealed_unwounded_scroll",
                 new UnconcealedUnwoundedScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "tag": "moreweaponry:unwounded_parchments"
+  },
+  "addition": {
+    "item": "incantation:sweetened_modifier_pack"
+  },
+  "result": {
+    "item": "incantation:unconcealed_unwounded_scroll_sweet",
+    "count": 1
+  }
+}

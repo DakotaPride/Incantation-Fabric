@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "tag": "incantation:remedy_parchments"
+  },
+  "addition": {
+    "item": "incantation:sweetened_modifier_pack"
+  },
+  "result": {
+    "item": "incantation:unconcealed_remedy_scroll_sweet",
+    "count": 1
+  }
+}

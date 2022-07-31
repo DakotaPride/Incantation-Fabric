@@ -3,6 +3,8 @@ package net.dakotapride.incantation.compat.pickyourpoison;
 import net.dakotapride.incantation.common.IncantationMod;
 import net.dakotapride.incantation.common.effect.EmptyStatusEffect;
 import net.dakotapride.incantation.compat.pickyourpoison.item.EchoingScrollItem;
+import net.dakotapride.incantation.compat.pickyourpoison.item.items_modified.GTUnconcealedEchoingScroll;
+import net.dakotapride.incantation.compat.pickyourpoison.item.items_modified.SweetUnconcealedEchoingScroll;
 import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.base.UnconcealedEchoingScroll;
 import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.extended.UnconcealedExtendedEchoingScroll;
 import net.dakotapride.incantation.compat.pickyourpoison.item.unconcealed_scrolls.frosted.UnconcealedFrostedEchoingScroll;
@@ -19,6 +21,8 @@ import net.minecraft.potion.Potions;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+import static net.dakotapride.incantation.common.IncantationMod.INCANTATION_GROUP;
+
 public class PickYourPoisonCompat {
     public static final String PICK_YOUR_POISON_ID = ("pickyourpoison");
 
@@ -34,6 +38,10 @@ public class PickYourPoisonCompat {
 
     public static Potion ECHOING_POTION;
 
+    // Random Modifiers, Go!
+    public static GTUnconcealedEchoingScroll gtUNCONCEALED_ECHOING_SCROLL;
+    public static SweetUnconcealedEchoingScroll sweetUNCONCEALED_ECHOING_SCROLL;
+
     // Registration
 
     public static <T extends Item> T registerItem(String name, T item) {
@@ -47,6 +55,13 @@ public class PickYourPoisonCompat {
     }
 
     public static void pickYourPoisonCompatRegistry() {
+
+        gtUNCONCEALED_ECHOING_SCROLL = registerItem("unconcealed_echoing_scroll_gt",
+                new GTUnconcealedEchoingScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxDamage(80).group(INCANTATION_GROUP)));
+        sweetUNCONCEALED_ECHOING_SCROLL = registerItem("unconcealed_echoing_scroll_sweet",
+                new SweetUnconcealedEchoingScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,
+                        new FabricItemSettings().maxDamage(80).group(INCANTATION_GROUP)));
 
         UNCONCEALED_ECHOING_SCROLL = registerItem("unconcealed_echoing_scroll",
                 new UnconcealedEchoingScroll(IncantationMod.IncantationMaterials.PACKED_FABRIC_PATCHING,

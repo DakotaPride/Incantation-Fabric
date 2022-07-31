@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "tag": "enhancedcelestials:remedy_parchments"
+  },
+  "addition": {
+    "item": "incantation:golden_touch_modifier_pack"
+  },
+  "result": {
+    "item": "incantation:unconcealed_remedy_scroll_gt",
+    "count": 1
+  }
+}
